@@ -5,7 +5,17 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'cities#index', as: 'index'
 
-  resources :cities, only: [:index, :new, :create, :show]
+  resources :cities, only: [:index, :show]
+
+  resources :admins, only: [:show] do
+    resources :cities, only: [:new, :create, :edit, :update]
+  end
+
+  resources :admin_sessions, only: [:create, :destroy] do 
+    collection do
+      get 'dekh_magar_pyar_say'
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
