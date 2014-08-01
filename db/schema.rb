@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140729123254) do
+ActiveRecord::Schema.define(version: 20140801000256) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "admins", force: true do |t|
+    t.string   "username",         null: false
+    t.string   "crypted_password", null: false
+    t.string   "salt",             null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "admins", ["username"], name: "index_admins_on_username", unique: true, using: :btree
 
   create_table "cities", force: true do |t|
     t.string   "name"
@@ -22,9 +35,9 @@ ActiveRecord::Schema.define(version: 20140729123254) do
     t.string   "facebook"
     t.string   "twitter"
     t.string   "eventbrite_page"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "admin_id"
   end
 
   create_table "users", force: true do |t|
@@ -36,6 +49,7 @@ ActiveRecord::Schema.define(version: 20140729123254) do
     t.string   "linkedin"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "city_id"
   end
 
 end
