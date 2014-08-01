@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
+
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -36,6 +37,9 @@ gem 'pg'
 # debugging in the console
 gem 'pry-rails'
 
+# Use Passenger as primary app server across all environments
+gem 'passenger', '~> 4.0.48'
+
 # ======================================================
 # Front-End Gems ---------------------------------------
 # ======================================================
@@ -45,6 +49,13 @@ gem 'better_errors'
 
 # Creates console on error page to troubleshoot in browser
 gem "binding_of_caller"
+
+# ======================================================
+# User Gems --------------------------------------------
+# ======================================================
+
+# Use sorcery for user model auth
+gem 'sorcery'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
