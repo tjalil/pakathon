@@ -8,6 +8,21 @@
 </head>
 <body>
 
+  <div id="navbar">
+    <% if current_user %>
+      <%= link_to 'Logout', admin_session_path("current"), method: :delete %>
+    <% end %>
+  </div>
+
+  <div class = "flash">
+    <% if flash[:notice] %>
+      <div class="alert" id = "notice"><%= flash[:notice] %></div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert" id = "alert"><%= flash[:alert] %></div>
+    <% end %>
+  </div>
+
 <%= yield %>
 
 </body>
