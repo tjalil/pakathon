@@ -50,6 +50,9 @@ gem 'better_errors'
 # Creates console on error page to troubleshoot in browser
 gem "binding_of_caller"
 
+# using foundation as front-end framework
+gem 'foundation-rails'
+
 # ======================================================
 # User Gems --------------------------------------------
 # ======================================================
