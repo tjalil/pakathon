@@ -1,5 +1,7 @@
 class AdminsController < ApplicationController
 
+  before_filter :require_login, only: [:show]
+
   def show
     @admin = Admin.find(params[:id])
   end
@@ -9,4 +11,9 @@ class AdminsController < ApplicationController
   def admin_params
     params.require(:admin).permit(:username, :password)
   end
+
+  def not_authenticated
+    redirect_to root_path, alert: "You do not have access to this page."
+  end
+
 end

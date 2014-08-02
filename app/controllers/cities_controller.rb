@@ -1,5 +1,6 @@
 class CitiesController < ApplicationController
 
+  before_filter :require_login, except: [:index, :show]
   before_filter :find_city, only: [:show]
 
   def index
@@ -23,6 +24,15 @@ class CitiesController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
   private
 
   def city_params
@@ -31,6 +41,10 @@ class CitiesController < ApplicationController
 
   def find_city
     @city = City.find(params[:id])
+  end
+
+  def not_authenticated
+    redirect_to root_path, alert: "You do not have access to this page."
   end
 
 end
