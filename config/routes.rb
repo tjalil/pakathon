@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'cities#index', as: 'index'
+  root :to => 'cities#index'
 
   resources :cities, only: [:index, :show]
 
@@ -16,6 +16,8 @@ Rails.application.routes.draw do
       get 'dekh_magar_pyar_say'
     end
   end
+
+  # post 'logout' => 'admin_sessions#destroy', :as => :logout
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
