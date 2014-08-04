@@ -1,1 +1,9 @@
 <h1>Welcome <%= current_user.username %></h1>
+
+<% if current_user.username == "taha.jalil" %>
+  <% @cities.each do |city| %>
+    <p><%= link_to "Edit #{city.name}", "#" %></p>
+  <% end %>
+<% else %>
+  <%= link_to "Edit #{@city.name}", "#" %>
+<% end %>
