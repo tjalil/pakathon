@@ -8,4 +8,8 @@ class Admin < ActiveRecord::Base
 
   has_one :city
 
+  def my_city
+    City.find_by(admin_id: Admin.find(self).id)
+  end
+
 end
