@@ -4,6 +4,12 @@ class AdminsController < ApplicationController
 
   def show
     @admin = Admin.find(params[:id])
+
+    if @admin.username == "taha.jalil"
+      @cities = City.all
+    else
+      @city = City.find_by(admin_id: Admin.find(@admin.id))
+    end
   end
 
   private
