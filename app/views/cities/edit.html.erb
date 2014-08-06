@@ -1,0 +1,62 @@
+<% if current_user.username == "taha.jalil" || @city.admin_id == current_user.id %>
+  <h1>Edit <%= @city.name %></h1>
+  <%= form_for ([current_user, @city]), :html => {:multipart => true} do |f| %>
+    <% if @city.errors.any? %>
+      <div class="error_messages">
+        <h2>Form is invalid</h2>
+        <ul>
+          <% for message in @city.errors.full_messages %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :address %><br>
+      <%= f.text_field :address %>
+    </div>
+
+    <div class="field">
+      <%= f.label :background_img %><br>
+      <%= f.file_field :background_img %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email %><br>
+      <%= f.text_field :email %>
+    </div>
+
+    <div class="field">
+      <%= f.label :phone %><br>
+      <%= f.text_field :phone %>
+    </div>
+
+    <div class="field">
+      <%= f.label :facebook %><br>
+      <%= f.text_field :facebook %>
+    </div>
+
+    <div class="field">
+      <%= f.label :twitter %><br>
+      <%= f.text_field :twitter %>
+    </div>
+
+    <div class="field">
+      <%= f.label :eventbrite_page %><br>
+      <%= f.text_field :eventbrite_page %>
+    </div>
+
+    <div class="action">
+      <%= f.submit "Save" %>
+    </div>
+
+  <% end %>
+<% else %>
+  <h1>Sorry you do not have access to this page</h1>
+<% end %> 
