@@ -40,6 +40,18 @@ gem 'pry-rails'
 # Use Passenger as primary app server across all environments
 gem 'passenger', '~> 4.0.48'
 
+# Use Carrierwave to upload file (images)
+gem 'carrierwave'
+
+# Use fog to support Amazon S3 storage
+gem "fog", "~> 1.3.1"
+
+# Use AWS S3 to store images
+gem 'aws-sdk', '~> 1.50.0'
+
+# Use mini-magick to manipulate images
+gem "mini_magick"
+
 # ======================================================
 # Front-End Gems ---------------------------------------
 # ======================================================
@@ -50,7 +62,7 @@ gem 'better_errors'
 # Creates console on error page to troubleshoot in browser
 gem "binding_of_caller"
 
-# using foundation as front-end framework
+# Use foundation as front-end framework
 gem 'foundation-rails'
 
 # ======================================================
