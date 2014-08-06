@@ -1,7 +1,8 @@
 class CitiesController < ApplicationController
 
   before_filter :require_login, except: [:index, :show]
-  before_filter :find_city, only: [:show]
+  before_filter :find_city, only: [:show, :edit, :update, :dashboard]
+  before_filter :find_user, only: [:edit, :update, :destroy, :dashboard]
 
   def index
     @cities = City.all
@@ -28,9 +29,17 @@ class CitiesController < ApplicationController
   end
 
   def update
+    if @city.update_attributes(city_params)
+      redirect_to city_path(@city), notice: "Successfully updated #{@city.name}!"
+    else
+      render :new, alert: "There was an issue updating #{@city.name}'s details. Please try again."
+    end
   end
 
   def destroy
+  end
+
+  def dashboard
   end
 
   private
@@ -41,6 +50,10 @@ class CitiesController < ApplicationController
 
   def find_city
     @city = City.find(params[:id])
+  end
+
+  def find_user
+    @admin = Admin.find(params[:id])
   end
 
   def not_authenticated
