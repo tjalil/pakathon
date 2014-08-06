@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       member do
         get 'dashboard'
       end
+      resources :users, only: [:new, :create, :edit, :update, :destroy]
     end
   end
 
