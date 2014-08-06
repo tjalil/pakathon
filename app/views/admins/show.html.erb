@@ -2,8 +2,8 @@
 
 <% if current_user.username == "taha.jalil" %>
   <% @cities.each do |city| %>
-    <p><%= link_to "Edit #{city.name}", "#" %></p>
+    <p><%= link_to "Go to #{city.name}", dashboard_admin_city_path(current_user, city) %> | <%= link_to "Edit #{city.name}", edit_admin_city_path(current_user, city) %></p>
   <% end %>
 <% else %>
-  <%= link_to "Edit #{@city.name}", "#" %>
+  <%= link_to "Edit #{@city.name}", edit_admin_city_path(current_user, @city) %>
 <% end %>
