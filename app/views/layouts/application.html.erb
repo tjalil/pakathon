@@ -12,6 +12,7 @@
 
   <div id="navbar">
     <% if current_user %>
+      <%= link_to 'Admin Dashboard', admin_path(current_user) %>
       <%= link_to 'Logout', admin_session_path("current"), method: :delete %>
     <% end %>
   </div>
