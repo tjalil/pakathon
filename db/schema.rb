@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140805231657) do
+ActiveRecord::Schema.define(version: 20140813232615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "admins", force: true do |t|
     t.string   "username",         null: false
@@ -38,6 +39,7 @@ ActiveRecord::Schema.define(version: 20140805231657) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "admin_id"
+    t.hstore   "schedule"
   end
 
   create_table "users", force: true do |t|
@@ -50,6 +52,7 @@ ActiveRecord::Schema.define(version: 20140805231657) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "city_id"
+    t.string   "fav_food"
   end
 
 end
