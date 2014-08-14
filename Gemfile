@@ -52,6 +52,9 @@ gem 'aws-sdk', '~> 1.50.0'
 # Use mini-magick to manipulate images
 gem "mini_magick"
 
+# To store keys in a secure way
+gem "figaro"
+
 # ======================================================
 # Front-End Gems ---------------------------------------
 # ======================================================
