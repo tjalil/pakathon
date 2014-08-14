@@ -22,6 +22,11 @@ class UsersController < ApplicationController
   end
 
   def update
+    if @user.update_attributes(user_params)
+      redirect_to dashboard_admin_city_path(current_user, @city), notice: "#{@user.name} successfully updated!"
+    else
+      render :new, alert: "There was an issue updating this user's info. Please try again."
+    end
   end
 
   def destroy
