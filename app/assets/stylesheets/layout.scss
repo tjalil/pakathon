@@ -1,0 +1,136 @@
+.row {
+  max-width: 1500px;
+  padding-bottom: 1rem;
+
+  // .city-name-under-img {
+  //   font-weight: bold;
+  // }
+
+  .image-link-to-city-page {
+    display: inline-block;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .our-mission, .mentorship {
+    background-image: url('http://uploads.striking.ly/page/images/backgrounds/bg6.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .global-event, .who-we-are, .contact-us {
+    background-color: #eee;
+  }
+
+  #tashaddud {
+    background-image: url('http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_900,w_1200/ixpwcfk4rvic6hyebsto.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .support {
+    background-image: url('http://assets.strikingly.com/assets/defaults/background2.jpg');
+    background-size: cover;
+    background-position: 49% 50%; 
+    background-repeat: no-repeat;
+  }
+
+  #toronto-background-img {
+    background-image: url('http://sandmanhotelgroup.files.wordpress.com/2012/11/101737874.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 720px;
+  }
+
+  .hero-text {
+    margin-top: 15rem;
+
+    h1, h4 {
+      color: white;
+    }
+
+    h1 {
+      font-weight: bold;
+    }
+  }
+
+  .signup-btn {
+    padding: 1rem 8rem;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0.7);
+
+    h1 {
+      color: white;
+      font-weight: bold;
+    }
+
+    &:hover {
+      background-color: rgba(0,0,0,1);
+    }
+  }
+
+  .cafe-signup {
+
+    background-color:rgba(67,172,106,0.5);
+    border-radius: 5px;
+
+    &:hover {
+      background-color:rgba(67,172,106,1);
+    }
+  }
+}
+
+#topnav-loggedin {
+  text-align: center;
+
+  // .topnav-titles {
+  //   color: #5e9516;
+  // }
+
+  .sub-nav .active {
+    color: white;
+  }
+}
+
+#topnav {
+  text-align: center;
+  // background-color: #43ac6a;
+
+  .topnav-titles {
+    // color: white;
+  }
+
+  .sub-nav .active {
+    color: white;
+  }
+}
+
+.img-circle {
+  border-radius: 100%;
+}
+
+.success {
+  border-radius: 5px;
+}
+
+// background-image: url('http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_progressive,h_1200,q_90,w_2000/wfydd9y1yy9eoxtozggy.jpg');
+// background-size: auto;
+// background-position: 49% 50%;
+// background-repeat: no-repeat;
+
+#topnav {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+#topnav-loggedin {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+.body-items {
+  margin-top: 3rem;
+}
+
+
+
+
