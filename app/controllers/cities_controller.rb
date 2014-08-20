@@ -6,6 +6,7 @@ class CitiesController < ApplicationController
 
   def index
     @cities = City.all
+    @global = City.find_by(name: "Boston")
   end
 
   def new
@@ -23,6 +24,7 @@ class CitiesController < ApplicationController
   end
 
   def show
+    @global = City.find_by(name: "Boston")
   end
 
   def edit
@@ -45,7 +47,7 @@ class CitiesController < ApplicationController
   private
 
   def city_params
-    params.require(:city).permit(:name, :address, :background_img, :email, :phone, :facebook, :twitter, :eventbrite_page)
+    params.require(:city).permit(:name, :address, :background_img, :email, :phone, :facebook, :twitter, :eventbrite_page, :hero_copy)
   end
 
   def find_city
