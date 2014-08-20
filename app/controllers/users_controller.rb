@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :description, :avatar, :type_of_user, :twitter, :linkedin, :city_id)
+    params.require(:user).permit(:name, :description, :fav_food, :avatar, :type_of_user, :twitter, :linkedin, :city_id)
   end
 
   def find_admin
