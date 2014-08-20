@@ -44,8 +44,8 @@ $include-html-global-classes: $include-html-classes;
 
 // We use these to control various global styles
 // $body-bg: #fff;
-// $body-font-color: #222;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+// $body-font-color: #fff;
+$body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 $font-weight-normal:normal;
 $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
@@ -672,8 +672,8 @@ $primary-color: #008CBA;
 
 // $include-html-magellan-classes: $include-html-classes;
 
-// $magellan-bg: #fff;
-$magellan-padding: 0 !important;
+// $magellan-bg: rgba(94,149,22, 0.3);
+$magellan-padding: 1rem !important;
 
 // Off-canvas
 
