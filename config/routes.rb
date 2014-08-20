@@ -13,7 +13,9 @@ Rails.application.routes.draw do
         get 'dashboard'
       end
       resources :users, only: [:new, :create, :edit, :update, :destroy]
+      resources :contacts, only: [:show]
     end
+    resources :logos, only: [:new, :create]
   end
 
   resources :admin_sessions, only: [:create, :destroy] do 
@@ -21,6 +23,8 @@ Rails.application.routes.draw do
       get 'dekh_magar_pyar_say'
     end
   end
+
+  resources :contacts, only: [:new, :create]
 
   # post 'logout' => 'admin_sessions#destroy', :as => :logout
 
