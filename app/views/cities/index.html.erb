@@ -1,6 +1,6 @@
 <% if current_user %>
   <div id="topnav-loggedin" class="fixed" data-magellan-expedition="fixed">
-    <dl class="sub-nav large-10 large-offset-1 columns large-centered">
+    <dl class="sub-nav large-10 columns large-centered">
       <dd data-magellan-arrival="homepage">
         <%= link_to image_tag(Logo.find_by(name:"pakathon globe").image_url(:logo)), root_path, :class=>"topnav-titles" %>
       </dd>
@@ -8,7 +8,7 @@
       <dd data-magellan-arrival="global-event"><a href="#global-event" class="topnav-titles">EVENT</a></dd>
       <dd data-magellan-arrival="past-projects"><a href="#past-projects" class="topnav-titles">PAKATHON 2013</a></dd>
       <dd data-magellan-arrival="mentorship-challenge"><a href="#mentorship-challenge" class="topnav-titles">JUDGES + MENTORS</a></dd>
-      <dd data-magellan-arrival="who-we-are"><a href="#who-we-are" class="topnav-titles">WHO WE ARE</a></dd>
+      <dd data-magellan-arrival="meet-the-founders"><a href="#meet-the-founders" class="topnav-titles">MEET THE FOUNDERS</a></dd>
       <dd data-magellan-arrival="support"><a href="#support" class="topnav-titles">SUPPORT</a></dd>
       <!-- <dd data-magellan-arrival="contact-us"><a href="#contact-us" class="topnav-titles">CONTACT US</a></dd> -->
       <dd data-magellan-arrival="admin-dashboard"><%= link_to 'Admin Dashboard', admin_path(current_user), :class=>"topnav-titles" %></dd>
@@ -25,7 +25,7 @@
       <dd data-magellan-arrival="global-event"><a href="#global-event" class="topnav-titles">EVENT</a></dd>
       <dd data-magellan-arrival="past-projects"><a href="#past-projects" class="topnav-titles">PAKATHON 2013</a></dd>
       <dd data-magellan-arrival="mentorship-challenge"><a href="#mentorship-challenge" class="topnav-titles">JUDGES + MENTORS</a></dd>
-      <dd data-magellan-arrival="who-we-are"><a href="#who-we-are" class="topnav-titles">WHO WE ARE</a></dd>
+      <dd data-magellan-arrival="meet-the-founders"><a href="#meet-the-founders" class="topnav-titles">MEET THE FOUNDERS</a></dd>
       <dd data-magellan-arrival="support"><a href="#support" class="topnav-titles">SUPPORT</a></dd>
       <!-- <dd data-magellan-arrival="contact-us"><a href="#contact-us" class="topnav-titles">CONTACT US</a></dd> -->
     </dl>
@@ -33,12 +33,16 @@
 <% end %>
 
 <div class="row">
-  <div class="large-8 text-center large-centered columns">
+  <div class="large-12 text-center large-centered columns">
     <% City.all.sort_by {|city| city[:name]}.each do |city| %>
       <div class="image-link-to-city-page large-2 columns end">
-        <%= link_to image_tag(city.background_img_url(:team)), city_path(city) %>
+        <% if city.name == "Toronto" %>
+          <%= link_to image_tag(city.background_img_url(:team)), city_path(city) %>
+        <% else %>
+          <%= link_to image_tag(city.background_img_url(:team)), city.eventbrite_page %>
+        <% end %>
         <p class="city-name">
-          <%= city.name %><br>
+          <%= city.name.upcase %><br>
           <% if city.eventbrite_page.present? %>
             <span style="font-style:italic; color:#43ac6a; font-size:0.75rem"><%= link_to "Registration Open", city.eventbrite_page %></span>
           <% else %>
@@ -199,19 +203,19 @@
       </div>
     </div>
     <div class="row">
-      <div class="large-8 columns large-centered">
+      <div class="large-12 columns large-centered">
         <% @global.judges.each do |judge| %>
-          <div class="large-2 columns text-center">
+          <div class="large-3 columns text-center">
             <% if judge.avatar.present? %>
               <%= image_tag judge.avatar_url(:team), :class => "img-circle" %>
             <% else %>
               <img class="img-circle" src="http://placehold.it/200x200&text=Img" />
             <% end %>
-            <!-- <p>
-              <span style="font-weight:bold"><%#= judge.name %></span>
+            <p>
+              <span style="font-weight:bold"><%= judge.name %></span>
               <br>
-              <span style="font-style:italic"><%#= judge.description %></span>
-            </p> -->
+              <span style="font-style:italic"><%= judge.description %></span>
+            </p>
           </div>
         <% end %>
       </div>
@@ -219,11 +223,11 @@
   </div>
 </div>
 
-<div class="row who-we-are" style="padding: 3rem" data-magellan-destination='who-we-are' id='who-we-are'>
+<div class="row who-we-are" style="padding: 3rem" data-magellan-destination='meet-the-founders' id='meet-the-founders'>
   <div class="large-12 columns">
     <div class="row text-center">
       <div class="large-12 columns">
-        <h1>WHO WE ARE</h1>
+        <h1>MEET THE FOUNDERS</h1>
       </div>
     </div>
     <div class="row">
