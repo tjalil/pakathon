@@ -3,6 +3,7 @@ class City < ActiveRecord::Base
   belongs_to :admin
   has_many :contacts
   mount_uploader :background_img, ImageUploader
+  mount_uploader :map_photo, ImageUploader
 
   def judges
     self.users.where(type_of_user: "Judge")
