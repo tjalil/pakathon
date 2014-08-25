@@ -23,27 +23,27 @@
 <div data-magellan-destination='streams' id="streams">
   <div class="row streams" style="padding: 3rem">
     <div class="large-12 columns text-center">
-      <h1 style="background-color:#43ac6a">STREAMS</h1>
+      <h1 class="title">STREAMS</h1>
       <div class="row">
-        <div class="large-4 columns">
-          <h2 style="color:#43ac6a">EDUCATION</h2>
+        <div class="stream large-3 large-centered columns">
+          <h4>EDUCATION</h4>
         </div>
-        <div class="large-4 columns">
-          <h2 style="color:#43ac6a">HEALTH</h2>
+        <div class="stream large-3 large-centered columns">
+          <h4>HEALTH</h4>
         </div>
-        <div class="large-4 columns">
-          <h2 style="color:#43ac6a">RETAIL</h2>
+        <div class="stream large-3 large-centered columns">
+          <h4>RETAIL</h4>
         </div>
       </div>
       <div class="row">
-        <div class="large-4 columns">
-          <h2 style="color:#43ac6a">ENERGY</h2>
+        <div class="stream large-3 large-centered columns">
+          <h4>ENERGY</h4>
         </div>
-        <div class="large-4 columns">
-          <h2 style="color:#43ac6a">HUMAN RIGHTS</h2>
+        <div class="stream large-3 large-centered columns">
+          <h4>HUMAN RIGHTS</h4>
         </div>
-        <div class="large-4 columns">
-          <h2 style="color:#43ac6a">HOUSING</h2>
+        <div class="stream large-3 large-centered columns">
+          <h4>HOUSING</h4>
         </div>
       </div>
     </div>
@@ -53,28 +53,36 @@
 <div data-magellan-destination='location' id="location">
   <div class="row location" style="padding: 3rem">
     <div class="large-12 columns text-center">
-      <h1 style="background-color:#43ac6a">LOCATION</h1>
-    </div>
-    <div class="row">
-      <a href="https://www.google.ca/maps/place/Bitmaker+Labs/@43.6466292,-79.3856308,17z/data=!4m2!3m1!1s0x0:0x38fdb7d96640b4da" target="_blank">
-        <%= image_tag Logo.find(2).image_url(:banner) %>
-      </a>
+      <!-- <h1 class="title">LOCATION</h1> -->
+      <div class="row">
+        <div class="address large-3 columns large-centered text-center">
+          <h3 style="border-bottom: 2px solid #8AC654"><%= @city.building_name.upcase %></h3>
+          <h4><%= @city.address %></h4>
+          <h4><%= @city.name %>, <%= @city.province_name %></h4>
+          <h4><%= @city.postal_code %></h4>
+        </div>
+        <div class="address large-6 large-centered columns end">
+          <a href="https://www.google.ca/maps/place/Bitmaker+Labs/@43.6466292,-79.3856308,17z/data=!4m2!3m1!1s0x0:0x38fdb7d96640b4da" class="map-photo" target="_blank">
+            <%= image_tag @city.map_photo_url(:map) %>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="row schedule" style="padding: 3rem">
-  <div class="large-12 columns">
+  <div class="large-12 columns text-center">
     <div data-magellan-destination='schedule' id="schedule">
       <div class="row text-center">
         <div class="large-12 columns">
-          <h1 style="background-color:#43ac6a">SCHEDULE</h1>
+          <h1>SCHEDULE</h1>
         </div>
       </div>
       <div class="row">
-        <div class="large-4 columns">
-          <h4 style="text-align:center">Friday, September 26th</h4>
-          <div class="large-11 large-offset-1 columns">
+        <div class="schedule-days large-3 large-centered columns">
+          <h4 style="text-align:center; border-bottom: 2px solid #8AC654">Friday, September 26th</h4>
+          <div class="large-11 large-offset-1 columns text-left">
             <h5 style="font-weight: bold">Event starts with dinner at 5:30pm.</h5>
             <p><span style="font-weight:bold">6:30pm</span> – City chapters will open with a quick introduction.</p>
             <p><span style="font-weight:bold">7:00pm</span> – Two keynote speakers.</p>
@@ -82,9 +90,9 @@
             <p>After <span style="font-weight:bold">60 minutes</span> of brainstorming, team leads take the podium and pitch their ideas and have one last chance to recruit team members. All ideas should be registered by the end of the night.</p>
           </div>
         </div>
-        <div class="large-4 columns">
-          <h4 style="text-align:center">Saturday, September 27th</h4>
-          <div class="large-11 large-offset-1 columns">
+        <div class="schedule-days large-4 large-centered columns">
+          <h4 style="text-align:center; border-bottom: 2px solid #8AC654">Saturday, September 27th</h4>
+          <div class="large-11 large-offset-1 columns text-left">
             <h5 style="font-weight: bold">Mentors will block out sessions to skype with participants from different cities.</h5>
             <p><span style="font-weight:bold">10:00am</span> – Breakfast will be served.</p>
             <p><span style="font-weight:bold">1:00pm</span> – Lunch will be served.</p>
@@ -94,9 +102,9 @@
             <p>Each team will have to pick the main city where they will be pitching from.</p>
           </div>
         </div>
-        <div class="large-4 columns">
-          <h4 style="text-align:center">Sunday, September 28th</h4>
-          <div class="large-11 large-offset-1 columns">
+        <div class="schedule-days large-4 large-centered columns">
+          <h4 style="text-align:center; border-bottom: 2px solid #8AC654">Sunday, September 28th</h4>
+          <div class="large-11 large-offset-1 columns text-left">
             <p><span style="font-weight:bold">10:00am</span> – Each of the cities will have judging and will nominate the best team from their city. This team will then send a video or skype in, for the final round of global winners to be announced from Boston</p>
             <p>Each team will post their blog to the Pakathon facebook page before they can pitch to judges.</p>
             <p><span style="font-weight:bold">6:00pm</span> – Results are announced.</p>
@@ -113,7 +121,7 @@
     <div class="large-12 columns">
       <div class="row text-center">
         <div class="large-12 columns">
-          <h1 style="background-color:#43ac6a">CAFE</h1>
+          <h1 style="background-color:#8AC654">CAFE</h1>
         </div>
       </div>
       <div class="row">
@@ -139,7 +147,7 @@
   <div class="large-12 columns">
     <div class="row text-center">
       <div class="large-12 columns large-centered">
-        <h1 style="background-color:#43ac6a">TEAM <%= @city.name.upcase %></h1>
+        <h1 style="background-color:#8AC654">TEAM <%= @city.name.upcase %></h1>
         <h5 style="text-align:center; font-style:italic; color:#678">The PakathonTO team is a group of young professionals, technology enthusiasts and big thinkers residing in Toronto. Working with like-minded people across the world, we are working hard to make PakathonTO happen. Our goal is to create a platform to catalyze collaborations and inspire individuals to work on start-up projects that have a sustainable social impact in Pakistan.</h5>
       </div>
     </div>
@@ -169,7 +177,7 @@
     <div data-magellan-destination='faq' id="faq">
       <div class="row text-center">
         <div class="large-12 columns">
-          <h1 style="background-color:#43ac6a">FAQs</h1>
+          <h1 style="background-color:#8AC654">FAQs</h1>
         </div>
       </div>
       <div class="row">
@@ -194,7 +202,7 @@
         <div class="large-3 columns">
           <h4 style="text-align:center">Where can I contact the organizer with any questions?</h4>
           <div class="large-12 columns text-center">
-            <h4 style="color:#43ac6a">pakathonTO@gmail.com</h4>
+            <h4 style="color:#8AC654">pakathonTO@gmail.com</h4>
           </div>
         </div>
       </div>
