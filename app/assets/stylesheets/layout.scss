@@ -6,6 +6,10 @@
   //   font-weight: bold;
   // }
 
+  .title {
+    padding-bottom: 1rem;
+  }
+
   .image-link-to-city-page {
     display: inline-block;
     padding-right: 1rem;
@@ -19,7 +23,7 @@
     background-repeat: no-repeat;
   }
 
-  .global-event, .who-we-are, .contact-us {
+  .global-event, .who-we-are, .contact-us, .streams, .schedule {
     background-color: #eee;
   }
 
@@ -78,6 +82,23 @@
     &:hover {
       background-color:rgba(67,172,106,1);
     }
+  }
+
+  .stream {
+    background-color: #fff;
+    border-top: 5px solid #8AC654;
+    display:inline-block;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  }
+
+  .address {
+    display:inline-block;
+  }
+
+  .schedule-days {
+    background-color: #fff;
+    display:inline-block;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   }
 }
 
