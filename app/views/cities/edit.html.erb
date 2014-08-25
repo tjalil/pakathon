@@ -30,6 +30,16 @@
         </div>
 
         <div class="field">
+          <%= f.label :map_photo %><br>
+          <%= f.file_field :map_photo %>
+        </div>
+
+        <div class="field">
+          <%= f.label "Copy to go above registration button on background image at top of the page", :hero_copy %><br>
+          <%= f.text_field :hero_copy %>
+        </div>
+
+        <div class="field">
           <%= f.label :email %><br>
           <%= f.text_field :email %>
         </div>
