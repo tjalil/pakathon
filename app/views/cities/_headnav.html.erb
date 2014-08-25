@@ -4,12 +4,12 @@
       <dd data-magellan-arrival="homepage">
         <%= link_to image_tag(Logo.find_by(name:"pakathon globe").image_url(:logo)), root_path, :class=>"topnav-titles" %>
       </dd>
-      <dd data-magellan-arrival="streams"><a href="#streams" class="topnav-titles">STREAMS</a></dd>
-      <dd data-magellan-arrival="location"><a href="#location" class="topnav-titles">LOCATION</a></dd>
-      <dd data-magellan-arrival="schedule"><a href="#schedule" class="topnav-titles">SCHEDULE</a></dd>
       <% if @city.name == "Toronto" %>
         <dd data-magellan-arrival="cafe"><a href="#cafe" class="topnav-titles">CAFE</a></dd>
       <% end %>
+      <dd data-magellan-arrival="streams"><a href="#streams" class="topnav-titles">STREAMS</a></dd>
+      <dd data-magellan-arrival="location"><a href="#location" class="topnav-titles">LOCATION</a></dd>
+      <dd data-magellan-arrival="schedule"><a href="#schedule" class="topnav-titles">SCHEDULE</a></dd>
       <dd data-magellan-arrival="team-to"><a href="#team-to" class="topnav-titles">TEAM <%= @city.name.upcase %></a></dd>
       <dd data-magellan-arrival="faq"><a href="#faq" class="topnav-titles">FAQs</a></dd>
       <dd data-magellan-arrival="support"><a href="#support" class="topnav-titles">SUPPORT</a></dd>
@@ -23,12 +23,12 @@
       <dd data-magellan-arrival="homepage">
        <%= link_to image_tag(Logo.find_by(name:"pakathon globe").image_url(:logo)), root_path, :class=>"topnav-titles" %>
       </dd>
-      <dd data-magellan-arrival="streams"><a href="#streams" class="topnav-titles">STREAMS</a></dd>
-      <dd data-magellan-arrival="location"><a href="#location" class="topnav-titles">LOCATION</a></dd>
-      <dd data-magellan-arrival="schedule"><a href="#schedule" class="topnav-titles">SCHEDULE</a></dd>
       <% if @city.name == "Toronto" %>
         <dd data-magellan-arrival="cafe"><a href="#cafe" class="topnav-titles">CAFE</a></dd>
       <% end %>
+      <dd data-magellan-arrival="streams"><a href="#streams" class="topnav-titles">STREAMS</a></dd>
+      <dd data-magellan-arrival="location"><a href="#location" class="topnav-titles">LOCATION</a></dd>
+      <dd data-magellan-arrival="schedule"><a href="#schedule" class="topnav-titles">SCHEDULE</a></dd>
       <dd data-magellan-arrival="team-to"><a href="#team-to" class="topnav-titles">TEAM <%= @city.name.upcase %></a></dd>
       <dd data-magellan-arrival="faq"><a href="#faq" class="topnav-titles">FAQs</a></dd>
       <dd data-magellan-arrival="support"><a href="#support" class="topnav-titles">SUPPORT</a></dd>
