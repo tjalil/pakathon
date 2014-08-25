@@ -47,7 +47,7 @@ class CitiesController < ApplicationController
   private
 
   def city_params
-    params.require(:city).permit(:name, :address, :background_img, :email, :phone, :facebook, :twitter, :eventbrite_page, :hero_copy, :map_photo)
+    params.require(:city).permit(:name, :address, :background_img, :email, :phone, :facebook, :twitter, :eventbrite_page, :hero_copy, :map_photo, :building_name, :province_name, :postal_code)
   end
 
   def find_city
