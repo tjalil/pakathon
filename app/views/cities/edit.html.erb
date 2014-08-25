@@ -20,24 +20,45 @@
         </div>
 
         <div class="field">
-          <%= f.label :address %><br>
-          <%= f.text_field :address %>
-        </div>
-
-        <div class="field">
           <%= f.label :background_img %><br>
           <%= f.file_field :background_img %>
         </div>
 
         <div class="field">
-          <%= f.label :map_photo %><br>
-          <%= f.file_field :map_photo %>
+          <%= f.label :hero_copy, "Copy to go above registration button on background image at top of the page" %><br>
+          <%= f.text_field :hero_copy %>
+        </div>
+        <br>
+
+        <h4>Address</h4>
+
+        <div class="field">
+          <%= f.label :building_name, "Name of Building or Business hosting the event" %><br>
+          <%= f.text_field :building_name %>
         </div>
 
         <div class="field">
-          <%= f.label "Copy to go above registration button on background image at top of the page", :hero_copy %><br>
-          <%= f.text_field :hero_copy %>
+          <%= f.label :address, "Address" %><br>
+          <%= f.text_field :address %>
         </div>
+
+        <div class="field">
+          <%= f.label :province_name, "Province/State" %><br>
+          <%= f.text_field :province_name %>
+        </div>
+
+        <div class="field">
+          <%= f.label :postal_code, "Postal Code/ZIP" %><br>
+          <%= f.text_field :postal_code %>
+        </div>
+
+        <div class="field">
+          <%= f.label :map_photo, "Snapshot of map with location centered" %><br>
+          <%= f.file_field :map_photo %>
+        </div>
+        <br>
+
+        <h4>Contact Information</h4>
 
         <div class="field">
           <%= f.label :email %><br>
