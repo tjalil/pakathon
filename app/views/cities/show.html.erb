@@ -1,40 +1,4 @@
-<% if current_user %>
-  <div id="topnav-loggedin" class="fixed" data-magellan-expedition="fixed">
-    <dl class="sub-nav large-10 large-offset-1 columns large-centered">
-      <dd data-magellan-arrival="homepage">
-        <%= link_to image_tag(Logo.find_by(name:"pakathon globe").image_url(:logo)), root_path, :class=>"topnav-titles" %>
-      </dd>
-      <dd data-magellan-arrival="streams"><a href="#streams" class="topnav-titles">STREAMS</a></dd>
-      <dd data-magellan-arrival="location"><a href="#location" class="topnav-titles">LOCATION</a></dd>
-      <dd data-magellan-arrival="schedule"><a href="#schedule" class="topnav-titles">SCHEDULE</a></dd>
-      <% if @city.name == "Toronto" %>
-        <dd data-magellan-arrival="cafe"><a href="#cafe" class="topnav-titles">CAFE</a></dd>
-      <% end %>
-      <dd data-magellan-arrival="team-to"><a href="#team-to" class="topnav-titles">TEAM <%= @city.name.upcase %></a></dd>
-      <dd data-magellan-arrival="faq"><a href="#faq" class="topnav-titles">FAQs</a></dd>
-      <dd data-magellan-arrival="support"><a href="#support" class="topnav-titles">SUPPORT</a></dd>
-      <dd data-magellan-arrival="admin-dashboard"><%= link_to 'Admin Dashboard', admin_path(current_user), :class=>"topnav-titles" %></dd>
-      <dd data-magellan-arrival="logout"><%= link_to 'Logout', admin_session_path("current"), method: :delete, :class=>"topnav-titles" %></dd>
-    </dl>
-  </div>
-<% else %>
-  <div id="topnav" class="fixed" data-magellan-expedition="fixed">
-    <dl class="sub-nav large-8 large-offset-2 columns large-centered">
-      <dd data-magellan-arrival="homepage">
-       <%= link_to image_tag(Logo.find_by(name:"pakathon globe").image_url(:logo)), root_path, :class=>"topnav-titles" %>
-      </dd>
-      <dd data-magellan-arrival="streams"><a href="#streams" class="topnav-titles">STREAMS</a></dd>
-      <dd data-magellan-arrival="location"><a href="#location" class="topnav-titles">LOCATION</a></dd>
-      <dd data-magellan-arrival="schedule"><a href="#schedule" class="topnav-titles">SCHEDULE</a></dd>
-      <% if @city.name == "Toronto" %>
-        <dd data-magellan-arrival="cafe"><a href="#cafe" class="topnav-titles">CAFE</a></dd>
-      <% end %>
-      <dd data-magellan-arrival="team-to"><a href="#team-to" class="topnav-titles">TEAM <%= @city.name.upcase %></a></dd>
-      <dd data-magellan-arrival="faq"><a href="#faq" class="topnav-titles">FAQs</a></dd>
-      <dd data-magellan-arrival="support"><a href="#support" class="topnav-titles">SUPPORT</a></dd>
-    </dl>
-  </div>
-<% end %>
+<%= render 'headnav' %>
 
 <div class="row">
   <div class="large-12 columns">
