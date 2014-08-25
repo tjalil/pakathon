@@ -82,11 +82,9 @@
 }
 
 #topnav-loggedin {
+  max-width: 1500px;
   text-align: center;
-
-  // .topnav-titles {
-  //   color: #5e9516;
-  // }
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
 
   .sub-nav .active {
     color: white;
@@ -94,12 +92,9 @@
 }
 
 #topnav {
+  max-width: 1500px;
   text-align: center;
-  // background-color: #43ac6a;
-
-  .topnav-titles {
-    // color: white;
-  }
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
 
   .sub-nav .active {
     color: white;
@@ -113,24 +108,6 @@
 .success {
   border-radius: 5px;
 }
-
-// background-image: url('http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_progressive,h_1200,q_90,w_2000/wfydd9y1yy9eoxtozggy.jpg');
-// background-size: auto;
-// background-position: 49% 50%;
-// background-repeat: no-repeat;
-
-#topnav {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
-}
-
-#topnav-loggedin {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
-}
-
-// .body-items {
-//   margin-top: 3rem;
-// }
-
 
 
 
