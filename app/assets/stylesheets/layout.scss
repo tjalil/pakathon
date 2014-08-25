@@ -101,6 +101,25 @@
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   }
 
+  .team-member-tile {
+    display:inline-block;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+
+    .team-member-connect-links {
+      display: none;
+    }
+
+    &:hover {
+      background-color: rgba(67,172,106,0.3);
+      min-height: 281px;
+
+      .team-member-connect-links {
+        display: block;
+      }
+    }
+  }
+
   .each-faq {
     background-color: #fff;
     border-top: 5px solid #8AC654;
