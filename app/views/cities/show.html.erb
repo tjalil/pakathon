@@ -162,20 +162,28 @@
     <div class="row">
       <div class="large-12 columns text-center">
         <% @city.team_members.sort_by {|member| member[:name]}.each do |team_member| %>
-          <div class="large-3 columns text-center end">
+          <div class="team-member-tile large-2 columns large-centered text-center">
             <% if team_member.avatar.present? %>
               <%= image_tag team_member.avatar_url(:team), :class => "img-circle" %>
             <% else %>
               <img class="img-circle" src="http://placehold.it/200x200&text=Img" />
             <% end %>
-            <p>
+            <p style="border-bottom: 2px solid #8AC654">
               <span style="font-weight:bold"><%= team_member.name %></span>
-              <br>
+            </p>
+            <p class="team-member-connect-links">
+              <% if team_member.twitter.present? %>
+                <%= link_to "Twitter", team_member.twitter %> | 
+              <% end %>
+              <% if team_member.linkedin.present? %>
+                <%= link_to "LinkedIn", team_member.linkedin %>
+              <% end %>
               <span style="font-style:italic"><%#= team_member.description %></span>
             </p>
           </div>
         <% end %>
       </div>
+      <br>
     </div>
   </div>
 </div>
@@ -201,18 +209,20 @@
             <p>Students may be asked to provide an ID card if their school e-mail address is not used to register.</p>
           </div>
         </div>
-        <div class="each-faq large-2 columns text-left large-centered">
-          <h4 style="text-align:center">What are my transport/parking options getting to the event?</h4>
-          <div class="large-12 columns">
-            <p>Take the subway to St. Andrews station and walk a couple of blocks west on King street.</p>
+        <% if @city.name == "Toronto" %>
+          <div class="each-faq large-2 columns text-left large-centered">
+            <h4 style="text-align:center">What are my transport/parking options getting to the event?</h4>
+            <div class="large-12 columns">
+              <p>Take the subway to St. Andrews station and walk a couple of blocks west on King street.</p>
+            </div>
           </div>
-        </div>
-        <div class="each-faq large-3 columns text-left large-centered">
-          <h4 style="text-align:center">Where can I contact the organizer with any questions?</h4>
-          <div class="large-12 columns text-center">
-            <h4 style="color:#8AC654"><%= @city.email %></h4>
+          <div class="each-faq large-3 columns text-left large-centered">
+            <h4 style="text-align:center">Where can I contact the organizer with any questions?</h4>
+            <div class="large-12 columns text-center">
+              <h4 style="color:#8AC654"><%= @city.email %></h4>
+            </div>
           </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>
@@ -221,7 +231,7 @@
 <div class="row support" style="padding: 3rem" data-magellan-destination='support' id='support'>
   <div class="large-12 columns text-center">
     <div class="row text-center">
-      <h1 style="color:white">SOCIAL IMPACT</h1>
+      <h1 style="color:white">CONNECT</h1>
       <h5 style="font-style:italic; color:white">A conversation worth having.<br>
         Let's talk.
       </h5>
