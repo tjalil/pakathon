@@ -23,7 +23,7 @@
     background-repeat: no-repeat;
   }
 
-  .global-event, .who-we-are, .contact-us, .streams, .schedule {
+  .global-event, .who-we-are, .contact-us, .streams, .schedule, .faq {
     background-color: #eee;
   }
 
@@ -97,6 +97,13 @@
 
   .schedule-days {
     background-color: #fff;
+    display:inline-block;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  }
+
+  .each-faq {
+    background-color: #fff;
+    border-top: 5px solid #8AC654;
     display:inline-block;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   }
