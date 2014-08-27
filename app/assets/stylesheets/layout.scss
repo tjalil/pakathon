@@ -47,6 +47,27 @@
     height: 720px;
   }
 
+  #boston-background-img {
+    background-image: url('http://upload.wikimedia.org/wikipedia/commons/0/07/Boston_downtown_skyline.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 720px;
+  }
+
+  #siliconvalley-background-img {
+    background-image: url('http://www.rantlifestyle.com/wp-content/uploads/2014/05/010.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 720px;
+  }
+
+  #newyork-background-img {
+    background-image: url('http://wallpaper-download.net/wallpapers/travel-wallpapers-statue-liberty-wallpaper-wallpaper-34891.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 720px;
+  }
+
   .hero-text {
     margin-top: 15rem;
 
@@ -106,6 +127,7 @@
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     margin-bottom: 1rem;
     margin-right: 1rem;
+    z-index: 0;
 
     .team-member-connect-links {
       display: none;
@@ -114,9 +136,11 @@
     &:hover {
       background-color: rgba(67,172,106,0.3);
       min-height: 281px;
+      z-index: 2;
 
       .team-member-connect-links {
         display: block;
+        z-index: 2;
       }
     }
   }

@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="large-12 columns">
-    <div id="<%= @city.name.downcase %>-background-img">
+    <div id="<%= @city.name.downcase.split(" ").join %>-background-img">
       <div class="row">
         <div class="hero-text large-8 columns text-center large-centered">
           <h1>SEPTEMBER 26<span style="font-size:1.5rem; vertical-align:top;">TH</span> - 28<span style="font-size:1.5rem; vertical-align:top;">TH</span></h1>
@@ -35,7 +35,7 @@
           <h5>We will be discussing and sharing 10 Ways Technology is Changing Pakistan</h5>
           <BR>
           <div class="large-4 columns text-center large-centered">
-            <a href="<%= "#" %>" target="_blank">
+            <a href="https://www.eventbrite.ca/e/pakathonto-cafe-tickets-12682386359" target="_blank">
               <div class="cafe-signup large button">
                 <h3>SIGN UP HERE</h3>
               </div>
@@ -62,17 +62,45 @@
           <h4>RETAIL</h4>
         </div>
       </div>
-      <div class="row">
-        <div class="stream large-3 large-centered columns">
-          <h4>ENERGY</h4>
+      <% if @city.name == "Toronto" %>
+        <div class="row">
+          <div class="stream large-3 large-centered columns">
+            <h4>ENERGY</h4>
+          </div>
+          <div class="stream large-3 large-centered columns">
+            <h4>HUMAN RIGHTS</h4>
+          </div>
+          <div class="stream large-3 large-centered columns">
+            <h4>HOUSING</h4>
+          </div>
         </div>
-        <div class="stream large-3 large-centered columns">
-          <h4>HUMAN RIGHTS</h4>
+      <% elsif @city.name == "Boston" %>
+        <div class="row">
+          <div class="stream large-3 large-centered columns">
+            <h4>INCLUSIVENESS</h4>
+          </div>
+          <div class="stream large-3 large-centered columns">
+            <h4>BROKEN SYSTEMS</h4>
+          </div>
+          <div class="stream large-3 large-centered columns">
+            <h4>SECURITY</h4>
+          </div>
         </div>
-        <div class="stream large-3 large-centered columns">
-          <h4>HOUSING</h4>
+        <div class="row">
+          <div class="stream large-3 large-centered columns">
+            <h4>BITCOINS, E-COMMERCE and MOBILE BANKING</h4>
+          </div>
         </div>
-      </div>
+      <% elsif @city.name == "New York" %>
+        <div class="row">
+          <div class="stream large-3 large-centered columns">
+            <h4>HUMAN RIGHTS</h4>
+          </div>
+          <div class="stream large-3 large-centered columns">
+            <h4>FINANCE</h4>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
@@ -89,7 +117,15 @@
           <h4><%= @city.postal_code %></h4>
         </div>
         <div class="address large-6 large-centered columns end">
-          <a href="https://www.google.ca/maps/place/Bitmaker+Labs/@43.6466292,-79.3856308,17z/data=!4m2!3m1!1s0x0:0x38fdb7d96640b4da" class="map-photo" target="_blank">
+          <% if @city.name == "Toronto" %>
+            <a href="https://www.google.ca/maps/place/Bitmaker+Labs/@43.6466292,-79.3856308,17z/data=!4m2!3m1!1s0x0:0x38fdb7d96640b4da" class="map-photo" target="_blank">
+          <% elsif @city.name == "New York" %>
+            <a href="https://www.google.ca/maps/place/70+Washington+Square+S,+New+York+University,+New+York,+NY+10012,+USA/@40.7296367,-73.9969733,17z/data=!4m2!3m1!1s0x89c2599051b30887:0xf3a3c981a1528dad" class="map-photo" target="_blank">
+          <% elsif @city.name == "Boston" %>
+            <a href="https://www.google.ca/maps/place/Impact+Hub+Boston/@42.3567916,-71.0577166,17z/data=!4m5!1m2!2m1!1sImpact+Hub+Boston,+Main+Street,+Cambridge,+MA,+USA!3m1!1s0x89e37084760558db:0xf9145892151372f8" class="map-photo" target="_blank">
+          <% elsif @city.name == "Silicon Valley" %>
+            <a href="https://www.google.ca/maps/place/Stanford+University/@37.4276742,-122.168807,15z/data=!4m2!3m1!1s0x0:0x29cdf01a44fc687f" class="map-photo" target="_blank">
+          <% end %>
             <%= image_tag @city.map_photo_url(:map) %>
           </a>
         </div>
@@ -108,10 +144,10 @@
       </div>
       <div class="row">
         <!-- adding logic in controller temporarily. Will store schedule in hstore for each city soon. -->
-        <% if @city.name == "Toronto" %>
+        <% if @city.name == "Toronto" || @city.name == "Boston" %>
           <div class="schedule-days large-3 large-centered columns">
             <h4 style="text-align:center; border-bottom: 2px solid #8AC654">Friday, September 26th</h4>
-            <div class="large-11 large-offset-1 columns text-left">
+            <div class="large-12 columns text-left">
               <h5 style="font-weight: bold">Event starts with dinner at 5:30pm.</h5>
               <p><span style="font-weight:bold">6:30pm</span> – City chapters will open with a quick introduction.</p>
               <p><span style="font-weight:bold">7:00pm</span> – Two keynote speakers.</p>
@@ -119,28 +155,73 @@
               <p>After <span style="font-weight:bold">60 minutes</span> of brainstorming, team leads take the podium and pitch their ideas and have one last chance to recruit team members. All ideas should be registered by the end of the night.</p>
             </div>
           </div>
-          <div class="schedule-days large-4 large-centered columns">
+          <div class="schedule-days large-3 large-centered columns">
             <h4 style="text-align:center; border-bottom: 2px solid #8AC654">Saturday, September 27th</h4>
-            <div class="large-11 large-offset-1 columns text-left">
+            <div class="large-12 columns text-left">
               <h5 style="font-weight: bold">Mentors will block out sessions to skype with participants from different cities.</h5>
               <p><span style="font-weight:bold">10:00am</span> – Breakfast will be served.</p>
               <p><span style="font-weight:bold">1:00pm</span> – Lunch will be served.</p>
               <p><span style="font-weight:bold">5:30pm </span> – Dinner will be served.</p>
               <p>People will work on their projects throughout the day.</p>
-              <p>There will breakout sessions throughout the day with mentors or speakers.</p>
+              <p>There will be breakout sessions throughout the day with mentors or speakers.</p>
+              <p>Each team will have to pick the main city where they will be pitching from.</p>
+            </div>
+          </div>
+          <div class="schedule-days large-3 large-centered columns">
+            <h4 style="text-align:center; border-bottom: 2px solid #8AC654">Sunday, September 28th</h4>
+            <div class="large-12 columns text-left">
+              <h5 style="font-weight: bold">Teams will get to finalize their pitches and project videos during the day.</h5>
+              <p><span style="font-weight:bold">10:00am</span> – Each of the cities will have judging and will nominate the best team from their city. This team will then send a video or skype in, for the final round of global winners to be announced from Boston</p>
+              <p>Each team will post their blog to the Pakathon facebook page before they can pitch to judges.</p>
+              <p><span style="font-weight:bold">6:00pm</span> – Results are announced.</p>
+              <p>Contestants will have a chance to mingle at the end.</p>
+            </div>
+          </div>
+        <% elsif @city.name == "New York" %>
+          <div class="schedule-days large-3 large-centered columns">
+            <h4 style="text-align:center; border-bottom: 2px solid #8AC654">Friday, September 26th</h4>
+            <div class="large-12 columns text-left">
+              <h5 style="font-weight: bold">Event starts with dinner at 6:00pm.</h5>
+              <p><span style="font-weight:bold">7:00pm</span> – Pakathon NYC will kick-off with a quick introduction.</p>
+              <p><span style="font-weight:bold">7:30pm</span> – Keynote speaker.</p>
+              <p><span style="font-weight:bold">8:00pm</span> – Brainstorming and break-out sessions.</p>
+              <p><span style="font-weight:bold">9:00pm</span> – After 60 minutes of brainstorming within track break-outs, teams will form and take the podium to pitch their ideas. This will be the last chance to recruit team members.</p>
+              <p><span style="font-weight:bold">10:00pm</span> – Teams meet/greet and register their ideas. All ideas should be registered by the end of the night.</p>
+            </div>
+          </div>
+          <div class="schedule-days large-4 large-centered columns">
+            <h4 style="text-align:center; border-bottom: 2px solid #8AC654">Saturday, September 27th</h4>
+            <div class="large-12 columns text-left">
+              <h5 style="font-weight: bold">Mentors will block out sessions to skype with participants from different cities.</h5>
+              <p><span style="font-weight:bold">9:00am</span> – Teams work on their ideas (Note: Breakfast will be provided).</p>
+              <p><span style="font-weight:bold">11:00am</span> – Break-out sessions with speakers until <span style="font-weight:bold">1:00pm</span>.</p>
+              <p><span style="font-weight:bold">12:00pm</span> – Lunch will be served.</p>
+              <p><span style="font-weight:bold">1:00pm</span> – Mentor hours until <span style="font-weight:bold">4:00pm</span>.</p>
+              <p><span style="font-weight:bold">4:00pm</span> – Snack break.</p>
+              <p><span style="font-weight:bold">6:00pm</span> – Dinner will be served.</p>
+              <p><span style="font-weight:bold">7:00pm</span> – Teams continue work on their ideas.</p>
+              <p><span style="font-weight:bold">11:00pm</span> – Working space closes (Teams can continue work at their own locations).</p>
+              <p>People will work on their projects throughout the day.</p>
               <p>Each team will have to pick the main city where they will be pitching from.</p>
             </div>
           </div>
           <div class="schedule-days large-4 large-centered columns">
             <h4 style="text-align:center; border-bottom: 2px solid #8AC654">Sunday, September 28th</h4>
-            <div class="large-11 large-offset-1 columns text-left">
-              <p><span style="font-weight:bold">10:00am</span> – Each of the cities will have judging and will nominate the best team from their city. This team will then send a video or skype in, for the final round of global winners to be announced from Boston</p>
-              <p>Each team will post their blog to the Pakathon facebook page before they can pitch to judges.</p>
-              <p><span style="font-weight:bold">6:00pm</span> – Results are announced.</p>
-              <p>Contestants may mingle at the end.</p>
+            <div class="large-12 columns text-left">
+              <h5 style="font-weight: bold">Teams will get to finalize their pitches and project videos during the day.</h5>
+              <p><span style="font-weight:bold">10:00am</span> – Teams finish working on their pitches (Note: Breakfast will be provided).</p>
+              <p><span style="font-weight:bold">11:00am</span> – Pitch coaches available until <span style="font-weight:bold">1:00pm</span>.</p>
+              <p><span style="font-weight:bold">12:00pm</span> – Lunch will be served.</p>
+              <p><span style="font-weight:bold">12:30pm</span> – Project videos and pitches due. Each team will post their blog to the Pakathon Facebook page before they can pitch to judges.</p>
+              <p><span style="font-weight:bold">1:00pm</span> – Intro to Judges and Speaker.</p>
+              <p><span style="font-weight:bold">1:30pm</span> – Pitches Round 1.</p>
+              <p><span style="font-weight:bold">3:00pm</span> – Pitches Round 2 for shortlisted ideas.</p>
+              <p><span style="font-weight:bold">4:00pm</span> – Results are announced.</p>
+              <p>Contestants will have a chance to mingle at the end.</p>
             </div>
           </div>
-        <% elsif @city.name == "Boston" %>
+        <% else %>
+          <h4>Hold your horses! Schedule will be up soon.</h4>
         <% end %>
       </div>
     </div>
@@ -153,8 +234,12 @@
       <div class="large-12 columns large-centered">
         <% if @city.name == "Toronto" %>
           <h1>#PakathonTO</h1>
-        <% else %>
-          <h1><%= @city.name.upcase %></h1>
+        <% elsif @city.name == "Boston" %>
+          <h1>#PakathonBO</h1>
+        <% elsif @city.name == "New York" %>
+          <h1>#PakathonNYC</h1>
+        <% elsif @city.name == "Silicon Valley" %>
+          <h1>#PakathonSV</h1>
         <% end %>
         <h5 style="text-align:center; font-style:italic; color:#678"><%= @city.team_description %></h5>
       </div>
@@ -166,7 +251,7 @@
             <% if team_member.avatar.present? %>
               <%= image_tag team_member.avatar_url(:team), :class => "img-circle" %>
             <% else %>
-              <img class="img-circle" src="http://placehold.it/200x200&text=Img" />
+              <img class="img-circle" src="http://placehold.it/200x200&text=Gone For A Stroll" />
             <% end %>
             <p style="border-bottom: 2px solid #8AC654">
               <span style="font-weight:bold"><%= team_member.name %></span>
@@ -232,24 +317,36 @@
   <div class="large-12 columns text-center">
     <div class="row text-center">
       <h1 style="color:white">CONNECT</h1>
-      <h5 style="font-style:italic; color:white">A conversation worth having.<br>
-        Let's talk.
+      <h5 style="font-style:italic; color:white">A conversation worth having. Let's talk.<br>
       </h5>
       <div class="row">
+        <div id="phone" class="large-4 large-centered columns text-center" style="border-bottom: 2px solid #8AC654">
+          <p style="color:white; font-weight:bold; font-size:2rem"><%= @city.phone %></p>
+        </div>
+      </div>
+      <div class="row">
         <div class="large-6 large-centered columns text-center">
-          <a href="<%= @global.facebook %>" target="_blank">
-            <div id="facebook" class="large button success" style="width:5rem; height:5rem; border-radius:50%">
-              <span style="color:white; font-size:2.25rem">f</span>
-            </div>
-          </a>
-          <a href="<%= @city.twitter %>" target="_blank">
-            <div id="twitter" class="large button success" style="width:5rem; height:5rem; border-radius:50%">
-              <span style="color:white; font-size:2.25rem">t</span>
-            </div>
-          </a>
-          <div id="phone" class="large button success" style="height:4rem">
-            <p style="color:white"><%= @city.phone %></p>
+          <div class="large-3 large-offset-3 columns text-center">
+            <a href="<%= @global.facebook %>" target="_blank">
+              <div id="facebook">
+                <% if @city.facebook.present? %>
+                  <%= link_to image_tag(Logo.find_by(name:"facebook_logo").image_url(:team), size: "100x100"), @city.facebook, target: "_blank" %>
+                <% else %>
+                  <%= link_to image_tag(Logo.find_by(name:"facebook_logo").image_url(:team), size: "100x100"), @global.facebook, target: "_blank" %>
+                <% end %>
+              </div>
+            </a>
           </div>
+          
+            <div class="large-3 columns text-center end">
+              <div id="twitter">
+                <% if @city.twitter.present? %>
+                  <%= link_to image_tag(Logo.find_by(name:"twitter_logo").image_url(:team), size: "100x100"), @city.twitter, target: "_blank" %>
+                <% else %>
+                  <%= link_to image_tag(Logo.find_by(name:"twitter_logo").image_url(:team), size: "100x100"), @global.twitter, target: "_blank" %>
+                <% end %>
+              </div>
+            </div>
         </div>
       </div>
     </div>
