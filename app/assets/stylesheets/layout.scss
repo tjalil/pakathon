@@ -2,9 +2,9 @@
   max-width: 1500px;
   padding-bottom: 1rem;
 
-  // .city-name-under-img {
-  //   font-weight: bold;
-  // }
+  .website-body {
+    margin-top: 3rem;
+  }
 
   .title {
     padding-bottom: 1rem;
@@ -69,39 +69,52 @@
   }
 
   .hero-text {
-    margin-top: 15rem;
+    margin-top: 10rem;
 
     h1, h4 {
       color: white;
+      padding: 1rem 3rem;
+      background-color: rgba(0,0,0,0.7);
     }
 
-    h1 {
+    .video-action {
+      color: black;
+      padding: 1rem 3rem;
+      background-color: rgba(255,255,255,1);
+    }
+
+    .video-action-on-hover {
+      display: none;
+      cursor: pointer;
+      font-size: 3rem;
+      height: 92px;
+      color: black;
+      padding: 1rem 3rem;
+      background-color: rgba(255,255,255,1);
+    }
+
+    h1, h3 {
       font-weight: bold;
     }
   }
 
-  .signup-btn {
-    padding: 1rem 8rem;
-    border-radius: 5px;
-    background-color: rgba(0,0,0,0.7);
-
-    h1 {
-      color: white;
-      font-weight: bold;
-    }
-
-    &:hover {
-      background-color: rgba(0,0,0,1);
-    }
+  .video-action-on-click {
+    margin-top: 1.5rem;
+    display: none;
   }
 
   .cafe-signup {
-
-    background-color:rgba(67,172,106,0.5);
+    background-color:rgba(67,172,106,1);
     border-radius: 5px;
+    padding: 1rem 5rem;
+
+    h3 {
+        color: white;
+      }
 
     &:hover {
-      background-color:rgba(67,172,106,1);
+      background-color:rgba(67,172,106,0.7);
+      border-color: rgba(67,172,106,1);
     }
   }
 
@@ -123,25 +136,63 @@
   }
 
   .team-member-tile {
+    position: relative;
     display:inline-block;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     margin-bottom: 1rem;
     margin-right: 1rem;
-    z-index: 0;
+    height: 290px;
 
-    .team-member-connect-links {
+    .team-member-initial-details {
+      padding-top: 10px;
+      border-bottom: 2px solid #8AC654;
+    }
+
+    .team-member-name {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .team-member-sharing {
+      margin-top: 10px;
+    }
+
+    .team-member-description {
       display: none;
+      margin-top: 10px;
+      float:left;
+      background-color:rgba(67,172,106,1);
+      z-index: 2000;
+      margin-left: -15px;
+      padding: 2rem;
+      width: 350px;
     }
 
     &:hover {
-      background-color: rgba(67,172,106,0.3);
-      min-height: 281px;
-      z-index: 2;
+      background-color:rgba(67,172,106,1);
+      color: white;
+      -webkit-transition: background-color 0.3s ease-out;
+      -moz-transition: background-color 0.3s ease-out;
+      transition: background-color 0.3s ease-out;
 
-      .team-member-connect-links {
+      .team-member-description {
         display: block;
-        z-index: 2;
+        -webkit-transition: background-color 0.3s ease-out;
+        -moz-transition: background-color 0.3s ease-out;
+        transition: background-color 0.3s ease-out;
       }
+    }
+
+  }
+
+  .judge-mentor-tile {
+    display:inline-block;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+
+    &:hover {
+      background-color: rgba(67,172,106,0.3);
     }
   }
 
@@ -153,24 +204,31 @@
   }
 }
 
-#topnav-loggedin {
+#topnav-loggedin, #topnav {
   max-width: 1500px;
+  max-height: 4rem;
   text-align: center;
   box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  background: rgba(255,255,255, 1);
 
-  .sub-nav .active {
-    color: white;
+  .topnav-titles {
+    margin-top: 1rem;
   }
-}
 
-#topnav {
-  max-width: 1500px;
-  text-align: center;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  .registration-button {
+    background: rgba(255,255,255, 1);
+    box-shadow: 0 4px 0 rgba(67,172,106,1);
+    border: rgba(67,172,106,1);
+    background-color:rgba(67,172,106,0.7);
+    border-radius: 5px;
+    padding: 1rem 5rem;
 
-  .sub-nav .active {
-    color: white;
+    &:hover {
+      background-color:rgba(67,172,106,1);
+      -webkit-transition: background-color .3s, border-color .3s, box-shadow .3s;
+    }
   }
+
 }
 
 .img-circle {
