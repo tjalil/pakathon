@@ -33,11 +33,35 @@
     background-repeat: no-repeat;
   }
 
-  .support {
-    background-image: url('http://assets.strikingly.com/assets/defaults/background2.jpg');
+  .support-section {
+    background-image: url('http://p1.pichost.me/i/14/1366572.jpg');
     background-size: cover;
     background-position: 49% 50%; 
     background-repeat: no-repeat;
+    z-index: 5;
+
+    h1, h5 {
+      color: white;
+    }
+
+    #phone {
+      border-bottom: 2px solid #8AC654;
+
+      p {
+        color: white;
+        font-weight:bold;
+        font-size:2rem;
+      }
+    }
+  }
+
+  #support {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('http://p1.pichost.me/i/14/1366572.jpg');
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('http://p1.pichost.me/i/14/1366572.jpg');
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('http://p1.pichost.me/i/14/1366572.jpg');
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('http://p1.pichost.me/i/14/1366572.jpg');
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('http://p1.pichost.me/i/14/1366572.jpg');
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('http://p1.pichost.me/i/14/1366572.jpg');
   }
 
   #toronto-background-img {
@@ -155,6 +179,7 @@
 
     .team-member-sharing {
       margin-top: 10px;
+      margin-bottom: 10px;
     }
 
     .team-member-description {
@@ -176,6 +201,49 @@
       transition: background-color 0.3s ease-out;
 
       .team-member-description {
+        display: block;
+        -webkit-transition: background-color 0.3s ease-out;
+        -moz-transition: background-color 0.3s ease-out;
+        transition: background-color 0.3s ease-out;
+      }
+    }
+
+  }
+
+  .judge-tile {
+    position: relative;
+    display:inline-block;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    height: 200px;
+
+    .judge-initial-details {
+      padding-top: 10px;
+    }
+
+    .judge-name {
+      margin-top: 10px;
+    }
+
+    .judge-description {
+      display: none;
+      float:left;
+      background-color:rgba(67,172,106,1);
+      z-index: 2000;
+      margin-left: -15px;
+      padding: 1rem;
+      width: 250px;
+    }
+
+    &:hover {
+      background-color:rgba(67,172,106,1);
+      color: white;
+      -webkit-transition: background-color 0.3s ease-out;
+      -moz-transition: background-color 0.3s ease-out;
+      transition: background-color 0.3s ease-out;
+
+      .judge-description {
         display: block;
         -webkit-transition: background-color 0.3s ease-out;
         -moz-transition: background-color 0.3s ease-out;
