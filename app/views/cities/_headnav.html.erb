@@ -1,37 +1,51 @@
 <% if current_user %>
-  <div id="topnav-loggedin" class="fixed" data-magellan-expedition="fixed">
-    <dl class="sub-nav large-10 large-offset-1 columns large-centered">
-      <dd data-magellan-arrival="homepage">
-        <%= link_to image_tag(Logo.find_by(name:"pakathon globe").image_url(:logo)), root_path, :class=>"topnav-titles" %>
-      </dd>
+  <div id="topnav-loggedin" class="fixed sticky">
+    <ul class="sub-nav large-12 columns large-centered">
+      <li style="margin-top:0.5rem">
+        <%= link_to image_tag(Logo.find_by(name:"pakathon globe").image_url(:team), size: "40"), root_path %>
+      </li>
       <% if @city.name == "Toronto" %>
-        <dd data-magellan-arrival="cafe"><a href="#cafe" class="topnav-titles">CAFE</a></dd>
+        <li class="topnav-titles"><a href="#cafe">CAFE</a></li>
       <% end %>
-      <dd data-magellan-arrival="streams"><a href="#streams" class="topnav-titles">STREAMS</a></dd>
-      <dd data-magellan-arrival="location"><a href="#location" class="topnav-titles">LOCATION</a></dd>
-      <dd data-magellan-arrival="schedule"><a href="#schedule" class="topnav-titles">SCHEDULE</a></dd>
-      <dd data-magellan-arrival="team-to"><a href="#team-to" class="topnav-titles">TEAM <%= @city.name.upcase %></a></dd>
-      <dd data-magellan-arrival="faq"><a href="#faq" class="topnav-titles">FAQs</a></dd>
-      <dd data-magellan-arrival="support"><a href="#support" class="topnav-titles">CONNECT</a></dd>
-      <dd data-magellan-arrival="admin-dashboard"><%= link_to 'Admin Dashboard', admin_path(current_user), :class=>"topnav-titles" %></dd>
-      <dd data-magellan-arrival="logout"><%= link_to 'Logout', admin_session_path("current"), method: :delete, :class=>"topnav-titles" %></dd>
-    </dl>
+      <li class="topnav-titles"><a href="#streams">STREAMS</a></li>
+      <li class="topnav-titles"><a href="#location">LOCATION</a></li>
+      <li class="topnav-titles"><a href="#schedule">SCHEDULE</a></li>
+      <li class="topnav-titles"><a href="#team-to">TEAM <%= @city.name.upcase %></a></li>
+      <li class="topnav-titles"><a href="#faq">FAQs</a></li>
+      <li class="topnav-titles"><a href="#support">CONNECT</a></li>
+      <li class="topnav-titles"><%= link_to 'Admin Dashboard', admin_path(current_user) %></li>
+      <li class="topnav-titles"><%= link_to 'Logout', admin_session_path("current"), method: :delete %></li>
+      <li style="float:right; margin-top: 0.30rem">
+        <a href="<%= @city.eventbrite_page %>" target="_blank">
+          <div class="registration-button button medium">
+            <span>REGISTER</span>
+          </div>
+        </a>
+      </li>
+    </ul>
   </div>
 <% else %>
-  <div id="topnav" class="fixed" data-magellan-expedition="fixed">
-    <dl class="sub-nav large-8 large-offset-2 columns large-centered">
-      <dd data-magellan-arrival="homepage">
-       <%= link_to image_tag(Logo.find_by(name:"pakathon globe").image_url(:logo)), root_path, :class=>"topnav-titles" %>
-      </dd>
+  <div id="topnav" class="fixed sticky">
+    <ul class="sub-nav large-12 columns large-centered">
+      <li style="margin-top:0.5rem">
+       <%= link_to image_tag(Logo.find_by(name:"pakathon globe").image_url(:logo), size: "40"), root_path %>
+      </li>
       <% if @city.name == "Toronto" %>
-        <dd data-magellan-arrival="cafe"><a href="#cafe" class="topnav-titles">CAFE</a></dd>
+        <li class="topnav-titles"><a href="#cafe">CAFE</a></li>
       <% end %>
-      <dd data-magellan-arrival="streams"><a href="#streams" class="topnav-titles">STREAMS</a></dd>
-      <dd data-magellan-arrival="location"><a href="#location" class="topnav-titles">LOCATION</a></dd>
-      <dd data-magellan-arrival="schedule"><a href="#schedule" class="topnav-titles">SCHEDULE</a></dd>
-      <dd data-magellan-arrival="team-to"><a href="#team-to" class="topnav-titles">TEAM <%= @city.name.upcase %></a></dd>
-      <dd data-magellan-arrival="faq"><a href="#faq" class="topnav-titles">FAQs</a></dd>
-      <dd data-magellan-arrival="support"><a href="#support" class="topnav-titles">CONNECT</a></dd>
-    </dl>
+      <li class="topnav-titles"><a href="#streams">STREAMS</a></li>
+      <li class="topnav-titles"><a href="#location">LOCATION</a></li>
+      <li class="topnav-titles"><a href="#schedule">SCHEDULE</a></li>
+      <li class="topnav-titles"><a href="#team-to">TEAM <%= @city.name.upcase %></a></li>
+      <li class="topnav-titles"><a href="#faq">FAQs</a></li>
+      <li class="topnav-titles"><a href="#support">CONNECT</a></li>
+      <li style="float:right; margin-top: 0.30rem">
+        <a href="<%= @city.eventbrite_page %>" target="_blank">
+          <div class="registration-button button medium">
+            <span>REGISTER</span>
+          </div>
+        </a>
+      </li>
+    </ul>
   </div>
 <% end %>
