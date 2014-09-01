@@ -673,7 +673,7 @@ $primary-color: #008CBA;
 // $include-html-magellan-classes: $include-html-classes;
 
 // $magellan-bg: rgba(94,149,22, 0.3);
-$magellan-padding: 1rem !important;
+// $magellan-padding: 1rem !important;
 
 // Off-canvas
 
@@ -1026,22 +1026,23 @@ $magellan-padding: 1rem !important;
 
 // We use these to control margin and padding
 // $sub-nav-list-margin: rem-calc(-4 0 18);
-// $sub-nav-list-padding-top: rem-calc(4);
+$sub-nav-list-padding-top: rem-calc(4);
 
 // We use this to control the definition
 // $sub-nav-font-family: $body-font-family;
-// $sub-nav-font-size: rem-calc(14);
-// $sub-nav-font-color: #999;
+$sub-nav-font-size: rem-calc(14);
+$sub-nav-font-color: #999;
 // $sub-nav-font-weight: $font-weight-normal;
 // $sub-nav-text-decoration: none;
 $sub-nav-padding: rem-calc(3 16);
 // $sub-nav-border-radius: 3px;
-// $sub-nav-font-color-hover: scale-color($sub-nav-font-color, $lightness: -25%);
+$sub-nav-font-color-hover: #8AC654;
+// $sub-nav-font-size-hover: rem-calc(17);
 
 
 // We use these to control the active item styles
 $sub-nav-active-font-weight: $font-weight-normal;
-$sub-nav-active-bg: $primary-color;
+$sub-nav-active-bg: #8AC654;
 $sub-nav-active-bg-hover: scale-color($sub-nav-active-bg, $lightness: -14%);
 $sub-nav-active-color: #fff;
 $sub-nav-active-padding: $sub-nav-padding;
