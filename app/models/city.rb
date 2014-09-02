@@ -5,6 +5,9 @@ class City < ActiveRecord::Base
   mount_uploader :background_img, ImageUploader
   mount_uploader :map_photo, ImageUploader
 
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   def judges
     self.users.where(type_of_user: "Judge")
   end
