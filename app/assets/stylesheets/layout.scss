@@ -151,6 +151,21 @@
 
   .address {
     display:inline-block;
+    background-color: #fff;
+    display:inline-block;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      background-color:rgba(67,172,106,1);
+      -webkit-transition: background-color 0.3s ease-out;
+      -moz-transition: background-color 0.3s ease-out;
+      transition: background-color 0.3s ease-out;
+
+      h3, h4 {
+        color: white;
+      }
+    }
+
   }
 
   .schedule-days {
@@ -216,24 +231,16 @@
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     margin-bottom: 1rem;
     margin-right: 1rem;
-    height: 200px;
+    height: 290px;
 
     .judge-initial-details {
       padding-top: 10px;
+      border-bottom: 2px solid #8AC654;
     }
 
     .judge-name {
       margin-top: 10px;
-    }
-
-    .judge-description {
-      display: none;
-      float:left;
-      background-color:rgba(67,172,106,1);
-      z-index: 2000;
-      margin-left: -15px;
-      padding: 1rem;
-      width: 250px;
+      margin-bottom: 10px;
     }
 
     &:hover {
@@ -242,31 +249,13 @@
       -webkit-transition: background-color 0.3s ease-out;
       -moz-transition: background-color 0.3s ease-out;
       transition: background-color 0.3s ease-out;
-
-      .judge-description {
-        display: block;
-        -webkit-transition: background-color 0.3s ease-out;
-        -moz-transition: background-color 0.3s ease-out;
-        transition: background-color 0.3s ease-out;
-      }
-    }
-
-  }
-
-  .judge-mentor-tile {
-    display:inline-block;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    margin-bottom: 1rem;
-    margin-right: 1rem;
-
-    &:hover {
-      background-color: rgba(67,172,106,0.3);
     }
   }
 
   .each-faq {
     background-color: #fff;
-    border-top: 5px solid #8AC654;
+    height: 200px;
+    border-right: 5px solid #8AC654;
     display:inline-block;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   }

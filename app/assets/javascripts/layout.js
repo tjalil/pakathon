@@ -14,5 +14,5 @@ $(document).ready(function() {
     $('.hero-text').hide();
     $('.video-action-on-click').fadeIn();
   });
-
+  
 });
