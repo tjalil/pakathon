@@ -144,7 +144,7 @@
                 </div>
               </a>
             <% elsif @city.name == "New York" %>
-              <a href="https://www.google.ca/maps/place/70+Washington+Square+S,+New+York+University,+New+York,+NY+10012,+USA/@40.7296367,-73.9969733,17z/data=!4m2!3m1!1s0x89c2599051b30887:0xf3a3c981a1528dad" class="map-photo" target="_blank">
+              <a href="https://www.google.ca/maps/place/New+York+University:+External+Affairs/@40.729901,-73.997716,17z/data=!3m1!4b1!4m2!3m1!1s0x89c2599051b30887:0x97b47bf1e6bc1929" class="map-photo" target="_blank">
                 <div class="address large-3 columns large-centered text-center">
                   <h3 style="border-bottom: 2px solid #8AC654"><%= @city.building_name.upcase %></h3>
                   <h4><%= @city.address %></h4>
@@ -404,31 +404,92 @@
             </div>
           </div>
           <div class="row">
-            <div class="each-faq large-3 columns text-left">
+            <div class="each-faq large-4 columns text-left">
               <h4 style="text-align:center">What is a Hackathon?</h4>
               <div class="large-12 columns">
                 <p>A Hackathon is an event where people come together for an intense and fun weekend of collaborative problem solving and rapid prototyping of ideas.</p>
               </div>
             </div>
-            <div class="each-faq large-3 columns text-left">
-              <h4 style="text-align:center">Are there ID requirements or an age limit to enter the event?</h4>
+            <div class="each-faq large-4 columns text-left">
+              <h4 style="text-align:center">Is Pakathon for me?</h4>
               <div class="large-12 columns">
-                <p>Students may be asked to provide an ID card if their school e-mail address is not used to register.</p>
+                <p>Pakathon events have something for everyone. Engineers, business professionals, designers, researchers all have something to contribute. We believe interdisciplinary and global collaboration is one of our most powerful tools for change. Pakathon is for Pakistanis and non-Pakistanis alike.</p>
               </div>
             </div>
+            <div class="each-faq large-4 columns text-left">
+              <h4 style="text-align:center">Why should I attend Pakathon?</h4>
+              <div class="large-12 columns">
+                <p>Pakathon will bring together some of the smartest minds in the city all focused on tackling social issues in Pakistan. If you have a great idea, or a skill that can help bring an idea to life, Pakathon is the perfect way to spend your weekend and create a product that will make an impact while networking with the <%= @city.name %> tech community. The winning <%= @city.name %> team will participate in the global Pakathon event in October to compete for prizes of up to $10,000 to implement projects and receive mentorship from business leaders.</p>
+              </div>
+            </div>
+            <div class="each-faq large-4 columns text-left">
+              <h4 style="text-align:center">How do I form a team for Pakathon?</h4>
+              <div class="large-12 columns">
+                <p>Pakathon’s opening event on Fri, September 26 will dedicate time to idea generation and individuals will organically coalesce towards strong ideas and create teams. In addition, you are welcome to get a head start by connecting with other participants through <%= link_to "Pakathon #{@city.name} Facebook Page", @city.facebook %> or contacting the Pakathon <%= @city.name %> team: <%= @city.email %>.</p>
+              </div>
+            </div>
+            <div class="each-faq large-4 columns text-left">
+              <h4 style="text-align:center">How do I prepare for Pakathon?</h4>
+              <div class="large-12 columns">
+                <p>Before the Pakathon event, participants should conduct background research and explore ideas. Consider researching your chosen social track (industry / demographic statistics, current landscape, problem articulation, etc.) or tech-related social initiatives. If you want to pitch an idea, research and prepare your proposal to give a persuasive pitch and attract a team. Also make sure you’re rested up before Pakathon starts!</p>
+              </div>
+            </div>
+            <div class="each-faq large-4 columns text-left">
+              <h4 style="text-align:center">What type of support is provided over a Pakathon weekend?</h4>
+              <div class="large-12 columns">
+                <p>A key part of Pakathon’s support is the valuable advice and assistance provided by the event’s Mentors to the teams. Mentors consist of experts in various fields ranging from software development, entrepreneurship, industry expertise, and local knowledge of Pakistan who dedicate their time to providing feedback and guidance and working with teams. In addition, a public speaking coach will be provided on Sunday morning to assist with final pitch rehearsal.</p>
+              </div>
+            </div>
+
+            <% if @city.name == "New York" %>
+              <div class="each-faq large-4 columns text-left">
+                <h4 style="text-align:center">Can I attend Pakathon without participating on a team?</h4>
+                <div class="large-12 columns">
+                  <p>Yes! A “Final Day Viewing Only” option is available for Sunday, September 28 for those excited to see participants unveil their final demo presentations. Tickets are $10 and can be purchased online at <%= link_to "Eventbrite", @city.eventbrite_page %>.</p>
+                </div>
+              </div>
+            <% end %>
             <% if @city.name == "Toronto" %>
-              <div class="each-faq large-3 columns text-left">
+              <div class="each-faq large-4 columns text-left">
                 <h4 style="text-align:center">What are my transport/parking options getting to the event?</h4>
                 <div class="large-12 columns">
                   <p>Take the subway to St. Andrews station and walk a couple of blocks west on King street.</p>
                 </div>
               </div>
+              <div class="each-faq large-4 columns text-left">
+                <h4 style="text-align:center">Are there ID requirements or an age limit to enter the event?</h4>
+                <div class="large-12 columns">
+                  <p>Students may be asked to provide an ID card if their school e-mail address is not used to register.</p>
+                </div>
+              </div>
             <% end %>
-            <div class="each-faq large-3 columns text-left end">
+
+            <div class="each-faq large-4 columns text-left">
+              <h4 style="text-align:center">What should I bring to Pakathon?</h4>
+              <div class="large-12 columns">
+                <ul>Bring the following items to Pakathon: 
+                  <li>Laptop</li>
+                  <li>Power cord</li>
+                  <li>Business cards</li>
+                  <li>Camera – take pictures and video!</li>
+                  <li>Lots of creative energy!</li>
+                </ul>
+              </div>
+            </div>
+            <div class="each-faq large-4 columns text-left">
+              <h4 style="text-align:center">How can I get involved with Pakathon <%= @city.name %>?</h4>
+              <div class="large-12 columns">
+                <p>Pakathon <%= @city.name %> is looking for passionate individuals committed to leveraging tech to build social impact projects for Pakistan. If this sounds like you, then please contact our team at: <%= @city.email %>. We look forward to hearing from you!</p>
+              </div>
+            </div>
+            <div class="each-faq large-4 columns text-left end">
               <h4 style="text-align:center">Where can I contact the organizer with any questions?</h4>
               <div class="large-12 columns text-center">
                 <h4 style="color:#8AC654">
-                  <%= @city.email %> <%= @city.phone %>
+                  <%= @city.email %><br>
+                  <% if @city.name != "New York" %>
+                    <%= @city.phone %>
+                  <% end %>
                 </h4>
               </div>
             </div>
