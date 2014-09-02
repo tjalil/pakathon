@@ -134,25 +134,43 @@
       <div class="row location" style="padding: 3rem">
         <div class="large-12 columns text-center">
           <div class="row">
-            <div class="address large-3 columns large-centered text-center">
-              <h3 style="border-bottom: 2px solid #8AC654"><%= @city.building_name.upcase %></h3>
-              <h4><%= @city.address %></h4>
-              <h4><%= @city.name %>, <%= @city.province_name %></h4>
-              <h4><%= @city.postal_code %></h4>
-            </div>
-            <div class="address large-6 large-centered columns end">
-              <% if @city.name == "Toronto" %>
-                <a href="https://www.google.ca/maps/place/Bitmaker+Labs/@43.6466292,-79.3856308,17z/data=!4m2!3m1!1s0x0:0x38fdb7d96640b4da" class="map-photo" target="_blank">
-              <% elsif @city.name == "New York" %>
-                <a href="https://www.google.ca/maps/place/70+Washington+Square+S,+New+York+University,+New+York,+NY+10012,+USA/@40.7296367,-73.9969733,17z/data=!4m2!3m1!1s0x89c2599051b30887:0xf3a3c981a1528dad" class="map-photo" target="_blank">
-              <% elsif @city.name == "Boston" %>
-                <a href="https://www.google.ca/maps/place/Impact+Hub+Boston/@42.3567916,-71.0577166,17z/data=!4m5!1m2!2m1!1sImpact+Hub+Boston,+Main+Street,+Cambridge,+MA,+USA!3m1!1s0x89e37084760558db:0xf9145892151372f8" class="map-photo" target="_blank">
-              <% elsif @city.name == "Silicon Valley" %>
-                <a href="https://www.google.ca/maps/place/Stanford+University/@37.4276742,-122.168807,15z/data=!4m2!3m1!1s0x0:0x29cdf01a44fc687f" class="map-photo" target="_blank">
-              <% end %>
-                <%= image_tag @city.map_photo_url(:map) %>
+            <% if @city.name == "Toronto" %>
+              <a href="https://www.google.ca/maps/place/Bitmaker+Labs/@43.6466292,-79.3856308,17z/data=!4m2!3m1!1s0x0:0x38fdb7d96640b4da" class="map-photo" target="_blank">
+                <div class="address large-3 columns large-centered text-center">
+                  <h3 style="border-bottom: 2px solid #8AC654"><%= @city.building_name.upcase %></h3>
+                  <h4><%= @city.address %></h4>
+                  <h4><%= @city.name %>, <%= @city.province_name %></h4>
+                  <h4><%= @city.postal_code %></h4>
+                </div>
               </a>
-            </div>
+            <% elsif @city.name == "New York" %>
+              <a href="https://www.google.ca/maps/place/70+Washington+Square+S,+New+York+University,+New+York,+NY+10012,+USA/@40.7296367,-73.9969733,17z/data=!4m2!3m1!1s0x89c2599051b30887:0xf3a3c981a1528dad" class="map-photo" target="_blank">
+                <div class="address large-3 columns large-centered text-center">
+                  <h3 style="border-bottom: 2px solid #8AC654"><%= @city.building_name.upcase %></h3>
+                  <h4><%= @city.address %></h4>
+                  <h4><%= @city.name %>, <%= @city.province_name %></h4>
+                  <h4><%= @city.postal_code %></h4>
+                </div>
+              </a>
+            <% elsif @city.name == "Boston" %>
+              <a href="https://www.google.ca/maps/place/Impact+Hub+Boston/@42.3567916,-71.0577166,17z/data=!4m5!1m2!2m1!1sImpact+Hub+Boston,+Main+Street,+Cambridge,+MA,+USA!3m1!1s0x89e37084760558db:0xf9145892151372f8" class="map-photo" target="_blank">
+                <div class="address large-3 columns large-centered text-center">
+                  <h3 style="border-bottom: 2px solid #8AC654"><%= @city.building_name.upcase %></h3>
+                  <h4><%= @city.address %></h4>
+                  <h4><%= @city.name %>, <%= @city.province_name %></h4>
+                  <h4><%= @city.postal_code %></h4>
+                </div>
+              </a>
+            <% elsif @city.name == "Silicon Valley" %>
+              <a href="https://www.google.ca/maps/place/Stanford+University/@37.4276742,-122.168807,15z/data=!4m2!3m1!1s0x0:0x29cdf01a44fc687f" class="map-photo" target="_blank">
+                <div class="address large-3 columns large-centered text-center">
+                  <h3 style="border-bottom: 2px solid #8AC654"><%= @city.building_name.upcase %></h3>
+                  <h4><%= @city.address %></h4>
+                  <h4><%= @city.name %>, <%= @city.province_name %></h4>
+                  <h4><%= @city.postal_code %></h4>
+                </div>
+              </a>
+            <% end %>
           </div>
         </div>
       </div>
@@ -254,21 +272,22 @@
 
     <div class="row team-to" style="padding: 3rem" id='team-to'>
       <div class="large-12 columns">
-        <div class="row text-center">
-          <div class="large-4 columns large-centered">
-            <% if @city.name == "Toronto" %>
-              <h1 style="border-bottom: 2px solid #8AC654">#PakathonTO</h1>
-            <% elsif @city.name == "Boston" %>
-              <h1 style="border-bottom: 2px solid #8AC654">#PakathonBO</h1>
-            <% elsif @city.name == "New York" %>
-              <h1 style="border-bottom: 2px solid #8AC654">#PakathonNYC</h1>
-            <% elsif @city.name == "Silicon Valley" %>
-              <h1 style="border-bottom: 2px solid #8AC654">#PakathonSV</h1>
-            <% end %>
-            </div>
-          <h5 style="text-align:center; font-style:italic; color:#678"><%= @city.team_description %></h5>
-        </div>
+
         <div class="row">
+          <div class="row text-center">
+            <div class="large-4 columns large-centered">
+              <% if @city.name == "Toronto" %>
+                <h1 style="border-bottom: 2px solid #8AC654">#PakathonTO</h1>
+              <% elsif @city.name == "Boston" %>
+                <h1 style="border-bottom: 2px solid #8AC654">#PakathonBO</h1>
+              <% elsif @city.name == "New York" %>
+                <h1 style="border-bottom: 2px solid #8AC654">#PakathonNYC</h1>
+              <% elsif @city.name == "Silicon Valley" %>
+                <h1 style="border-bottom: 2px solid #8AC654">#PakathonSV</h1>
+              <% end %>
+            </div>
+            <h5 style="text-align:center; font-style:italic; color:#678"><%= @city.team_description %></h5>
+          </div>
           <div class="large-12 columns text-center">
             <% @city.team_members.sort_by {|member| member[:name]}.each do |team_member| %>
               <div class="team-member-tile large-2 columns large-centered text-center">
@@ -303,18 +322,19 @@
             <% end %>
           </div>
         </div>
+
         <div class="row">
           <% if @city.judges.present? %>
-            <div class="large-6 columns">
+            <div class="large-12 columns">
               <div class="row text-center">
-                <div class="large-6 columns large-centered">
-                  <h1>Judges</h1>
+                <div class="large-4 columns large-centered">
+                  <h1 style="border-bottom: 2px solid #8AC654">Judges</h1>
                 </div>
               </div>
               <div class="row">
-                <div class="large-12 columns text-center">
+                <div class="large-12 columns text-center end">
                   <% @city.judges.sort_by {|member| member[:name]}.each do |judge| %>
-                    <div class="judge-tile large-3 columns large-centered text-center">
+                    <div class="judge-tile large-2 columns large-centered text-center">
                       <div class="judge-initial-details">
                         <% if judge.avatar.present? %>
                           <%= image_tag judge.avatar_url(:team), :class => "img-circle" %>
@@ -325,11 +345,9 @@
                           <span style="font-weight:bold"><%= judge.name %></span>
                         </div>
                       </div>
-                      <% if judge.description.present? %>
-                        <div class="large-12 columns text-left judge-description">
-                          <p><%= judge.description %></p>
-                        </div>
-                      <% end %>
+                      <div class="large-12 columns text-center judge-description">
+                        <p><%= judge.description %></p>
+                      </div>
                     </div>
                   <% end %>
                 </div>
@@ -337,34 +355,40 @@
               <br>
             </div>
           <% end %>
+        </div>
 
+        <div class="row">
           <% if @city.mentors.present? %>
-            <div class="large-6 columns end">
+            <div class="large-12 columns end">
               <div class="row text-center">
-                <div class="large-6 columns large-centered">
-                  <h1>Mentors</h1>
+                <div class="large-4 columns large-centered">
+                  <h1 style="border-bottom: 2px solid #8AC654">Mentors</h1>
                 </div>
               </div>
               <div class="row">
                 <div class="large-12 columns text-center">
-                  <% @city.mentors.sort_by {|member| member[:name]}.each do |mentor| %>
-                    <div class="judge-mentor-tile large-4 columns large-centered text-center">
-                      <% if mentor.avatar.present? %>
-                        <%= image_tag mentor.avatar_url(:team), :class => "img-circle" %>
-                      <% else %>
-                        <img class="img-circle" src="http://placehold.it/200x200&text=Gone For A Stroll" />
+                  <% @city.mentors.sort_by {|member| member[:name]}.each do |team_member| %>
+                    <div class="team-member-tile large-2 columns large-centered text-center">
+                      <div class="team-member-initial-details">
+                        <% if team_member.avatar.present? %>
+                          <%= image_tag team_member.avatar_url(:team), :class => "img-circle" %>
+                        <% else %>
+                          <img class="img-circle" src="http://placehold.it/200x200&text=Gone For A Stroll" />
+                        <% end %>
+                        <div class="team-member-name">
+                          <span style="font-weight:bold"><%= team_member.name %></span>
+                        </div>
+                      </div>
+                      <% if team_member.description.present? %>
+                        <div class="large-12 columns text-left team-member-description">
+                          <p><%= team_member.description %></p>
+                        </div>
                       <% end %>
-                      <p style="border-bottom: 2px solid #8AC654">
-                        <span style="font-weight:bold"><%= mentor.name %></span>
-                      </p>
-                      <p class="judge-mentor-connect-links">
-                        <span style="font-style:italic"><%= mentor.description %></span>
-                      </p>
                     </div>
                   <% end %>
                 </div>
-              </div>
               <br>
+              </div>
             </div>
           <% end %>
         </div>
@@ -374,39 +398,38 @@
     <div class="row faq" style="padding:3rem">
       <div class="large-12 columns text-center">
         <div id="faq">
-          <!-- <div class="row text-center">
-            <div class="large-12 columns">
-              <h1 class="title">FAQs</h1>
-            </div>
-          </div> -->
           <div class="row">
-            <div class="each-faq large-3 columns text-left large-centered">
+            <div class="large-3 columns large-centered">
+              <h1 style="border-bottom: 2px solid #8AC654">FAQs</h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="each-faq large-3 columns text-left">
               <h4 style="text-align:center">What is a Hackathon?</h4>
               <div class="large-12 columns">
                 <p>A Hackathon is an event where people come together for an intense and fun weekend of collaborative problem solving and rapid prototyping of ideas.</p>
               </div>
             </div>
-            <div class="each-faq large-2 columns text-left large-centered">
+            <div class="each-faq large-3 columns text-left">
               <h4 style="text-align:center">Are there ID requirements or an age limit to enter the event?</h4>
               <div class="large-12 columns">
                 <p>Students may be asked to provide an ID card if their school e-mail address is not used to register.</p>
               </div>
             </div>
             <% if @city.name == "Toronto" %>
-              <div class="each-faq large-2 columns text-left large-centered">
+              <div class="each-faq large-3 columns text-left">
                 <h4 style="text-align:center">What are my transport/parking options getting to the event?</h4>
                 <div class="large-12 columns">
                   <p>Take the subway to St. Andrews station and walk a couple of blocks west on King street.</p>
                 </div>
               </div>
             <% end %>
-            <div class="each-faq large-3 columns text-left large-centered">
+            <div class="each-faq large-3 columns text-left end">
               <h4 style="text-align:center">Where can I contact the organizer with any questions?</h4>
               <div class="large-12 columns text-center">
-                <h4 style="color:#8AC654"><%= @city.email %></h4>
-                <% if @city.name != "New York" %>
-                  <h4 style="color:#8AC654"><%= @city.phone %></h4>
-                <% end %>
+                <h4 style="color:#8AC654">
+                  <%= @city.email %> <%= @city.phone %>
+                </h4>
               </div>
             </div>
           </div>
