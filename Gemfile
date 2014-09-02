@@ -71,6 +71,9 @@ gem "binding_of_caller"
 # Use foundation as front-end framework
 gem 'foundation-rails'
 
+# Replace city id with city name in url
+gem 'friendly_id'
+
 # ======================================================
 # User Gems --------------------------------------------
 # ======================================================
