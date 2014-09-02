@@ -1,6 +1,15 @@
-<% City.all.sort_by {|city| city[:name]}.each do |city| %>
-  <p>Go to <%= link_to city.name, city_path(city) %></p>
-<% end %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="refresh" content="0; url=http://www.pakathon.org/" />
+</head>
+</html>
+
+<h1>If you are not redirected automatically, follow the <a href='http://www.pakathon.org/'>link to Pakathon Homepage</a></h1>
+
+<%# City.all.sort_by {|city| city[:name]}.each do |city| %>
+  <!-- <p>Go to <%#= link_to city.name, city_path(city) %></p> -->
+<%# end %>
 
 <%# if current_user %>
   <!-- <div id="topnav-loggedin" class="fixed" data-magellan-expedition="fixed">

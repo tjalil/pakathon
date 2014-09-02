@@ -153,10 +153,10 @@
     display:inline-block;
     background-color: #fff;
     display:inline-block;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 
     &:hover {
       background-color:rgba(67,172,106,1);
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
       -webkit-transition: background-color 0.3s ease-out;
       -moz-transition: background-color 0.3s ease-out;
       transition: background-color 0.3s ease-out;
