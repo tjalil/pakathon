@@ -43,7 +43,7 @@ class UsersController < ApplicationController
   end
 
   def find_city
-    @city = City.find(params[:city_id])
+    @city = City.friendly.find(params[:city_id])
   end
 
   def find_user

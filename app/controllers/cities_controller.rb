@@ -55,7 +55,7 @@ class CitiesController < ApplicationController
   end
 
   def find_user
-    @admin = Admin.find(params[:id])
+    @admin = Admin.find(current_user.id)
   end
 
   def not_authenticated
