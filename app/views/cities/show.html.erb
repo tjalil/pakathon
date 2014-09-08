@@ -223,28 +223,26 @@
               <div class="schedule-days large-3 large-centered columns">
                 <h4 style="text-align:center; border-bottom: 2px solid #8AC654">Friday, September 26th</h4>
                 <div class="large-12 columns text-left">
-                  <h5 style="font-weight: bold">Event starts with dinner at 6:00pm.</h5>
-                  <p><span style="font-weight:bold">7:00pm</span> – Pakathon NYC will kick-off with a quick introduction.</p>
+                  <p><span style="font-weight:bold">6:00pm</span> – Dinner and meet-and-greet</p>
+                  <p><span style="font-weight:bold">7:00pm</span> – Pakathon NYC kick-off with a quick introduction.</p>
                   <p><span style="font-weight:bold">7:30pm</span> – Keynote speaker.</p>
                   <p><span style="font-weight:bold">8:00pm</span> – Brainstorming and break-out sessions.</p>
-                  <p><span style="font-weight:bold">9:00pm</span> – After 60 minutes of brainstorming within track break-outs, teams will form and take the podium to pitch their ideas. This will be the last chance to recruit team members.</p>
+                  <p><span style="font-weight:bold">9:00pm</span> – After 60 minutes of brainstorming within track breakouts. Teams will form and take the podium to pitch their ideas. Last chance to recruit team members.</p>
                   <p><span style="font-weight:bold">10:00pm</span> – Teams meet/greet and register their ideas. All ideas should be registered by the end of the night.</p>
                 </div>
               </div>
               <div class="schedule-days large-4 large-centered columns">
                 <h4 style="text-align:center; border-bottom: 2px solid #8AC654">Saturday, September 27th</h4>
                 <div class="large-12 columns text-left">
-                  <h5 style="font-weight: bold">Mentors will block out sessions to skype with participants from different cities.</h5>
+                  <h5 style="font-weight: bold">People will work on their projects throughout the day.</h5>
                   <p><span style="font-weight:bold">9:00am</span> – Teams work on their ideas (Note: Breakfast will be provided).</p>
                   <p><span style="font-weight:bold">11:00am</span> – Break-out sessions with speakers until <span style="font-weight:bold">1:00pm</span>.</p>
-                  <p><span style="font-weight:bold">12:00pm</span> – Lunch will be served.</p>
+                  <p><span style="font-weight:bold">12:00pm</span> – Lunch.</p>
                   <p><span style="font-weight:bold">1:00pm</span> – Mentor hours until <span style="font-weight:bold">4:00pm</span>.</p>
                   <p><span style="font-weight:bold">4:00pm</span> – Snack break.</p>
-                  <p><span style="font-weight:bold">6:00pm</span> – Dinner will be served.</p>
-                  <p><span style="font-weight:bold">7:00pm</span> – Teams continue work on their ideas.</p>
+                  <p><span style="font-weight:bold">6:00pm</span> – Dinner.</p>
+                  <p><span style="font-weight:bold">7:00pm</span> – Teams continue working on their ideas.</p>
                   <p><span style="font-weight:bold">11:00pm</span> – Working space closes (Teams can continue work at their own locations).</p>
-                  <p>People will work on their projects throughout the day.</p>
-                  <p>Each team will have to pick the main city where they will be pitching from.</p>
                 </div>
               </div>
               <div class="schedule-days large-4 large-centered columns">
@@ -253,13 +251,12 @@
                   <h5 style="font-weight: bold">Teams will get to finalize their pitches and project videos during the day.</h5>
                   <p><span style="font-weight:bold">10:00am</span> – Teams finish working on their pitches (Note: Breakfast will be provided).</p>
                   <p><span style="font-weight:bold">11:00am</span> – Pitch coaches available until <span style="font-weight:bold">1:00pm</span>.</p>
-                  <p><span style="font-weight:bold">12:00pm</span> – Lunch will be served.</p>
-                  <p><span style="font-weight:bold">12:30pm</span> – Project videos and pitches due. Each team will post their blog to the Pakathon Facebook page before they can pitch to judges.</p>
+                  <p><span style="font-weight:bold">12:00pm</span> – Lunch.</p>
+                  <p><span style="font-weight:bold">12:30pm</span> – Project videos and pitches due.</p>
                   <p><span style="font-weight:bold">1:00pm</span> – Intro to Judges and Speaker.</p>
                   <p><span style="font-weight:bold">1:30pm</span> – Pitches Round 1.</p>
                   <p><span style="font-weight:bold">3:00pm</span> – Pitches Round 2 for shortlisted ideas.</p>
-                  <p><span style="font-weight:bold">4:00pm</span> – Results are announced.</p>
-                  <p>Contestants will have a chance to mingle at the end.</p>
+                  <p><span style="font-weight:bold">4:00pm</span> – Results are announced and networking.</p>
                 </div>
               </div>
             <% else %>
@@ -419,7 +416,8 @@
             <div class="each-faq large-4 columns text-left">
               <h4 style="text-align:center">Why should I attend Pakathon?</h4>
               <div class="large-12 columns">
-                <p>Pakathon will bring together some of the smartest minds in the city all focused on tackling social issues in Pakistan. If you have a great idea, or a skill that can help bring an idea to life, Pakathon is the perfect way to spend your weekend and create a product that will make an impact while networking with the <%= @city.name %> tech community. The winning <%= @city.name %> team will participate in the global Pakathon event in October to compete for prizes of up to $10,000 to implement projects and receive mentorship from business leaders.</p>
+                <!-- <p>Pakathon will bring together some of the smartest minds in the city all focused on tackling social issues in Pakistan. If you have a great idea, or a skill that can help bring an idea to life, Pakathon is the perfect way to spend your weekend and create a product that will make an impact while networking with the <%#= @city.name %> tech community. The winning <%#= @city.name %> team will participate in the global Pakathon event in October to compete for prizes of up to $10,000 to implement projects and receive mentorship from business leaders.</p> -->
+                <p>Pakathon will bring together some of the smartest minds in <%= @city.name %> to tackle social issues in Pakistan. It is the perfect way to spend your weekend to create social impact projects while networking with the <%= @city.name %> tech community. The winning team from <%= @city.name %> will participate in the global Pakathon event for prizes of up to $10,000.</p>
               </div>
             </div>
             <div class="each-faq large-4 columns text-left">
@@ -431,13 +429,15 @@
             <div class="each-faq large-4 columns text-left">
               <h4 style="text-align:center">How do I prepare for Pakathon?</h4>
               <div class="large-12 columns">
-                <p>Before the Pakathon event, participants should conduct background research and explore ideas. Consider researching your chosen social track (industry / demographic statistics, current landscape, problem articulation, etc.) or tech-related social initiatives. If you want to pitch an idea, research and prepare your proposal to give a persuasive pitch and attract a team. Also make sure you’re rested up before Pakathon starts!</p>
+                <p>Before Pakathon, participants should conduct background research and explore ideas. Consider researching your chosen social track (industry/demographic statistics, current landscape, problem articulation, etc.) or tech-related social initiatives. Also make sure you’re rested up before Pakathon starts!</p>
+                <!-- <p>Before the Pakathon event, participants should conduct background research and explore ideas. Consider researching your chosen social track (industry / demographic statistics, current landscape, problem articulation, etc.) or tech-related social initiatives. If you want to pitch an idea, research and prepare your proposal to give a persuasive pitch and attract a team. Also make sure you’re rested up before Pakathon starts!</p> -->
               </div>
             </div>
             <div class="each-faq large-4 columns text-left">
               <h4 style="text-align:center">What type of support is provided over a Pakathon weekend?</h4>
               <div class="large-12 columns">
-                <p>A key part of Pakathon’s support is the valuable advice and assistance provided by the event’s Mentors to the teams. Mentors consist of experts in various fields ranging from software development, entrepreneurship, industry expertise, and local knowledge of Pakistan who dedicate their time to providing feedback and guidance and working with teams. In addition, a public speaking coach will be provided on Sunday morning to assist with final pitch rehearsal.</p>
+                <p>A key part of Pakathon’s support is the valuable advice provided by our Mentors to the teams. Mentors consist of experts ranging from software development, entrepreneurship, industry expertise, and local knowledge of Pakistan who dedicate their time to sharing feedback and guidance to teams.</p>
+                <!-- <p>A key part of Pakathon’s support is the valuable advice and assistance provided by the event’s Mentors to the teams. Mentors consist of experts in various fields ranging from software development, entrepreneurship, industry expertise, and local knowledge of Pakistan who dedicate their time to providing feedback and guidance and working with teams. In addition, a public speaking coach will be provided on Sunday morning to assist with final pitch rehearsal.</p> -->
               </div>
             </div>
 
@@ -482,17 +482,17 @@
                 <p>Pakathon <%= @city.name %> is looking for passionate individuals committed to leveraging tech to build social impact projects for Pakistan. If this sounds like you, then please contact our team at: <%= @city.email %>. We look forward to hearing from you!</p>
               </div>
             </div>
-            <div class="each-faq large-4 columns text-left end">
-              <h4 style="text-align:center">Where can I contact the organizer with any questions?</h4>
-              <div class="large-12 columns text-center">
-                <h4 style="color:#8AC654">
-                  <%= @city.email %><br>
-                  <% if @city.name != "New York" %>
+            <% if @city.name != "New York" %>
+              <div class="each-faq large-4 columns text-left end">
+                <h4 style="text-align:center">Where can I contact the organizer with any questions?</h4>
+                <div class="large-12 columns text-center">
+                  <h4 style="color:#8AC654">
+                    <%= @city.email %><br>
                     <%= @city.phone %>
-                  <% end %>
-                </h4>
+                  </h4>
+                </div>
               </div>
-            </div>
+            <% end %>
           </div>
         </div>
       </div>
