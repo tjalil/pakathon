@@ -26,6 +26,9 @@ Rails.application.routes.draw do
 
   resources :contacts, only: [:new, :create]
 
+  # resources :pages, only: [:index]
+  resources :torontocafe, controller: "pages", only: [:index]
+
   # post 'logout' => 'admin_sessions#destroy', :as => :logout
 
   # Example of regular route:
