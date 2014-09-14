@@ -6,7 +6,7 @@
   <div class="large-12 columns">
     <% if @city.users.present? %>
       <% @city.users.each do |user| %>
-          <p><%= image_tag user.avatar_url(:team) %><%= user.name %> (<%= user.type_of_user %>) | <%= link_to "Edit", edit_admin_city_user_path(current_user, @city, user) %></p>
+          <p><%= image_tag user.avatar_url(:team) %><%= user.name %> (<%= user.type_of_user %>) | <%= link_to "Edit", edit_admin_city_user_path(current_user, @city, user) %> | <%= link_to "Delete", admin_city_user_path(current_user, @city, user), method: :delete, data: { confirm: "Are you sure?" } %></p>
       <% end %>
     <% else %>
       <h5>No Team Members to display</h5>

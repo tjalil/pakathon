@@ -30,6 +30,8 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    @user.destroy
+    redirect_to dashboard_admin_city_path(current_user, @city), notice: "#{@user.name} successfully deleted"
   end
 
   private
