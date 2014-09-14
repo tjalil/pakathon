@@ -92,6 +92,10 @@
     height: 720px;
   }
 
+  #washington-background-img {
+    
+  }
+
   .hero-text {
     margin-top: 10rem;
 
@@ -231,7 +235,7 @@
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     margin-bottom: 1rem;
     margin-right: 1rem;
-    height: 290px;
+    height: 320px;
 
     .judge-initial-details {
       padding-top: 10px;
@@ -288,6 +292,17 @@
     }
   }
 
+}
+
+.sponsor-img {
+  opacity: 0.5;
+  transition: 0.3s ease;
+  display: inline-block;
+
+  &:hover {
+    opacity: 1;
+    transition: 0.3s ease;
+  }
 }
 
 .img-circle {
