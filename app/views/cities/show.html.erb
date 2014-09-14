@@ -1,4 +1,4 @@
-<% if @city.name == "Toronto" || @city.name == "Boston" || @city.name == "New York" || @city.name == "Silicon Valley" %>
+<% if @city.name == "Toronto" || @city.name == "Boston" || @city.name == "New York" || @city.name == "Silicon Valley" || @city.name == "Washington DC" %>
 
   <%= render 'headnav' %>
 
@@ -41,8 +41,8 @@
       <% end %>
     </div>
 
-    <% if @city.name == "Toronto" %>
-      <div class="row cafe" style="padding: 3rem" id='cafe'>
+    <%# if @city.name == "Toronto" %>
+      <!-- <div class="row cafe" style="padding: 3rem" id='cafe'>
         <div class="large-12 columns" style="background-color:rgba(139,199,85,0.5)">
           <div class="row text-center">
             <div class="large-4 columns large-centered">
@@ -65,8 +65,8 @@
             </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      </div> -->
+    <%# end %>
 
     <div id="streams">
       <div class="row streams" style="padding: 3rem">
@@ -163,6 +163,15 @@
               </a>
             <% elsif @city.name == "Silicon Valley" %>
               <a href="https://www.google.ca/maps/place/Stanford+University/@37.4276742,-122.168807,15z/data=!4m2!3m1!1s0x0:0x29cdf01a44fc687f" class="map-photo" target="_blank">
+                <div class="address large-3 columns large-centered text-center">
+                  <h3 style="border-bottom: 2px solid #8AC654"><%= @city.building_name.upcase %></h3>
+                  <h4><%= @city.address %></h4>
+                  <h4><%= @city.name %>, <%= @city.province_name %></h4>
+                  <h4><%= @city.postal_code %></h4>
+                </div>
+              </a>
+            <% elsif @city.name == "Washington DC" %>
+              <a href="https://www.google.ca/maps/place/Impact+Hub+Boston/@42.3567916,-71.0577166,17z/data=!4m5!1m2!2m1!1sImpact+Hub+Boston,+Main+Street,+Cambridge,+MA,+USA!3m1!1s0x89e37084760558db:0xf9145892151372f8" class="map-photo" target="_blank">
                 <div class="address large-3 columns large-centered text-center">
                   <h3 style="border-bottom: 2px solid #8AC654"><%= @city.building_name.upcase %></h3>
                   <h4><%= @city.address %></h4>
@@ -281,6 +290,8 @@
                 <h1 style="border-bottom: 2px solid #8AC654">#PakathonNYC</h1>
               <% elsif @city.name == "Silicon Valley" %>
                 <h1 style="border-bottom: 2px solid #8AC654">#PakathonSV</h1>
+              <% elsif @city.name == "Washington DC" %>
+                <h1 style="border-bottom: 2px solid #8AC654">#PakathonDC</h1>
               <% end %>
             </div>
             <h5 style="text-align:center; font-style:italic; color:#678"><%= @city.team_description %></h5>
@@ -381,6 +392,28 @@
                           <p><%= team_member.description %></p>
                         </div>
                       <% end %>
+                    </div>
+                  <% end %>
+                </div>
+              <br>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="row">
+          <% if @city.sponsors.present? %>
+            <div class="large-12 columns end">
+              <div class="row text-center">
+                <div class="large-4 columns large-centered">
+                  <h1 style="border-bottom: 2px solid #8AC654">Partners</h1>
+                </div>
+              </div>
+              <div class="row">
+                <div class="large-12 columns text-center">
+                  <% @city.sponsors.each do |sponsor| %>
+                    <div class="sponsor-img large-2 columns large-centered text-center">
+                      <%= link_to image_tag(sponsor.avatar_url), sponsor.description, target: "_blank" %>
                     </div>
                   <% end %>
                 </div>
