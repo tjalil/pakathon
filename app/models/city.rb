@@ -20,4 +20,8 @@ class City < ActiveRecord::Base
     self.users.where(type_of_user: "Mentor")
   end
 
+  def sponsors
+    self.users.where(type_of_user: "Sponsor")
+  end
+
 end
