@@ -385,6 +385,12 @@ li {
   }
 
   .job-descriptions {
+    background-color: #fff;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin-top: 20px;
+    border-left: 5px solid rgba(67, 172, 106, 1);
+
     h2 {
       color: #678;
     }
@@ -392,6 +398,7 @@ li {
 
   .job-location {
     color: black;
+    font-weight: 500;
   }
 
   .job-synopsis {
