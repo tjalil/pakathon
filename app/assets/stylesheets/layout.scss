@@ -1,3 +1,8 @@
+//common
+li {
+  list-style: none;
+}
+
 //cities
 .row {
   max-width: 1500px;
@@ -91,10 +96,6 @@
     background-size: cover;
     background-repeat: no-repeat;
     height: 720px;
-  }
-
-  #washington-background-img {
-    
   }
 
   .hero-text {
@@ -267,7 +268,7 @@
 
 }
 
-#topnav-loggedin, #topnav {
+#topnav-loggedin, .topnav {
   max-width: 1500px;
   max-height: 4rem;
   text-align: center;
@@ -315,4 +316,45 @@
 }
 
 //careers
+#careers-header {
+  height: 65px;
 
+  .columns {
+    margin: 5px 0 0 0;
+  }
+
+  .topnav-titles {
+    margin: 0;
+  }
+
+  .logo {
+    position: absolute;
+    top: 5px;
+    left: 5%;
+    right: 5%;
+
+    @media only screen and (max-width: 700px) {
+      right: auto;
+    }
+  }
+
+  .cta {
+    position: absolute;
+    top: 0;
+    right: 5%;
+  }
+
+  .apply-button {
+    background: rgba(255,255,255, 1);
+    box-shadow: 0 4px 0 rgba(67,172,106,1);
+    border: rgba(67,172,106,1);
+    background-color:rgba(67,172,106,0.7);
+    border-radius: 5px;
+    padding: 1rem 5rem;
+
+    &:hover {
+      background-color:rgba(67,172,106,1);
+      -webkit-transition: background-color .3s, border-color .3s, box-shadow .3s;
+    }
+  }
+}
