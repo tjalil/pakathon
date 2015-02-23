@@ -319,14 +319,20 @@ li {
 
 .apply-button {
   background: rgba(255,255,255, 1);
-  box-shadow: 0 4px 0 rgba(67,172,106,1);
-  border: rgba(67,172,106,1);
-  background-color:rgba(67,172,106,0.7);
+  // box-shadow: 0 4px 0 rgba(67, 172, 106, 1);
+  box-shadow: 0 4px 0 rgba(94, 149, 22, 1);
+  
+  // border: rgba(67,172,106,1);
+  border: rgba(94, 149, 22, 1);
+
+  // background-color:rgba(67,172,106,0.7);
+  background-color: rgba(94, 149, 22, 0.7);
   border-radius: 5px;
   padding: 1rem 5rem;
 
   &:hover {
-    background-color:rgba(67,172,106,1);
+    // background-color:rgba(67,172,106,1);
+    background-color: rgba(94, 149, 22, 1);
     -webkit-transition: background-color .3s, border-color .3s, box-shadow .3s;
   }
 }
@@ -389,7 +395,8 @@ li {
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     padding: 10px;
     margin-top: 20px;
-    border-left: 5px solid rgba(67, 172, 106, 1);
+    // border-left: 5px solid rgba(67, 172, 106, 1);
+    border-left: 5px solid rgba(94, 149, 22, 1);
 
     h2 {
       color: #678;
@@ -402,7 +409,8 @@ li {
   }
 
   .job-synopsis {
-    color: rgba(67, 172, 106, 1);
+    // color: rgba(67, 172, 106, 1);
+    color: rgba(94, 149, 22, 1);
   }
 
   li {
