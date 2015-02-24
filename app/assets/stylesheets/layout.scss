@@ -3,6 +3,11 @@ li {
   list-style: none;
 }
 
+.keyline {
+  height: 2px;
+  background-color: rgba(94, 149, 22, 1);
+}
+
 //CITIES
 .row {
   max-width: 100%;
@@ -370,6 +375,22 @@ li {
 #careers-carousel {
   padding-top: 45px;
 
+  .headline {
+    background-color: rgba(0,0,0,0.7);
+    margin-top: 150px;
+
+    h2, h3 {
+      color: white;
+    }
+  }
+
+  h2 {
+    padding: 25px 0 10px;
+  }
+  h3 {
+    padding: 0 0 25px;
+  }
+
   .orbit-timer, .orbit-slide-number, .orbit-bullets-container {
     display: none;
   }
@@ -378,7 +399,7 @@ li {
     max-height: 500px;
   }
 
-  .headline-1, .headline-2, .headline-3 {
+  .slide-1, .slide-2, .slide-3 {
     max-width: auto;
     height: 500px;
     background-size: cover;
@@ -389,7 +410,7 @@ li {
     background-repeat-y: no-repeat;
   }
 
-  .headline-1 {
+  .slide-1 {
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/careers-slide-1.jpg");
     background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/careers-slide-1.jpg");
     background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/careers-slide-1.jpg");
@@ -399,7 +420,7 @@ li {
   }
     
 
-  .headline-2 {
+  .slide-2 {
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/careers-slide-2.png");
     background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/careers-slide-2.png");
     background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/careers-slide-2.png");
@@ -408,7 +429,7 @@ li {
     background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/careers-slide-2.png");
   }
 
-  .headline-3 {
+  .slide-3 {
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/careers-slide-3.png");
     background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/careers-slide-3.png");
     background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/careers-slide-3.png");
@@ -421,6 +442,8 @@ li {
 }
 
 #careers-main {
+  padding-top: 50px;
+
   .careers-description {
     p {
       color: #7a8fa3;
