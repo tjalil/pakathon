@@ -377,6 +377,47 @@ li {
   .orbit-container {
     max-height: 500px;
   }
+
+  .headline-1, .headline-2, .headline-3 {
+    max-width: auto;
+    height: 500px;
+    background-size: cover;
+    background-color: white;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+  }
+
+  .headline-1 {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/careers-slide-1.jpg");
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/careers-slide-1.jpg");
+    background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/careers-slide-1.jpg");
+    background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/careers-slide-1.jpg");
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.5))), url("/assets/careers-slide-1.jpg");
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/careers-slide-1.jpg");
+  }
+    
+
+  .headline-2 {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/careers-slide-2.png");
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/careers-slide-2.png");
+    background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/careers-slide-2.png");
+    background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/careers-slide-2.png");
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.5))), url("/assets/careers-slide-2.png");
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/careers-slide-2.png");
+  }
+
+  .headline-3 {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/careers-slide-3.png");
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/careers-slide-3.png");
+    background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/careers-slide-3.png");
+    background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/careers-slide-3.png");
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.5))), url("/assets/careers-slide-3.png");
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/careers-slide-3.png");
+  }
+
+  
 }
 
 #careers-main {
