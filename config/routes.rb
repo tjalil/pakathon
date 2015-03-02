@@ -29,8 +29,8 @@ Rails.application.routes.draw do
   # resources :pages, only: [:index]
   resources :torontocafe, controller: "pages", only: [:index]
 
-  # resources :careers, only: [:index]
-  resources :dekhmagarpyarsaycareers, controller: "careers", only: [:index]
+  resources :careers, only: [:index]
+  # resources :dekhmagarpyarsaycareers, controller: "careers", only: [:index]
 
   # post 'logout' => 'admin_sessions#destroy', :as => :logout
 
