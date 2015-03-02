@@ -324,19 +324,13 @@ li {
 
 .apply-button {
   background: rgba(255,255,255, 1);
-  // box-shadow: 0 4px 0 rgba(67, 172, 106, 1);
   box-shadow: 0 4px 0 rgba(94, 149, 22, 1);
-  
-  // border: rgba(67,172,106,1);
   border: rgba(94, 149, 22, 1);
-
-  // background-color:rgba(67,172,106,0.7);
   background-color: rgba(94, 149, 22, 0.7);
   border-radius: 5px;
-  padding: 1rem 5rem;
+  padding: 8px 36px;
 
   &:hover {
-    // background-color:rgba(67,172,106,1);
     background-color: rgba(94, 149, 22, 1);
     -webkit-transition: background-color .3s, border-color .3s, box-shadow .3s;
   }
@@ -358,17 +352,21 @@ li {
     top: 5px;
     left: 5%;
     right: 5%;
-    font-size: 30px;
+    font-size: 25px;
     color: rgba(94, 149, 22, 1);
 
     @media only screen and (max-width: 700px) {
       right: auto;
     }
+
+    img {
+      margin-bottom: 5px;
+    }
   }
 
   .cta {
     position: absolute;
-    top: 0;
+    top: 8px;
     right: 5%;
   }
 }
