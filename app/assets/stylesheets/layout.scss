@@ -393,6 +393,16 @@ li {
       font-weight: 100;
       letter-spacing: 1px;
     }
+
+    @media only screen and (max-width: 400px) {
+      h2 {
+        font-size: 35px;
+      }
+
+      h3 {
+        font-size: 22px;
+      }
+    }
   }
 
   h2 {
