@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   resources :contacts, only: [:new, :create]
 
   # resources :pages, only: [:index]
-  resources :torontocafe, controller: "pages", only: [:index]
+  resources :toronto_baithak, controller: "pages", only: [:index]
 
   resources :careers, only: [:index]
   # resources :dekhmagarpyarsaycareers, controller: "careers", only: [:index]
