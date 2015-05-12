@@ -211,5 +211,7 @@
 }
 
 // Additional grid sizes can be added here.
+@include gridSize("xsmall", $xsmallScreen);
+@include gridSize("small", $smallScreen);
 @include gridSize("medium", $mediumScreen);
 @include gridSize("large", $largeScreen);
