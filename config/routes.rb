@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   resources :pages, :path => '' do
     collection do
       get 'toronto_baithak'
+      get 'homepage_proto'
     end
   end
 
