@@ -5,7 +5,15 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root :to => 'cities#index'
 
-  resources :cities, only: [:index, :show]
+  resources :cities, only: [:index, :show] do
+    member do
+      get 'get_involved'
+    end
+  end
+
+  # resources :cities, only: [:show], :path => '' do
+  #   get 'get_involved'
+  # end
 
   resources :admins, only: [:show] do
     resources :cities, only: [:new, :create, :edit, :update] do

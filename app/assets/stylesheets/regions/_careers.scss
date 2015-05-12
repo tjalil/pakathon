@@ -1,0 +1,203 @@
+.apply-button {
+  background: rgba(255,255,255, 1);
+  box-shadow: 0 4px 0 rgba(94, 149, 22, 1);
+  border: rgba(94, 149, 22, 1);
+  background-color: rgba(94, 149, 22, 0.7);
+  border-radius: 5px;
+  padding: 8px 36px;
+
+  &:hover {
+    background-color: rgba(94, 149, 22, 1);
+    -webkit-transition: background-color .3s, border-color .3s, box-shadow .3s;
+  }
+}
+
+#careers-header {
+  height: 65px;
+
+  .columns {
+    margin: 5px 0 0 0;
+  }
+
+  .topnav-titles {
+    margin: 0;
+  }
+
+  .logo {
+    position: absolute;
+    top: 5px;
+    left: 5%;
+    right: 5%;
+    font-size: 25px;
+    color: rgba(94, 149, 22, 1);
+
+    @media only screen and (max-width: 700px) {
+      right: auto;
+    }
+
+    img {
+      margin-bottom: 5px;
+    }
+  }
+
+  .cta {
+    position: absolute;
+    top: 8px;
+    right: 5%;
+  }
+}
+
+
+#careers-carousel {
+  padding-top: 45px;
+
+  .headline {
+    background-color: rgba(85, 85, 85, 0.7);
+    margin-top: 150px;
+
+    h2, h3 {
+      color: white;
+    }
+
+    h2 {
+      font-weight: 300;
+      font-size: 50px;
+    }
+
+    h3 {
+      font-size: 30px;
+      font-weight: 100;
+      letter-spacing: 1px;
+    }
+
+    @media only screen and (max-width: 400px) {
+      h2 {
+        font-size: 35px;
+      }
+
+      h3 {
+        font-size: 22px;
+      }
+    }
+  }
+
+  h2 {
+    padding: 25px 0 0;
+  }
+  h3 {
+    padding: 0 0 25px;
+  }
+
+  .orbit-timer, .orbit-slide-number, .orbit-bullets-container {
+    display: none;
+  }
+
+  .orbit-container {
+    max-height: 500px;
+  }
+
+  .slide-1, .slide-2, .slide-3 {
+    max-width: auto;
+    height: 500px;
+    background-size: cover;
+    background-color: white;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+  }
+
+  .slide-1 {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), asset_url("careers-slide-1.jpg");
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), asset_url("careers-slide-1.jpg");
+    background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), asset_url("careers-slide-1.jpg");
+    background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), asset_url("careers-slide-1.jpg");
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.5))), asset_url("careers-slide-1.jpg");
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), asset_url("careers-slide-1.jpg");
+  }
+    
+
+  .slide-2 {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), asset_url("careers-slide-2.png");
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), asset_url("careers-slide-2.png");
+    background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), asset_url("careers-slide-2.png");
+    background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), asset_url("careers-slide-2.png");
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.5))), asset_url("careers-slide-2.png");
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), asset_url("careers-slide-2.png");
+  }
+
+  .slide-3 {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), asset_url("careers-slide-3.png");
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), asset_url("careers-slide-3.png");
+    background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), asset_url("careers-slide-3.png");
+    background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), asset_url("careers-slide-3.png");
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.5))), asset_url("careers-slide-3.png");
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), asset_url("careers-slide-3.png");
+
+    h3:nth-child(1) {
+      padding: 25px 0 0;
+    }
+  }
+}
+
+#careers-main {
+  padding-top: 50px;
+
+  h1 {
+    color: #555;
+    font-size: 40px;
+    font-weight: 300;
+  }
+
+  .careers-description {
+    p {
+      color: #555;
+      font-weight: 300;
+      line-height: 1.4;
+      font-size: 18px;
+    }
+  }
+
+  .job-descriptions {
+    background-color: #fff;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    margin-bottom: 50px;
+    border-left: 1px solid rgba(94, 149, 22, 1);
+    padding: 10px 35px;
+
+    h2 {
+      color: #555;
+      font-size: 30px;
+      font-weight: 300;
+    }
+  }
+
+  .job-location {
+    color: black;
+    font-weight: 300;
+    margin-top: 7px;
+    margin-bottom: 10px;
+  }
+
+  .job-synopsis {
+    color: rgba(94, 149, 22, 1);
+    font-weight: 300;
+    margin-bottom: 30px;
+  }
+
+  li {
+    list-style-type: disc;
+    color: #555;
+    font-weight: 300;
+  }
+}
+
+#careers-cta {
+  p {
+    color: #555;
+    font-weight: 300;
+    line-height: 1.4;
+    font-size: 20px;
+  }
+}

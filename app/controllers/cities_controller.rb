@@ -1,7 +1,7 @@
 class CitiesController < ApplicationController
 
-  before_filter :require_login, except: [:index, :show]
-  before_filter :find_city, only: [:show, :edit, :update, :dashboard]
+  before_filter :require_login, except: [:index, :show, :get_involved]
+  before_filter :find_city, only: [:show, :edit, :update, :dashboard, :get_involved]
   before_filter :find_user, only: [:edit, :update, :destroy, :dashboard]
 
   def index
