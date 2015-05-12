@@ -5,15 +5,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root :to => 'cities#index'
 
-  resources :cities, only: [:index, :show] do
-    member do
-      get 'get_involved'
-    end
-  end
-
-  # resources :cities, only: [:show], :path => '' do
-  #   get 'get_involved'
-  # end
+  resources :cities, only: [:index, :show]
 
   resources :admins, only: [:show] do
     resources :cities, only: [:new, :create, :edit, :update] do
@@ -34,13 +26,29 @@ Rails.application.routes.draw do
 
   resources :contacts, only: [:new, :create]
 
-  # resources :pages, only: [:index]
-  resources :toronto_baithak, controller: "pages", only: [:index]
-
   resources :careers, only: [:index]
+
+  resources :pages, :path => '' do
+    collection do
+      get 'toronto_baithak'
+    end
+  end
+
+  # resources :pages, only: [:index] do
+  #   collection do
+  #     get 'webinar'
+  #   end
+  # end
+  # resources :toronto_baithak, controller: "pages", only: [:index]
+  # resources :toronto_webinar, controller: "pages", only: [:webinar]
+
   # resources :dekhmagarpyarsaycareers, controller: "careers", only: [:index]
 
   # post 'logout' => 'admin_sessions#destroy', :as => :logout
+
+
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

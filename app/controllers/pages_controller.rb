@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
-  def index
+  def toronto_baithak
   end
 
 end
