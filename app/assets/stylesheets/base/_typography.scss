@@ -2,6 +2,10 @@ h1, h2, h3, h4, h5, h6,
 .alpha, .beta, .gamma, .delta, .epsilon, .zeta {
 	color: $titleColor;
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
 }
 
 h1, 
@@ -10,18 +14,34 @@ h1,
 
 h2, 
 .beta {
+  @include fontSize(35);
+
+  @media only screen and (min-width: ($mediumScreen + px)) {
+    @include fontSize(45);
+  }
 }
 
 h3, 
 .gamma {
+  @include fontSize(28);
+
+  @media only screen and (min-width: ($mediumScreen + px)) {
+    @include fontSize(30);
+  }
 }
 
 h4, 
 .delta {
+  @include fontSize(22);
+
+  @media only screen and (min-width: ($mediumScreen + px)) {
+    @include fontSize(24);
+  }
 }
 
 h5, 
 .epsilon {
+  @include fontSize(16);
 }
 
 h6, 

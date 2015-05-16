@@ -83,12 +83,19 @@ li {
   @include pre(transition, all 0.3s ease);
 
   &:hover {
-    background: $white;
+    background: transparent;
     color: $green;
   }
   // @extend .apply-button;
   // color: white;
   // @include pre(transition, all 0.3s ease);
+}
+
+.punch {
+  @include fontSize(20);
+  @include pre(line-height, 1.4);
+  @include prop(margin, 30, 0, 40);
+  font-weight: 100;
 }
 
 //----------------------------------------------------------------
