@@ -1,288 +1,287 @@
 .row {
-  max-width: 100%;
-  padding-bottom: 1rem;
+  // max-width: 100%;
+  // padding-bottom: 1rem;
 
   &.body-items {
     padding-bottom: 0;
   }
+}
 
-  .website-body {
-    margin-top: 3rem;
+.website-body {
+  margin-top: 3rem;
+}
+
+.title {
+  padding-bottom: 1rem;
+}
+
+.image-link-to-city-page {
+  display: inline-block;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+}
+
+.our-mission, .mentorship {
+  background-image: url('http://uploads.striking.ly/page/images/backgrounds/bg6.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.global-event, .who-we-are, .contact-us, .streams, .schedule, .faq {
+  background-color: #eee;
+}
+
+#tashaddud {
+  background-image: url('http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_900,w_1200/ixpwcfk4rvic6hyebsto.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.support-section {
+  background-image: url('http://p1.pichost.me/i/14/1366572.jpg');
+  background-size: cover;
+  background-position: 49% 50%; 
+  background-repeat: no-repeat;
+  z-index: 5;
+
+  h1, h5 {
+    color: white;
   }
 
-  .title {
-    padding-bottom: 1rem;
-  }
+  #phone {
+    border-bottom: 2px solid #8AC654;
 
-  .image-link-to-city-page {
-    display: inline-block;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    padding-bottom: 1rem;
-  }
-
-  .our-mission, .mentorship {
-    background-image: url('http://uploads.striking.ly/page/images/backgrounds/bg6.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
-  .global-event, .who-we-are, .contact-us, .streams, .schedule, .faq {
-    background-color: #eee;
-  }
-
-  #tashaddud {
-    background-image: url('http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_900,w_1200/ixpwcfk4rvic6hyebsto.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
-  .support-section {
-    background-image: url('http://p1.pichost.me/i/14/1366572.jpg');
-    background-size: cover;
-    background-position: 49% 50%; 
-    background-repeat: no-repeat;
-    z-index: 5;
-
-    h1, h5 {
+    p {
       color: white;
-    }
-
-    #phone {
-      border-bottom: 2px solid #8AC654;
-
-      p {
-        color: white;
-        font-weight:bold;
-        font-size:2rem;
-      }
+      font-weight:bold;
+      font-size:2rem;
     }
   }
+}
 
-  #support {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('http://p1.pichost.me/i/14/1366572.jpg');
-    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('http://p1.pichost.me/i/14/1366572.jpg');
-    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('http://p1.pichost.me/i/14/1366572.jpg');
-    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('http://p1.pichost.me/i/14/1366572.jpg');
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.9)), to(rgba(0, 0, 0, 0.9))), url('http://p1.pichost.me/i/14/1366572.jpg');
-    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('http://p1.pichost.me/i/14/1366572.jpg');
+#support {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('http://p1.pichost.me/i/14/1366572.jpg');
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('http://p1.pichost.me/i/14/1366572.jpg');
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('http://p1.pichost.me/i/14/1366572.jpg');
+  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('http://p1.pichost.me/i/14/1366572.jpg');
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.9)), to(rgba(0, 0, 0, 0.9))), url('http://p1.pichost.me/i/14/1366572.jpg');
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('http://p1.pichost.me/i/14/1366572.jpg');
 
-    h2 {
-      font-size: 25px;
-      color: white;
-    }
+  h2 {
+    font-size: 25px;
+    color: white;
+  }
+}
+
+#toronto-background-img {
+  background: url('http://sandmanhotelgroup.files.wordpress.com/2012/11/101737874.jpg') 0 -140px;
+  width: 100%;
+  height: 550px;
+  background-size: cover;
+  background-color: white;
+  background-position-x: 50%;
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+}
+
+#boston-background-img {
+  background-image: url('http://upload.wikimedia.org/wikipedia/commons/0/07/Boston_downtown_skyline.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 720px;
+}
+
+#siliconvalley-background-img {
+  background-image: url('http://www.rantlifestyle.com/wp-content/uploads/2014/05/010.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 720px;
+}
+
+#newyork-background-img {
+  background-image: url('http://wallpaper-download.net/wallpapers/travel-wallpapers-statue-liberty-wallpaper-wallpaper-34891.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 720px;
+}
+
+.hero-text {
+  margin-top: 10rem;
+
+  h1, h4 {
+    color: white;
+    padding: 1rem 3rem;
+    background-color: rgba(0,0,0,0.7);
   }
 
-  #toronto-background-img {
-    background: url('http://sandmanhotelgroup.files.wordpress.com/2012/11/101737874.jpg') 0 -140px;
-    width: 100%;
-    height: 550px;
-    background-size: cover;
-    background-color: white;
-    background-position-x: 50%;
-    background-repeat-x: no-repeat;
-    background-repeat-y: no-repeat;
+  h1, h3 {
+    width: 70%;
+    margin-left: 15%;
   }
 
-  #boston-background-img {
-    background-image: url('http://upload.wikimedia.org/wikipedia/commons/0/07/Boston_downtown_skyline.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 720px;
+  iframe {
+    left: 50%;
+    margin-left: -500px;
   }
 
-  #siliconvalley-background-img {
-    background-image: url('http://www.rantlifestyle.com/wp-content/uploads/2014/05/010.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 720px;
+  .video-action {
+    color: black;
+    padding: 1rem 3rem;
+    background-color: rgba(255,255,255,1);
   }
 
-  #newyork-background-img {
-    background-image: url('http://wallpaper-download.net/wallpapers/travel-wallpapers-statue-liberty-wallpaper-wallpaper-34891.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 720px;
-  }
-
-  .hero-text {
-    margin-top: 10rem;
-
-    h1, h4 {
-      color: white;
-      padding: 1rem 3rem;
-      background-color: rgba(0,0,0,0.7);
-    }
-
-    h1, h3 {
-      width: 70%;
-      margin-left: 15%;
-    }
-
-    iframe {
-      left: 50%;
-      margin-left: -500px;
-    }
-
-    .video-action {
-      color: black;
-      padding: 1rem 3rem;
-      background-color: rgba(255,255,255,1);
-    }
-
-    .video-action-on-hover {
-      display: none;
-      cursor: pointer;
-      font-size: 3rem;
-      height: 92px;
-      color: black;
-      padding: 1rem 3rem;
-      background-color: rgba(255,255,255,1);
-    }
-
-    h1, h3 {
-      font-weight: bold;
-    }
-  }
-
-  .video-action-on-click {
-    margin-top: 1.5rem;
+  .video-action-on-hover {
     display: none;
+    cursor: pointer;
+    font-size: 3rem;
+    height: 92px;
+    color: black;
+    padding: 1rem 3rem;
+    background-color: rgba(255,255,255,1);
   }
 
-  .cafe-signup {
+  h1, h3 {
+    font-weight: bold;
+  }
+}
+
+.video-action-on-click {
+  margin-top: 1.5rem;
+  display: none;
+}
+
+.cafe-signup {
+  background-color:rgba(67,172,106,1);
+  border-radius: 5px;
+  padding: 1rem 5rem;
+
+  h3 {
+      color: white;
+    }
+
+  &:hover {
+    background-color:rgba(67,172,106,0.7);
+    border-color: rgba(67,172,106,1);
+  }
+}
+
+.stream {
+  background-color: #fff;
+  border-top: 5px solid #8AC654;
+  display:inline-block;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.address {
+  display:inline-block;
+  background-color: #fff;
+  display:inline-block;
+
+  &:hover {
     background-color:rgba(67,172,106,1);
-    border-radius: 5px;
-    padding: 1rem 5rem;
-
-    h3 {
-        color: white;
-      }
-
-    &:hover {
-      background-color:rgba(67,172,106,0.7);
-      border-color: rgba(67,172,106,1);
-    }
-  }
-
-  .stream {
-    background-color: #fff;
-    border-top: 5px solid #8AC654;
-    display:inline-block;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    -webkit-transition: background-color 0.3s ease-out;
+    -moz-transition: background-color 0.3s ease-out;
+    transition: background-color 0.3s ease-out;
+
+    h3, h4 {
+      color: white;
+    }
   }
 
-  .address {
-    display:inline-block;
-    background-color: #fff;
-    display:inline-block;
+}
 
-    &:hover {
-      background-color:rgba(67,172,106,1);
-      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-      -webkit-transition: background-color 0.3s ease-out;
-      -moz-transition: background-color 0.3s ease-out;
-      transition: background-color 0.3s ease-out;
+.schedule-days {
+  background-color: #fff;
+  display:inline-block;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
 
-      h3, h4 {
-        color: white;
-      }
-    }
+.team-member-tile {
+  position: relative;
+  display:inline-block;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  height: 290px;
 
+  .team-member-initial-details {
+    padding-top: 10px;
+    border-bottom: 2px solid #8AC654;
   }
 
-  .schedule-days {
-    background-color: #fff;
-    display:inline-block;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  .team-member-name {
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
-  .team-member-tile {
-    position: relative;
-    display:inline-block;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    margin-bottom: 1rem;
-    margin-right: 1rem;
-    height: 290px;
+  .team-member-sharing {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 
-    .team-member-initial-details {
-      padding-top: 10px;
-      border-bottom: 2px solid #8AC654;
-    }
+  .team-member-description {
+    display: none;
+    margin-top: 10px;
+    float:left;
+    background-color:rgba(67,172,106,1);
+    z-index: 2000;
+    margin-left: -15px;
+    padding: 2rem;
+    width: 350px;
+  }
 
-    .team-member-name {
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-
-    .team-member-sharing {
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
+  &:hover {
+    background-color:rgba(67,172,106,1);
+    color: white;
+    -webkit-transition: background-color 0.3s ease-out;
+    -moz-transition: background-color 0.3s ease-out;
+    transition: background-color 0.3s ease-out;
 
     .team-member-description {
-      display: none;
-      margin-top: 10px;
-      float:left;
-      background-color:rgba(67,172,106,1);
-      z-index: 2000;
-      margin-left: -15px;
-      padding: 2rem;
-      width: 350px;
-    }
-
-    &:hover {
-      background-color:rgba(67,172,106,1);
-      color: white;
-      -webkit-transition: background-color 0.3s ease-out;
-      -moz-transition: background-color 0.3s ease-out;
-      transition: background-color 0.3s ease-out;
-
-      .team-member-description {
-        display: block;
-        -webkit-transition: background-color 0.3s ease-out;
-        -moz-transition: background-color 0.3s ease-out;
-        transition: background-color 0.3s ease-out;
-      }
-    }
-
-  }
-
-  .judge-tile {
-    position: relative;
-    display:inline-block;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    margin-bottom: 1rem;
-    margin-right: 1rem;
-    height: 320px;
-
-    .judge-initial-details {
-      padding-top: 10px;
-      border-bottom: 2px solid #8AC654;
-    }
-
-    .judge-name {
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-
-    &:hover {
-      background-color:rgba(67,172,106,1);
-      color: white;
+      display: block;
       -webkit-transition: background-color 0.3s ease-out;
       -moz-transition: background-color 0.3s ease-out;
       transition: background-color 0.3s ease-out;
     }
   }
 
-  .each-faq {
-    background-color: #fff;
-    height: 350px;
-    display:inline-block;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    border: 2px solid #8AC654
+}
+
+.judge-tile {
+  position: relative;
+  display:inline-block;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  height: 320px;
+
+  .judge-initial-details {
+    padding-top: 10px;
+    border-bottom: 2px solid #8AC654;
   }
 
+  .judge-name {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  &:hover {
+    background-color:rgba(67,172,106,1);
+    color: white;
+    -webkit-transition: background-color 0.3s ease-out;
+    -moz-transition: background-color 0.3s ease-out;
+    transition: background-color 0.3s ease-out;
+  }
+}
+
+.each-faq {
+  background-color: #fff;
+  height: 350px;
+  display:inline-block;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  border: 2px solid #8AC654
 }
 
 .sponsor-img {

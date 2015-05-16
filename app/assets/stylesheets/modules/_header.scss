@@ -5,12 +5,64 @@ header.global {
   @include prop(right, 0);
   @include prop(height, 68);
   z-index: 1000;
-  @include prop(padding, 15, 0);
+  @include prop(padding, 15, 25);
   @include pre(transition, all 0.3s ease);
   background: transparent;
 
   &.headerTransition {
     background: #000;
     background: rgba(0,0,0,0.7);
+  }
+
+  a, .logo, nav, ul, li {
+    display: inline-block;
+  }
+
+  .logo {
+    float: left;
+    position: relative;
+    @include prop(padding, 20, 0);
+
+    img {
+      position: absolute;
+      @include prop(margin, 0, 0, 0, -35);
+    }
+  }
+
+  nav {
+    display: none;
+    float: right;
+    @include prop(padding, 20, 0);
+
+    li {
+      @include prop(margin, 0, 10);
+
+      a {
+        color: $green;
+        @include pre(transition, all 0.3s ease);
+
+        &:hover {
+          color: darken($green, 10);
+        }
+      }
+
+      @media only screen and (min-width: $largeScreen + px) {
+        @include prop(margin, 0, 15);
+      }
+    }
+
+    @media only screen and (min-width: 950px) {
+      display: block;
+    }
+  }
+
+  .drawer-btn {
+    display: inline-block;
+    float: right;
+    @include prop(padding, 20, 0);
+
+    @media only screen and (min-width: 950px) {
+      display: none;
+    }
   }
 }

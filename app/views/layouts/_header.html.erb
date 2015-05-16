@@ -1,7 +1,25 @@
 <header class="global">
   <div class="row">
     <div class="columns xsmall-12 small-12 medium-12 large-12">
-      <li class="logo topnav-titles"><%= link_to image_tag(Logo.find_by(name:"pakathon globe").image_url(:team), size: "30"), root_path %> PAKATHON</li>
+      <a href="/homepage_proto" class="logo">
+        <%= image_tag(Logo.find_by(name:"pakathon globe").image_url(:team), size: "30")%> PAKATHON
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="javascript:void(0)">About</a></li>
+          <li><a href="javascript:void(0)">The Hackathon</a></li>
+          <li><a href="javascript:void(0)">Blog</a></li>
+          <li><a href="javascript:void(0)">Partners &amp; Sponsors</a></li>
+          <li><a href="javascript:void(0)">Forum</a></li>
+        </ul>
+
+        <a class="button" href="javascript:void(0)">Get Involved</a>
+      </nav>
+
+      <div class="drawer-btn">
+        <a class="menu" href="javascript:void(0)">Menu icon</a>
+      </div>
     </div>
   </div>
 </header>
