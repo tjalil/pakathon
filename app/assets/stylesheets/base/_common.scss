@@ -32,6 +32,12 @@
 //----------------------------------------------------------------
 a {
   outline: none;
+  color: $green;
+  @include prop(margin, 30, 0, 0);
+
+  &:hover {
+    color: darken($green, 10);
+  }
 }
 
 iframe, 

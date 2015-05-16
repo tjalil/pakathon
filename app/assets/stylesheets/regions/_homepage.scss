@@ -1,6 +1,7 @@
 #homepage-hero {
   @include prop(padding, 90, 0, 40);
   @include prop(min-height, 600);
+
   background-size: cover;
   background-color: white;
   background-repeat-x: no-repeat;
@@ -43,5 +44,14 @@
       width: 50%;
       text-align: left;
     }
+  }
+}
+
+#homepage-mission {
+  @include prop(padding, 90, 0, 40);
+
+  .gamma {
+    font-weight: 300;
+    @include prop(margin-bottom, 30);
   }
 }
