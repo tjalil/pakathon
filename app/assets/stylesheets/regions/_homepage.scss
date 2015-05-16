@@ -112,3 +112,28 @@
     }
   }
 }
+
+#homepage-streams {
+  @include prop(padding, 40, 0);
+
+  .gamma {
+    @include prop(margin-bottom, 30);
+  }
+
+  .panel {
+    @include prop(padding, 20);
+
+    @media only screen and (min-width: $largeScreen + px) {
+      @include prop(padding, 0, 20);
+    }
+  }
+
+  ul {
+    width: 100%;
+  }
+
+  .large-block-grid-6 {
+    @include prop(padding, 0, 25);
+    @include prop(margin, 0);
+  }
+}
