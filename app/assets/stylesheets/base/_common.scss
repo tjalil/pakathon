@@ -89,7 +89,7 @@ li {
   @include pre(transition, all 0.3s ease);
 
   &:hover {
-    background: transparent;
+    background: $white;
     color: $green;
   }
   // @extend .apply-button;
