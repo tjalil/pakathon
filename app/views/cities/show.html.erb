@@ -1,3 +1,46 @@
+<% if current_user %>
+  <div id="topnav-loggedin" class="fixed sticky">
+    <ul class="sub-nav small-12 medium-12 large-12 columns">
+      <li class="logo" style="margin-top:0.5rem">
+        <%= link_to image_tag(Logo.find_by(name:"pakathon globe").image_url(:team), size: "40"),root_path %>
+      </li>
+      <%# if @city.name == "Toronto" %>
+        <!-- <li class="topnav-titles"><a href="#cafe">CAFE</a></li> -->
+      <%# end %>
+      
+      <li class="topnav-titles"><%= link_to 'Admin Dashboard', admin_path(current_user) %></li>
+      <li class="topnav-titles"><%= link_to 'Logout', admin_session_path("current"), method: :delete %></li>
+
+      <li style="float:right; margin-top: 0.30rem">
+        <a href="<%= @city.eventbrite_page %>" target="_blank">
+          <div class="registration-button button medium">
+            <span>Webinar Registration</span>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+<% else %>
+  <div class="fixed sticky topnav">
+    <ul class="sub-nav small-12 medium-12 large-12 columns large-centered medium-centered small-centered">
+      <li class="logo" style="margin-top:0.5rem">
+       <%= link_to image_tag(Logo.find_by(name:"pakathon globe").image_url(:team), size: "40"),root_path %>
+      </li>
+      <%# if @city.name == "Toronto" %>
+        <!-- <li class="topnav-titles"><a href="#cafe">CAFE</a></li> -->
+      <%# end %>
+      
+      <li style="float:right; margin-top: 0.30rem">
+        <a href="<%= @city.eventbrite_page %>" target="_blank">
+          <div class="registration-button button medium">
+            <span>WEBINAR REGISTRATION</span>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+<% end %>
+
 <% if @city.name == "Toronto" || @city.name == "Boston" || @city.name == "New York" || @city.name == "Silicon Valley" || @city.name == "Washington DC" %>
 
   <%= render 'headnav' %>
@@ -5,34 +48,31 @@
   <div class="website-body">
     <% if @city.name == "Toronto" %>
       <div class="row">
-        <div class="large-12 columns">
+        <div class="columns small-12 medium-12 large-12">
           <div id="<%= @city.name.downcase.split(" ").join %>-background-img">
             <div class="row">
-              <div class="hero-text large-8 columns text-center large-centered">
-                <h1>SEPTEMBER 26<span style="font-size:1.5rem; vertical-align:top;">TH</span> - 28<span style="font-size:1.5rem; vertical-align:top;">TH</span></h1>
-                <h4 class="hero-copy-text"><%= @city.hero_copy %></h4>
+              <div class="hero-text small-12 medium-12 large-12 columns text-center">
+                <h1>#PakathonTO | OCTOBER 2<span style="font-size:1.5rem; vertical-align:top;">ND</span> - 4<span style="font-size:1.5rem; vertical-align:top;">TH</span></h1>
+                <!-- <h4 class="hero-copy-text"><%#= @city.hero_copy %></h4> -->
                 <h3 class="video-action"><%= image_tag(Logo.find_by(name:"play-button-red").image_url(:team), size:"60") %> ENGAGING THE WORLD TO RESHAPE PAKISTAN</h3>
                 <h3 class="video-action-on-hover">WATCH THE VIDEO</h3>
               </div>
               <div class="video-action-on-click large-10 columns large-centered">
-                <iframe width="1200" height="675" src="//www.youtube.com/embed/doW5YQOAdgQ?autohide=1&color=white&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
+                <iframe width="1400" height="500" src="https://www.youtube.com/embed/RqfYtAHHFJk?autohide=1&color=white&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
               </div>
             </div>
           </div>
         </div>
-        <div>
-        </div>
-      </div>
       <% else %>
         <div class="row">
           <div class="large-12 columns">
             <div id="<%= @city.name.downcase.split(" ").join %>-background-img">
               <div class="row">
                 <div class="hero-text large-8 columns text-center large-centered">
-                  <h1>SEPTEMBER 26<span style="font-size:1.5rem; vertical-align:top;">TH</span> - 28<span style="font-size:1.5rem; vertical-align:top;">TH</span></h1>
-                  <% if @city.hero_copy.present? %>
-                    <h4><%= @city.hero_copy %></h4>
-                  <% end %>
+                  <h1>OCTOBER 2<span style="font-size:1.5rem; vertical-align:top;">ND</span> - 4<span style="font-size:1.5rem; vertical-align:top;">TH</span></h1>
+                  <%# if @city.hero_copy.present? %>
+                    <!-- <h4><%= @city.hero_copy %></h4> -->
+                  <%# end %>
                 </div>
               </div>
             </div>
@@ -68,7 +108,7 @@
       </div> -->
     <%# end %>
 
-    <div id="streams">
+    <!-- <div id="streams">
       <div class="row streams" style="padding: 3rem">
         <div class="large-12 columns text-center">
           <div class="row text-center">
@@ -134,9 +174,9 @@
           <% end %>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div id="location">
+    <!-- <div id="location">
       <div class="row location" style="padding: 3rem">
         <div class="large-12 columns text-center">
           <div class="row">
@@ -189,9 +229,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div class="row schedule" style="padding: 3rem">
+    <!-- <div class="row schedule" style="padding: 3rem">
       <div class="large-12 columns text-center">
         <div id="schedule">
           <div class="row text-center">
@@ -200,7 +240,6 @@
             </div>
           </div>
           <div class="row">
-            <!-- adding logic in controller temporarily. Will store schedule in hstore for each city soon. -->
             <% if @city.name == "Toronto" || @city.name == "Boston" %>
               <div class="schedule-days large-3 large-centered columns">
                 <h4 style="text-align:center; border-bottom: 2px solid #8AC654">Friday, September 26th</h4>
@@ -317,9 +356,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div class="row team-to" style="padding: 3rem" id='team-to'>
+   <!--  <div class="row team-to" style="padding: 3rem" id='team-to'>
       <div class="large-12 columns">
 
         <div class="row">
@@ -466,9 +505,9 @@
           <% end %>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div class="row faq" style="padding:3rem">
+    <!-- <div class="row faq" style="padding:3rem">
       <div class="large-12 columns text-center">
         <div id="faq">
           <div class="row">
@@ -492,7 +531,6 @@
             <div class="each-faq large-4 columns text-left">
               <h4 style="text-align:center">Why should I attend Pakathon?</h4>
               <div class="large-12 columns">
-                <!-- <p>Pakathon will bring together some of the smartest minds in the city all focused on tackling social issues in Pakistan. If you have a great idea, or a skill that can help bring an idea to life, Pakathon is the perfect way to spend your weekend and create a product that will make an impact while networking with the <%#= @city.name %> tech community. The winning <%#= @city.name %> team will participate in the global Pakathon event in October to compete for prizes of up to $10,000 to implement projects and receive mentorship from business leaders.</p> -->
                 <p>Pakathon will bring together some of the smartest minds in <%= @city.name %> to tackle social issues in Pakistan. It is the perfect way to spend your weekend to create social impact projects while networking with the <%= @city.name %> tech community. The winning team from <%= @city.name %> will participate in the global Pakathon event for prizes of up to $10,000.</p>
               </div>
             </div>
@@ -506,14 +544,12 @@
               <h4 style="text-align:center">How do I prepare for Pakathon?</h4>
               <div class="large-12 columns">
                 <p>Before Pakathon, participants should conduct background research and explore ideas. Consider researching your chosen social track (industry/demographic statistics, current landscape, problem articulation, etc.) or tech-related social initiatives. Also make sure you’re rested up before Pakathon starts!</p>
-                <!-- <p>Before the Pakathon event, participants should conduct background research and explore ideas. Consider researching your chosen social track (industry / demographic statistics, current landscape, problem articulation, etc.) or tech-related social initiatives. If you want to pitch an idea, research and prepare your proposal to give a persuasive pitch and attract a team. Also make sure you’re rested up before Pakathon starts!</p> -->
               </div>
             </div>
             <div class="each-faq large-4 columns text-left">
               <h4 style="text-align:center">What type of support is provided over a Pakathon weekend?</h4>
               <div class="large-12 columns">
                 <p>A key part of Pakathon’s support is the valuable advice provided by our Mentors to the teams. Mentors consist of experts ranging from software development, entrepreneurship, industry expertise, and local knowledge of Pakistan who dedicate their time to sharing feedback and guidance to teams.</p>
-                <!-- <p>A key part of Pakathon’s support is the valuable advice and assistance provided by the event’s Mentors to the teams. Mentors consist of experts in various fields ranging from software development, entrepreneurship, industry expertise, and local knowledge of Pakistan who dedicate their time to providing feedback and guidance and working with teams. In addition, a public speaking coach will be provided on Sunday morning to assist with final pitch rehearsal.</p> -->
               </div>
             </div>
 
@@ -572,45 +608,67 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="row support-section" style="padding: 3rem" id='support'>
-      <div class="large-12 columns text-center">
+      <div class="small-12 medium-6 large-6 columns text-center">
         <div class="row text-center">
-          <div class="large-4 columns large-centered">
-            <h1>CONNECT</h1>
+          <div class="small-12 medium-12 large-12 columns text-center">
+            <!-- <h2>CONNECT</h2> -->
             <h5 style="font-style:italic">A conversation worth having. Let's talk.<br></h5>
           </div>
         </div>
           <div class="row">
-            <div id="phone" class="large-4 large-centered columns text-center">
+            <div id="phone" class="small-12 medium-12 large-12 columns text-center">
               <p><%= @city.email %></p>
             </div>
           </div>
           <div class="row">
-            <div class="large-6 large-centered columns text-center">
-              <div class="large-3 large-offset-3 columns text-center">
-                <a href="<%= @global.facebook %>" target="_blank">
-                  <div id="facebook">
-                    <% if @city.facebook.present? %>
-                      <%= link_to image_tag(Logo.find_by(name:"facebook_logo").image_url(:team), size: "100x100"), @city.facebook, target: "_blank" %>
-                    <% else %>
-                      <%= link_to image_tag(Logo.find_by(name:"facebook_logo").image_url(:team), size: "100x100"), @global.facebook, target: "_blank" %>
-                    <% end %>
-                  </div>
-                </a>
-              </div>
-              <div class="large-3 columns text-center end">
-                <div id="twitter">
-                  <% if @city.twitter.present? %>
-                    <%= link_to image_tag(Logo.find_by(name:"twitter_logo").image_url(:team), size: "100x100"), @city.twitter, target: "_blank" %>
+            <div class="small-6 medium-6 large-6 columns text-center">
+              <a href="<%= @global.facebook %>" target="_blank">
+                <div id="facebook">
+                  <% if @city.facebook.present? %>
+                    <%= link_to image_tag(Logo.find_by(name:"facebook_logo").image_url(:team), size: "60"), @city.facebook, target: "_blank" %>
                   <% else %>
-                    <%= link_to image_tag(Logo.find_by(name:"twitter_logo").image_url(:team), size: "100x100"), @global.twitter, target: "_blank" %>
+                    <%= link_to image_tag(Logo.find_by(name:"facebook_logo").image_url(:team), size: "60"), @global.facebook, target: "_blank" %>
                   <% end %>
                 </div>
+              </a>
+            </div>
+
+            <div class="small-6 medium-6 large-6 columns text-center end">
+              <div id="twitter">
+                <% if @city.twitter.present? %>
+                  <%= link_to image_tag(Logo.find_by(name:"twitter_logo").image_url(:team), size: "60"), @city.twitter, target: "_blank" %>
+                <% else %>
+                  <%= link_to image_tag(Logo.find_by(name:"twitter_logo").image_url(:team), size: "60"), @global.twitter, target: "_blank" %>
+                <% end %>
               </div>
             </div>
           </div>
+        </div>
+
+        <div class="small-12 medium-6 large-6 columns text-center">
+        <!-- Begin MailChimp Signup Form -->
+          <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+          <div id="mc_embed_signup">
+            <form action="//pakathon.us9.list-manage.com/subscribe/post?u=ad8b8f5d43cbae3d83d1dbe5e&amp;id=42c988d66c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div id="mc_embed_signup_scroll" class="text-center">
+                <label for="mce-EMAIL">Subscribe to our mailing list</label>
+                <div class="email-field">
+                  <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                </div>
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;">
+                  <input type="text" name="b_ad8b8f5d43cbae3d83d1dbe5e_42c988d66c" tabindex="-1" value="">
+                </div>
+                <div class="clear">
+                  <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                </div>
+              </div>
+            </form>
+          </div>
+          <!--End mc_embed_signup-->
         </div>
       </div>
     </div>
