@@ -27,6 +27,7 @@
   .v-wrapper {
     position: relative;
     @include prop(top, 50);
+    @include prop(padding, 0, 25);
   }
 
   .hero-text {
@@ -179,5 +180,48 @@
 
   .cta-row {
     @include prop(margin-top, 50);
+  }
+}
+
+#homepage-hackathon {
+  @include prop(min-height, 500);
+
+  background-size: cover;
+  background-color: white;
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-position-y: 50%;
+  background-position-x: 50%;
+  background-image: linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
+  background-image: -moz-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
+  background-image: -o-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
+  background-image: -ms-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(255, 255, 255, 0.2))), asset_url("pakathonto_2014_selfie.jpg");
+  background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
+
+  @media only screen and (min-width: $smallScreen + px) {
+    background-image: linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
+    background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
+    background-image: -o-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
+    background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(255, 255, 255, 0.2))), asset_url("pakathonto_2014_selfie.jpg");
+    background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
+  }
+
+  .v-wrapper {
+    position: relative;
+    @include prop(top, 100);
+    @include prop(padding, 0, 25);
+  }
+
+  .homepage-hackathon-text {
+    width: 100%;
+    @include prop(margin, 0);
+    text-align: center;
+
+    @media only screen and (min-width: $smallScreen + px) {
+      width: 50%;
+      text-align: left;
+    }
   }
 }
