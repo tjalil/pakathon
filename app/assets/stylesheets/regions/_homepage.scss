@@ -88,7 +88,7 @@
     text-align: center;
     @include prop(margin-bottom, 20);
 
-    @media only screen and (min-width: $smallScreen + px) {
+    @media only screen and (min-width: $mediumScreen + px) {
       text-align: right;
       @include prop(margin-bottom, 0);
     }
@@ -97,7 +97,7 @@
   .cta {
     text-align: center;
 
-    @media only screen and (min-width: $smallScreen + px) {
+    @media only screen and (min-width: $mediumScreen + px) {
       text-align: left;
     }
 
@@ -109,7 +109,7 @@
 }
 
 #homepage-streams {
-  @include prop(padding, 40, 0);
+  @include prop(padding, 40, 0, 70);
   position: relative;
 
   &:before {
@@ -159,7 +159,7 @@
     text-align: center;
     @include prop(margin-bottom, 20);
 
-    @media only screen and (min-width: $smallScreen + px) {
+    @media only screen and (min-width: $mediumScreen + px) {
       text-align: right;
       @include prop(margin-bottom, 0);
     }
@@ -168,7 +168,7 @@
   .cta {
     text-align: center;
 
-    @media only screen and (min-width: $smallScreen + px) {
+    @media only screen and (min-width: $mediumScreen + px) {
       text-align: left;
     }
 
@@ -180,6 +180,22 @@
 
   .cta-row {
     @include prop(margin-top, 50);
+  }
+
+  img {
+    @include border(1, solid, $bodyColor);
+  }
+}
+
+#homepage-news {
+  @include prop(padding, 60, 0);
+
+  img {
+    @include border(1, solid, $bodyColor);
+  }
+
+  .row {
+    @include prop(margin, 0);
   }
 }
 
