@@ -12,6 +12,8 @@
 </head>
 <body>
 
+  <%= yield %>
+
   <div class="row">
     <div class="columns xsmall-12 small-12 medium-12 large-12">
       <% if flash[:notice] %>
@@ -26,8 +28,6 @@
       <% end %>
     </div>
   </div>
-
-  <%= yield %>
 
   <%= javascript_include_tag 'application' %>
 

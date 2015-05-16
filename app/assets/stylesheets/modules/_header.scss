@@ -3,15 +3,16 @@ header.global {
   @include prop(top, 0);
   @include prop(left, 0);
   @include prop(right, 0);
-  @include prop(height, 68);
+  @include prop(height, 78);
   z-index: 1000;
   @include prop(padding, 15, 25);
   @include pre(transition, all 0.3s ease);
   background: transparent;
 
   &.headerTransition {
-    background: #000;
-    background: rgba(0,0,0,0.7);
+    @include prop(height, 68);
+    background: #ffffff;
+    background: rgba(255,255,255,0.9);
   }
 
   a, .logo, nav, ul, li {
@@ -21,7 +22,6 @@ header.global {
   .logo {
     float: left;
     position: relative;
-    @include prop(padding, 20, 0);
 
     img {
       position: absolute;
@@ -32,7 +32,6 @@ header.global {
   nav {
     display: none;
     float: right;
-    @include prop(padding, 20, 0);
 
     li {
       @include prop(margin, 0, 10);
