@@ -29,12 +29,6 @@
     @include prop(top, 50);
   }
 
-  #homepage-hero-button {
-    &:hover {
-      background: transparent;
-    }
-  }
-
   .hero-text {
     width: 100%;
     @include prop(margin, 0);

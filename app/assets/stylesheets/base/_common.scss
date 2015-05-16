@@ -33,7 +33,7 @@
 a {
   outline: none;
   color: $green;
-  
+
   &:hover {
     color: darken($green, 10);
   }
@@ -82,14 +82,14 @@ li {
 .button {
   @include prop(padding, 10, 30);
   @include pre(border-radius, 5px);
-  @include border(1, solid, $green);
-  background: $green;
-  color: $white;
+  @include border(2, solid, $green);
+  background: transparent;
+  color: $green;
   @include pre(transition, all 0.3s ease);
 
   &:hover {
-    background: $white;
-    color: $green;
+    background: $green;
+    color: $white;
   }
   // @extend .apply-button;
   // color: white;
