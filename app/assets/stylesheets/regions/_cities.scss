@@ -2,6 +2,10 @@
   max-width: 100%;
   padding-bottom: 1rem;
 
+  &.body-items {
+    padding-bottom: 0;
+  }
+
   .website-body {
     margin-top: 3rem;
   }
@@ -56,19 +60,28 @@
   }
 
   #support {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('http://p1.pichost.me/i/14/1366572.jpg');
-    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('http://p1.pichost.me/i/14/1366572.jpg');
-    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('http://p1.pichost.me/i/14/1366572.jpg');
-    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('http://p1.pichost.me/i/14/1366572.jpg');
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url('http://p1.pichost.me/i/14/1366572.jpg');
-    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('http://p1.pichost.me/i/14/1366572.jpg');
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('http://p1.pichost.me/i/14/1366572.jpg');
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('http://p1.pichost.me/i/14/1366572.jpg');
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('http://p1.pichost.me/i/14/1366572.jpg');
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('http://p1.pichost.me/i/14/1366572.jpg');
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.9)), to(rgba(0, 0, 0, 0.9))), url('http://p1.pichost.me/i/14/1366572.jpg');
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('http://p1.pichost.me/i/14/1366572.jpg');
+
+    h2 {
+      font-size: 25px;
+      color: white;
+    }
   }
 
   #toronto-background-img {
-    background-image: url('http://sandmanhotelgroup.files.wordpress.com/2012/11/101737874.jpg');
+    background: url('http://sandmanhotelgroup.files.wordpress.com/2012/11/101737874.jpg') 0 -140px;
+    width: 100%;
+    height: 550px;
     background-size: cover;
-    background-repeat: no-repeat;
-    height: 720px;
+    background-color: white;
+    background-position-x: 50%;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
   }
 
   #boston-background-img {
@@ -99,6 +112,16 @@
       color: white;
       padding: 1rem 3rem;
       background-color: rgba(0,0,0,0.7);
+    }
+
+    h1, h3 {
+      width: 70%;
+      margin-left: 15%;
+    }
+
+    iframe {
+      left: 50%;
+      margin-left: -500px;
     }
 
     .video-action {
@@ -262,8 +285,6 @@
 
 }
 
-
-
 .sponsor-img {
   opacity: 0.5;
   transition: 0.3s ease;
@@ -272,5 +293,52 @@
   &:hover {
     opacity: 1;
     transition: 0.3s ease;
+  }
+}
+
+
+
+#mc_embed_signup {
+  #mc_embed_signup_scroll {
+    text-align: center;
+
+    label {
+      font-size: 25px;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .email-field {
+      width: 100%;
+
+      input[type="email"] {
+        margin-left: 50%;
+        left: -150px;
+        position: relative;
+        width: 300px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .clear {
+      input[type="submit"] {
+        background: rgba(255,255,255, 1);
+        box-shadow: 0 4px 0 rgba(67,172,106,1);
+        border: rgba(67,172,106,1);
+        background-color:rgba(67,172,106,0.7);
+        border-radius: 5px;
+        padding: 0;
+        width: 200px;
+        margin-left: 50%;
+        left: -100px;
+        text-align: center;
+        // font-size: 1.5rem;
+
+        &:hover {
+          background-color:rgba(67,172,106,1);
+          -webkit-transition: background-color .3s, border-color .3s, box-shadow .3s;
+        }
+      }
+    }
   }
 }
