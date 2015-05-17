@@ -241,3 +241,51 @@
     }
   }
 }
+
+#homepage-analytics {
+  // @include prop(padding, 60, 0);
+
+  .main-row {
+    @include prop(height, 700);
+  }
+
+  .row {
+    @include border(1, solid, $bodyColor);
+    position: relative;
+    // height: 100%;
+  }
+
+  .columns {
+    position: relative;
+    height: 100%;
+
+    .panel-right-top {
+      height: 60%;
+    }
+
+    .panel-right-bottom {
+      height: 40%;
+    }
+
+    .panel-right-top, .panel-right-bottom {
+      .columns {
+        @include prop(padding, 60, 0, 0, 25);
+
+        @media only screen and(min-width: $mediumScreen + px) {
+          @include prop(padding, 0, 20);
+        }
+      }
+    }
+  }
+
+  .data-or-image {
+    border: none;
+  }
+
+  .data-or-image-3 {
+    @include border(1, solid, $bodyColor);
+    position: relative;
+    height: 100%;
+  }
+
+}
