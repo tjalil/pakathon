@@ -37,7 +37,7 @@ h2,
 
 h3, 
 .gamma {
-  font-family: 'OpenSans-Regular';
+  font-family: 'OpenSans-Light';
   @include fontSize(28);
 
   @media only screen and (min-width: ($mediumScreen + px)) {

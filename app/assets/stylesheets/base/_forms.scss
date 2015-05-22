@@ -33,7 +33,7 @@ input[type="text"] {
   @include pre(transition, border 0.3s ease);
 
   &:focus {
-    @include border(2, solid, $greenDark);
+    @include border(2, solid, $green);
   }
 }
 

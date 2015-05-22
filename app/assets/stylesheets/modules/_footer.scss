@@ -29,7 +29,7 @@ footer.global {
         @include pre(transition, all 0.3s ease);
 
         &:hover {
-          color: $greenDark;
+          color: $green;
         }
       }
 
@@ -43,12 +43,12 @@ footer.global {
     }
 
     .button {
-      background: $greenDark;
+      background: $green;
       color: $white;
 
       &:hover {
         background: $white;
-        color: $greenDark;        
+        color: $green;        
       }
     }
   }

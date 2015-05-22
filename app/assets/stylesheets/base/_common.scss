@@ -82,14 +82,14 @@ li {
 .button {
   font-family: "OpenSans-Bold";
   @include prop(padding, 10, 30);
-  @include border(1, solid, $greenDark);
+  @include border(1, solid, $green);
   background: transparent;
-  color: $greenDark;
+  color: $green;
   @include pre(transition, all 0.3s ease);
   text-transform: uppercase;
 
   &:hover {
-    background: $greenDark;
+    background: $green;
     color: $white;
   }
 }

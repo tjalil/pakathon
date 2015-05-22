@@ -35,6 +35,16 @@
     @include prop(margin, 0);
     text-align: center;
 
+    h2 {
+      @include fontSize(32);
+      color: $greyDark;
+    }
+
+    p {
+      color: $greenDark;
+      @include prop(line-height, 31);
+    }
+
     @media only screen and (min-width: $smallScreen + px) {
       width: 50%;
       text-align: left;
