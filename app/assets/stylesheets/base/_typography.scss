@@ -1,7 +1,13 @@
+@include font(OpenSans-Bold, opensans-bold-webfont);
+@include font(OpenSans-Italic, opensans-italic-webfont);
+@include font(OpenSans-Light, opensans-light-webfont);
+@include font(OpenSans-LightItalic, opensans-lightitalic-webfont);
+@include font(OpenSans-Regular, opensans-regular-webfont);
+@include font(OpenSans-Semibold, opensans-semibold-webfont);
+
 h1, h2, h3, h4, h5, h6,
 .alpha, .beta, .gamma, .delta, .epsilon, .zeta {
 	color: $titleColor;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: normal;
   margin: 0;
   padding: 0;
@@ -10,10 +16,18 @@ h1, h2, h3, h4, h5, h6,
 
 h1, 
 .alpha {
+  font-family: 'OpenSans-Regular';
+  @include fontSize(30);
+  color: black;
+
+  @media only screen and (max-width: ($largeScreen) + px ) {
+      @include fontSize(24)
+  }
 }
 
 h2, 
 .beta {
+  font-family: 'OpenSans-Regular';
   @include fontSize(35);
 
   @media only screen and (min-width: ($mediumScreen + px)) {
@@ -23,6 +37,7 @@ h2,
 
 h3, 
 .gamma {
+  font-family: 'OpenSans-Regular';
   @include fontSize(28);
 
   @media only screen and (min-width: ($mediumScreen + px)) {
@@ -32,6 +47,7 @@ h3,
 
 h4, 
 .delta {
+  font-family: 'OpenSans-Regular';
   @include fontSize(22);
 
   @media only screen and (min-width: ($mediumScreen + px)) {
@@ -41,6 +57,7 @@ h4,
 
 h5, 
 .epsilon {
+  font-family: 'OpenSans-Regular';
   @include fontSize(16);
 }
 
@@ -50,7 +67,18 @@ h6,
 
 p,
 li {
+  font-family: 'OpenSans-Regular';
 	color: $bodyColor;
+  @include fontSize(16);
+
+  &.semibold {
+    font-family: 'OpenSans-Semibold';
+  }
+
+  &.tiny {
+    @include fontSize(14);
+    line-height: 1.6;
+  }
 }
 
 ol,
