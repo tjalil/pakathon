@@ -3,17 +3,17 @@ header.global {
   @include prop(top, 0);
   @include prop(left, 0);
   @include prop(right, 0);
-  @include prop(height, 78);
+  @include prop(height, 68);
   z-index: 1000;
   @include prop(padding, 15, 25);
   @include pre(transition, all 0.3s ease);
-  background: transparent;
+  background: $greyDark;
 
-  &.headerTransition {
-    @include prop(height, 68);
-    background: #ffffff;
-    background: rgba(255,255,255,0.9);
-  }
+  // &.headerTransition {
+  //   @include prop(height, 68);
+  //   background: #ffffff;
+  //   background: rgba(255,255,255,0.9);
+  // }
 
   a, .logo, nav, ul, li {
     display: inline-block;
@@ -22,6 +22,18 @@ header.global {
   .logo {
     float: left;
     position: relative;
+    color: $white;
+    font-family: "OpenSans-SemiBold";
+    @include prop(letter-spacing, 5);
+    @include fontSize(20);
+
+    &:before {
+      content: asset_url("pakathon-logo.png");
+      display: block;
+      position: absolute;
+      @include prop(left, -50);
+      @include prop(top, -6);
+    }
 
     img {
       position: absolute;
@@ -37,11 +49,15 @@ header.global {
       @include prop(margin, 0, 10);
 
       a {
-        color: $green;
+        color: $white;
         @include pre(transition, all 0.3s ease);
+        text-transform: uppercase;
+        font-family: "OpenSans-Bold";
+        @include fontSize(13);
+        @include prop(letter-spacing, 2);
 
         &:hover {
-          color: darken($green, 10);
+          color: $greenDark;
         }
       }
 
@@ -55,12 +71,14 @@ header.global {
     }
 
     .button {
-      background: $green;
+      @include fontSize(13);
+      @include prop(letter-spacing, 2);
+      background: $greenDark;
       color: $white;
 
       &:hover {
         background: $white;
-        color: $green;        
+        color: $greenDark;        
       }
     }
   }

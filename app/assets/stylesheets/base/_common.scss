@@ -80,20 +80,18 @@ li {
 }
 
 .button {
+  font-family: "OpenSans-Bold";
   @include prop(padding, 10, 30);
-  @include pre(border-radius, 5px);
-  @include border(2, solid, $green);
+  @include border(1, solid, $greenDark);
   background: transparent;
-  color: $green;
+  color: $greenDark;
   @include pre(transition, all 0.3s ease);
+  text-transform: uppercase;
 
   &:hover {
-    background: $green;
+    background: $greenDark;
     color: $white;
   }
-  // @extend .apply-button;
-  // color: white;
-  // @include pre(transition, all 0.3s ease);
 }
 
 .punch {
