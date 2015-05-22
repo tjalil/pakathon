@@ -6,6 +6,7 @@ footer.global {
   @include pre(transition, all 0.3s ease);
   background: transparent;
   z-index: 1000;
+  background: $greyDark;
 
   a, .logo, nav, ul, li {
     display: inline-block;
@@ -17,13 +18,18 @@ footer.global {
 
     li {
       @include prop(margin, 0, 10);
+      color: $white;
+      font-family:  "OpenSans-Regular";
+      @include fontSize(13);
+      @include prop(letter-spacing, 2);
+      text-transform: uppercase;
 
       a {
-        color: $green;
+        color: $white;
         @include pre(transition, all 0.3s ease);
 
         &:hover {
-          color: darken($green, 10);
+          color: $greenDark;
         }
       }
 
@@ -37,12 +43,12 @@ footer.global {
     }
 
     .button {
-      background: $green;
+      background: $greenDark;
       color: $white;
 
       &:hover {
         background: $white;
-        color: $green;        
+        color: $greenDark;        
       }
     }
   }
