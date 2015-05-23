@@ -8,13 +8,37 @@ footer.global {
   z-index: 1000;
   background: $greyDark;
 
-  a, .logo, nav, ul, li {
+  a, .logo, nav, ul, li, p {
     display: inline-block;
   }
 
+  .copyright {
+    text-align: center;
+
+    @media only screen and (min-width: $mediumScreen + px) {
+      text-align: left;
+    }
+
+    p {
+      position: relative;
+      @include prop(margin-top, 5);
+      color: $white;
+      font-family:  "OpenSans-Regular";
+      @include fontSize(13);
+      @include prop(letter-spacing, 2);
+      text-transform: uppercase;
+    }
+  }
+
   nav {
-    display: none;
-    float: right;
+    width: 100%;
+    text-align: center;
+
+    @media only screen and (min-width: $smallScreen + px) {
+      float: right;
+      text-align: left;
+      width: auto;
+    }
 
     li {
       @include prop(margin, 0, 10);
@@ -23,6 +47,7 @@ footer.global {
       @include fontSize(13);
       @include prop(letter-spacing, 2);
       text-transform: uppercase;
+      text-align: center;
 
       a {
         color: $white;
@@ -33,13 +58,36 @@ footer.global {
         }
       }
 
+      input {
+        display: block;
+        @include prop(margin-top, 20);
+
+        @media only screen and (min-width: $smallScreen + px) {
+          display: inline;
+          @include prop(margin-top, 0);
+        }
+      }
+
+      .button {
+        @include fontSize(10);
+        @include prop(line-height, 25);
+        @include prop(padding, 2, 15);
+        float: none;
+        @include prop(margin-top, 10);
+
+        @media only screen and (min-width: $smallScreen + px) {
+          float: right;
+          @include prop(margin-top, 0);
+        }
+      }
+
       @media only screen and (min-width: $largeScreen + px) {
         @include prop(margin, 0, 15);
       }
-    }
 
-    @media only screen and (min-width: 950px) {
-      display: block;
+      @media only screen and (min-width: $smallScreen + px) {
+        text-align: left;
+      }
     }
 
     .button {
