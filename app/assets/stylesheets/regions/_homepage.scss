@@ -6,22 +6,22 @@
   background-color: white;
   background-repeat-x: no-repeat;
   background-repeat-y: no-repeat;
-  background-position-y: 50%;
+  background-position-y: 30%;
   background-position-x: 50%;
   background-image: linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("careers-slide-1.jpg");
   background-image: -moz-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("careers-slide-1.jpg");
   background-image: -o-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("careers-slide-1.jpg");
   background-image: -ms-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("careers-slide-1.jpg");
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(255, 255, 255, 0.2))), asset_url("careers-slide-1.jpg");
+  background-image: -webkit-gradient(linear, bottom bottom, left bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(255, 255, 255, 0.2))), asset_url("careers-slide-1.jpg");
   background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("careers-slide-1.jpg");
 
   @media only screen and (min-width: $smallScreen + px) {
-    background-image: linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("careers-slide-1.jpg");
-    background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("careers-slide-1.jpg");
-    background-image: -o-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("careers-slide-1.jpg");
-    background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("careers-slide-1.jpg");
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(255, 255, 255, 0.2))), asset_url("careers-slide-1.jpg");
-    background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("careers-slide-1.jpg");
+    background-image: linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("careers-slide-1.jpg");
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("careers-slide-1.jpg");
+    background-image: -o-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("careers-slide-1.jpg");
+    background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("careers-slide-1.jpg");
+    background-image: -webkit-gradient(linear, top top, top bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(255, 255, 255, 0.2))), asset_url("careers-slide-1.jpg");
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("careers-slide-1.jpg");
   }
 
   .v-wrapper {
@@ -36,28 +36,46 @@
     text-align: center;
 
     h2 {
-      @include fontSize(32);
       color: $greyDark;
+
+      @media only screen and (min-width: $mediumScreen + px) {
+        @include fontSize(37);
+      }
     }
 
     p {
-      color: $greenDark;
+      color: $greyDark;
       @include prop(line-height, 31);
-    }
+      @include fontSize(17);
 
-    @media only screen and (min-width: $smallScreen + px) {
-      width: 50%;
-      text-align: left;
+      @media only screen and (min-width: $mediumScreen + px) {
+        @include pre(width, 70%);
+        @include pre(margin-left, 15%);
+      }
     }
   }
 }
 
 #homepage-mission {
   @include prop(padding, 90, 0);
+  background: $greenBackground;
 
   .gamma {
-    font-weight: 300;
     @include prop(margin-bottom, 30);
+    color: $white;
+    @include fontSize(23);
+  }
+
+  a {
+    color: $white;
+    text-decoration: underline;
+    @include pre(transition, all 0.3s ease);
+    @include fontSize(18);
+    
+    &:hover {
+      color: darken($white, 10);
+      text-decoration: none;
+    }
   }
 }
 

@@ -33,6 +33,8 @@
 a {
   outline: none;
   color: $green;
+  font-family: "OpenSans-Light";
+  font-weight: 100;
 
   &:hover {
     color: darken($green, 10);
@@ -159,7 +161,6 @@ li {
     color: $white;
   }
 }
-
 
 //----------------------------------------------------------------
 //  Borders
