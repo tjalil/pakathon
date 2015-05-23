@@ -80,8 +80,7 @@
 }
 
 #homepage-impact {
-  background-color: lighten($bodyColor, 50);
-  @include prop(padding, 90, 0, 40);
+  @include prop(padding, 50, 0, 20);
 
   .panel {
     @include prop(margin-bottom, 40);
@@ -93,6 +92,7 @@
 
   .gamma {
     @include prop(margin-bottom, 30);
+    color: $greyLight;
   }
 
   .large-block-grid-3 {
@@ -100,17 +100,25 @@
   }
 
   .punch {
-    font-size: 16px;
+    font-family: "OpenSans-Bold";
+    @include fontSize(16);
     @include prop(margin-bottom, 10);
+    color: $greyLight;
 
     &.text-left {
-      font-size: 20px;
+      font-family: "OpenSans-Regular";
+      @include fontSize(15);
+      @include pre(line-height, 1.8);
     }
   }
 }
 
 #homepage-sponsor-cta {
-  @include prop(padding, 60, 0);
+  @include prop(padding, 0, 0, 60);
+
+  @media only screen and (min-width: $smallScreen + px) {
+    @include prop(padding, 60, 0);    
+  }
 
   .text {
     text-align: center;
