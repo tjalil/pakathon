@@ -8,20 +8,20 @@
   background-repeat-y: no-repeat;
   background-position-y: 30%;
   background-position-x: 50%;
-  background-image: linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("careers-slide-1.jpg");
-  background-image: -moz-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("careers-slide-1.jpg");
-  background-image: -o-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("careers-slide-1.jpg");
-  background-image: -ms-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("careers-slide-1.jpg");
-  background-image: -webkit-gradient(linear, bottom bottom, left bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(255, 255, 255, 0.2))), asset_url("careers-slide-1.jpg");
-  background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("careers-slide-1.jpg");
+  background-image: linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("homepage-hero.jpg");
+  background-image: -moz-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("homepage-hero.jpg");
+  background-image: -o-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("homepage-hero.jpg");
+  background-image: -ms-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("homepage-hero.jpg");
+  background-image: -webkit-gradient(linear, bottom bottom, left bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(255, 255, 255, 0.2))), asset_url("homepage-hero.jpg");
+  background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("homepage-hero.jpg");
 
   @media only screen and (min-width: $smallScreen + px) {
-    background-image: linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("careers-slide-1.jpg");
-    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("careers-slide-1.jpg");
-    background-image: -o-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("careers-slide-1.jpg");
-    background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("careers-slide-1.jpg");
-    background-image: -webkit-gradient(linear, top top, top bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(255, 255, 255, 0.2))), asset_url("careers-slide-1.jpg");
-    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("careers-slide-1.jpg");
+    background-image: linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("homepage-hero.jpg");
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("homepage-hero.jpg");
+    background-image: -o-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("homepage-hero.jpg");
+    background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("homepage-hero.jpg");
+    background-image: -webkit-gradient(linear, top top, top bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(255, 255, 255, 0.2))), asset_url("homepage-hero.jpg");
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("homepage-hero.jpg");
   }
 
   .v-wrapper {
