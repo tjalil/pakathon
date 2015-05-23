@@ -257,47 +257,181 @@
 #homepage-analytics {
   @include prop(padding, 0, 0, 40);
 
-  .main-row {
-    @include prop(height, 700);
-  }
-
   .row {
-    @include border(1, solid, $bodyColor);
-    position: relative;
-    // height: 100%;
+    margin: 0;
+    max-width: none;
   }
 
   .columns {
-    position: relative;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  @media only screen and (min-width: $mediumScreen + px) {
+    .column-left, .column-center, .column-right {
+      height: 500px;
+    }
+  }
+
+  .img-one, .img-two, .img-three {
     height: 100%;
+    background-size: cover;
+    background-position-x: 50%;
+    background-position-y: 50%;
+  }
 
-    .panel-right-top {
-      height: 60%;
-    }
+  .img-one {
+    background-image: asset_url("global-hackathon.png");
+    min-height: 250px;
+  }
 
-    .panel-right-bottom {
-      height: 40%;
-    }
+  .img-two {
+    background-image: asset_url("toronto-baithak.png");
+    min-height: 250px;
+  }
 
-    .panel-right-top, .panel-right-bottom {
-      .columns {
-        @include prop(padding, 60, 0, 0, 25);
+  .img-three {
+    background-image: asset_url("girl-presenting.png");
+    min-height: 500px;
+    // -webkit-filter: grayscale(100%);
+    position: relative;
 
-        @media only screen and(min-width: $mediumScreen + px) {
-          @include prop(padding, 0, 20);
+    .img-text {
+      position: absolute;
+      top: 0;
+      @include prop(margin, 30, 30, 0);
+
+      .gamma {
+        color: $white;
+        @include prop(margin, 0, 20, 0, 0);
+        @include fontSize(30);
+        font-family: "OpenSans-Light";
+      }
+
+      .punch {
+        color: $white;
+        font-family: "OpenSans-Light";
+        @include prop(margin, 20, 130, 40, 0);
+        @include fontSize(17);
+        line-height: 1.8;
+      }
+
+      .button {
+        background: $white;
+        @include border(1, solid, $white);
+        @include fontSize(15);
+        letter-spacing: 1px;
+        font-family: "OpenSans-Bold";
+
+        &:hover {
+          background: $green;
+          @include border(1, solid, $green);
+          color: $white;
+        }
+      }
+
+      @media only screen and (min-width: $mediumScreen + px) {
+        .gamma {
+          @include fontSize(30);
+        }
+
+        .punch {
+          @include prop(margin, 20, 50, 40, 0);
+        }
+      }
+
+      @media only screen and (min-width: $largeScreen + px) {
+        .gamma {
+          @include fontSize(37);
+        }
+
+        .punch {
+          @include prop(margin, 20, 130, 40, 0);
         }
       }
     }
+
+    &:before {
+      content: "";
+      display: block;
+      min-height: 500px;
+      width: 100%;
+      background-color: $greenBackground;
+      opacity: 0.6;
+    }
   }
 
-  .data-or-image {
-    border: none;
+  .testimonial-row {
+    background: $greyDark;
   }
 
-  .data-or-image-3 {
-    @include border(1, solid, $bodyColor);
+  .testimonial {
+    @include prop(padding, 20, 10);
+    text-align: center;
+
+    @media only screen and (min-width: $smallScreen + px) {
+      text-align: left;
+      @include prop(padding, 20);
+    }
+
+    .gamma {
+      @include fontSize(28);
+      font-family: "OpenSans-LightItalic";
+      color: $white;
+    }
+
+    .punch {
+      @include fontSize(12);
+      text-transform: uppercase;
+      font-family: "OpenSans-Regular";
+      letter-spacing: 2px;
+      @include prop(margin-bottom, 0);
+      color: $white;
+    }
+  }
+
+  ul {
+    background: $greenBackground;
+  }
+
+  li {
+    padding: 0;
     position: relative;
-    height: 100%;
+
+    .gamma {
+      @include prop(margin, 30, 0, 0);
+      color: $white;
+      font-family: "OpenSans-Bold";
+      @include fontSize(30);
+      letter-spacing: 2px;
+    }
+
+    .punch {
+      @include prop(margin, 5, 0, 30);
+      color: $white;
+      font-family: "OpenSans-Regular";
+      text-transform: uppercase;
+      @include fontSize(12);
+      letter-spacing: 2px;
+      line-height: 1.5;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      @include prop(height, 1);
+      @include pre(width, 50%);
+      @include prop(bottom, 0);
+      @include pre(left, 25%);
+      background-color: $green;
+    }
+
+    &:nth-child(4) {
+      &:after {
+        display: none;
+      }
+    }
   }
 }
 
