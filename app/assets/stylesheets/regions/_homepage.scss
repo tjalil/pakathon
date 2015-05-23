@@ -418,11 +418,35 @@
 }
 
 #homepage-social {
-  @include prop(padding, 40, 0);
-  background-color: $grey;
+  @include prop(padding, 40, 0, 100);
+  background-color: lighten($greyDark, 10);
+
+  @media only screen and (min-width: $mediumScreen + px) {
+    @include prop(padding, 40, 0, 60);  
+  }
+  
+
+  .gamma {
+    font-family: "OpenSans-Light";
+    color: $white;
+    @include fontSize(22);
+  }
+
+  .punch {
+    font-family: "OpenSans-Light";
+    color: $white;
+    @include fontSize(15);
+    @include prop(margin-bottom, 20);
+  }
+
+  img {
+    @include prop(min-width, 25);
+    @include prop(width, 30);
+    height: auto;
+  }
 
   .social-text {
-    text-align: center;
+    text-align: left;
 
     @media only screen and (min-width: $smallScreen + px) {
       text-align: left;
@@ -433,16 +457,18 @@
     position: relative;
     @include prop(padding-left, 20);
     float: left;
-    width: 100%;
+    @include pre(width, 100%);
   }
 
   .tweet {
     position: relative;
     @include prop(top, 50);
     @include border(1, solid, $bodyColor);
+    background: $white;
 
     .punch {
       @include prop(margin, 30, 20);
+      color: $greyLight;
     }
   }
 }
