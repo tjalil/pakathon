@@ -145,33 +145,13 @@
 }
 
 #homepage-streams {
+  background: $offWhite;
   @include prop(padding, 40, 0, 70);
   position: relative;
 
-  &:before {
-    content: "";
-    display: block;
-    position: absolute;
-    @include prop(height, 1);
-    @include pre(width, 90%);
-    @include prop(top, 0);
-    @include pre(left, 5%);
-    background-color: $black;
-  }
-
-  &:after {
-    content: "";
-    display: block;
-    position: absolute;
-    @include prop(height, 1);
-    @include pre(width, 90%);
-    @include prop(bottom, 0);
-    @include pre(left, 5%);
-    background-color: $black;
-  }
-
   .gamma {
     @include prop(margin-bottom, 30);
+    @include fontSize(28);
   }
 
   .panel {
@@ -229,54 +209,50 @@
   img {
     @include border(1, solid, $bodyColor);
   }
-
-  .row {
-    @include prop(margin, 0);
-  }
 }
 
-#homepage-hackathon {
-  @include prop(min-height, 500);
+// #homepage-hackathon {
+//   @include prop(min-height, 500);
 
-  background-size: cover;
-  background-color: white;
-  background-repeat-x: no-repeat;
-  background-repeat-y: no-repeat;
-  background-position-y: 50%;
-  background-position-x: 50%;
-  background-image: linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
-  background-image: -moz-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
-  background-image: -o-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
-  background-image: -ms-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(255, 255, 255, 0.2))), asset_url("pakathonto_2014_selfie.jpg");
-  background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
+//   background-size: cover;
+//   background-color: white;
+//   background-repeat-x: no-repeat;
+//   background-repeat-y: no-repeat;
+//   background-position-y: 50%;
+//   background-position-x: 50%;
+//   background-image: linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
+//   background-image: -moz-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
+//   background-image: -o-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
+//   background-image: -ms-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
+//   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(255, 255, 255, 0.2))), asset_url("pakathonto_2014_selfie.jpg");
+//   background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
 
-  @media only screen and (min-width: $smallScreen + px) {
-    background-image: linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
-    background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
-    background-image: -o-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
-    background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(255, 255, 255, 0.2))), asset_url("pakathonto_2014_selfie.jpg");
-    background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
-  }
+//   @media only screen and (min-width: $smallScreen + px) {
+//     background-image: linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
+//     background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
+//     background-image: -o-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
+//     background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
+//     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(255, 255, 255, 0.2))), asset_url("pakathonto_2014_selfie.jpg");
+//     background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("pakathonto_2014_selfie.jpg");
+//   }
 
-  .v-wrapper {
-    position: relative;
-    @include prop(top, 100);
-    @include prop(padding, 0, 25);
-  }
+//   .v-wrapper {
+//     position: relative;
+//     @include prop(top, 100);
+//     @include prop(padding, 0, 25);
+//   }
 
-  .homepage-hackathon-text {
-    width: 100%;
-    @include prop(margin, 0);
-    text-align: center;
+//   .homepage-hackathon-text {
+//     width: 100%;
+//     @include prop(margin, 0);
+//     text-align: center;
 
-    @media only screen and (min-width: $smallScreen + px) {
-      width: 50%;
-      text-align: left;
-    }
-  }
-}
+//     @media only screen and (min-width: $smallScreen + px) {
+//       width: 50%;
+//       text-align: left;
+//     }
+//   }
+// }
 
 #homepage-analytics {
   @include prop(padding, 0, 0, 40);
