@@ -14,16 +14,86 @@
 #hackathon-timeline {
   li {
     @include prop(margin, 20, 0);
-    line-height: 5;
+    @include pre(transition, all 0.3s ease);
 
-    &:before {
+    &:hover {
+      .punch {
+        color: $green;
+      }
+
+      span {
+        background: $greenLight;
+
+        &:before {
+          background: $greenLight;
+        }
+      }
+    }
+
+    &.active {
+      .punch {
+        color: $green;
+      }
+
+      span {
+        background: $greenLight;
+
+        &:before {
+          background: $greenLight;
+        }
+      }
+    }
+
+    &:first-child {
+      .punch {
+        color: $green;
+      }
+
+      span {
+        background: $greenLight;
+
+        &:before {
+          background: $greenLight;
+        }
+      }
+    }
+
+    .punch {
+      color: $greyDark;
+      font-family: "OpenSans-Light";
+      @include prop(margin, 10, 0, 0, 60);
+      line-height: 5;
+      @include pre(transition, all 0.3s ease);      
+    }
+
+    span {
       display: block;
       position: absolute;
       content: "";
       @include prop(width, 50);
       @include prop(height, 50);
-      background: $offWhite;
+      background: lighten($greyLight, 50);
       @include pre(border-radius, 50%);
+      @include prop(margin-top, 25);
+      @include pre(transition, all 0.3s ease);
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        @include prop(width, 1);
+        @include prop(height, 120);
+        @include prop(bottom, 0);
+        @include prop(left, 25);
+        background: lighten($greyLight, 50);
+        @include pre(transition, all 0.3s ease);
+      }
+
+      &#dot-one {
+        &:before {
+          display: none;
+        }
+      }
     }
   }
 }
