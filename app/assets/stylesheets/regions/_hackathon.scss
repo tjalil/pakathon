@@ -118,12 +118,21 @@
       @include border(0, solid, $greyDark, bottom);      
     }
 
-    img {
+    .timeline-panel-img {
       float: left;
       display: inline;
       width: 350px;
       height: 300px;
       background: lighten($greyLight, 50);
+    }
+
+    .hackathon-panel-img {
+      height: 200px;
+      @extend .timeline-panel-img;
+    }
+
+    .hackathon-day-one, .hackathon-day-two, .hackathon-day-three {
+      @include prop(margin-top, 40);
     }
 
     .timeline-panel-text {
