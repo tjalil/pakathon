@@ -23,8 +23,12 @@
   }
 
   li {
-    @include prop(margin, 20, 0);
+    @include prop(margin, 0);
     @include pre(transition, all 0.3s ease);
+
+    @media only screen and (min-width: 900px) {
+      @include prop(margin, 20, 0);
+    }
 
     &:hover {
       .punch {
@@ -55,6 +59,12 @@
     }
 
     &:first-child {
+      @include prop(margin, 30, 0, 0);
+
+      @media only screen and (min-width: 900px) {
+        @include prop(margin, 20, 0);
+      }
+
       .punch {
         color: $green;
       }
@@ -71,34 +81,52 @@
     .punch {
       color: $greyDark;
       font-family: "OpenSans-Bold";
-      @include prop(margin, 10, 0, 0, 60);
-      line-height: 5;
+      @include prop(margin, 0, 0, 0, 25);
+      line-height: 3;
       @include pre(transition, all 0.3s ease);
       text-transform: uppercase; 
       letter-spacing: 2px;
+      @include fontSize(12);
+
+      @media only screen and (min-width: 900px) {
+        @include prop(margin, 10, 0, 0, 60);
+        line-height: 5;
+        @include fontSize(20);
+      }
     }
 
     span {
       display: block;
       position: absolute;
       content: "";
-      @include prop(width, 50);
-      @include prop(height, 50);
+      @include prop(width, 20);
+      @include prop(height, 20);
       background: lighten($greyLight, 50);
       @include pre(border-radius, 50%);
-      @include prop(margin-top, 25);
+      @include prop(margin-top, 7);
       @include pre(transition, all 0.3s ease);
+
+      @media only screen and (min-width: 900px) {
+        @include prop(width, 50);
+        @include prop(height, 50);
+        @include prop(margin-top, 25);
+      }
 
       &:before {
         content: "";
         display: block;
         position: absolute;
         @include prop(width, 1);
-        @include prop(height, 120);
+        @include prop(height, 37);
         @include prop(bottom, 0);
-        @include prop(left, 25);
+        @include prop(left, 9);
         background: lighten($greyLight, 50);
         @include pre(transition, all 0.3s ease);
+
+        @media only screen and (min-width: 900px) {
+          @include prop(height, 120);
+          @include prop(left, 25);
+        }
       }
 
       &#dot-one {
@@ -111,19 +139,32 @@
 
   .timeline-panel {
     @include prop(margin, 20, 0);
-    @include prop(padding, 20, 0, 40);
+    @include prop(padding, 20, 0, 0);
     @include border(1, solid, $greyDark, bottom);
+
+    @media only screen and (min-width: $largeScreen + px) {
+      @include prop(padding, 20, 0, 40);
+    }
 
     &:nth-child(6) {
       @include border(0, solid, $greyDark, bottom);      
     }
 
     .timeline-panel-img {
-      float: left;
-      display: inline;
-      width: 350px;
-      height: 300px;
+      display: block;
+      width: 100%;
+      height: 150px;
       background: lighten($greyLight, 50);
+
+      @media only screen and (min-width: $smallScreen + px) {
+        height: 300px;
+      }
+
+      @media only screen and (min-width: $largeScreen + px) {
+        float: left;
+        display: inline;
+        width: 350px;
+      }
     }
 
     .hackathon-panel-img {
@@ -136,7 +177,11 @@
     }
 
     .timeline-panel-text {
-      @include prop(margin, 0, 0, 0, 400);
+      @include prop(margin, 20, 0, 0);
+
+      @media only screen and (min-width: $largeScreen + px) {
+        @include prop(margin, 0, 0, 0, 400);
+      }
     }
 
     .gamma, .delta {
