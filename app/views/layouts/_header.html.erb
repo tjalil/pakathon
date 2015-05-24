@@ -8,7 +8,13 @@
       <nav>
         <ul>
           <!-- <li><a href="javascript:void(0)">About</a></li> -->
-          <li><a href="javascript:void(0)">Hackathon</a></li>
+
+          <%# if request.original_url == "http://localhost:3000/dekhmagarpyarsay_hackathon_proto" %>
+            <!-- <li><a href="javascript:void(0)" class="active">Hackathon</a></li> -->
+          <%# else %>
+            <li><a href="javascript:void(0)">Program</a></li>
+          <%# end %>
+
           <li><a href="javascript:void(0)">Team</a></li>
           <li><a href="/careers">Careers</a></li>
           <!-- <li><a href="javascript:void(0)">Partners &amp; Sponsors</a></li> -->

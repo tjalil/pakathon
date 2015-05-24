@@ -56,6 +56,10 @@ header.global {
         @include fontSize(13);
         @include prop(letter-spacing, 2);
 
+        &.active {
+          color: $green;
+        }
+
         &:hover {
           color: $green;
         }
