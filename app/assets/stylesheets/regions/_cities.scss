@@ -1,6 +1,59 @@
 .city-hero {
   @include prop(padding, 90, 0, 40);
   @include prop(min-height, 550);
+
+  .hero-text {
+    margin-top: 10rem;
+
+    .beta {
+      span {
+        @include fontSize(15);
+        vertical-align: top;
+      }
+    }
+
+    h1, h2 {
+      color: white;
+      @include prop(padding, 10, 30);
+      background-color: rgba(0,0,0,0.7);
+
+      @media only screen and (min-width: $mediumScreen + px) {
+        width: 70%;
+        margin-left: 15%;      
+      }
+    }
+
+    iframe {
+      left: 50%;
+      margin-left: -500px;
+    }
+
+    .video-action {
+      @include prop(padding, 10, 30);
+      color: $black;
+      background-color: $white;
+      position: relative;
+      
+      img {
+        position: absolute;
+        @include prop(top, 10);
+        @include prop(left, 20);
+        @include prop(width, 30);
+
+        @media only screen and (min-width: $largeScreen + px) {
+          @include prop(width, 50);
+          @include prop(top, 5);
+        }
+      }
+    }
+
+    .video-action-on-hover {
+      display: none;
+      cursor: pointer;
+      color: $black;
+      background-color: $white;
+    }
+  }
 }
 
 #toronto-background-img {
@@ -21,59 +74,6 @@
   background-repeat-y: no-repeat;
   background-position-y: 60%;
   background-position-x: 50%;
-}
-
-.hero-text {
-  margin-top: 10rem;
-
-  .beta {
-    span {
-      @include fontSize(15);
-      vertical-align: top;
-    }
-  }
-
-  h1, h2 {
-    color: white;
-    @include prop(padding, 10, 30);
-    background-color: rgba(0,0,0,0.7);
-
-    @media only screen and (min-width: $mediumScreen + px) {
-      width: 70%;
-      margin-left: 15%;      
-    }
-  }
-
-  iframe {
-    left: 50%;
-    margin-left: -500px;
-  }
-
-  .video-action {
-    @include prop(padding, 10, 30);
-    color: $black;
-    background-color: $white;
-    position: relative;
-    
-    img {
-      position: absolute;
-      @include prop(top, 10);
-      @include prop(left, 20);
-      @include prop(width, 30);
-
-      @media only screen and (min-width: $largeScreen + px) {
-        @include prop(width, 50);
-        @include prop(top, 5);
-      }
-    }
-  }
-
-  .video-action-on-hover {
-    display: none;
-    cursor: pointer;
-    color: $black;
-    background-color: $white;
-  }
 }
 
 .video-action-on-click {

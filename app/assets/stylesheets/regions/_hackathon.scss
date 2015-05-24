@@ -1,0 +1,12 @@
+#hackathon-hero {
+  @include prop(margin-top, 60);
+  @include prop(min-height, 300);
+
+  background-image: asset_url("hero-hackathon.png");
+  background-size: cover;
+  background-color: white;
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  // background-position-y: 50%;
+  background-position-x: 50%;
+}

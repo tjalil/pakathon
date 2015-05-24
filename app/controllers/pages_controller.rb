@@ -6,4 +6,7 @@ class PagesController < ApplicationController
   def homepage_proto
   end
 
+  def hackathon_proto
+  end
+
 end

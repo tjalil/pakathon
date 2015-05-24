@@ -32,6 +32,7 @@ Rails.application.routes.draw do
     collection do
       get 'toronto_baithak'
       get 'homepage_proto'
+      get 'hackathon_proto'
     end
   end
 
