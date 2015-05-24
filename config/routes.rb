@@ -33,6 +33,7 @@ Rails.application.routes.draw do
       get 'toronto_baithak'
       get 'dekhmagarpyarsay_homepage_proto'
       get 'dekhmagarpyarsay_hackathon_proto'
+      get 'dekhmagarpyarsay_team_proto'
     end
   end
 
