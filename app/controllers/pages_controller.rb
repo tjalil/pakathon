@@ -3,10 +3,10 @@ class PagesController < ApplicationController
   def toronto_baithak
   end
 
-  def homepage_proto
+  def dekhmagarpyarsay_homepage_proto
   end
 
-  def hackathon_proto
+  def dekhmagarpyarsay_hackathon_proto
   end
 
 end
