@@ -144,46 +144,74 @@
 }
 
 #careers-openings {
-  .job-description {
-    background-color: #fff;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    margin-top: 10px;
-    margin-bottom: 50px;
-    border-left: 1px solid rgba(94, 149, 22, 1);
-    padding: 10px 35px;
 
-    h2 {
-      color: #555;
-      font-size: 30px;
-      font-weight: 300;
+  .job-description {
+    background: $white;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    @include prop(margin-bottom, 20);
+    border-left: 1px solid $greenLight;
+    @include prop(padding, 10, 35);
+
+    .alpha {
+      color: $greyLight;
+      font-family: "OpenSans-Light";
+
+      span {
+        text-transform: uppercase;
+        font-family: "OpenSans-Bold";
+        font-size: 13px;
+        letter-spacing: 2px;
+        color: $green;
+      }
+    }
+
+    &.active {
+      display: block;
+    }
+
+    &:first-child {
+      .content {
+        display: block;
+      }
     }
   }
 
+  .content {
+    display: none;
+  }
+
   .job-location {
-    color: black;
-    font-weight: 300;
-    margin-top: 7px;
-    margin-bottom: 10px;
+    color: $greyDark;
+    @include prop(margin, 7, 0, 10);
   }
 
   .job-synopsis {
-    color: rgba(94, 149, 22, 1);
-    font-weight: 300;
-    margin-bottom: 30px;
+    color: $green;
+    @include prop(margin, 0, 0, 20);
+  }
+
+  ul {
+    @include prop(margin, 0, 20);
   }
 
   li {
     list-style-type: disc;
-    color: #555;
-    font-weight: 300;
+    color: $greyLight;
+    line-height: 1.5;
+    @include prop(margin, 0, 0, 5);
+  }
+
+  .apply {
+    @include prop(margin, 30, 0, 10);
+    text-align: center;
   }
 }
 
 #careers-cta {
+  @include prop(padding, 0, 0, 40);
+
   p {
-    color: #555;
-    font-weight: 300;
+    color: $greyLight;
     line-height: 1.4;
-    font-size: 20px;
   }
 }
