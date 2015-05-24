@@ -12,6 +12,16 @@
 }
 
 #hackathon-timeline {
+  @include prop(padding, 40, 0);
+  
+  .row {
+    &.main {
+      @include prop(margin, 0);
+      @include prop(padding, 0, 20);
+      max-width: none;
+    }
+  }
+
   li {
     @include prop(margin, 20, 0);
     @include pre(transition, all 0.3s ease);
@@ -60,10 +70,12 @@
 
     .punch {
       color: $greyDark;
-      font-family: "OpenSans-Light";
+      font-family: "OpenSans-Bold";
       @include prop(margin, 10, 0, 0, 60);
       line-height: 5;
-      @include pre(transition, all 0.3s ease);      
+      @include pre(transition, all 0.3s ease);
+      text-transform: uppercase; 
+      letter-spacing: 2px;
     }
 
     span {
@@ -96,4 +108,40 @@
       }
     }
   }
+
+  .timeline-panel {
+    @include prop(margin, 20, 0);
+    @include prop(padding, 20, 0, 40);
+    @include border(1, solid, $greyDark, bottom);
+
+    img {
+      float: left;
+      display: inline;
+      width: 350px;
+      height: 300px;
+      background: lighten($greyLight, 50);
+    }
+
+    .timeline-panel-text {
+      @include prop(margin, 0, 0, 0, 400);
+    }
+
+    .gamma, .delta {
+      text-transform: uppercase;
+      color: $greyLight;
+      @include prop(margin-bottom, 10);
+    }
+
+    .delta {
+      @include fontSize(18);
+      font-family: "OpenSans-Light";
+    }
+
+    .punch {
+      @include fontSize(18);
+      font-family: "OpenSans-Regular";
+      @include prop(margin-top, 0);
+    }
+  }
+
 }

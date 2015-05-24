@@ -18,7 +18,7 @@ h1,
 .alpha {
   font-family: 'OpenSans-Regular';
   @include fontSize(30);
-  color: black;
+  color: $greyLight;
 
   @media only screen and (max-width: ($largeScreen) + px ) {
       @include fontSize(24)
