@@ -14,3 +14,4 @@
 //= require jquery_ujs
 //= require layout
 //= require careers
+//= require hackathon
