@@ -114,6 +114,10 @@
     @include prop(padding, 20, 0, 40);
     @include border(1, solid, $greyDark, bottom);
 
+    &:nth-child(6) {
+      @include border(0, solid, $greyDark, bottom);      
+    }
+
     img {
       float: left;
       display: inline;
