@@ -10,3 +10,20 @@
   // background-position-y: 50%;
   background-position-x: 50%;
 }
+
+#hackathon-timeline {
+  li {
+    @include prop(margin, 20, 0);
+    line-height: 5;
+
+    &:before {
+      display: block;
+      position: absolute;
+      content: "";
+      @include prop(width, 50);
+      @include prop(height, 50);
+      background: $offWhite;
+      @include pre(border-radius, 50%);
+    }
+  }
+}
