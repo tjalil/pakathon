@@ -39,6 +39,10 @@
   
 #team-cta {
   @extend #homepage-sponsor-cta;
-  background: lighten($greyLight, 50);
+  background-color: lighten($greyDark, 10);
   @include prop(padding-bottom, 70);
+
+  .delta {
+    color: $white;
+  }
 }
