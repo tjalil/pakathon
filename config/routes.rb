@@ -34,6 +34,7 @@ Rails.application.routes.draw do
       get 'dekhmagarpyarsay_homepage_proto'
       get 'dekhmagarpyarsay_hackathon_proto'
       get 'dekhmagarpyarsay_team_proto'
+      get 'dekhmagarpyarsay_contact_proto'
     end
   end
 
