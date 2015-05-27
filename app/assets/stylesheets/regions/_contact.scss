@@ -4,7 +4,6 @@
   @include prop(min-height, 300);
 
   background-position-y: 50%;
-  background-image: asset_url("homepage-hero.jpg");
   
   .gamma {
     @include prop(padding-top, 40);

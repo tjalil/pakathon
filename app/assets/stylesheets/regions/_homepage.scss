@@ -8,20 +8,20 @@
   background-repeat-y: no-repeat;
   background-position-y: 30%;
   background-position-x: 50%;
-  background-image: linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("homepage-hero.jpg");
-  background-image: -moz-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("homepage-hero.jpg");
-  background-image: -o-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("homepage-hero.jpg");
-  background-image: -ms-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("homepage-hero.jpg");
-  background-image: -webkit-gradient(linear, bottom bottom, left bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(255, 255, 255, 0.2))), asset_url("homepage-hero.jpg");
-  background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("homepage-hero.jpg");
+  background-image: linear-gradient(top, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0.6)), asset_url("hero-homepage.jpg");
+  background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0.6)), asset_url("hero-homepage.jpg");
+  background-image: -o-linear-gradient(top, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0.6)), asset_url("hero-homepage.jpg");
+  background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0.6)), asset_url("hero-homepage.jpg");
+  background-image: -webkit-gradient(linear, bottom, top, from(rgba(255, 255, 255, 0.6)), to(rgba(255, 255, 255, 1))), asset_url("hero-homepage.jpg");
+  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0.6)), asset_url("hero-homepage.jpg");
 
   @media only screen and (min-width: $smallScreen + px) {
-    background-image: linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("homepage-hero.jpg");
-    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("homepage-hero.jpg");
-    background-image: -o-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("homepage-hero.jpg");
-    background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("homepage-hero.jpg");
-    background-image: -webkit-gradient(linear, top top, top bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(255, 255, 255, 0.2))), asset_url("homepage-hero.jpg");
-    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("homepage-hero.jpg");
+    background-image: linear-gradient(top, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0)), asset_url("hero-homepage.jpg");
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0)), asset_url("hero-homepage.jpg");
+    background-image: -o-linear-gradient(top, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0)), asset_url("hero-homepage.jpg");
+    background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0)), asset_url("hero-homepage.jpg");
+    background-image: -webkit-gradient(linear, bottom, top, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 1))), asset_url("hero-homepage.jpg");
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0)), asset_url("hero-homepage.jpg");
   }
 
   .v-wrapper {
