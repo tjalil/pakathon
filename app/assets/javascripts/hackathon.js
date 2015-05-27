@@ -3,13 +3,13 @@ $(window).ready(function() {
   // fixing left-panel on scroll
   if (Modernizr.mq('only screen and (min-width: 768px)')) {
     
-    var fix_left_panel = 292;
+    var fix_left_panel = 20;
 
     $(window).scroll(function() {
-      if ($(window).scrollTop() >= fix_left_panel) {
+      if ($(window).scrollTop() >= 1) {
         $('.left-panel').css({
           'position': 'fixed',
-          'margin-top': '-300px',
+          // 'margin-top': '-10px',
         });
       } else {
         $('.left-panel').css({

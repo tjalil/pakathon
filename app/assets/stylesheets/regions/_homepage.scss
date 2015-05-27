@@ -275,7 +275,6 @@
   .img-three {
     background-image: asset_url("girl-presenting.png");
     min-height: 500px;
-    // -webkit-filter: grayscale(100%);
     position: relative;
 
     .img-text {
@@ -376,16 +375,24 @@
     background: $greenBackground;
   }
 
+  [class*="block-grid-"] {
+    @include prop(margin, 0);
+  }
+
   li {
     padding: 0;
     position: relative;
 
     .gamma {
-      @include prop(margin, 30, 0, 0);
+      @include prop(margin, 20, 0, 0);
       color: $white;
       font-family: "OpenSans-Bold";
       @include fontSize(30);
       letter-spacing: 2px;
+
+      @media only screen and (min-width: 1000px) {
+        @include prop(margin, 30, 0, 0); 
+      }
     }
 
     .punch {
@@ -412,6 +419,14 @@
     &:nth-child(4) {
       &:after {
         display: none;
+      }
+    }
+
+    @media only screen and (max-width: $mediumScreen + px) {
+      &:nth-child(3) {
+        &:after {
+          display: none;
+        }
       }
     }
   }
