@@ -228,10 +228,19 @@
 
   li {
     position: relative;
-    @include pre(width, 32%);
+    @include pre(width, 100%);
     @include prop(height, 70);
+    @include prop(margin-bottom, 20);
     @include pre(filter, grayscale(100%));
     @include pre(transition, all 0.3s ease);
+    float: none;
+
+    @media only screen and (min-width: $smallScreen + px) {
+      @include pre(width, 32%);
+      @include prop(height, 70);
+      @include prop(margin-bottom, 0);
+      float: left;
+    }
 
     &:hover {
       @include pre(filter, grayscale(0));
@@ -256,15 +265,6 @@
       @include prop(left, 0);
     }
   }
-
-  // img {
-  //   @include pre(filter, grayscale(100%));
-  //   @include pre(transition, all 0.3s ease);
-
-  //   &:hover {
-  //     @include pre(filter, grayscale(0));
-  //   }
-  // }
 }
 
 #homepage-analytics {
