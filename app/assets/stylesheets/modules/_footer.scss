@@ -35,7 +35,7 @@ footer.global {
     text-align: center;
 
     @media only screen and (min-width: $smallScreen + px) {
-      float: right;
+      // float: right;
       text-align: left;
       width: auto;
     }
