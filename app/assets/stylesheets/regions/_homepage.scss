@@ -226,14 +226,45 @@
     }
   }
 
-  img {
+  li {
+    position: relative;
+    @include pre(width, 32%);
+    @include prop(height, 70);
     @include pre(filter, grayscale(100%));
     @include pre(transition, all 0.3s ease);
 
     &:hover {
       @include pre(filter, grayscale(0));
     }
+
+    &#pakathon-news-one {
+      background: asset_url('metro-news-logo.png') 50% 0 no-repeat no-repeat;
+    }
+
+    &#pakathon-news-two {
+      background: asset_url('tribune-news-logo.png') 50% 0 no-repeat no-repeat;
+    }
+
+    &#pakathon-news-three {
+      background: asset_url('asiasociety-news-logo.png') 50% 0 no-repeat no-repeat;
+    }
+
+    a {
+      position: absolute;
+      @include pre(height, 100%);
+      @include pre(width, 100%);
+      @include prop(left, 0);
+    }
   }
+
+  // img {
+  //   @include pre(filter, grayscale(100%));
+  //   @include pre(transition, all 0.3s ease);
+
+  //   &:hover {
+  //     @include pre(filter, grayscale(0));
+  //   }
+  // }
 }
 
 #homepage-analytics {
