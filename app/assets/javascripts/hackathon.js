@@ -18,7 +18,10 @@ $(window).ready(function() {
         });
       }
     });
-  }
+  };
+
+  //highlight active sidenav item on scroll
+  
 
   // smooth scroll to anchor links
   $(function() {
@@ -36,5 +39,12 @@ $(window).ready(function() {
           }
       }
     });
+  });
+
+  // // making green color persist on selected sidenav item
+  $('.smooth-scroll').click(function() {
+    $('.smooth-scroll').removeClass('active');
+    $(this).parent().prevAll().children('a').addClass('active');
+    $(this).addClass('active');
   });
 });

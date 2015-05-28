@@ -52,16 +52,18 @@
       }
     }
 
-    &.active {
-      .punch {
-        color: $green;
-      }
+    a {
+      &.active {
+        .punch {
+          color: $green;
+        }
 
-      span {
-        background: $greenLight;
-
-        &:before {
+        span {
           background: $greenLight;
+
+          &:before {
+            background: $greenLight;
+          }
         }
       }
     }
@@ -71,18 +73,6 @@
 
       @media only screen and (min-width: 900px) {
         @include prop(margin, 20, 0);
-      }
-
-      .punch {
-        color: $green;
-      }
-
-      span {
-        background: $greenLight;
-
-        &:before {
-          background: $greenLight;
-        }
       }
     }
 
