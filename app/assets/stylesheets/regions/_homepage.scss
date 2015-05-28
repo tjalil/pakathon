@@ -464,7 +464,7 @@
 }
 
 #homepage-social {
-  @include prop(padding, 40, 0, 100);
+  @include prop(padding, 40, 0);
   background-color: lighten($greyDark, 10);
 
   @media only screen and (min-width: $mediumScreen + px) {
@@ -483,58 +483,39 @@
     color: $white;
     @include fontSize(15);
     @include prop(margin-bottom, 20);
+    @include prop(margin-top, 20);
   }
-
-  // img {
-  //   @include prop(min-width, 25);
-  //   @include prop(width, 30);
-  //   height: auto;
-  // }
 
   .social-text {
-    text-align: left;
 
-    @media only screen and (min-width: $smallScreen + px) {
-      text-align: left;
-    }
-  }
+    .social-icons {
+      position: relative;
+      @include prop(width, 30);
+      @include prop(height, 30);
+      display: inline-block;
+      @include prop(margin, 0, 30);
 
-  ul {
-    position: relative;
-    @include prop(padding-left, 40);
-    float: left;
-    @include pre(width, 100%);
-  }
+      &#social-icons-facebook {
+        background: asset_url('logo-facebook.png') no-repeat no-repeat;
+        background-size: contain;
+      }
 
-  li {
-    position: relative;
-    @include pre(width, 25%);
-    @include prop(height, 30);
+      &#social-icons-twitter {
+        background: asset_url('logo-twitter.png') no-repeat no-repeat;
+        background-size: contain;
+      }
 
-    @media only screen and (min-width: $smallScreen + px) {
-      @include pre(width, 15%);
-    }
+      &#social-icons-instagram {
+        background: asset_url('logo-instagram.png') no-repeat no-repeat;
+        background-size: contain;
+      }
 
-    &#social-icons-facebook {
-      background: asset_url('logo-facebook.png') no-repeat no-repeat;
-      background-size: contain;
-    }
-
-    &#social-icons-twitter {
-      background: asset_url('logo-twitter.png') no-repeat no-repeat;
-      background-size: contain;
-    }
-
-    &#social-icons-instagram {
-      background: asset_url('logo-instagram.png') no-repeat no-repeat;
-      background-size: contain;
-    }
-
-    a {
-      position: absolute;
-      @include pre(height, 100%);
-      @include pre(width, 100%);
-      @include prop(left, 0);
+      a {
+        position: absolute;
+        @include pre(height, 100%);
+        @include pre(width, 100%);
+        @include prop(left, 0);
+      }
     }
   }
 
