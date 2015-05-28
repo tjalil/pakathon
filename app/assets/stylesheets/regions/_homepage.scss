@@ -146,7 +146,7 @@
 
 #homepage-streams {
   background: $offWhite;
-  @include prop(padding, 40, 0, 70);
+  @include prop(padding, 40, 0);
   position: relative;
 
   .gamma {
@@ -155,11 +155,45 @@
   }
 
   .panel {
-    @include prop(padding, 20);
+    @include prop(padding, 80, 20, 0);
+    position: relative;
+    text-transform: uppercase;
+    font-family: "OpenSans-Light";
+    color: $greyDark;
+    @include fontSize(12);
+    letter-spacing: 2px;
+    @include prop(margin-bottom, 40);
 
     @media only screen and (min-width: $largeScreen + px) {
-      @include prop(padding, 0, 20);
+      @include prop(margin-bottom, 0);
     }
+
+    &:before {
+      position: absolute;
+      @include prop(left, 0);
+      @include prop(right, 0);
+      @include fontSize(70);
+      color: darken(#1964BB, 10);
+      @include prop(top, 0);
+    }
+
+    // &.icon-gaming {
+    //   &:before {
+    //     @include prop(left, 55);
+    //   }
+    // }
+
+    // &.icon-book {
+    //   &:before {
+    //     @include prop(left, 65);
+    //   }
+    // }
+
+    // &.icon-retail {
+    //   &:before {
+    //     @include prop(left, 69);
+    //   }
+    // }
   }
 
   ul {

@@ -4,6 +4,7 @@
 @include font(OpenSans-LightItalic, opensans-lightitalic-webfont);
 @include font(OpenSans-Regular, opensans-regular-webfont);
 @include font(OpenSans-Semibold, opensans-semibold-webfont);
+@include font(icomoon, icomoon);
 
 h1, h2, h3, h4, h5, h6,
 .alpha, .beta, .gamma, .delta, .epsilon, .zeta {
@@ -101,4 +102,48 @@ ol {
     li {
 
     }
+}
+
+// ==========================================================================
+// ICON FONT
+// ==========================================================================
+
+[class^="icon-"], [class*=" icon-"] {
+    &:before {
+        font-family: 'icomoon';
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+.icon-bitcoin:before {
+    content: "\e600";
+}
+
+.icon-book:before {
+    content: "\e601";
+}
+
+.icon-cafe:before {
+    content: "\e602";
+}
+
+.icon-gaming:before {
+    content: "\e603";
+}
+
+.icon-healthcare:before {
+    content: "\e604";
+}
+
+.icon-retail:before {
+    content: "\e605";
 }
