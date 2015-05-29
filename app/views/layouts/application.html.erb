@@ -11,7 +11,7 @@
   <%= favicon_link_tag(Logo.find_by(name:"pakathon globe").image_url(:logo)) %>
 </head>
 <body>
-
+  <%= render 'layouts/header' %>
   <%= yield %>
 
   <div class="row">
@@ -28,8 +28,9 @@
       <% end %>
     </div>
   </div>
-
+  
+  <%= render 'layouts/footer' %>
+  <%= render 'layouts/drawer_nav' %>
   <%= javascript_include_tag 'application' %>
-
 </body>
 </html>

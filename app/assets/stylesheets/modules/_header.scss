@@ -92,6 +92,32 @@ header.global {
     float: right;
     @include prop(padding, 20, 0);
 
+    a {
+      position: relative;
+
+      &:before {
+        position: absolute;
+        @include fontSize(30);
+        color: $white;
+        @include prop(top, -30);
+        @include pre(transition, color 0.3s ease);
+      }
+
+      &:hover {
+        &:before {
+          color: $green;
+        }
+      }
+    }
+
+    .icon-close {
+      &:before {
+        @include fontSize(16);
+        @include prop(top, -25);
+        @include prop(left, 7);
+      }
+    }
+
     @media only screen and (min-width: 950px) {
       display: none;
     }

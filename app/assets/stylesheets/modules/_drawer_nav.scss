@@ -1,0 +1,49 @@
+// header,
+body {
+  left: 0;
+  position: relative;
+  z-index: 100;
+
+  &.drawer-open {
+    @include prop(left, -320);
+  }
+}
+  
+#drawer-nav {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  right: 0;
+  @include prop(width, 356);
+  height: 100%;
+  @include prop(padding, 90, 20);
+
+  li {
+    @include prop(margin, 20, 0);
+
+    a {
+      color: $greyDark;
+      text-transform: uppercase;
+      font-family: "OpenSans-Bold";
+      @include fontSize(16);
+      @include prop(letter-spacing, 6);
+
+      &:hover {
+        color: $green;
+      }
+    }
+  }
+
+  .button {
+    display: block;
+    @include prop(margin, 20, 0);
+  }
+
+  @media only screen and (max-width: 949px) {
+    overflow: scroll;
+  }
+
+  @media only screen and (max-width: ($mediumScreen + px)) {
+    @include prop(width, 320);
+  }
+}
