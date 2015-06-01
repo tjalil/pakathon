@@ -58,23 +58,27 @@
 
 #homepage-mission {
   @include prop(padding, 90, 0);
-  background: $greenBackground;
+  background-image: asset_url("map.jpg");
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-size: cover;
 
   .gamma {
     @include prop(margin-bottom, 30);
-    color: $white;
+    color: $greyDark;
     @include fontSize(23);
   }
 
   a {
-    color: $white;
+    color: $greyDark;
     text-decoration: underline;
     @include pre(transition, all 0.3s ease);
     @include fontSize(18);
     
     &:hover {
-      color: darken($white, 10);
+      color: darken($greyDark, 20);
       text-decoration: none;
+      text-decoration: underline;
     }
   }
 }

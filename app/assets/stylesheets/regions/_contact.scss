@@ -42,7 +42,8 @@
 }
 
 #contact-form {
-  @include prop(padding, 40, 0);
+  @include prop(padding, 90, 0, 0);
+  height: 93%;
   background: lighten($greyLight, 10);
 
   .gamma {
