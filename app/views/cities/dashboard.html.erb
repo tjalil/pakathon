@@ -1,15 +1,17 @@
-<div class="row">
-  <div class="large-12 columns text-center">
-    <h1><%= @city.name.upcase %></h1>
-    <p><%= link_to "Add Team Member/Judge/Mentor/Sponsor", new_admin_city_user_path(current_user, @city) %></p>
-  </div>
-  <div class="large-12 columns">
-    <% if @city.users.present? %>
-      <% @city.users.each do |user| %>
-          <p><%= image_tag user.avatar_url(:team) %><%= user.name %> (<%= user.type_of_user %>) | <%= link_to "Edit", edit_admin_city_user_path(current_user, @city, user) %> | <%= link_to "Delete", admin_city_user_path(current_user, @city, user), method: :delete, data: { confirm: "Are you sure?" } %></p>
+<section class="admin-users-dashboard">
+  <div class="row">
+    <div class="columns small-12">
+      <h1><%= @city.name.upcase %></h1>
+      <p><%= link_to "Add Team Member/Judge/Mentor/Sponsor", new_admin_city_user_path(current_user, @city) %></p>
+    </div>
+    <div class="columns small-12">
+      <% if @city.users.present? %>
+        <% @city.users.each do |user| %>
+            <p><%= image_tag user.avatar_url(:team) %><%= user.name %> (<%= user.type_of_user %>) | <%= link_to "Edit", edit_admin_city_user_path(current_user, @city, user) %> | <%= link_to "Delete", admin_city_user_path(current_user, @city, user), method: :delete, data: { confirm: "Are you sure?" } %></p>
+        <% end %>
+      <% else %>
+        <h5>No Team Members to display</h5>
       <% end %>
-    <% else %>
-      <h5>No Team Members to display</h5>
-    <% end %>
+    </div>
   </div>
-</div>
+</section>

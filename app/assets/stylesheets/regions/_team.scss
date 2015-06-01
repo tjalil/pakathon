@@ -34,11 +34,15 @@
 }
 
 #team-core, #team-city-leads, #team-partners, #team-sponsors, #team-cta {
-  @include prop(padding, 40, 0);
+  @include prop(padding, 40, 0, 0);
 
   ul {
     @include prop(margin, 0);
     float: left;
+  }
+
+  li {
+    @include prop(padding, 0, 10);
   }
 }
   
@@ -52,39 +56,28 @@
   }
 }
 
-#team-core {
+#team-core, #team-city-leads {
   .team-photo {
     position: relative;
     @include prop(width, 200);
-    @include prop(height, 200);
-    @include pre(max-width, 120%);
+    @include pre(height, 100%);
     display: inline-block;
-    @include prop(margin, 20);
+    @include prop(margin, 20, 0);
 
-    // @media only screen and (min-width: $smallScreen + px) {
-    //   @include prop(margin, 20, 10);      
-    // }
+    img {
+      @include pre(max-width, 100%);
+    }
 
-    // @media only screen and (min-width: $mediumScreen + px) and (max-width: 815px) {
-    //   @include prop(width, 150);
-    //   @include prop(height, 150);
-    //   @include prop(margin, 20, 10);
-    // }
+    @media only screen and (min-width: $xsmallScreen + px) and (max-width: 415px) {
+      @include prop(width, 150);
+    }
 
-    // @media only screen and (min-width: 1215px) {
-    //   @include prop(width, 200);
-    //   @include prop(height, 200);  
-    // }
-  }
+    @media only screen and (min-width: $mediumScreen + px) {
+      @include prop(width, 180);
+    }
 
-  // #core-team-1,
-  #core-team-2,
-  #core-team-3,
-  #core-team-4,
-  #core-team-5,
-  #core-team-6,
-  #core-team-7 {
-    // background: asset_url('asad.jpg') 50% 0% no-repeat no-repeat;
-    // background-size: contain;
+    @media only screen and (min-width: $largeScreen + px) and (max-width: 1215px) {
+      @include prop(width, 160);
+    }
   }
 }
