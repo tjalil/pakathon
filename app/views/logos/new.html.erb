@@ -1,34 +1,36 @@
-<div class="row">
-  <div class="columns large-12">
-    <% if current_user.username == "taha.jalil" %>
-      <%= form_for ([current_user, @logo]), :html => {:multipart => true} do |f| %>
-        <% if @logo.errors.any? %>
-          <div class="error_messages">
-            <h2>Form is invalid</h2>
-            <ul>
-              <% for message in @logo.errors.full_messages %>
-                <li><%= message %></li>
-              <% end %>
-            </ul>
+<section class="new-logo">
+  <div class="row">
+    <div class="columns large-12">
+      <% if current_user.username == "taha.jalil" %>
+        <%= form_for ([current_user, @logo]), :html => {:multipart => true} do |f| %>
+          <% if @logo.errors.any? %>
+            <div class="error_messages">
+              <h2>Form is invalid</h2>
+              <ul>
+                <% for message in @logo.errors.full_messages %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="field">
+            <%= f.label :name %><br>
+            <%= f.text_field :name %>
+          </div>
+
+          <div class="field">
+            <%= f.label :image %><br>
+            <%= f.file_field :image %>
+          </div>
+
+          <div class="action">
+            <%= f.submit "Submit" %>
           </div>
         <% end %>
-
-        <div class="field">
-          <%= f.label :name %><br>
-          <%= f.text_field :name %>
-        </div>
-
-        <div class="field">
-          <%= f.label :image %><br>
-          <%= f.file_field :image %>
-        </div>
-
-        <div class="action">
-          <%= f.submit "Submit" %>
-        </div>
+      <% else %>
+        <h1>Sorry you do not have access to this page</h1>
       <% end %>
-    <% else %>
-      <h1>Sorry you do not have access to this page</h1>
-    <% end %>
+    </div>
   </div>
-</div>
+</section>
