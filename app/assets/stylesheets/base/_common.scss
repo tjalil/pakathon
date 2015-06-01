@@ -103,7 +103,11 @@ li {
   font-weight: 100;
 }
 
-.login-form, .admin-users-dashboard, .admin-new-user, .new-logo {
+.login-form,
+.admin-users-dashboard,
+.admin-new-user,
+.new-logo,
+.admin-main-dashboard {
   @include prop(padding, 120, 0, 50);
 }
 
