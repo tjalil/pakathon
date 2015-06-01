@@ -12,7 +12,7 @@
 }
 
 #hackathon-timeline {
-  @include prop(padding, 100, 0);
+  @include prop(padding, 100, 0, 50);
   
   .row {
     &.main {
