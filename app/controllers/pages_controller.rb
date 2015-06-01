@@ -10,6 +10,7 @@ class PagesController < ApplicationController
   end
 
   def dekhmagarpyarsay_team_proto
+    @users = City.find(18).users
   end
 
   def dekhmagarpyarsay_contact_proto
