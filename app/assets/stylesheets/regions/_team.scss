@@ -1,6 +1,7 @@
 #team-hero {
   @include prop(padding, 90, 0, 40);
   @include prop(min-height, 400);
+  position: relative;
 
   background-size: cover;
   background-color: white;
@@ -8,15 +9,25 @@
   background-repeat-y: no-repeat;
   background-position-y: 70%;
   background-position-x: 50%;
-  background-image: linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("homepage-hero.jpg");
-  background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("homepage-hero.jpg");
-  background-image: -o-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("homepage-hero.jpg");
-  background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("homepage-hero.jpg");
-  background-image: -webkit-gradient(linear, top top, top bottom, from(rgba(255, 255, 255, 1)), to(rgba(255, 255, 255, 0.2))), asset_url("homepage-hero.jpg");
-  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), asset_url("homepage-hero.jpg");
+  background-image: asset_url("homepage-hero.jpg");
+
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    min-height: 100%;
+    top: 0;
+    background-color: $greenBackground;
+    opacity: 0.8;
+    position: absolute;
+  }
+
+  .gamma {
+    color: $white;
+  }
 
   .punch {  
-    color: $greyDark;
+    color: $white;
     line-height: 1.8;
     @include fontSize(17);
 
@@ -28,8 +39,12 @@
 
   .v-wrapper {
     position: relative;
-    @include prop(top, 50);
+    @include prop(top, 30);
     @include prop(padding, 0, 25);
+
+    @media only screen and (min-width: 550px) {
+      @include prop(top, 50);
+    }
   }
 }
 
@@ -56,7 +71,7 @@
   }
 }
 
-#team-core, #team-city-leads {
+#team-core {
   .team-photo {
     position: relative;
     @include prop(width, 200);

@@ -16,13 +16,13 @@
 <section id="team-core">
   <div class="row">
     <div class="columns large-12 medium-12 small-12 xsmall-12">
-      <h2 class="gamma">CORE TEAM</h2>
+      <h2 class="gamma">TEAM</h2>
     </div>
   </div>
   <div class="row">
     <ul class="columns large-block-grid-6 medium-block-grid-4 small-block-grid-3 xsmall-block-grid-2">
       <% @users.each do |user| %>
-        <% if user.type_of_user == "Core Team Member" %>
+        <% if user.type_of_user == "Core Team Member" || user.type_of_user == "City Lead" %>
           <li class="team-photo text-center">
             <%= image_tag user.avatar %>
             <h2 class="epsilon"><%= user.name %></h2>
@@ -34,7 +34,7 @@
   </div>
 </section>
 
-<section id="team-city-leads">
+<!-- <section id="team-city-leads">
   <div class="row">
     <div class="columns large-12 medium-12 small-12 xsmall-12">
       <h2 class="gamma">CITY LEADS</h2>
@@ -42,18 +42,18 @@
   </div>
   <div class="row">
     <ul class="columns large-block-grid-6 medium-block-grid-4 small-block-grid-3 xsmall-block-grid-2">
-      <% @users.each do |user| %>
-        <% if user.type_of_user == "City Lead" %>
+      <%# @users.each do |user| %>
+        <%# if user.type_of_user == "City Lead" %>
           <li class="team-photo text-center">
-            <%= image_tag user.avatar %>
-            <h2 class="epsilon"><%= user.name %></h2>
-            <p class="user-description"><%= user.description %></p>
+            <%#= image_tag user.avatar %>
+            <h2 class="epsilon"><%#= user.name %></h2>
+            <p class="user-description"><%#= user.description %></p>
           </li>
-        <% end %>
-      <% end %>
+        <%# end %>
+      <%# end %>
     </ul>
   </div>
-</section>
+</section> -->
 
 <!-- <section id="team-partners">
   <div class="row">
