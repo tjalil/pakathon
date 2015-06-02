@@ -57,8 +57,14 @@
   }
 
   li {
-    @include prop(padding, 0, 10);
+    @include prop(padding, 0, 20);
+    float: left;
+    @include prop(height, 200);
   }
+}
+
+#team-partners {
+  @include prop(padding, 40, 0, 90);
 }
   
 #team-cta {
@@ -71,7 +77,7 @@
   }
 }
 
-#team-core, .team-partners {
+#team-core {
   .team-photo {
     position: relative;
     @include prop(width, 200);
@@ -93,6 +99,14 @@
 
     @media only screen and (min-width: $largeScreen + px) and (max-width: 1215px) {
       @include prop(width, 160);
+    }
+  }
+}
+
+#team-partners {
+  li:last-child {
+    img {
+      @include prop(height, 200);
     }
   }
 }

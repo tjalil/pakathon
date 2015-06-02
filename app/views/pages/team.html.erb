@@ -58,15 +58,15 @@
 <section id="team-partners">
   <div class="row">
     <div class="columns large-12 medium-12 small-12 xsmall-12">
-      <h2 class="gamma">Partners</h2>
+      <h2 class="gamma">PARTNERS</h2>
     </div>
   </div>
   <div class="row">
-    <ul class="columns large-block-grid-6 medium-block-grid-6 small-block-grid-4 xsmall-block-grid-4">
+    <ul>
       <% @users.each do |user| %>
         <% if user.type_of_user == "Sponsor" %>
-          <li class="team-photo text-center">
-            <%= image_tag user.avatar %>
+          <li class="columns large-4 medium-4 small-6 xsmall-12 team-photo text-center">
+            <%= image_tag user.avatar_url %>
           </li>
         <% end %>
       <% end %>
