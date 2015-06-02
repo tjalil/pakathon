@@ -9,9 +9,24 @@
         <ul>
           <!-- <li><a href="javascript:void(0)">About</a></li> -->
 
-          <li><a href="/program">Program</a></li>
-          <li><a href="/team">Team</a></li>
-          <li><a href="/careers">Careers</a></li>
+          <% if request.original_url == "http://localhost:3000/program" %>
+            <li><a href="/program" class="active">Program</a></li>
+          <% else %>
+            <li><a href="/program">Program</a></li>
+          <% end %>
+
+          <% if request.original_url == "http://localhost:3000/team" %>
+            <li><a href="/team" class="active">Team</a></li>
+          <% else %>
+            <li><a href="/team">Team</a></li>
+          <% end %>
+
+          <% if request.original_url == "http://localhost:3000/careers" %>
+            <li><a href="/careers" class="active">Careers</a></li>
+          <% else %>
+            <li><a href="/careers">Careers</a></li>
+          <% end %>
+
           <!-- <li><a href="javascript:void(0)">Partners &amp; Sponsors</a></li> -->
           <li><a href="https://muut.com/pakathon">Forum</a></li>
         </ul>

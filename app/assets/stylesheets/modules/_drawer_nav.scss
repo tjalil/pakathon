@@ -31,6 +31,10 @@ body {
       &:hover {
         color: $green;
       }
+
+      &.active {
+        color: $green;
+      }
     }
   }
 
