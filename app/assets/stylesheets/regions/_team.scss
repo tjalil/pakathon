@@ -59,7 +59,6 @@
   li {
     @include prop(padding, 0, 20);
     float: left;
-    @include prop(height, 200);
   }
 }
 
@@ -104,9 +103,17 @@
 }
 
 #team-partners {
+  li {
+    @include prop(height, 150);
+
+    img {
+      @include prop(height, 100%);
+    }
+  }
+
   li:last-child {
     img {
-      @include prop(height, 200);
+      @include prop(height, 150);
     }
   }
 }
