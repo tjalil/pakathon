@@ -88,10 +88,10 @@
   @include prop(padding, 50, 0, 20);
 
   .panel {
-    @include prop(margin-bottom, 40);
+    @include prop(margin-bottom, 0);
 
     @media only screen and (min-width: $smallScreen + px) {
-      @include prop(margin-bottom, 0);
+      @include prop(margin-bottom, 40);
     }
   }
 
@@ -104,16 +104,56 @@
     @include prop(padding, 0, 25);
   }
 
+  .education, .networks, .financing {
+    position: relative;
+    @include prop(padding-top, 200);
+    @include prop(padding-bottom, 50);
+
+    @media only screen and (min-width: $mediumScreen + px)  {
+      @include prop(padding-bottom, 0);
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      display: block;
+      background-size: contain;
+      height: 200px;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .education {
+    &:before {
+      background: asset_url("icon-education.png") 50% 50% no-repeat no-repeat;
+    }
+  }
+
+  .networks {
+    &:before {
+      background: asset_url("icon-networks.png") 50% 50% no-repeat no-repeat;
+    }
+  }
+
+  .financing {
+    &:before {
+      background: asset_url("icon-financing.png") 50% 50% no-repeat no-repeat;
+    }
+  }
+
   .punch {
     font-family: "OpenSans-Bold";
     @include fontSize(16);
     @include prop(margin-bottom, 10);
     color: $greyLight;
 
-    &.text-left {
+    &.text-center {
       font-family: "OpenSans-Regular";
       @include fontSize(15);
       @include pre(line-height, 1.8);
+      @include prop(margin-top, 10);
     }
   }
 }
@@ -121,9 +161,9 @@
 #homepage-sponsor-cta {
   @include prop(padding, 0, 0, 60);
 
-  @media only screen and (min-width: $smallScreen + px) {
-    @include prop(padding, 60, 0);    
-  }
+  // @media only screen and (min-width: $smallScreen + px) {
+  //   @include prop(padding, 0, 0, 60);    
+  // }
 
   .text {
     text-align: center;
