@@ -2,7 +2,7 @@
 body {
   left: 0;
   position: relative;
-  z-index: 100;
+  z-index: 10;
 
   &.drawer-open {
     @include prop(left, -320);
@@ -11,10 +11,10 @@ body {
   
 #drawer-nav {
   position: fixed;
-  z-index: 5;
+  z-index: 500;
   top: 0;
   right: 0;
-  @include prop(width, 356);
+  @include prop(width, 320);
   height: 100%;
   @include prop(padding, 90, 20);
 
