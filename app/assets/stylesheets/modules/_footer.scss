@@ -58,20 +58,42 @@ footer.global {
         }
       }
 
-      input {
+      .text {
+        @include prop(margin, 0);
+        float: none;
         display: block;
-        @include prop(margin-top, 20);
 
         @media only screen and (min-width: $smallScreen + px) {
           display: inline;
+          @include prop(margin, 5, 10, 0, 0);
+          float: left;
+        }
+      }
+
+      input[type="email"] {
+        @media only screen and (min-width: $xsmallScreen + px) {
+          @include prop(margin-right, -5);
+        }
+      }
+
+      input[type="text"] {
+        display: none;
+      }
+
+      #mc_embed_signup_scroll {
+        float: none;
+        @include prop(margin-top, 10);
+
+        @media only screen and (min-width: $smallScreen + px) {
+          float: right;
           @include prop(margin-top, 0);
         }
       }
 
       .button {
         @include fontSize(10);
-        @include prop(line-height, 25);
-        @include prop(padding, 2, 15);
+        @include prop(line-height, 24);
+        @include prop(padding, 3, 15, 2);
         float: none;
         @include prop(margin-top, 10);
 
