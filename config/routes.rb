@@ -31,10 +31,10 @@ Rails.application.routes.draw do
   resources :pages, :path => '' do
     collection do
       get 'toronto_baithak'
-      get 'dekhmagarpyarsay_homepage_proto'
-      get 'dekhmagarpyarsay_hackathon_proto'
-      get 'dekhmagarpyarsay_team_proto'
-      get 'dekhmagarpyarsay_contact_proto'
+      # get 'dekhmagarpyarsay_homepage_proto'
+      get 'program'
+      get 'team'
+      get 'contact'
     end
   end
 
