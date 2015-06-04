@@ -214,7 +214,8 @@
       @include prop(left, 0);
       @include prop(right, 0);
       @include fontSize(70);
-      color: darken(#1964BB, 10);
+      // color: darken(#1964BB, 10);
+      color: $green;
       @include prop(top, 0);
     }
   }

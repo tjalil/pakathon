@@ -29,7 +29,6 @@ $(window).ready(function() {
     });
   };
   
-
   // smooth scroll to anchor links
   $(function() {
     $('.smooth-scroll').click(function(e) {

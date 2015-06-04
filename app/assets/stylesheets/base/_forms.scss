@@ -22,7 +22,7 @@ form {
 }
 
 input[type="email"] {
-  width: 200px;
+  width: 300px;
   font-family: 'OpenSans-Regular';
   outline: none;
   @include fontSize(12);
@@ -33,11 +33,11 @@ input[type="email"] {
   @include pre(transition, border 0.3s ease);
 
   &:focus {
-    @include border(2, solid, $green);
+    @include border(2, solid, $greenBackground);
   }
 }
 
-input[type="submit"] {
+  input[type="submit"] {
 
 }
 
