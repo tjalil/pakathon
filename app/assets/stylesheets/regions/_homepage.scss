@@ -59,7 +59,7 @@
 }
 
 #homepage-mission {
-  @include prop(padding, 90, 0);
+  @include prop(padding, 110, 0);
   background-image: asset_url("map.jpg");
   background-repeat-x: no-repeat;
   background-repeat-y: no-repeat;
@@ -67,18 +67,18 @@
 
   .gamma {
     @include prop(margin-bottom, 30);
-    color: $greyDark;
+    color: $white;
     @include fontSize(23);
   }
 
   a {
-    color: $greyDark;
+    color: $white;
     text-decoration: underline;
     @include pre(transition, all 0.3s ease);
     @include fontSize(18);
     
     &:hover {
-      color: darken($greyDark, 20);
+      color: darken($white, 20);
       text-decoration: none;
     }
   }
@@ -393,8 +393,8 @@
         font-family: "OpenSans-Bold";
 
         &:hover {
-          background: $green;
-          @include border(1, solid, $green);
+          background: $greenBackground;
+          @include border(1, solid, $greenBackground);
           color: $white;
         }
       }
