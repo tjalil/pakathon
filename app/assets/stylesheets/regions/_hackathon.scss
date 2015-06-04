@@ -87,8 +87,8 @@
       @include fontSize(12);
 
       @media only screen and (min-width: 900px) {
-        @include prop(margin, 10, 0, 0, 60);
-        line-height: 4;
+        @include prop(margin, 10, 0, 0, 40);
+        line-height: 3;
         @include fontSize(20);
       }
     }
@@ -105,9 +105,9 @@
       @include pre(transition, all 0.3s ease);
 
       @media only screen and (min-width: 900px) {
-        @include prop(width, 50);
-        @include prop(height, 50);
-        @include prop(margin-top, 15);
+        @include prop(width, 30);
+        @include prop(height, 30);
+        @include prop(margin-top, 13);
       }
 
       &:before {
@@ -123,8 +123,8 @@
 
         @media only screen and (min-width: 900px) {
           @include prop(height, 50);
-          @include prop(left, 25);
-          @include prop(bottom, 50);
+          @include prop(left, 15);
+          @include prop(bottom, 30);
         }
       }
 
@@ -137,12 +137,14 @@
   }
 
   .timeline-panel {
-    @include prop(margin, 20, 0);
+    // @include prop(margin, 20, 0);
+    @include prop(margin, 0);
     @include prop(padding, 20, 0, 0);
     @include border(1, solid, $greyDark, bottom);
 
     @media only screen and (min-width: $largeScreen + px) {
-      @include prop(padding, 20, 0, 40);
+      // @include prop(padding, 20, 0, 40);
+      @include prop(padding, 20, 0);
     }
 
     &:nth-child(6) {
@@ -172,15 +174,16 @@
     }
 
     .hackathon-day-one, .hackathon-day-two, .hackathon-day-three {
-      @include prop(margin-top, 40);
+      // @include prop(margin-top, 40);
+      @include prop(margin-top, 0);
     }
 
     .timeline-panel-text {
       @include prop(margin, 20, 0, 0);
 
-      @media only screen and (min-width: $largeScreen + px) {
-        @include prop(margin, 0, 0, 0, 400);
-      }
+      // @media only screen and (min-width: $largeScreen + px) {
+      //   @include prop(margin, 0, 0, 0, 400);
+      // }
     }
 
     .gamma, .delta {

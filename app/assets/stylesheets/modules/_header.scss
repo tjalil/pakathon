@@ -57,11 +57,11 @@ header.global {
         @include prop(letter-spacing, 2);
 
         &.active {
-          color: $green;
+          color: $greenBackground;
         }
 
         &:hover {
-          color: $green;
+          color: $greenBackground;
         }
       }
 

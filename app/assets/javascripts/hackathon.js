@@ -6,6 +6,15 @@ $(window).ready(function() {
     var fix_left_panel = 20;
 
     $(window).scroll(function() {
+      //highlight active sidenav item on scroll
+      $.each(['#mini-events-', "#orientation-", "#hackathon-", "#global-finals-", "#partnerships-", "#funding-"], function(i, step) {
+        if ($(window).scrollTop() + 105 > $(step + 'panel').offset().top) {
+          $(step + 'node').addClass('active');
+        } else {
+          $(step + 'node').not('#mini-events-node').removeClass('active');
+        }
+      });
+
       if ($(window).scrollTop() >= 1) {
         $('.left-panel').css({
           'position': 'fixed',
@@ -19,8 +28,6 @@ $(window).ready(function() {
       }
     });
   };
-
-  //highlight active sidenav item on scroll
   
 
   // smooth scroll to anchor links
@@ -29,19 +36,19 @@ $(window).ready(function() {
       if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
           || location.hostname == this.hostname) {
 
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-             if (target.length) {
-        e.preventDefault();
-      $('html,body').stop().animate({
-         scrollTop: target.offset().top - 100
-      }, 1200);
-          }
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          e.preventDefault();
+          $('html,body').stop().animate({
+            scrollTop: target.offset().top - 100
+          }, 1200);
+        }
       }
     });
   });
 
-  // // making green color persist on selected sidenav item
+  // making green color persist on selected sidenav item
   $('.smooth-scroll').click(function() {
     $('.smooth-scroll').removeClass('active');
     $(this).parent().prevAll().children('a').addClass('active');
