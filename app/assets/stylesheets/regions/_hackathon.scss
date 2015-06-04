@@ -40,7 +40,7 @@
 
     &:hover {
       .punch {
-        color: $green;
+        color: $greenBackground;
       }
 
       span {
@@ -55,7 +55,7 @@
     a {
       &.active {
         .punch {
-          color: $green;
+          color: $greenBackground;
         }
 
         span {
@@ -90,6 +90,12 @@
         @include prop(margin, 10, 0, 0, 40);
         line-height: 3;
         @include fontSize(20);
+      }
+    }
+
+    &:last-child {
+      .punch {
+        line-height: 1.5;
       }
     }
 

@@ -7,7 +7,7 @@ $(window).ready(function() {
 
     $(window).scroll(function() {
       //highlight active sidenav item on scroll
-      $.each(['#mini-events-', "#orientation-", "#hackathon-", "#global-finals-", "#partnerships-", "#funding-"], function(i, step) {
+      $.each(['#mini-events-', "#orientation-", "#hackathon-", "#global-finals-", "#partnerships-and-funding-"], function(i, step) {
         if ($(window).scrollTop() + 105 > $(step + 'panel').offset().top) {
           $(step + 'node').addClass('active');
         } else {
