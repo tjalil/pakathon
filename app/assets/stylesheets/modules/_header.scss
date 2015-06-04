@@ -77,12 +77,12 @@ header.global {
     .button {
       @include fontSize(13);
       @include prop(letter-spacing, 2);
-      background: $green;
+      background: $greenBackground;
       color: $white;
 
       &:hover {
         background: $white;
-        color: $green;        
+        color: $greenBackground;        
       }
     }
   }
@@ -105,7 +105,7 @@ header.global {
 
       &:hover {
         &:before {
-          color: $green;
+          color: $greenBackground;
         }
       }
     }

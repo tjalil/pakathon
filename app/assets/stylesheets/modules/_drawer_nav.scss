@@ -27,13 +27,14 @@ body {
       font-family: "OpenSans-Bold";
       @include fontSize(16);
       @include prop(letter-spacing, 6);
+      @include pre(transition, color 0.3s ease);
 
       &:hover {
-        color: $green;
+        color: $greenBackground;
       }
 
       &.active {
-        color: $green;
+        color: $greenBackground;
       }
     }
   }
