@@ -8,13 +8,13 @@
       <li class="topnav-titles"><%= link_to 'Admin Dashboard', admin_path(current_user) %></li>
       <li class="topnav-titles"><%= link_to 'Logout', admin_session_path("current"), method: :delete %></li>
 
-      <li style="float:right; margin-top: 0.30rem">
+      <!-- <li style="float:right; margin-top: 0.30rem">
         <a href="<%= @city.eventbrite_page %>" target="_blank">
           <div class="registration-button button medium">
             <span>Webinar Registration</span>
           </div>
         </a>
-      </li>
+      </li> -->
     </ul>
   </div>
 <% else %>
@@ -51,7 +51,7 @@
 
   <section id="city-support">
     <div class="row">
-      <div class="columns large-6 medium-6 small-12 xsmall-12">
+      <div class="columns large-6 medium-6 small-12 xsmall-12 city-connect">
 
         <div class="row text-center">
           <div class="small-12 medium-12 large-12 columns text-center">
@@ -82,12 +82,12 @@
       </div>
 
       <% if @city.name == "Toronto" %>
-        <div class="columns large-6 medium-6 small-12 xsmall-12 text-center">
+        <div class="columns large-6 medium-6 small-12 xsmall-12 text-center city-email-signup">
           <!-- Begin MailChimp Signup Form -->
-          <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
-          <div id="mc_embed_signup">
+          <!-- <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css"> -->
+          <div id="city_mc_embed_signup">
             <form action="//pakathon.us9.list-manage.com/subscribe/post?u=ad8b8f5d43cbae3d83d1dbe5e&amp;id=42c988d66c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-              <div id="mc_embed_signup_scroll" class="text-center">
+              <div id="city_mc_embed_signup_scroll" class="text-center">
                 <label for="mce-EMAIL">Subscribe to <%= @city.name %>'s mailing list</label>
                 <div class="email-field">
                   <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email" required>

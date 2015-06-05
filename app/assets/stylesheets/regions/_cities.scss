@@ -85,6 +85,14 @@
   @include prop(padding, 40, 0);
   background-color: lighten($greyDark, 10);
 
+  .city-email-signup {
+    @include prop(margin-top, 50);
+
+    @media only screen and (min-width: $mediumScreen + px) {
+      @include prop(margin-top, 0);
+    }
+  }
+
   .punch {
     color: $white;
     @include prop(margin, 10, 0);
@@ -129,12 +137,13 @@
   }
 }
 
-#mc_embed_signup {
+#city_mc_embed_signup {
+
   form {
     @include prop(padding-top, 0);
   }
 
-  #mc_embed_signup_scroll {
+  #city_mc_embed_signup_scroll {
     text-align: center;
 
     label {
@@ -146,6 +155,7 @@
 
     .email-field {
       @include pre(width, 100%);
+      @include prop(margin-top, 20);
 
       input[type="email"] {
         @extend input[type="email"];
@@ -154,16 +164,15 @@
     }
 
     .clear {
+      @include prop(margin-top, 20);
+
       input[type="submit"] {
         @extend .button;
-        width: 100%;
-        @include prop(padding, 0, 30);
-
-        @media only screen and (min-width: $smallScreen + px) {
-          width: 60%;
-          margin-left: 20%;
-        }
+        width: 50%;
+        @include prop(padding, 10, 20);
+        cursor: pointer;
       }
     }
   }
 }
+
