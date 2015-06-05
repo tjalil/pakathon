@@ -20,7 +20,7 @@
 <% else %>
 <% end %>
 
-<% if @city.name == "Toronto" || @city.name == "Boston" %>
+<% if @city.name == "Toronto" %>
 
   <section class="city-hero" id="<%= @city.name.downcase.split(" ").join %>-background-img">
     <div class="row">
@@ -56,30 +56,24 @@
         <div class="row text-center">
           <div class="small-12 medium-12 large-12 columns text-center">
             <p class="punch">A conversation worth having. Let's talk.</h5>
-            <p class="punch email">pakathonTO@gmail.com</p>
+
+              <p class="punch email">pakathonTO@gmail.com</p>
           </div>
         </div>
 
-        <div class="row text-center">
-          <ul class="columns large-block-grid-2 medium-block-grid-2 small-block-grid-2 xsmall-block-grid-2">
-            <li class="text-right">
+        <!-- <div class="row text-center">
+          <ul class="large-6 large-centered medium-6 medium-centered small-6 small-centered xsmall-12 toronto-social-media">
+            <li class="toronto-facebook">
               <a href="https://www.facebook.com/pakathonTO">
-                <img src="../assets/logo-facebook.png">
               </a>
             </li>
-            <li class="text-left">
+            <li class="toronto-twitter">
               <a href="https://twitter.com/PakathonTO">
-                <img src="../assets/logo-twitter.png">
               </a>
             </li>
-            <!-- <li>
-              <a href="https://instagram.com/pakathonglobal/">
-                <img src="assets/logo-instagram.png">
-              </a>
-            </li> -->
           </ul>
         </div>
-      </div>
+      </div> -->
 
       <% if @city.name == "Toronto" %>
         <div class="columns large-6 medium-6 small-12 xsmall-12 text-center city-email-signup">
