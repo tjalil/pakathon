@@ -2,11 +2,23 @@ footer.global {
   @include prop(top, 0);
   @include prop(left, 0);
   @include prop(right, 0);
-  @include prop(padding, 15, 25);
   @include pre(transition, all 0.3s ease);
   background: transparent;
   z-index: 1000;
   background: $greyDark;
+  @include prop(padding, 15, 0);
+
+  .columns {
+    @include prop(padding, 0);
+  }
+
+  @media only screen and (min-width: $smallScreen + px) {
+    @include prop(padding, 15, 25);
+
+    .columns {
+      @include prop(padding, 0, 20);
+    }
+  }
 
   a, .logo, nav, ul, li, p {
     display: inline-block;

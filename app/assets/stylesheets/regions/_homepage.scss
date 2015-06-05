@@ -16,7 +16,7 @@
   background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0.6)), asset_url("hero-homepage.jpg");
 
   @media only screen and (min-width: $smallScreen + px) {
-    @include prop(min-height, 700);
+    @include prop(min-height, 700); 
 
     background-image: linear-gradient(top, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0)), asset_url("hero-homepage.jpg");
     background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0)), asset_url("hero-homepage.jpg");
@@ -51,8 +51,8 @@
       @include fontSize(17);
 
       @media only screen and (min-width: $mediumScreen + px) {
-        @include pre(width, 70%);
-        @include pre(margin-left, 15%);
+        @include pre(width, 90%);
+        @include pre(margin-left, 5%);
       }
     }
   }
@@ -78,7 +78,7 @@
     @include fontSize(18);
     
     &:hover {
-      color: darken($white, 20);
+      color: $greenDark;
       text-decoration: none;
     }
   }
@@ -445,9 +445,13 @@
     }
 
     .gamma {
-      @include fontSize(28);
+      @include fontSize(20);
       font-family: "OpenSans-LightItalic";
       color: $white;
+
+      @media only screen and (min-width: 768px) and (max-width: 920px) {
+        @include fontSize(18);
+      }
     }
 
     .punch {
@@ -457,6 +461,27 @@
       letter-spacing: 2px;
       @include prop(margin-bottom, 0);
       color: $white;
+      @include prop(margin, 20, 0, 30);
+
+      @media only screen and (min-width: $smallScreen + px) {
+        @include prop(margin, 10, 0, 20);
+      }
+
+      @media only screen and (min-width: 768px) and (max-width: 1093px) {
+        @include prop(margin, 10, 0, 15);
+        @include fontSize(10);
+      }
+    }
+
+    #testimonial-cta {
+      .button {
+        @include prop(padding, 5, 10);
+        @include fontSize(12);
+
+        @media only screen and (min-width: 768px) and (max-width: 1093px) {
+          @include fontSize(10);
+        } 
+      }
     }
   }
 

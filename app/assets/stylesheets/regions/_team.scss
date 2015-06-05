@@ -3,13 +3,17 @@
   @include prop(min-height, 400);
   position: relative;
 
+  @media only screen and (min-width: $smallScreen + px) {
+    @include prop(min-height, 300); 
+  }
+
   background-size: cover;
   background-color: white;
   background-repeat-x: no-repeat;
   background-repeat-y: no-repeat;
-  background-position-y: 70%;
+  background-position-y: 30%;
   background-position-x: 50%;
-  background-image: asset_url("homepage-hero.jpg");
+  background-image: asset_url("careers-slide-1.jpg");
 
   &:before {
     content: "";
@@ -52,7 +56,7 @@
   @include prop(padding, 40, 0, 0);
 
   ul {
-    @include prop(margin, 0);
+    @include prop(margin, 0, 10);
     float: left;
   }
 
@@ -104,10 +108,22 @@
 
 #team-partners {
   li {
-    @include prop(height, 150);
+    @include prop(height, 100);
+    @include prop(margin, 0);
+    @include prop(padding, 20);
+
+    @media only screen and (min-width: $smallScreen + px) {
+      @include prop(height, 150); 
+      @include prop(margin, 20, 0);
+      @include prop(padding, 0, 20);
+    }
 
     img {
-      @include prop(height, 100%);
+      @include prop(height, 70);
+
+      @media only screen and (min-width: $smallScreen + px) {
+        @include prop(height, 100);
+      }
     }
   }
 
