@@ -363,7 +363,7 @@
 
   .img-three {
     background-image: asset_url("girl-presenting.png");
-    min-height: 500px;
+    height: 500px;
     position: relative;
 
     .img-text {
@@ -487,6 +487,7 @@
 
   ul {
     background: $greenBackground;
+    @include pre(height, 100%);
   }
 
   [class*="block-grid-"] {
