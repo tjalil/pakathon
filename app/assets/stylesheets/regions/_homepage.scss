@@ -362,7 +362,7 @@
   }
 
   .img-three {
-    background-image: asset_url("girl-presenting.png");
+    background-image: asset_url("saim.jpg");
     height: 500px;
     position: relative;
 
@@ -371,7 +371,19 @@
       top: 0;
       @include prop(margin, 30, 30, 0);
 
+      .tag {
+        @include fontSize(10);
+        letter-spacing: 2px;
+        font-family: "OpenSans-Bold";
+        color: $white;
+        background-color: $green;
+        @include prop(padding, 5, 10);
+        text-transform: uppercase;
+        @include prop(margin-bottom, 5);
+      }
+
       .gamma {
+        @include prop(margin-top, 5);
         color: $white;
         @include prop(margin, 0, 20, 0, 0);
         @include fontSize(30);
