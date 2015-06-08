@@ -5,18 +5,22 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root :to => 'cities#index'
 
-  resources :cities, only: [:index, :show]
+  match '/404', to: 'errors#file_not_found', via: :all
+  match '/500', to: 'errors#internal_server_error', via: :all
 
-  resources :admins, only: [:show] do
-    resources :cities, only: [:new, :create, :edit, :update] do
-      member do
-        get 'dashboard'
-      end
-      resources :users, only: [:new, :create, :edit, :update, :destroy]
-      resources :contacts, only: [:show]
-    end
-    resources :logos, only: [:new, :create]
-  end
+  # resources :cities, only: [:index, :show]
+  resources :cities, only: [:index]
+
+  # resources :admins, only: [:show] do
+  #   resources :cities, only: [:new, :create, :edit, :update] do
+  #     member do
+  #       get 'dashboard'
+  #     end
+  #     resources :users, only: [:new, :create, :edit, :update, :destroy]
+  #     resources :contacts, only: [:show]
+  #   end
+  #   resources :logos, only: [:new, :create]
+  # end
 
   resources :admin_sessions, only: [:create, :destroy] do 
     collection do
@@ -24,7 +28,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :contacts, only: [:new, :create]
+  # resources :contacts, only: [:new, :create]
 
   resources :careers, only: [:index]
 
@@ -37,6 +41,10 @@ Rails.application.routes.draw do
       get 'contact'
     end
   end
+
+  # get "/404", to: 'errors#file_not_found', via: :all
+  # get "/500", to: 'errors#internal_server_error', via: :all
+
 
   # resources :pages, only: [:index] do
   #   collection do

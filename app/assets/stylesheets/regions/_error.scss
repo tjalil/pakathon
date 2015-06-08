@@ -1,0 +1,15 @@
+.four-oh-four {
+  @include prop(padding, 120, 0);
+  height: 93%;
+  // background: url("http://media.giphy.com/media/DqKiYKud5ckRa/giphy.gif") no-repeat;
+  background: url("https://betterbeingunderground.files.wordpress.com/2015/06/l6fa0lktqdc5n3vccl2c_gold-kid-dancing.gif") no-repeat;
+  background-size: cover;
+  @include pre(background-position-x, 70%);
+  @include pre(background-position-y, 0%);
+
+  @media only screen and (min-width: 900px) {
+    background-size: contain;
+    @include pre(background-position-x, 50%);
+    @include pre(background-position-y, 100%);
+  }
+}
