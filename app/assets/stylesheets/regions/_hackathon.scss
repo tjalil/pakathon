@@ -159,8 +159,8 @@
 
     .timeline-panel-img {
       display: block;
-      height: 150px;
-      width: 150px;
+      height: 200px;
+      width: 200px;
       margin: 0 auto;
 
       &#img-mini-events {
@@ -216,10 +216,9 @@
       }
     }
 
-    .hackathon-panel-img {
-      height: 300px;
-      @extend .timeline-panel-img;
-    }
+    // .hackathon-panel-img {
+    //   @extend .timeline-panel-img;
+    // }
 
     .hackathon-day-one, .hackathon-day-two, .hackathon-day-three {
       @include prop(margin-top, 40);

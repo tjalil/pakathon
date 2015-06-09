@@ -39,6 +39,7 @@
 
     h2 {
       color: $greyDark;
+      text-transform: uppercase;
 
       @media only screen and (min-width: $mediumScreen + px) {
         @include fontSize(37);

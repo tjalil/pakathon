@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   def toronto_baithak
   end
 
-  # def dekhmagarpyarsay_homepage_proto
+  # def homepage
   # end
 
   def program
