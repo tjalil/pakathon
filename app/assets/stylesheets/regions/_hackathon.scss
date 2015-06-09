@@ -169,32 +169,38 @@
       }
 
       &#img-orientation {
-        background: url('pakathonto_2014_selfie.jpg') 0% 100%;
+        background: url('orientation.jpg') 30% 100%;
         background-size: 160%;
       }
 
       &#img-hackathon {
-        background: url('pakathonto_2014_selfie.jpg') 50% 50%;
+        background: url('hackathon.jpg') 0% 100%;
+        background-size: 120%;
       }
 
       &#img-hackathon-day-one {
-        background: url('pakathonto_2014_selfie.jpg') 50% 50%;
+        background: url('hackathon-day-one.jpg') 60% 100%;
+        background-size: 160%;
       }
 
       &#img-hackathon-day-two {
-        background: url('pakathonto_2014_selfie.jpg') 50% 50%;
+        background: url('hackathon-day-two.jpg') 0% 100%;
+        background-size: 120%;
       }
 
       &#img-hackathon-day-three {
-        background: url('pakathonto_2014_selfie.jpg') 50% 50%;
+        background: url('hackathon-day-three.jpg') 30% 100%;
+        background-size: 160%;
       }
 
       &#img-global-finals {
-        background: url('pakathonto_2014_selfie.jpg') 50% 50%;
+        background: url('global-finals.jpg') 35% 100%;
+        background-size: 160%;
       }
 
       &#img-partnerships-and-funding {
-        background: url('pakathonto_2014_selfie.jpg') 50% 50%;
+        background: url('partnerships-funding.jpg') 35% 100%;
+        background-size: 120%;
       }
 
       @media only screen and (min-width: $smallScreen + px) {
@@ -234,14 +240,22 @@
       @include prop(margin-bottom, 10);
     }
 
-    .delta {
-      @include fontSize(18);
-      font-family: "OpenSans-Light";
+    .delta,
+    .icon-calendar {
+      @include fontSize(14);
+      font-family: "OpenSans-Bold";
+      letter-spacing: 2px;
+
+      &:before {
+        color: $green;
+        @include prop(margin-right, 10);
+        @include fontSize(18);
+      }
     }
 
     .punch {
       @include fontSize(18);
-      font-family: "OpenSans-Regular";
+      font-family: "OpenSans-Light";
       @include prop(margin-top, 0);
     }
   }
