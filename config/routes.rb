@@ -33,7 +33,7 @@ Rails.application.routes.draw do
 
   resources :pages, :path => '' do
     collection do
-      get 'toronto_baithak'
+      # get 'toronto_baithak'
       get 'program'
       get 'team'
       get 'contact'
