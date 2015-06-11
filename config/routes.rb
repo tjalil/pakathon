@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   match '/404', to: 'errors#file_not_found', via: :all
   # match '/500', to: 'errors#internal_server_error', via: :all
 
-  # resources :cities, only: [:index, :show]
   resources :cities, only: [:index]
 
   # resources :admins, only: [:show] do
@@ -43,18 +42,6 @@ Rails.application.routes.draw do
       # get 'dekhmagarpyarsay_contact_proto'
     end
   end
-
-  # get "/404", to: 'errors#file_not_found', via: :all
-  # get "/500", to: 'errors#internal_server_error', via: :all
-
-
-  # resources :pages, only: [:index] do
-  #   collection do
-  #     get 'webinar'
-  #   end
-  # end
-  # resources :toronto_baithak, controller: "pages", only: [:index]
-  # resources :toronto_webinar, controller: "pages", only: [:webinar]
 
   # resources :dekhmagarpyarsaycareers, controller: "careers", only: [:index]
 
