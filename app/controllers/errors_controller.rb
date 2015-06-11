@@ -6,7 +6,10 @@ class ErrorsController < ApplicationController
     end
   end
 
-  # def internal_server_error
-  #   render :status => 500
-  # end
+  def internal_server_error
+    respond_to do |format|
+      format.html { render template: 'errors/file_not_found', layout: 'layouts/application', status: 500 }
+      format.all  { render nothing: true, status: 500 }
+    end
+  end
 end
