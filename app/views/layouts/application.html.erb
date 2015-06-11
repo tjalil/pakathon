@@ -8,7 +8,7 @@
   <%= stylesheet_link_tag    'application' %>
   <%= javascript_include_tag 'vendor/modernizr' %>
   <%= csrf_meta_tags %>
-  <%= favicon_link_tag(Logo.find_by(name:"favicon").image_url(:logo)) %>
+  <%= favicon_link_tag(Logo.find_by(name:"favicon")) %>
 </head>
 <body>
   <%= render 'layouts/header' %>

@@ -6,7 +6,7 @@ class CitiesController < ApplicationController
 
   def index
     @cities = City.all
-    @global = City.find_by(name: "Boston")
+    # @global = City.find_by(name: "Boston")
   end
 
   def new
