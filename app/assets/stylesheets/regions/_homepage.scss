@@ -375,7 +375,7 @@
         letter-spacing: 2px;
         font-family: "OpenSans-Bold";
         color: $white;
-        background-color: $green;
+        background-color: $greenBackground;
         @include prop(padding, 5, 10);
         text-transform: uppercase;
         @include prop(margin-bottom, 5);
