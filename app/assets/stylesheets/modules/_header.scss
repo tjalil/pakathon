@@ -28,11 +28,15 @@ header.global {
     @include fontSize(20);
 
     &:before {
-      content: asset_url("pakathon-logo.png");
+      content: "";
+      background: asset_url("pakathon-logo.png") 50% 50%;
       display: block;
       position: absolute;
+      background-size: 100%;
       @include prop(left, -50);
-      @include prop(top, -6);
+      @include prop(top, -10);
+      @include prop(width, 45);
+      @include prop(height, 45);
     }
 
     img {
@@ -57,11 +61,11 @@ header.global {
         @include prop(letter-spacing, 2);
 
         &.active {
-          color: $greenBackground;
+          color: $greenLight;
         }
 
         &:hover {
-          color: $greenBackground;
+          color: $greenLight;
         }
       }
 
@@ -77,13 +81,13 @@ header.global {
     .button {
       @include fontSize(13);
       @include prop(letter-spacing, 2);
-      background: $green;
+      background: $greenLight;
       color: $white;
-      @include border(1, solid, $green);
+      @include border(1, solid, $greenLight);
 
       &:hover {
         background: $white;
-        color: $green;        
+        color: $greenLight;        
       }
     }
   }
@@ -106,7 +110,7 @@ header.global {
 
       &:hover {
         &:before {
-          color: $greenBackground;
+          color: $greenLight;
         }
       }
     }

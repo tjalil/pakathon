@@ -30,11 +30,11 @@ body {
       @include pre(transition, color 0.3s ease);
 
       &:hover {
-        color: $greenBackground;
+        color: $greenLight;
       }
 
       &.active {
-        color: $greenBackground;
+        color: $greenLight;
       }
     }
   }

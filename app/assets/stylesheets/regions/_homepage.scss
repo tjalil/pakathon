@@ -407,8 +407,8 @@
         font-family: "OpenSans-Bold";
 
         &:hover {
-          background: $greenBackground;
-          @include border(1, solid, $greenBackground);
+          background: $greenLight;
+          @include border(1, solid, $greenLight);
           color: $white;
         }
       }
@@ -439,8 +439,8 @@
       display: block;
       min-height: 500px;
       width: 100%;
-      background-color: $greenBackground;
-      opacity: 0.6;
+      background-color: $blackBackground;
+      opacity: 0.8;
     }
   }
 
