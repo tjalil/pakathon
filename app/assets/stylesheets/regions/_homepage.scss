@@ -384,9 +384,8 @@
       }
 
       .gamma {
-        @include prop(margin-top, 5);
         color: $white;
-        @include prop(margin, 0, 20, 0, 0);
+        @include prop(margin, 10, 20, 0, 0);
         @include fontSize(30);
         font-family: "OpenSans-Light";
       }
