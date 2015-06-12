@@ -16,8 +16,6 @@
   background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0.6)), asset_url("hero-homepage.jpg");
 
   @media only screen and (min-width: $smallScreen + px) {
-    @include prop(min-height, 700); 
-
     background-image: linear-gradient(top, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0)), asset_url("hero-homepage.jpg");
     background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0)), asset_url("hero-homepage.jpg");
     background-image: -o-linear-gradient(top, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0)), asset_url("hero-homepage.jpg");
