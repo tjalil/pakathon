@@ -581,7 +581,12 @@
   }
 
   .social-text {
-
+    .social-icons-columns {
+      @media only screen and (max-width: 320px) {
+        @include pre(width, 100%);
+      }
+    }
+  
     .social-icons {
       position: relative;
       @include prop(width, 30);
@@ -609,6 +614,10 @@
         @include pre(height, 100%);
         @include pre(width, 100%);
         @include prop(left, 0);
+      }
+
+      @media only screen and (max-width: 320px) { 
+        @include prop(margin, 0, 20);
       }
     }
   }
