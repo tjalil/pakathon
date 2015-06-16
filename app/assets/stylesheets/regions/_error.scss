@@ -6,10 +6,19 @@
   background-size: cover;
   @include pre(background-position-x, 70%);
   @include pre(background-position-y, 0%);
+  
+  h2 {
+    color: $white;  
+  }
+  
 
   @media only screen and (min-width: 900px) {
     background-size: contain;
     @include pre(background-position-x, 50%);
     @include pre(background-position-y, 100%);
+    
+    h2 {
+      color: $titleColor;
+    }
   }
 }
