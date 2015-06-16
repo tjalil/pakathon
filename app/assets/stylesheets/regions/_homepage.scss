@@ -100,7 +100,8 @@
   }
 
   .large-block-grid-3 {
-    @include prop(padding, 0, 25);
+    @include prop(margin, 0);
+    @include prop(padding, 0, 0);
   }
 
   .education, .networks, .financing {
@@ -116,29 +117,32 @@
       content: "";
       position: absolute;
       display: block;
-      background-size: contain;
       height: 200px;
       width: 100%;
       top: 0;
       left: 0;
+      right: 0;
     }
   }
 
   .education {
     &:before {
       background: asset_url("icon-education.png") 50% 50% no-repeat no-repeat;
+      // background-size: 100%;
     }
   }
 
   .networks {
     &:before {
       background: asset_url("icon-networks.png") 50% 50% no-repeat no-repeat;
+      // background-size: 100%;
     }
   }
 
   .financing {
     &:before {
       background: asset_url("icon-financing.png") 50% 50% no-repeat no-repeat;
+      // background-size: 100%;
     }
   }
 
