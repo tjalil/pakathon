@@ -269,14 +269,26 @@
 }
 
 .program-nav {
+  display: block;
+
+  @media only screen and (min-width: $smallScreen + px) {
+    display: none;
+  }
+
   position: fixed;
   @include pre(top, 90%);
   @include prop(right, -20);
   @include prop(width, 100);
 
   .button {
-    background-color: $greenBackground;
+    background-color: $green;
+    border-color: $green;
     @include prop(padding, 15, 10);
+    // @include pre(box-shadow, 0 3px 6px rgba(0,0,0,0.33));
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.33);
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.33);
+    -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.33);
+    -ms-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.33);
     @include pre(transition, background-color 0.3s ease-out);
 
     &:before {
@@ -287,7 +299,7 @@
     }
 
     &:hover {
-      background-color: lighten($greenBackground, 10);
+      background-color: lighten($green, 10);
     }
   }
 
@@ -310,7 +322,7 @@
       a {
         &.active {
           p {
-            color: $greenBackground;
+            color: $green;
           }
         }
       }
@@ -320,7 +332,7 @@
         @include fontSize(16);
 
         &:hover {
-          color: $greenBackground;
+          color: $green;
         }
       }
     }
