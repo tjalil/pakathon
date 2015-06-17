@@ -154,6 +154,10 @@ li {
   @include radius(3);
 }
 
+.hidden {
+  display: none;
+}
+
 
 //----------------------------------------------------------------
 //  Backgrounds & Containers

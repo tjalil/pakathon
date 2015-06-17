@@ -266,5 +266,63 @@
       @include prop(margin-top, 0);
     }
   }
+}
 
+.program-nav {
+  position: fixed;
+  @include pre(top, 90%);
+  @include prop(right, -20);
+  @include prop(width, 100);
+
+  .button {
+    background-color: $greenBackground;
+    @include prop(padding, 15, 10);
+    @include pre(transition, background-color 0.3s ease-out);
+
+    &:before {
+      position: relative;
+      color: $white;
+      @include fontSize(35);
+      @include prop(top, 10);
+    }
+
+    &:hover {
+      background-color: lighten($greenBackground, 10);
+    }
+  }
+
+  ul {
+    position: absolute;
+    // display: none;
+    @include prop(bottom, 50);
+    @include prop(right, 40);
+    background-color: black;
+    @include pre(transition, opacity 0.3s ease-out);
+    @include prop(padding, 20);
+    text-align: center;
+
+    .active {
+      display: block;
+    }
+
+    li {
+
+      a {
+        &.active {
+          p {
+            color: $greenBackground;
+          }
+        }
+      }
+
+      p {
+        @include prop(margin, 10);
+        @include fontSize(16);
+
+        &:hover {
+          color: $greenBackground;
+        }
+      }
+    }
+  }
 }
