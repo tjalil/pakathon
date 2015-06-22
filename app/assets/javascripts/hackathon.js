@@ -50,7 +50,18 @@ $(window).ready(function() {
   // making green color persist on selected sidenav item
   $('.smooth-scroll').click(function() {
     $('.smooth-scroll').removeClass('active');
-    $(this).parent().prevAll().children('a').addClass('active');
+    if (Modernizr.mq('only screen and (min-width: 768px)')) {
+      $(this).parent().prevAll().children('a').addClass('active');
+    }
     $(this).addClass('active');
+  });
+
+  // 
+  $('#page-nav-btn').click(function() {
+    if ($('.program-nav').hasClass('active')) {
+      $('.program-nav').removeClass('active');
+    } else {
+      $('.program-nav').addClass('active');
+    }
   });
 });
