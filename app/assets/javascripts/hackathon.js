@@ -43,6 +43,7 @@ $(window).ready(function() {
             scrollTop: target.offset().top - 100
           }, 1200);
         }
+        $('.program-nav').removeClass('active');
       }
     });
   });
