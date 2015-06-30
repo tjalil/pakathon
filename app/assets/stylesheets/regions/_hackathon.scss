@@ -263,7 +263,7 @@
   }
 
   position: fixed;
-  @include pre(top, 90%);
+  @include pre(top, 85%);
   @include prop(right, -20);
   @include prop(width, 100);
 
@@ -318,7 +318,7 @@
   }
 
   &.active {
-    @include pre(top, 92%);
+    @include pre(top, 87%);
 
     .button {
       @include prop(padding, 15, 20);
