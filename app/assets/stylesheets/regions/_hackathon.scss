@@ -257,15 +257,15 @@
 
 .program-nav {
   display: block;
-
-  @media only screen and (min-width: $smallScreen + px) {
-    display: none;
-  }
-
   position: fixed;
   @include pre(top, 85%);
   @include prop(right, -20);
   @include prop(width, 100);
+  z-index: 998;
+
+  @media only screen and (min-width: $smallScreen + px) {
+    display: none;
+  }
 
   .button {
     background-color: $greenLight;

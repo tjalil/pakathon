@@ -2,6 +2,7 @@ footer.global {
   @include prop(top, 0);
   @include prop(left, 0);
   @include prop(right, 0);
+  position: relative;
   @include pre(transition, all 0.3s ease);
   background: transparent;
   z-index: 1000;
