@@ -37,6 +37,7 @@ Rails.application.routes.draw do
       get 'program'
       get 'team'
       get 'contact'
+      get 'resources'
       # get 'dekhmagarpyarsay_program_proto'
       # get 'dekhmagarpyarsay_team_proto'
       # get 'dekhmagarpyarsay_contact_proto'

@@ -15,6 +15,9 @@ class PagesController < ApplicationController
   end
 
   def contact
-  end 
+  end
+
+  def resources
+  end
 
 end

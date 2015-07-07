@@ -1,0 +1,52 @@
+#resources-hero {
+  @include prop(padding, 90, 0);
+}
+
+.main-resource-link {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+.resource-box {
+  z-index: 1;
+  @include prop(max-width, 250);
+  @include pre(box-shadow, 0 1px 3px rgba(0, 0, 0, 0.2));
+  @include prop(padding, 20, 10);
+  @include pre(transition, box-shadow 0.3s ease-out);
+  cursor: pointer;
+  @include border(1, solid, $greenLight, bottom);
+
+  &:hover {
+    @include pre(box-shadow, 0 3px 9px rgba(0,0,0,0.2));
+  }
+
+  &:before {
+    @include fontSize(40);
+  }
+
+  h4 {
+    @include prop(margin, 20, 0, 0);
+
+    span {
+      font-family: "OpenSans-Bold";
+    }
+  }
+
+  .type {
+    text-transform: uppercase;
+    font-family: "OpenSans-Bold";
+    @include fontSize(13);
+    letter-spacing: 2px;
+    color: $green;
+  }
+
+  .resource-posted {
+    color: $bodyColor;
+    @include prop(padding, 0, 0, 30)
+  }
+
+  .download-link {
+    z-index: 2;
+  }
+}
