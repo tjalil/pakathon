@@ -13,6 +13,11 @@
   }
 
   li {
+
+    @media only screen and (max-width: 320px) {
+      @include pre(width, 100%);
+    }
+
     &.resource-box {
       z-index: 1;
       cursor: pointer;
