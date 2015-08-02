@@ -10,16 +10,16 @@ Rails.application.routes.draw do
   
   resources :cities, only: [:index]
 
-  # resources :admins, only: [:show] do
-  #   resources :cities, only: [:new, :create, :edit, :update] do
-  #     member do
-  #       get 'dashboard'
-  #     end
-  #     resources :users, only: [:new, :create, :edit, :update, :destroy]
-  #     resources :contacts, only: [:show]
-  #   end
-  #   resources :logos, only: [:new, :create]
-  # end
+  resources :admins, only: [:show] do
+    resources :cities, only: [:new, :create, :edit, :update] do
+      member do
+        get 'dashboard'
+      end
+      resources :users, only: [:new, :create, :edit, :update, :destroy]
+      resources :contacts, only: [:show]
+    end
+    resources :logos, only: [:new, :create]
+  end
 
   resources :admin_sessions, only: [:create, :destroy] do 
     collection do
