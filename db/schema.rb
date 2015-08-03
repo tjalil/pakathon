@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140902031919) do
+ActiveRecord::Schema.define(version: 20150803233242) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,19 @@ ActiveRecord::Schema.define(version: 20140902031919) do
   create_table "logos", force: true do |t|
     t.string   "name"
     t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "resources", force: true do |t|
+    t.string   "title"
+    t.string   "series"
+    t.string   "type_of_document"
+    t.string   "twitter_canned_message"
+    t.string   "facebook_canned_message"
+    t.string   "link_to_muut_discussion"
+    t.string   "link_to_document"
+    t.string   "link_to_download"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
