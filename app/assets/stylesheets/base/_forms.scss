@@ -21,10 +21,19 @@
 form {
 }
 
+.field {
+    @include prop(margin, 10, 0);
+
+    &.radio-field {
+        @include prop(margin, 10, 0, 20);
+    }
+}
+
 input[type="email"],
 input[type="text"],
-input[type="password"] {
-    width: 300px;
+input[type="password"],
+textarea {
+    @include prop(width, 300);
     font-family: 'OpenSans-Regular';
     outline: none;
     @include fontSize(12);
@@ -34,7 +43,7 @@ input[type="password"] {
     @include pre(transition, border 0.3s ease);
 
     &.login-text-field {
-        @include border(2, solid, $grey);
+        @include border(2, solid, $greyDark);
         @include prop(margin, 10, 0, 20);
     }
 
@@ -43,8 +52,15 @@ input[type="password"] {
     }
 }
 
-input[type="submit"] {
+textarea {
+    @include pre(width, 100%);
+}
 
+input[type="radio"] {
+    @include prop(margin, 10, 0);
+}
+
+input[type="submit"] {
 }
 
 fieldset {

@@ -1,3 +1,8 @@
+#resource-form {
+    @include prop(min-height, 400);
+    @include prop(padding, 90, 0);
+}
+
 #resources-repo {
     @include prop(padding, 90, 0);
 
@@ -71,4 +76,9 @@
             }
         }
     }
+}
+
+#my-resources-repo {
+    @include prop(min-height, 400);
+    @include prop(padding, 90, 0);
 }
