@@ -5,70 +5,70 @@
         @include prop(margin, 0);
     }
 
-        .main-resource-link {
-            display: block;
-            width: 100%;
-            height: 100%;
-            position: relative;
+    .main-resource-link {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    li {
+
+        @media only screen and (max-width: 320px) {
+            @include pre(width, 100%);
         }
 
-        li {
-
-            @media only screen and (max-width: 320px) {
-              @include pre(width, 100%);
-            }
-
         &.resource-box {
-          z-index: 1;
-          cursor: pointer;
-          @include prop(margin, 20, 0);
+            z-index: 1;
+            cursor: pointer;
+            @include prop(margin, 20, 0);
 
-          .icon-doc,
-          .icon-audio,
-          .icon-video {
-            @include prop(padding, 20, 10);
-            @include pre(transition, box-shadow 0.3s ease-out);
-            @include border(1, solid, $greenLight, bottom);
-            @include pre(box-shadow, 0 1px 3px rgba(0, 0, 0, 0.2));
-
-            &:before {
-              @include fontSize(30);
-              color: $green;
-            }
-          }
-
-          &:hover {
             .icon-doc,
             .icon-audio,
             .icon-video {
-              @include pre(box-shadow, 0 3px 9px rgba(0,0,0,0.2));
+                @include prop(padding, 20, 10);
+                @include pre(transition, box-shadow 0.3s ease-out);
+                @include border(1, solid, $greenLight, bottom);
+                @include pre(box-shadow, 0 1px 3px rgba(0, 0, 0, 0.2));
+
+                &:before {
+                    @include fontSize(30);
+                    color: $green;
+                }
             }
-          }
 
-          h4 {
-            @include prop(margin, 20, 0, 0);
-
-            span {
-              font-family: "OpenSans-Bold";
+            &:hover {
+                .icon-doc,
+                .icon-audio,
+                .icon-video {
+                    @include pre(box-shadow, 0 3px 9px rgba(0,0,0,0.2));
+                }
             }
-          }
 
-          .type {
-            text-transform: uppercase;
-            font-family: "OpenSans-Bold";
-            @include fontSize(13);
-            letter-spacing: 2px;
-            color: $green;
-          }
+            h4 {
+                @include prop(margin, 20, 0, 0);
 
-          .resource-posted {
-            color: $bodyColor;
-            @include prop(padding, 0, 0, 30)
-          }
+                span {
+                    font-family: "OpenSans-Bold";
+                }
+            }
 
-          .download-link {
-            z-index: 2;
-          }
+            .type {
+                text-transform: uppercase;
+                font-family: "OpenSans-Bold";
+                @include fontSize(13);
+                letter-spacing: 2px;
+                color: $green;
+            }
+
+            .resource-posted {
+                color: $bodyColor;
+                @include prop(padding, 0, 0, 30)
+            }
+
+            .download-link {
+                z-index: 2;
+            }
         }
     }
 }

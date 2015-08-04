@@ -21,23 +21,29 @@
 form {
 }
 
-input[type="email"] {
-  width: 300px;
-  font-family: 'OpenSans-Regular';
-  outline: none;
-  @include fontSize(12);
-  @include prop(line-height, 25);
-  @include border(1, solid, $grey);
-  @include prop(padding-left, 20);
-  @include border(2, solid, transparent);
-  @include pre(transition, border 0.3s ease);
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+    width: 300px;
+    font-family: 'OpenSans-Regular';
+    outline: none;
+    @include fontSize(12);
+    @include prop(line-height, 25);
+    @include prop(padding-left, 20);
+    @include border(2, solid, transparent);
+    @include pre(transition, border 0.3s ease);
 
-  &:focus {
-    @include border(2, solid, $greenBackground);
-  }
+    &.login-text-field {
+        @include border(2, solid, $grey);
+        @include prop(margin, 10, 0, 20);
+    }
+
+    &:focus {
+        @include border(2, solid, $greenBackground);
+    }
 }
 
-  input[type="submit"] {
+input[type="submit"] {
 
 }
 
