@@ -1,10 +1,37 @@
 <section id="resources-repo">
   <div class="row">
     <ul class="columns large-block-grid-4 medium-block-grid-3 small-block-grid-2 xsmall-block-grid-1">
+      <% @resources.each do |resource| %>
+        <li class="resource-box">
+          <a href="<%= resource.link_to_document %>">
+            <% if resource.type_of_document == "Text File" %>
+              <div class="text-center icon-doc">
+            <% elsif resource.type_of_document == "Audio File" %>
+              <div class="text-center icon-audio">
+            <% elsif resource.type_of_document == "Video File" %>
+              <div class="text-center icon-video">
+            <% end %>
+
+                <% if resource.series %>
+                  <p class="type"><%= resource.series %></p>
+                <% end %>
+                
+                <h4 class="delta"><%= resource.title %></h4>
+                <div class="resource-posted">
+                  <p class="tiny">Posted On: <%= resource.created_at.to_s(:just_date) %></p>
+                </div>
+                <div class="download-link">
+                  <%= link_to "Or click here to download", resource.link_to_download, class: "tiny" %>
+                </div>
+              </div>
+          </a>
+        </li>
+      <% end %>
+
       <li class="resource-box">
         <a href="https://pakathonto.uberflip.com/i/537429-test-email-course-module-1-v2" class="main-resource-link" target="_blank">
           <div class="text-center icon-doc">
-            <p class="type">Email Course</p>
+            <p class="type">Hardcoded Email Course</p>
             <h4><span>Module 1</span><br> An Entrepreneurial Perspective on Pakistan's Creation</h4>
             <div class="resource-posted">
               <p class="tiny">Posted On: July 8th, 2015</p>
