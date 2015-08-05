@@ -2,7 +2,14 @@
   <div class="row">
     <div class="columns xsmall-12">
       <h1 class="alpha"><%= current_user.username %>'s Resources</h1>
-      <h4 class="delta"><%= link_to "Add Resource", new_admin_resource_path(current_user) %></h4>
+      <h5 class="epsilon"><%= link_to "Add Resource", new_admin_resource_path(current_user) %></h5>
+      <ul class="resources-list">
+        <% @resources.each do |resource| %>
+        <li>
+          <p class="punch"><%= resource.title %> | <%= link_to "Edit", edit_admin_resource_path(current_user, resource) %></p>
+        </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </section>

@@ -1,6 +1,7 @@
 class ResourcesController < ApplicationController
 
   before_filter :find_admin, except: [:index]
+  before_filter :find_resource, only: [:edit, :update, :destroy]
 
   def index
     @resources = Resource.all
@@ -32,6 +33,11 @@ class ResourcesController < ApplicationController
   end
 
   def update
+    if @resource.update_attribute(resource_params)
+      redirect_to my_resources_admin_resources_path(current_user), notice: "Resource successfully edited."
+    else
+      render :edit, alert: "Unable to edit resource. Please try again."
+    end
   end
 
   def destroy
@@ -45,5 +51,9 @@ class ResourcesController < ApplicationController
 
   def find_admin
     @admin = Admin.find(current_user.id)
+  end
+
+  def find_resource
+    @resource = Resource.find(params[:id])
   end
 end
