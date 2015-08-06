@@ -13,6 +13,7 @@ class ResourcesController < ApplicationController
 
   def create
     @resource = Resource.new(resource_params)
+    @resource.admin_id = current_user.id
 
     if @resource.save
       redirect_to my_resources_admin_resources_path(current_user), notice: "Resource successfully added."

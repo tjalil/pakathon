@@ -60,9 +60,7 @@
     <%= f.label :link_to_muut_discussion, "Link to Muut Discussion around Resource (Optional)" %><br>
     <%= f.text_field :link_to_muut_discussion, class: "login-text-field" %>
   </div>
-
-  <%= f.hidden_field :admin_id, value: current_user.id %>
-
+  
   <div class="action">
     <%= f.submit "Save", class: "button" %>
   </div>
