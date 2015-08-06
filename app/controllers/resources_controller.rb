@@ -11,14 +11,6 @@ class ResourcesController < ApplicationController
     @resource = Resource.new
   end
 
-  def my_resources
-    if current_user.username == "taha.jalil"
-      @resources = Resource.all
-    else
-      @resources = @admin.resources
-    end
-  end
-
   def create
     @resource = Resource.new(resource_params)
 
@@ -29,11 +21,19 @@ class ResourcesController < ApplicationController
     end
   end
 
+  def my_resources
+    if current_user.username == "taha.jalil"
+      @resources = Resource.all
+    else
+      @resources = @admin.resources
+    end
+  end
+
   def edit
   end
 
   def update
-    if @resource.update_attribute(resource_params)
+    if @resource.update_attributes(resource_params)
       redirect_to my_resources_admin_resources_path(current_user), notice: "Resource successfully edited."
     else
       render :edit, alert: "Unable to edit resource. Please try again."
@@ -46,7 +46,7 @@ class ResourcesController < ApplicationController
   private
 
   def resource_params
-    params.require(:resource).permit(:title, :series, :type_of_document, :twitter_canned_message, :facebook_canned_message, :link_to_muut_discussion, :link_to_document, :link_to_download)
+    params.require(:resource).permit(:title, :series, :type_of_document, :twitter_canned_message, :facebook_canned_message, :link_to_muut_discussion, :link_to_document, :link_to_download, :admin_id)
   end
 
   def find_admin
