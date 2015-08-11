@@ -20,9 +20,13 @@
                 <div class="resource-posted">
                   <p class="tiny">Posted On: <%= resource.created_at.to_s(:just_date) %></p>
                 </div>
-                <div class="download-link">
-                  <%= link_to "Or click here to download", resource.link_to_download, class: "tiny" %>
-                </div>
+
+                <% if resource.link_to_download.present? %>
+                  <div class="download-link">
+                    <%= link_to "Or click here to download", resource.link_to_download, class: "tiny" %>
+                  </div>
+                <% end %>
+
               </div>
           </a>
         </li>
