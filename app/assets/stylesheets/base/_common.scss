@@ -162,12 +162,15 @@ li {
   font-weight: 100;
 }
 
-.login-form,
 .admin-users-dashboard,
 .admin-new-user,
 .new-logo,
 .admin-main-dashboard {
   @include prop(padding, 20, 0, 50);
+}
+
+.login-form {
+  @include prop(padding, 90, 0, 50);
 }
 
 //----------------------------------------------------------------
