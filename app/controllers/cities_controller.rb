@@ -17,9 +17,9 @@ class CitiesController < ApplicationController
     @city = City.new(city_params)
 
     if @city.save
-      redirect_to city_path(@city), notice: "#{@city.name} successfully created!"
+      redirect_to admin_path(current_user), notice: "#{@city.name} successfully created!"
     else
-      render :new, alert: "There was an issue creating this city. Please try again."
+      render :edit, alert: "There was an issue creating this city. Please try again."
     end
   end
 
@@ -32,9 +32,9 @@ class CitiesController < ApplicationController
 
   def update
     if @city.update_attributes(city_params)
-      redirect_to city_path(@city), notice: "Successfully updated #{@city.name}!"
+      redirect_to admin_path(current_user), notice: "Successfully updated #{@city.name}!"
     else
-      render :new, alert: "There was an issue updating #{@city.name}'s details. Please try again."
+      render :edit, alert: "There was an issue updating #{@city.name}'s details. Please try again."
     end
   end
 
@@ -47,7 +47,7 @@ class CitiesController < ApplicationController
   private
 
   def city_params
-    params.require(:city).permit(:name, :address, :background_img, :email, :phone, :facebook, :twitter, :eventbrite_page, :hero_copy, :map_photo, :building_name, :province_name, :postal_code, :team_description)
+    params.require(:city).permit(:name, :hero_photo, :hero_photo_url, :hero_photographer_name, :hero_photographer_page, :hero_copy, :address, :email, :phone, :facebook, :twitter, :eventbrite_page, :map_photo, :province_name, :postal_code, :team_description)
   end
 
   def find_city

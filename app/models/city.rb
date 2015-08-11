@@ -2,7 +2,7 @@ class City < ActiveRecord::Base
   has_many :users
   belongs_to :admin
   has_many :contacts
-  mount_uploader :background_img, ImageUploader
+  mount_uploader :hero_photo, ImageUploader
   mount_uploader :map_photo, ImageUploader
 
   extend FriendlyId

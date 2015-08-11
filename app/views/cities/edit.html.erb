@@ -1,102 +1,118 @@
-<div class="row">
-  <div class="columns large-12">
-    <% if current_user.username == "taha.jalil" || @city.admin_id == current_user.id %>
-      <h1>Edit <%= @city.name %></h1>
-      <%= form_for ([current_user, @city]), :html => {:multipart => true} do |f| %>
-        <% if @city.errors.any? %>
-          <div class="error_messages">
-            <h2>Form is invalid</h2>
-            <ul>
-              <% for message in @city.errors.full_messages %>
-                <li><%= message %></li>
-              <% end %>
-            </ul>
+<section id="edit-city-form">
+  <div class="row">
+    <div class="columns xsmall-12">
+      <% if current_user.username == "taha.jalil" || @city.admin_id == current_user.id %>
+        <h4 class="delta">Edit <%= @city.name %></h4>
+        <%= form_for ([current_user, @city]), :html => {:multipart => true} do |f| %>
+          <% if @city.errors.any? %>
+            <div class="error_messages">
+              <h2>Form is invalid</h2>
+              <ul>
+                <% for message in @city.errors.full_messages %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <% if current_user.username == "taha.jalil" %>
+            <div class="field">
+              <%= f.label :name, "Name of the City" %><br>
+              <%= f.text_field :name, class: "login-text-field" %>
+            </div>
+
+            <div class="field">
+              <%= f.label :hero_photo, "Upload Hero Background Image" %><br>
+              <%= f.file_field :hero_photo, class: "file-field" %>
+            </div>
+
+            <div class="field">
+              <%= f.label :hero_photo_url, "Photo URL: For Creative Commons use of photo" %><br>
+              <%= f.text_field :hero_photo_url, class: "login-text-field" %>
+            </div>
+
+            <div class="field">
+              <%= f.label :hero_photographer_page, "Photographer Page URL: For Creative Commons use of photo" %><br>
+              <%= f.text_field :hero_photographer_page, class: "login-text-field" %>
+            </div>
+
+            <div class="field">
+              <%= f.label :hero_photographer_name, "Photographer Name: For Creative Commons use of photo" %><br>
+              <%= f.text_field :hero_photographer_name, class: "login-text-field" %>
+            </div>
+          <% end %>
+
+          <div class="field">
+            <%= f.label :hero_copy, "Hero Text" %><br>
+            <%= f.text_field :hero_copy, class: "login-text-field" %>
           </div>
+
+          <div class="field">
+            <%= f.label :team_description, "A few words to describe your local team" %><br>
+            <%= f.text_field :team_description, class: "login-text-field" %>
+          </div>
+          <br>
+
+          <h4>Address</h4>
+
+          <div class="field">
+            <%= f.label :address, "Address" %><br>
+            <%= f.text_field :address, class: "login-text-field" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :province_name, "Province/State" %><br>
+            <%= f.text_field :province_name, class: "login-text-field" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :postal_code, "Postal Code/ZIP" %><br>
+            <%= f.text_field :postal_code, class: "login-text-field" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :map_photo, "Snapshot of map with location centered" %><br>
+            <%= f.file_field :map_photo, class: "file-field" %>
+          </div>
+          <br>
+
+          <h4>Contact Information</h4>
+
+          <div class="field">
+            <%= f.label :email %><br>
+            <%= f.text_field :email, class: "login-text-field" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :phone %><br>
+            <%= f.text_field :phone, class: "login-text-field" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :facebook %><br>
+            <%= f.text_field :facebook, class: "login-text-field" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :twitter %><br>
+            <%= f.text_field :twitter, class: "login-text-field" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :eventbrite_page %><br>
+            <%= f.text_field :eventbrite_page, class: "login-text-field" %>
+          </div>
+
+          <div class="action">
+            <%= f.submit "Save", class: "button green" %>
+          </div>
+
         <% end %>
-
-        <div class="field">
-          <%= f.label :name %><br>
-          <%= f.text_field :name %>
-        </div>
-
-        <div class="field">
-          <%= f.label :background_img %><br>
-          <%= f.file_field :background_img %>
-        </div>
-
-        <div class="field">
-          <%= f.label :hero_copy, "A few words about the event. For example, consult Toronto page." %><br>
-          <%= f.text_field :hero_copy %>
-        </div>
-
-        <div class="field">
-          <%= f.label :team_description, "A few words to describe your local team. For example, consult Toronto page." %><br>
-          <%= f.text_field :team_description %>
-        </div>
-        <br>
-
-        <h4>Address</h4>
-
-        <div class="field">
-          <%= f.label :building_name, "Name of Building or Business hosting the event" %><br>
-          <%= f.text_field :building_name %>
-        </div>
-
-        <div class="field">
-          <%= f.label :address, "Address" %><br>
-          <%= f.text_field :address %>
-        </div>
-
-        <div class="field">
-          <%= f.label :province_name, "Province/State" %><br>
-          <%= f.text_field :province_name %>
-        </div>
-
-        <div class="field">
-          <%= f.label :postal_code, "Postal Code/ZIP" %><br>
-          <%= f.text_field :postal_code %>
-        </div>
-
-        <div class="field">
-          <%= f.label :map_photo, "Snapshot of map with location centered" %><br>
-          <%= f.file_field :map_photo %>
-        </div>
-        <br>
-
-        <h4>Contact Information</h4>
-
-        <div class="field">
-          <%= f.label :email %><br>
-          <%= f.text_field :email %>
-        </div>
-
-        <div class="field">
-          <%= f.label :phone %><br>
-          <%= f.text_field :phone %>
-        </div>
-
-        <div class="field">
-          <%= f.label :facebook %><br>
-          <%= f.text_field :facebook %>
-        </div>
-
-        <div class="field">
-          <%= f.label :twitter %><br>
-          <%= f.text_field :twitter %>
-        </div>
-
-        <div class="field">
-          <%= f.label :eventbrite_page %><br>
-          <%= f.text_field :eventbrite_page %>
-        </div>
-
-        <div class="action">
-          <%= f.submit "Save" %>
-        </div>
-
+      <% else %>
+        <h1>Sorry you do not have access to this page</h1>
       <% end %>
-    <% else %>
-      <h1>Sorry you do not have access to this page</h1>
-    <% end %>
+
+      <%= link_to "Back to My Dashboard", admin_path(current_user), class: "button back-button white-red" %>
+    </div>
   </div>
-</div>
+</section>
