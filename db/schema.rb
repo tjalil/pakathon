@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140902031919) do
+ActiveRecord::Schema.define(version: 20150811230817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 20140902031919) do
   create_table "cities", force: true do |t|
     t.string   "name"
     t.string   "address"
-    t.string   "background_img"
     t.string   "email"
     t.string   "phone"
     t.string   "facebook"
@@ -42,7 +41,6 @@ ActiveRecord::Schema.define(version: 20140902031919) do
     t.hstore   "schedule"
     t.text     "hero_copy"
     t.string   "map_photo"
-    t.string   "building_name"
     t.string   "province_name"
     t.string   "postal_code"
     t.text     "team_description"
@@ -66,6 +64,22 @@ ActiveRecord::Schema.define(version: 20140902031919) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "resources", force: true do |t|
+    t.string   "title"
+    t.string   "series"
+    t.string   "type_of_document"
+    t.string   "twitter_canned_message"
+    t.string   "facebook_canned_message"
+    t.string   "link_to_muut_discussion"
+    t.string   "link_to_document"
+    t.string   "link_to_download"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "admin_id"
+  end
+
+  add_index "resources", ["admin_id"], name: "index_resources_on_admin_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"
