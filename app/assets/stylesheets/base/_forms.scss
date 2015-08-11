@@ -32,6 +32,7 @@ form {
 input[type="email"],
 input[type="text"],
 input[type="password"],
+input[type="file"],
 textarea {
     @include prop(width, 300);
     font-family: 'OpenSans-Regular';
@@ -42,7 +43,8 @@ textarea {
     @include border(2, solid, transparent);
     @include pre(transition, border 0.3s ease);
 
-    &.login-text-field {
+    &.login-text-field,
+    &.file-field {
         @include border(2, solid, $greyDark);
         @include prop(margin, 10, 0, 20);
     }
