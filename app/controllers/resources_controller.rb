@@ -42,6 +42,8 @@ class ResourcesController < ApplicationController
   end
 
   def destroy
+    @resource.destroy
+    redirect_to my_resources_admin_resources_path(current_user), notice: "Resource successfully deleted."
   end
 
   private
