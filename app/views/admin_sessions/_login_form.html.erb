@@ -1,17 +1,15 @@
-<div class="row">
-  <div class="columns large-6">
-    <%= form_tag admin_sessions_path, method: :post do %>
-      <div class="field">
-        <%= label_tag :username %><br>
-        <%= text_field_tag :username %>
-      </div>
-      <div class="field">
-        <%= label_tag :password %><br>
-        <%= password_field_tag :password %>
-      </div>
-      <div class="actions">
-        <%= submit_tag "Login" %>
-      </div>
-    <% end %>
-  </div>
+<div class="columns xsmall-12 small-6 small-centered text-center">
+  <%= form_tag admin_sessions_path, method: :post do %>
+    <div class="field">
+      <%= label_tag :username %><br>
+      <%= text_field_tag :username, nil, class: "login-text-field" %>
+    </div>
+    <div class="field">
+      <%= label_tag :password %><br>
+      <%= password_field_tag :password, nil, class: "login-text-field" %>
+    </div>
+    <div class="actions">
+      <%= submit_tag "Login", class: "button" %>
+    </div>
+  <% end %>
 </div>

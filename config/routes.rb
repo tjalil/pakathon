@@ -10,16 +10,22 @@ Rails.application.routes.draw do
   
   resources :cities, only: [:index]
 
-  # resources :admins, only: [:show] do
-  #   resources :cities, only: [:new, :create, :edit, :update] do
-  #     member do
-  #       get 'dashboard'
-  #     end
-  #     resources :users, only: [:new, :create, :edit, :update, :destroy]
-  #     resources :contacts, only: [:show]
-  #   end
-  #   resources :logos, only: [:new, :create]
-  # end
+  resources :admins, only: [:show] do
+    resources :cities, only: [:new, :create, :edit, :update] do
+      member do
+        get 'dashboard'
+      end
+      resources :users, only: [:new, :create, :edit, :update, :destroy]
+      # resources :contacts, only: [:show]
+    end
+    resources :resources, except: [:show, :index] do
+      collection do
+        get 'my_resources'
+      end
+    end
+
+    # resources :logos, only: [:new, :create]
+  end
 
   resources :admin_sessions, only: [:create, :destroy] do 
     collection do
@@ -30,6 +36,8 @@ Rails.application.routes.draw do
   # resources :contacts, only: [:new, :create]
 
   resources :careers, only: [:index]
+
+  resources :resources, only: [:index]
 
   resources :pages, :path => '' do
     collection do
@@ -46,10 +54,6 @@ Rails.application.routes.draw do
   # resources :dekhmagarpyarsaycareers, controller: "careers", only: [:index]
 
   # post 'logout' => 'admin_sessions#destroy', :as => :logout
-
-
-
-
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -4,26 +4,26 @@
 .clearfix,
 %clearfix {
 
-  &:after {
-    content: "";
-    width: 100%;
-    height: 0;
-    display: block;
-    clear: both;
-  }
+      &:after {
+        content: "";
+        width: 100%;
+        height: 0;
+        display: block;
+        clear: both;
+    }
 }
 
 .circle,
 %circle {
-  @include pre(background-clip, padding-box);
-  @include pre(border-radius, 50%);
-  overflow: hidden;
+    @include pre(background-clip, padding-box);
+    @include pre(border-radius, 50%);
+    overflow: hidden;
 }
 
 .has-shadow,
 %has-shadow {
-  box-shadow: 0 2px 3px #ccc;
-  box-shadow: 0 0.2rem 0.3rem #ccc;
+    box-shadow: 0 2px 3px #ccc;
+    box-shadow: 0 0.2rem 0.3rem #ccc;
 }
 
 
@@ -31,69 +31,128 @@
 //  General Elements
 //----------------------------------------------------------------
 a {
-  outline: none;
-  color: $greenBackground;
-  font-family: "OpenSans-Light";
-  font-weight: 100;
+    outline: none;
+    color: $greenBackground;
+    font-family: "OpenSans-Light";
+    font-weight: 100;
 
-  &:hover {
-    color: darken($greenBackground, 10);
-  }
+    &:hover {
+        color: darken($greenBackground, 10);
+    }
 }
 
 iframe, 
 object, 
 embed {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 .img-circle {
-  border-radius: 100%;
+    border-radius: 100%;
 }
 
 .success {
-  border-radius: 5px;
+    border-radius: 5px;
 }
 
 li {
-  list-style: none;
+    list-style: none;
 }
 
 .keyline {
-  height: 2px;
-  background-color: rgba(94, 149, 22, 1);
+    height: 2px;
+    background-color: rgba(94, 149, 22, 1);
 }
 
 .logo {
-  position: absolute;
-  top: 5px;
-  left: 5%;
-  right: 5%;
-  font-size: 25px;
-  color: rgba(94, 149, 22, 1);
+    position: absolute;
+    top: 5px;
+    left: 5%;
+    right: 5%;
+    font-size: 25px;
+    color: rgba(94, 149, 22, 1);
 
-  @media only screen and (max-width: 700px) {
-    right: auto;
-  }
+    @media only screen and (max-width: 700px) {
+        right: auto;
+    }
 
-  img {
-    margin-bottom: 5px;
-  }
+    img {
+        margin-bottom: 5px;
+    }
 }
 
 .button {
-  font-family: "OpenSans-Bold";
-  @include prop(padding, 10, 30);
-  @include border(1, solid, $greenLight);
-  background: transparent;
-  color: $greenLight;
-  @include pre(transition, all 0.3s ease);
-  text-transform: uppercase;
+    font-family: "OpenSans-Bold";
+    @include prop(padding, 10, 30);
+    @include border(1, solid, $greenLight);
+    background: transparent;
+    color: $greenLight;
+    @include pre(transition, all 0.3s ease);
+    text-transform: uppercase;
 
-  &:hover {
-    background: $greenLight;
-    color: $white;
-  }
+    &:hover {
+        background: $greenLight;
+        color: $white;
+    }
+
+    &.back-button {
+        position: relative;
+        @include prop(top, 20);
+        @include fontSize(13);
+    }
+
+    &.tiny {
+        position: relative;
+        @include prop(top, 20);
+        @include prop(padding, 5, 20);
+        @include fontSize(13);
+        @include prop(margin-right, 10);
+    }
+
+    &.green {
+      color: $white;
+      background: $greenLight;
+      pointer: cursor;
+
+      &:hover {
+        background: $white;
+        color: $greenLight;
+      }
+    }
+
+    &.orange {
+        @include border(0, solid, $orange);
+        color: $white;
+        background: $orange;
+        @include pre(transition, background 0.3s ease);
+
+        &:hover {
+            background: darken($orange, 10);
+            @include border(0, solid, $orange);
+        }
+    }
+
+    &.red {
+        @include border(0, solid, $red);
+        color: $white;
+        background: $red;
+        @include pre(transition, background 0.3s ease);
+
+        &:hover {
+            background: darken($red, 10);
+            @include border(0, solid, $red);
+        }
+    }
+
+    &.white-red {
+        @include border(1, solid, $red);
+        color: $red;
+
+        &:hover {
+            background: $red;
+            color: $white;
+        }
+    }
 }
 
 .punch {
@@ -103,12 +162,15 @@ li {
   font-weight: 100;
 }
 
-.login-form,
 .admin-users-dashboard,
 .admin-new-user,
 .new-logo,
 .admin-main-dashboard {
-  @include prop(padding, 120, 0, 50);
+  @include prop(padding, 20, 0, 50);
+}
+
+.login-form {
+  @include prop(padding, 90, 0, 50);
 }
 
 //----------------------------------------------------------------
@@ -147,7 +209,7 @@ li {
     display: table-cell;
     height: 100%;
     vertical-align: middle;
-  }
+}
 }
 
 .has-radius {
@@ -171,7 +233,7 @@ li {
 
   * {
     color: $white;
-  }
+}
 }
 
 //----------------------------------------------------------------

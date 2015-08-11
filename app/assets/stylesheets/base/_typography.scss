@@ -124,38 +124,39 @@ ol {
     }
 }
 
+.icon-video:before {
+    content: "\e609";
+}
+.icon-audio:before {
+    content: "\e608";
+}
+.icon-doc:before {
+    content: "\e607";
+}
 .icon-bitcoin:before {
     content: "\e600";
 }
-
 .icon-book:before {
     content: "\e601";
 }
-
 .icon-cafe:before {
     content: "\e602";
 }
-
 .icon-gaming:before {
     content: "\e603";
 }
-
 .icon-healthcare:before {
     content: "\e604";
 }
-
 .icon-retail:before {
     content: "\e605";
 }
-
 .icon-close:before {
     content: "\e610";
 }
-
 .icon-drawer:before {
     content: "\e613";
 }
-
 .icon-calendar:before {
     content: "\e606";
 }

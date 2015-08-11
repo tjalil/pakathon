@@ -1,0 +1,70 @@
+<%= form_for ([current_user, @resource]), :html => {:multipart => true} do |f| %>
+  <% if @resource.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @resource.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title, "Title of the Resource (Required)" %><br>
+    <%= f.text_field :title, class: "login-text-field", required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :series, "Is this part of a series e.g Email Series or Webinar Series? If yes, please input below. Otherwise leave blank." %><br>
+    <%= f.text_field :series, class: "login-text-field" %>
+  </div>
+
+  <div class="field radio-field">
+    <%= f.label :type_of_document, "Type of Resource (Required)" %><br>
+    <p>
+      <%= f.radio_button(:type_of_document, "Text File") %>
+      <%= f.label(:type_of_document, "Text") %>
+    </p>
+    <p>
+      <%= f.radio_button(:type_of_document, "Audio File") %>
+      <%= f.label(:type_of_document, "Audio") %>
+    </p>
+    <p>
+      <%= f.radio_button(:type_of_document, "Video File") %>
+      <%= f.label(:type_of_document, "Video") %>
+    </p>
+  </div>
+
+  <div class="field">
+    <%= f.label :link_to_document, "Link of the Resource (Required)" %><br>
+    <%= f.text_field :link_to_document, class: "login-text-field", required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :link_to_download, "Link to download the Resource (Optional)" %><br>
+    <%= f.text_field :link_to_download, class: "login-text-field" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :twitter_canned_message, "Twitter Canned Message. This is the default message when someone wants to share this on Twitter. (Optional)" %><br>
+    <%= f.text_area :twitter_canned_message, {class: "login-text-field", maxlength: "100"} %>
+  </div>
+
+  <div class="field">
+    <%= f.label :facebook_canned_message, "Facebook Canned Message. This is the default message when someone wants to share this on Facebook. (Optional)" %><br>
+    <%= f.text_area :facebook_canned_message, class: "login-text-field" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :link_to_muut_discussion, "Link to Muut Discussion around Resource (Optional)" %><br>
+    <%= f.text_field :link_to_muut_discussion, class: "login-text-field" %>
+  </div>
+  
+  <div class="action">
+    <%= f.submit "Save", class: "button green" %>
+  </div>
+
+<% end %>
+
+<%= link_to "Back to My Resources", my_resources_admin_resources_path(current_user), class: "button back-button white-red" %>
