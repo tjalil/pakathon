@@ -128,3 +128,26 @@ header.global {
     }
   }
 }
+
+#logged-in-header {
+  @include prop(padding, 90, 0, 20);
+  background: $offWhite;
+
+  nav,
+  ul,
+  li {
+    display: inline-block;
+  }
+
+  .nav-items {
+    float: left;
+
+    li {
+      @include prop(margin, 0, 20, 0, 0);
+    }
+  }
+
+  .userinfo {
+    float: right;
+  }
+}
