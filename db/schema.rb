@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150811231957) do
+ActiveRecord::Schema.define(version: 20150811234259) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,10 +45,10 @@ ActiveRecord::Schema.define(version: 20150811231957) do
     t.string   "postal_code"
     t.text     "team_description"
     t.string   "slug"
-    t.string   "hero_photo_url"
     t.string   "hero_photographer_name"
     t.string   "hero_photographer_page"
     t.string   "hero_photo"
+    t.text     "hero_photo_url"
   end
 
   add_index "cities", ["slug"], name: "index_cities_on_slug", using: :btree
