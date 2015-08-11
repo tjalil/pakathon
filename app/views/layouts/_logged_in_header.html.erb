@@ -1,0 +1,17 @@
+<section id="logged-in-header">
+  <div class="row">
+    <div class="columns xsmall-12">
+      <nav class="nav-items">
+        <ul>
+          <li><%= link_to "My Dashboard", admin_path(current_user) %></li>
+          <li><%= link_to "My Resources", my_resources_admin_resources_path(current_user) %></li>
+        </ul>
+      </nav>
+
+      <nav class="userinfo">
+        <ul>
+          <li>Logged in as <strong><%= current_user.username %></strong> | <%= link_to 'Logout', admin_session_path("current"), method: :delete %></li>
+        </ul>
+      </nav>
+  </div>
+</section>
