@@ -83,7 +83,13 @@
     @include prop(padding, 20, 0);
 
     .resource-box {
-        @include prop(padding, 20, 0);
+        @include prop(padding, 20);
+
+        .icon-doc,
+        .icon-audio,
+        .icon-video {
+            @include prop(padding, 20, 10, 40);
+        }
     }
 
     .punch {
