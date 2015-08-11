@@ -98,12 +98,58 @@ li {
     &.back-button {
         position: relative;
         @include prop(top, 20);
-        @include border(1, solid, red);
-        color: red;
         @include fontSize(13);
+    }
+
+    &.tiny {
+        position: relative;
+        @include prop(top, 20);
+        @include prop(padding, 5, 20);
+        @include fontSize(13);
+        @include prop(margin-right, 10);
+    }
+
+    &.green {
+      color: $white;
+      background: $greenLight;
+      pointer: cursor;
+
+      &:hover {
+        background: $white;
+        color: $greenLight;
+      }
+    }
+
+    &.orange {
+        @include border(0, solid, $orange);
+        color: $white;
+        background: $orange;
+        @include pre(transition, background 0.3s ease);
 
         &:hover {
-            background: red;
+            background: darken($orange, 10);
+            @include border(0, solid, $orange);
+        }
+    }
+
+    &.red {
+        @include border(0, solid, $red);
+        color: $white;
+        background: $red;
+        @include pre(transition, background 0.3s ease);
+
+        &:hover {
+            background: darken($red, 10);
+            @include border(0, solid, $red);
+        }
+    }
+
+    &.white-red {
+        @include border(1, solid, $red);
+        color: $red;
+
+        &:hover {
+            background: $red;
             color: $white;
         }
     }
@@ -121,7 +167,7 @@ li {
 .admin-new-user,
 .new-logo,
 .admin-main-dashboard {
-  @include prop(padding, 120, 0, 50);
+  @include prop(padding, 20, 0, 50);
 }
 
 //----------------------------------------------------------------
