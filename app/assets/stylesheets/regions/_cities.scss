@@ -92,18 +92,51 @@
       &:before {
         background: rgba(0, 0, 0, 0);
       }
+
+      .tag {
+        opacity: 1;
+        @include prop(bottom, 0);
+      }
     }
 
     .v-wrapper {
       @include prop(min-height, 250);
       position: relative;
       z-index: 3;
+      overflow: hidden;
 
       .delta {
         text-align: center;
         color: $white;
         letter-spacing: 5px;
       }
+
+      p {
+        a {
+          color: $white;
+          @include pre(transition, color 0.3s ease-out);
+
+          &:hover {
+            color: darken($white, 20);
+          }
+        }
+      }
+    }
+
+    .tag {
+      @include fontSize(10);
+      letter-spacing: 2px;
+      font-family: "OpenSans-Bold";
+      color: $white;
+      background-color: $greenBackground;
+      @include prop(padding, 5, 10);
+      text-transform: uppercase;
+      position: absolute;
+      @include prop(left, 0);
+      @include prop(right, 0);
+      @include prop(bottom, -24);
+      opacity: 0;
+      transition: bottom 0.3s ease-out, opacity 0.3s ease-out;
     }
   }
 }
