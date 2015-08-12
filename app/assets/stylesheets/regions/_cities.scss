@@ -1,4 +1,49 @@
-.admin-main-dashboard {
+#cities-hero {
+  @include prop(margin, 65, 0, 0);
+  @include prop(padding, 50, 0);
+  background-image: asset_url("map.jpg");
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-size: cover;
+  background-position-x: 50%;
+
+  @media only screen and (min-width: $mediumScreen + px) {
+    @include prop(min-height, 340);
+    @include prop(padding, 100, 0);
+  }
+
+  .gamma {
+    color: $white;
+    @include fontSize(24);
+
+    @media only screen and (min-width: $mediumScreen + px) {
+      @include fontSize(28);      
+    }
+  }
+
+  .punch {
+    @include prop(margin, 10, 0, 0);
+    color: $white;
+    font-family: "OpenSans-Light";
+    @include pre(width, 100%);
+    position: relative;
+    @include fontSize(16);
+
+    @media only screen and (min-width: $mediumScreen + px) {
+      @include pre(width, 80%);
+      @include pre(left, 10%);
+      @include fontSize(20);
+    }
+
+    @media only screen and (min-width: $largeScreen + px) {
+      @include pre(width, 60%);
+      @include pre(left, 20%);
+    }
+  }
+}
+
+.admin-main-dashboard,
+.cities-grid {
 
   .admin-city-panel {
     position: relative;
@@ -57,10 +102,14 @@
       .delta {
         text-align: center;
         color: $white;
-        letter-spacing: 2px;
+        letter-spacing: 5px;
       }
     }
   }
+}
+
+.cities-grid {
+  @include prop(padding, 20, 0);
 }
 
 #edit-city-form {
