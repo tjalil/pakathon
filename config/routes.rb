@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root :to => 'cities#index'
+  root :to => 'pages#homepage'
 
   # match '/404', to: 'errors#file_not_found', via: :all
   # match '/500', to: 'errors#internal_server_error', via: :all
