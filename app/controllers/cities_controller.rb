@@ -5,7 +5,7 @@ class CitiesController < ApplicationController
   before_filter :find_user, only: [:edit, :update, :destroy, :dashboard]
 
   def index
-    @cities = City.all
+    @cities = City.order('name ASC')
     # @global = City.find_by(name: "Boston")
   end
 

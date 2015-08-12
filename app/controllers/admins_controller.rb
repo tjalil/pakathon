@@ -6,7 +6,7 @@ class AdminsController < ApplicationController
     @admin = Admin.find(params[:id])
 
     if @admin.username == "taha.jalil"
-      @cities = City.all
+      @cities = City.order('name ASC')
     else
       @city = City.find_by(admin_id: Admin.find(@admin.id))
     end

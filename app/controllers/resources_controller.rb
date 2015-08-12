@@ -4,7 +4,7 @@ class ResourcesController < ApplicationController
   before_filter :find_resource, only: [:edit, :update, :destroy]
 
   def index
-    @resources = Resource.all
+    @resources = Resource.order('created_at ASC')
   end
 
   def new
@@ -26,7 +26,7 @@ class ResourcesController < ApplicationController
     if current_user.username == "taha.jalil"
       @resources = Resource.all
     else
-      @resources = @admin.resources
+      @resources = @admin.resources.order('created_at ASC')
     end
   end
 
