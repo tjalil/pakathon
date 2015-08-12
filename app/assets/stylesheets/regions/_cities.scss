@@ -1,11 +1,9 @@
 .admin-main-dashboard {
-  .cities-grid {
-  }
 
   .admin-city-panel {
     position: relative;
     @include prop(min-height, 250);
-    @include prop(max-width, 250);
+    @include pre(width, 100%);
     background-size: cover;
     background-color: white;
     background-repeat-x: no-repeat;
@@ -13,9 +11,22 @@
     background-position-x: 50%;
     z-index: 1;
     float: left;
-
     @include prop(padding, 0);
-    @include prop(margin, 10);
+    @include prop(margin, 10, 0);
+
+    @media only screen and (min-width: $smallScreen + px) {
+      @include pre(width, 45%);
+      @include prop(margin, 10);
+    }
+
+    @media only screen and (min-width: $mediumScreen + px) {
+      @include pre(width, 30%);
+    }
+
+    @media only screen and (min-width: $largeScreen + px) {
+      @include prop(max-width, 265);
+      @include pre(width, 22%);
+    }
 
     &#city-boston {
       background-position-x: 70%;
