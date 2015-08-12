@@ -17,7 +17,7 @@ class AdminSessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to cities_path, notice: "Logged Out!"
+    redirect_to root_path, notice: "Logged Out!"
   end
 
 end
