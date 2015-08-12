@@ -1,3 +1,61 @@
+.admin-main-dashboard {
+  .cities-grid {
+  }
+
+  .admin-city-panel {
+    position: relative;
+    @include prop(min-height, 250);
+    @include prop(max-width, 250);
+    background-size: cover;
+    background-color: white;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-position-x: 50%;
+    z-index: 1;
+    float: left;
+
+    @include prop(padding, 0);
+    @include prop(margin, 10);
+
+    &#city-boston {
+      background-position-x: 70%;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      @include pre(width, 100%);
+      @include pre(height, 100%);
+      @include pre(left, 0);
+      background: rgba(0, 0, 0, 0.2);
+      @include pre(transition, background 0.3s ease-out);
+      z-index: 2;
+    }
+
+    &:hover {
+      &:before {
+        background: rgba(0, 0, 0, 0);
+      }
+    }
+
+    .v-wrapper {
+      @include prop(min-height, 250);
+      position: relative;
+      z-index: 3;
+
+      .delta {
+        text-align: center;
+        color: $white;
+        letter-spacing: 2px;
+      }
+    }
+  }
+}
+
+#edit-city-form {
+  @include prop(padding, 20, 0, 50);
+}
+
 .city-hero {
   @include prop(padding, 90, 0, 40);
   @include prop(min-height, 550);
