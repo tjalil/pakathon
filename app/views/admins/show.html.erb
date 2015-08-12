@@ -7,15 +7,26 @@
               <a href="/admins/<%= current_user.id %>/cities/<%= city.slug %>/dashboard">
                 <div class="v-wrapper">
                   <div class="v-inner">
-                    <h4 class="delta"><%= city.name.upcase %></h5>
-                      <p class="text-center"><%= link_to "Edit #{city.name}", edit_admin_city_path(current_user, city) %></p>
+                    <h4 class="delta"><%= city.name.upcase %></h4>
+                    <p class="text-center"><%= link_to "Edit #{city.name}", edit_admin_city_path(current_user, city) %></p>
                   </div>
                 </div>
               </a>
             </div>
         <% end %>
       <% else %>
-       <p><%= link_to "View/Add/Edit members/mentors/judges/sponsors of #{@city.name}", dashboard_admin_city_path(current_user, @city) %> | <%= link_to "Edit #{@city.name}", edit_admin_city_path(current_user, @city) %></p>
+        <% current_user.cities.each do |city| %>
+          <div id="city-<%= city.slug %>" class="admin-city-panel column large-3 medium-3 small-6 xsmall-12" style="background-image: url(<%= city.hero_photo %>)">
+            <a href="/admins/<%= current_user.id %>/cities/<%= city.slug %>/dashboard">
+              <div class="v-wrapper">
+                <div class="v-inner">
+                  <h4 class="delta"><%= city.name.upcase %></h4>
+                  <p class="text-center"><%= link_to "Edit #{city.name}", edit_admin_city_path(current_user, city) %></p>
+                </div>
+              </div>
+            </a>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>
