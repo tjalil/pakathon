@@ -42,6 +42,12 @@ class CitiesController < ApplicationController
   end
 
   def dashboard
+    @core_team_members = @city.users.where(type_of_user: "Core Team Member");
+    @team_members = @city.users.where(type_of_user: "Team Member");
+    @city_leads = @city.users.where(type_of_user: "City Lead");
+    @judges = @city.users.where(type_of_user: "Judge");
+    @mentors = @city.users.where(type_of_user: "Mentor");
+    @sponsors = @city.users.where(type_of_user: "Sponsor");
   end
 
   private

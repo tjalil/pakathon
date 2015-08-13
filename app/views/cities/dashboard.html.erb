@@ -1,16 +1,126 @@
 <section class="admin-users-dashboard">
   <div class="row">
-    <div class="columns small-12">
-      <h1><%= @city.name.upcase %></h1>
-      <p><%= link_to "Add Team Member/Judge/Mentor/Sponsor", new_admin_city_user_path(current_user, @city) %></p>
-    </div>
-    <div class="columns small-12">
+    <div class="columns xsmall-12 users-grid">
+      <h2 class="alpha"><%= @city.name.upcase %></h2>
+      <h5 class="epsilon"><%= link_to "Add Team Member/Judge/Mentor/Sponsor", new_admin_city_user_path(current_user, @city) %></h5>
+
       <% if @city.users.present? %>
-        <% @city.users.each do |user| %>
-            <p><%= image_tag user.avatar_url(:team) %><%= user.name %> (<%= user.type_of_user %>) | <%= link_to "Edit", edit_admin_city_user_path(current_user, @city, user) %> | <%= link_to "Delete", admin_city_user_path(current_user, @city, user), method: :delete, data: { confirm: "Are you sure?" } %></p>
+
+        <% if @city.name == "Global" %>
+          <div class="row type-of-user">
+            <h3 class="gamma">Core Team Members</h3>
+            <% @core_team_members.each do |user| %>
+              <div class="admin-user-panel columns large-2 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
+                <div class="v-wrapper">
+                  <div class="v-inner">
+                    <h4 class="delta"><%= user.name %></h4>
+                    <h5 class="epsilon"><%= user.description.upcase %></h5>
+                    
+                    <%= link_to "Edit", edit_admin_city_user_path(current_user, @city, user), class: "button tiny orange" %>
+
+                    <%= link_to "Delete", admin_city_user_path(current_user, @city, user), method: :delete, class: "button tiny red", data: {confirm: "Are you sure?"} %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+
+          <div class="row type-of-user">
+            <h3 class="gamma">City Leads</h3>
+            <% @city_leads.each do |user| %>
+              <div class="admin-user-panel column large-3 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
+                <div class="v-wrapper">
+                  <div class="v-inner">
+                    <h4 class="delta"><%= user.name %></h4>
+                    <h5 class="epsilon"><%= user.description.upcase %></h5>
+                    
+                    <%= link_to "Edit", edit_admin_city_user_path(current_user, @city, user), class: "button tiny orange" %>
+
+                    <%= link_to "Delete", admin_city_user_path(current_user, @city, user), method: :delete, class: "button tiny red", data: {confirm: "Are you sure?"} %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
         <% end %>
+
+
+        <div class="row type-of-user">
+          <h3 class="gamma">Team Members</h3>
+          <% @team_members.each do |user| %>
+            <div class="admin-user-panel column large-3 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
+              <div class="v-wrapper">
+                <div class="v-inner">
+                  <h4 class="delta"><%= user.name %></h4>
+                  <h5 class="epsilon"><%= user.description.upcase %></h5>
+                  
+                  <%= link_to "Edit", edit_admin_city_user_path(current_user, @city, user), class: "button tiny orange" %>
+
+                  <%= link_to "Delete", admin_city_user_path(current_user, @city, user), method: :delete, class: "button tiny red", data: {confirm: "Are you sure?"} %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="row type-of-user">
+          <h3 class="gamma">Mentors</h3>
+          <% @mentors.each do |user| %>
+            <div class="admin-user-panel column large-3 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
+              <div class="v-wrapper">
+                <div class="v-inner">
+                  <h4 class="delta"><%= user.name %></h4>
+                  <h5 class="epsilon"><%= user.description.upcase %></h5>
+                  
+                  <%= link_to "Edit", edit_admin_city_user_path(current_user, @city, user), class: "button tiny orange" %>
+
+                  <%= link_to "Delete", admin_city_user_path(current_user, @city, user), method: :delete, class: "button tiny red", data: {confirm: "Are you sure?"} %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+
+        <div class="row type-of-user">
+          <h3 class="gamma">Judges</h3>
+          <% @judges.each do |user| %>
+            <div class="admin-user-panel column large-3 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
+              <div class="v-wrapper">
+                <div class="v-inner">
+                  <h4 class="delta"><%= user.name %></h4>
+                  <h5 class="epsilon"><%= user.description.upcase %></h5>
+                  
+                  <%= link_to "Edit", edit_admin_city_user_path(current_user, @city, user), class: "button tiny orange" %>
+
+                  <%= link_to "Delete", admin_city_user_path(current_user, @city, user), method: :delete, class: "button tiny red", data: {confirm: "Are you sure?"} %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+
+        <div class="row type-of-user">
+          <h3 class="gamma">Sponsors</h3>
+          <% @sponsors.each do |user| %>
+            <div class="admin-user-panel column large-3 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
+              <div class="v-wrapper">
+                <div class="v-inner">
+                  <h4 class="delta"><%= user.name %></h4>
+                  <h5 class="epsilon"><%= user.description.upcase %></h5>
+                  
+                  <%= link_to "Edit", edit_admin_city_user_path(current_user, @city, user), class: "button tiny orange" %>
+
+                  <%= link_to "Delete", admin_city_user_path(current_user, @city, user), method: :delete, class: "button tiny red", data: {confirm: "Are you sure?"} %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
       <% else %>
-        <h5>No Team Members to display</h5>
+        <h5 class="epsilon">No Team Members to display</h5>
       <% end %>
     </div>
   </div>

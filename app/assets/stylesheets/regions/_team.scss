@@ -1,3 +1,79 @@
+.admin-users-dashboard {
+
+  .type-of-user {
+    @include prop(margin, 40, -10);
+
+    .gamma {
+      @include prop(margin, 10);
+    }
+  }
+
+  .admin-user-panel {
+    position: relative;
+    @include prop(min-height, 250);
+    @include pre(width, 100%);
+    background-size: cover;
+    background-color: white;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-position-x: 50%;
+    z-index: 1;
+    float: left;
+    @include prop(padding, 0);
+    @include prop(margin, 10, 0);
+
+    @media only screen and (min-width: $smallScreen + px) {
+      @include pre(width, 45%);
+      @include prop(margin, 10);
+    }
+
+    @media only screen and (min-width: $mediumScreen + px) {
+      @include pre(width, 30%);
+    }
+
+    @media only screen and (min-width: $largeScreen + px) {
+      @include prop(max-width, 265);
+      @include pre(width, 22%);
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      @include pre(width, 100%);
+      @include pre(height, 100%);
+      @include pre(left, 0);
+      background: rgba(0, 0, 0, 0.4);
+      @include pre(transition, background 0.3s ease-out);
+      z-index: 2;
+    }
+
+    // &:hover {
+    //   &:before {
+    //     background: rgba(0, 0, 0, 0);
+    //   }
+    // }
+
+    .v-wrapper {
+      @include prop(min-height, 250);
+      position: relative;
+      z-index: 3;
+      overflow: hidden;
+
+      .delta {
+        text-align: center;
+        color: $white;
+        // letter-spacing: 5px;
+      }
+
+      .epsilon {
+        color: $white;
+        letter-spacing: 5px;
+        font-family: "OpenSans-Light";
+      }
+    }
+  }
+}
+
 #team-hero {
   @include prop(padding, 90, 0, 40);
   @include prop(min-height, 400);
