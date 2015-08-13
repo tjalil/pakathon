@@ -1,4 +1,5 @@
-.admin-users-dashboard {
+.admin-users-dashboard,
+#team-core {
 
   .type-of-user {
     @include prop(margin, 40, -10);
@@ -47,12 +48,6 @@
       z-index: 2;
     }
 
-    // &:hover {
-    //   &:before {
-    //     background: rgba(0, 0, 0, 0);
-    //   }
-    // }
-
     .v-wrapper {
       @include prop(min-height, 250);
       position: relative;
@@ -69,6 +64,58 @@
         color: $white;
         letter-spacing: 5px;
         font-family: "OpenSans-Light";
+      }
+    }
+  }
+}
+
+#team-core {
+  @include prop(padding, 40, 0);
+
+  .gamma {
+    @include prop(margin, 20, 10);
+    letter-spacing: 5px;
+  }
+
+  .admin-user-panel {
+    position: relative;
+    @include prop(min-height, 250);
+    @include pre(width, 44%);
+    @include prop(margin, 5);
+
+    @media only screen and (min-width: $smallScreen + px) and (max-width: 707px) {
+      @include pre(width, 30%);
+      @include prop(margin, 10);
+    }
+
+    @media only screen and (min-width: 708px) {
+      @include pre(width, 22%);
+    }
+
+    @media only screen and (min-width: $largeScreen + px) {
+      @include prop(max-width, 265);
+      @include pre(width, 18%);
+    }
+
+    &:before {
+      content: none;
+    }
+
+    .team-member-info {
+      position: absolute;
+      @include pre(left, 0);
+      @include pre(right, 0);
+      @include pre(bottom, 0);
+      background-color: rgba(0, 0, 0, 0.5);
+
+      .delta,
+      .epsilon {
+        color: $white;
+        font-family: "OpenSans-Light";
+      }
+
+      .epsilon {
+        @include fontSize(14);
       }
     }
   }
@@ -128,7 +175,10 @@
   }
 }
 
-#team-core, #team-city-leads, #team-partners, #team-sponsors, #team-cta {
+#team-city-leads, 
+#team-partners, 
+#team-sponsors, 
+#team-cta {
   @include prop(padding, 40, 0, 0);
 
   ul {
@@ -144,6 +194,11 @@
 
 #team-partners {
   @include prop(padding, 40, 0, 90);
+
+  .gamma {
+    @include prop(margin, 20, 10);
+    letter-spacing: 5px;
+  }
 }
   
 #team-cta {
@@ -156,31 +211,31 @@
   }
 }
 
-#team-core {
-  .team-photo {
-    position: relative;
-    @include prop(width, 200);
-    @include pre(height, 100%);
-    display: inline-block;
-    @include prop(margin, 20, 0);
+// #team-core {
+//   .team-photo {
+//     position: relative;
+//     @include prop(width, 200);
+//     @include pre(height, 100%);
+//     display: inline-block;
+//     @include prop(margin, 20, 0);
 
-    img {
-      @include pre(max-width, 100%);
-    }
+//     img {
+//       @include pre(max-width, 100%);
+//     }
 
-    @media only screen and (min-width: $xsmallScreen + px) and (max-width: 415px) {
-      @include prop(width, 150);
-    }
+//     @media only screen and (min-width: $xsmallScreen + px) and (max-width: 415px) {
+//       @include prop(width, 150);
+//     }
 
-    @media only screen and (min-width: $mediumScreen + px) {
-      @include prop(width, 180);
-    }
+//     @media only screen and (min-width: $mediumScreen + px) {
+//       @include prop(width, 180);
+//     }
 
-    @media only screen and (min-width: $largeScreen + px) and (max-width: 1215px) {
-      @include prop(width, 160);
-    }
-  }
-}
+//     @media only screen and (min-width: $largeScreen + px) and (max-width: 1215px) {
+//       @include prop(width, 160);
+//     }
+//   }
+// }
 
 #team-partners {
   li {
