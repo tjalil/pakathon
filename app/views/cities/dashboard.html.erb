@@ -1,7 +1,7 @@
 <section class="admin-users-dashboard">
   <div class="row">
     <div class="columns xsmall-12 users-grid">
-      <h2 class="alpha"><%= @city.name.upcase %></h2>
+      <h2 class="alpha"><%= @city.name %>'s City Dashboard</h2>
       <h5 class="epsilon"><%= link_to "Add Team Member/Judge/Mentor/Sponsor", new_admin_city_user_path(current_user, @city) %></h5>
 
       <% if @city.users.present? %>
