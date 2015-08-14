@@ -16,8 +16,24 @@
   </div>
 
   <div class="field">
-    <%= f.label :series, "Is this part of a series e.g Email Series or Webinar Series? If yes, please input below. Otherwise leave blank." %><br>
-    <%= f.text_field :series, class: "login-text-field" %>
+    <%= f.label :email_course_banner, "Banner Image, only for Email Course (Required)" %><br>
+    <%= f.file_field :email_course_banner, class: "login-text-field" %>
+  </div>
+
+  <div class="field radio-field">
+    <%= f.label :series, "Which series does this belong to? (Required)" %><br>
+    <p>
+      <%= f.radio_button(:series, "Email Course") %>
+      <%= f.label(:series, "Email Course") %>
+    </p>
+    <p>
+      <%= f.radio_button(:series, "Webinar Series") %>
+      <%= f.label(:series, "Webinar Series") %>
+    </p>
+    <p>
+      <%= f.radio_button(:series, "Other") %>
+      <%= f.label(:series, "Other") %>
+    </p>
   </div>
 
   <div class="field radio-field">
