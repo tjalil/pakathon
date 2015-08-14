@@ -3,6 +3,30 @@
     @include prop(padding, 20, 0, 90);
 }
 
+#resources-hero {
+    @include prop(margin, 65, 0, 0);
+    @include prop(min-height, 60);
+
+    background-image: asset_url("resources-banner-2.png");
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-size: cover;
+    background-position-x: 0%;
+    background-position-y: 50%;
+
+    @media only screen and (min-width: $smallScreen + px) {
+        @include prop(min-height, 100);
+    }
+
+    @media only screen and (min-width: $mediumScreen + px) {
+        @include prop(min-height, 150);
+    }
+
+    @media only screen and (min-width: $largeScreen + px) {
+        @include prop(min-height, 200);
+    }
+}
+
 #email-course-resources-repo,
 #webinar-series-resources-repo,
 #misc-resources-repo {
@@ -37,7 +61,7 @@
 }
 
 #email-course-resources-repo {
-    @include prop(padding, 90, 0, 20);
+    @include prop(padding, 40, 0, 20);
 
     ul {
         float: left;

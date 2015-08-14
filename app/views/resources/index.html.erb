@@ -1,15 +1,18 @@
+<section id="resources-hero"></section>
+
 <% if @email_course_resources.present? %>
   <section id="email-course-resources-repo">
     <div class="row section-heading">
       <div class="columns xsmall-12">
-        <h2 class="gamma">Email Course</h2>
+        <h2 class="gamma">Online Course</h2>
       </div>
     </div>
     <div class="row">
       <ul class="columns large-block-grid-2 medium-block-grid-2 small-block-grid-2 xsmall-block-grid-1">
+        <% counter = 1 %>
         <% @email_course_resources.each do |resource| %>
           <li class="resource-box">
-            <a href="<%= resource.link_to_document %>">
+            <a id="course-resource-<%= counter %>" href="<%= resource.link_to_document %>", method: POST  >
               <% if resource.type_of_document == "Text File" %>
                 <div class="text-center icon-doc">
               <% elsif resource.type_of_document == "Audio File" %>
@@ -20,9 +23,9 @@
 
                 <div class="email-course-banner" style="background-image: url(<%= resource.email_course_banner %>)"></div>
 
-                  <% if resource.series %>
-                    <p class="type"><%= resource.series %></p>
-                  <% end %>
+                  <%# if resource.series %>
+                    <!-- <p class="type"><%= resource.series %></p> -->
+                  <%# end %>
                   
                   <h4 class="delta"><%= resource.title %></h4>
                   <div class="resource-posted">
@@ -38,6 +41,7 @@
                 </div>
             </a>
           </li>
+          <% counter+=1 %>
         <% end %>
       </ul>
     </div>
