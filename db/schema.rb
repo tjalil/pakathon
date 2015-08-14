@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150814000811) do
+ActiveRecord::Schema.define(version: 20150814010354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 20150814000811) do
     t.datetime "updated_at"
     t.integer  "admin_id"
     t.string   "email_course_banner"
+    t.integer  "clicks"
   end
 
   add_index "resources", ["admin_id"], name: "index_resources_on_admin_id", using: :btree
