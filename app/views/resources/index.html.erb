@@ -1,36 +1,133 @@
-<section id="resources-repo">
-  <div class="row">
-    <ul class="columns large-block-grid-4 medium-block-grid-3 small-block-grid-2 xsmall-block-grid-1">
-      <% @resources.each do |resource| %>
-        <li class="resource-box">
-          <a href="<%= resource.link_to_document %>">
-            <% if resource.type_of_document == "Text File" %>
-              <div class="text-center icon-doc">
-            <% elsif resource.type_of_document == "Audio File" %>
-              <div class="text-center icon-audio">
-            <% elsif resource.type_of_document == "Video File" %>
-              <div class="text-center icon-video">
-            <% end %>
+<% if @email_course_resources.present? %>
+  <section id="email-course-resources-repo">
+    <div class="row section-heading">
+      <div class="columns xsmall-12">
+        <h2 class="gamma">Email Course</h2>
+      </div>
+    </div>
+    <div class="row">
+      <ul class="columns large-block-grid-2 medium-block-grid-2 small-block-grid-2 xsmall-block-grid-1">
+        <% @email_course_resources.each do |resource| %>
+          <li class="resource-box">
+            <a href="<%= resource.link_to_document %>">
+              <% if resource.type_of_document == "Text File" %>
+                <div class="text-center icon-doc">
+              <% elsif resource.type_of_document == "Audio File" %>
+                <div class="text-center icon-audio">
+              <% elsif resource.type_of_document == "Video File" %>
+                <div class="text-center icon-video">
+              <% end %>
 
-                <% if resource.series %>
-                  <p class="type"><%= resource.series %></p>
-                <% end %>
-                
-                <h4 class="delta"><%= resource.title %></h4>
-                <div class="resource-posted">
-                  <p class="tiny">Posted On: <%= resource.created_at.to_s(:just_date) %></p>
-                </div>
+                <div class="email-course-banner" style="background-image: url(<%= resource.email_course_banner %>)"></div>
 
-                <% if resource.link_to_download.present? %>
-                  <div class="download-link">
-                    <%= link_to "Or click here to download", resource.link_to_download, class: "tiny" %>
+                  <% if resource.series %>
+                    <p class="type"><%= resource.series %></p>
+                  <% end %>
+                  
+                  <h4 class="delta"><%= resource.title %></h4>
+                  <div class="resource-posted">
+                    <p class="tiny">Posted On: <%= resource.created_at.to_s(:just_date) %></p>
                   </div>
-                <% end %>
 
-              </div>
-          </a>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-</section>
+                  <% if resource.link_to_download.present? %>
+                    <div class="download-link">
+                      <%= link_to "Or click here to download", resource.link_to_download, class: "tiny" %>
+                    </div>
+                  <% end %>
+
+                </div>
+            </a>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </section>
+<% end %>
+
+<% if @webinar_series_resources.present? %>
+  <section id="webinar-series-resources-repo">
+    <div class="row section-heading">
+      <div class="columns xsmall-12">
+        <h2 class="gamma">Webinar Series</h2>
+      </div>
+    </div>
+    <div class="row">
+      <ul class="columns large-block-grid-4 medium-block-grid-3 small-block-grid-2 xsmall-block-grid-1">
+        <% @webinar_series_resources.each do |resource| %>
+          <li class="resource-box">
+            <a href="<%= resource.link_to_document %>">
+              <% if resource.type_of_document == "Text File" %>
+                <div class="text-center icon-doc">
+              <% elsif resource.type_of_document == "Audio File" %>
+                <div class="text-center icon-audio">
+              <% elsif resource.type_of_document == "Video File" %>
+                <div class="text-center icon-video">
+              <% end %>
+
+                  <% if resource.series %>
+                    <p class="type"><%= resource.series %></p>
+                  <% end %>
+                  
+                  <h4 class="delta"><%= resource.title %></h4>
+                  <div class="resource-posted">
+                    <p class="tiny">Posted On: <%= resource.created_at.to_s(:just_date) %></p>
+                  </div>
+
+                  <% if resource.link_to_download.present? %>
+                    <div class="download-link">
+                      <%= link_to "Or click here to download", resource.link_to_download, class: "tiny" %>
+                    </div>
+                  <% end %>
+
+                </div>
+            </a>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </section>
+<% end %>
+
+<% if @other_resources.present? %>
+  <section id="misc-resources-repo">
+    <div class="row section-heading">
+      <div class="columns xsmall-12">
+        <h2 class="gamma">Other Resources</h2>
+      </div>
+    </div>
+    <div class="row">
+      <ul class="columns large-block-grid-4 medium-block-grid-3 small-block-grid-2 xsmall-block-grid-1">
+        <% @other_resources.each do |resource| %>
+          <li class="resource-box">
+            <a href="<%= resource.link_to_document %>">
+              <% if resource.type_of_document == "Text File" %>
+                <div class="text-center icon-doc">
+              <% elsif resource.type_of_document == "Audio File" %>
+                <div class="text-center icon-audio">
+              <% elsif resource.type_of_document == "Video File" %>
+                <div class="text-center icon-video">
+              <% end %>
+
+                  <% if resource.series %>
+                    <p class="type"><%= resource.series %></p>
+                  <% end %>
+                  
+                  <h4 class="delta"><%= resource.title %></h4>
+                  <div class="resource-posted">
+                    <p class="tiny">Posted On: <%= resource.created_at.to_s(:just_date) %></p>
+                  </div>
+
+                  <% if resource.link_to_download.present? %>
+                    <div class="download-link">
+                      <%= link_to "Or click here to download", resource.link_to_download, class: "tiny" %>
+                    </div>
+                  <% end %>
+
+                </div>
+            </a>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </section>
+<% end %>

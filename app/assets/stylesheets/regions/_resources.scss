@@ -3,11 +3,18 @@
     @include prop(padding, 20, 0, 90);
 }
 
-#resources-repo {
-    @include prop(padding, 90, 0);
+#email-course-resources-repo,
+#webinar-series-resources-repo,
+#misc-resources-repo {
+    @include prop(padding, 20, 0);
 
     ul {
         @include prop(margin, 0);
+        float: left;
+
+        @media only screen and (max-width: $smallScreen + px) {
+            @include pre(width, 100%);
+        }
     }
 
     .main-resource-link {
@@ -23,12 +30,57 @@
             @include pre(width, 100%);
         }
     }
+
+    .resource-box {
+        @include prop(padding, 20);
+    }
+}
+
+#email-course-resources-repo {
+    @include prop(padding, 90, 0, 20);
+
+    ul {
+        float: left;
+
+        @media only screen and (max-width: $mediumScreen + px) {
+            @include pre(width, 100%);
+        }
+    }
+
+    .icon-doc,
+    .icon-audio,
+    .icon-video {
+        @include prop(padding, 10);
+
+        &:before {
+            content: none;
+        }
+    }
+
+    .resource-box {
+        @include pre(width, 100%);
+    }
+
+    .email-course-banner {
+        @include prop(min-height, 240);
+        background-size: cover;
+        background-color: white;
+        background-repeat-x: no-repeat;
+        background-repeat-y: no-repeat;
+        background-position-x: 50%;
+        background-position-y: 100%;
+    }
+
+    .type {
+        @include prop(margin, 10, 0, 0);
+    }
 }
 
 .resource-box {
     z-index: 1;
     cursor: pointer;
-    @include prop(margin, 20, 0);
+    // @include prop(margin, 20, 0);
+    // @include prop(padding, 20);
 
     .icon-doc,
     .icon-audio,
