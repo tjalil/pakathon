@@ -5,6 +5,9 @@ class ResourcesController < ApplicationController
 
   def index
     @resources = Resource.order('created_at ASC')
+    @email_course_resources = Resource.order('created_at ASC').where(series: "Email Course")
+    @webinar_series_resources = Resource.order('created_at ASC').where(series: "Webinar Series")
+    @other_resources = Resource.order('created_at ASC').where(series: "Other")
   end
 
   def new
@@ -49,7 +52,7 @@ class ResourcesController < ApplicationController
   private
 
   def resource_params
-    params.require(:resource).permit(:title, :series, :type_of_document, :twitter_canned_message, :facebook_canned_message, :link_to_muut_discussion, :link_to_document, :link_to_download, :admin_id)
+    params.require(:resource).permit(:title, :email_course_banner, :series, :type_of_document, :twitter_canned_message, :facebook_canned_message, :link_to_muut_discussion, :link_to_document, :link_to_download, :admin_id)
   end
 
   def find_admin
