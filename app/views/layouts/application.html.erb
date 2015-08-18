@@ -9,6 +9,18 @@
   <%= javascript_include_tag 'vendor/modernizr' %>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag(Logo.find_by(name:"logo-light").image_url(:logo)) %>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-66457520-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  
 </head>
 <body>
   <%= render 'layouts/header' %>
@@ -35,6 +47,7 @@
   
   <%= render 'layouts/footer' %>
   <%= render 'layouts/drawer_nav' %>
+
   <%= javascript_include_tag 'application' %>
 </body>
 </html>

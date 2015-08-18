@@ -9,10 +9,9 @@
     </div>
     <div class="row">
       <ul class="columns large-block-grid-2 medium-block-grid-2 small-block-grid-2 xsmall-block-grid-1">
-        <% counter = 1 %>
         <% @email_course_resources.each do |resource| %>
           <li class="resource-box">
-            <a id="course-resource-<%= counter %>" href="<%= resource.link_to_document %>", method: POST  >
+            <a id="course-resource" href="<%= resource.link_to_document %>">
               <% if resource.type_of_document == "Text File" %>
                 <div class="text-center icon-doc">
               <% elsif resource.type_of_document == "Audio File" %>
@@ -41,7 +40,6 @@
                 </div>
             </a>
           </li>
-          <% counter+=1 %>
         <% end %>
       </ul>
     </div>
