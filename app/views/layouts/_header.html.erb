@@ -21,18 +21,6 @@
             <li><a href="/cities">Cities</a></li>
           <% end %>
 
-          <% if request.original_url == "http://www.pakathon.org/team" %>
-            <li><a href="/team" class="active">Team</a></li>
-          <% else %>
-            <li><a href="/team">Team</a></li>
-          <% end %>
-
-          <% if request.original_url == "http://www.pakathon.org/careers" %>
-            <li><a href="/careers" class="active">Careers</a></li>
-          <% else %>
-            <li><a href="/careers">Careers</a></li>
-          <% end %>
-
           <% if request.original_url == "http://www.pakathon.org/resources" %>
             <li><a href="/resources" class="active">Resources</a></li>
           <% else %>

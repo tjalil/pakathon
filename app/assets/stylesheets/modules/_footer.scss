@@ -11,6 +11,11 @@ footer.global {
 
   .columns {
     @include prop(padding, 0);
+    text-align: center;
+
+    @media only screen and (min-width: $largeScreen + px) {
+      text-align: left;
+    }
   }
 
   @media only screen and (min-width: $smallScreen + px) {
@@ -21,7 +26,7 @@ footer.global {
     }
   }
 
-  a, .logo, nav, ul, li, p {
+  a, .logo, nav, li, p {
     display: inline-block;
   }
 
@@ -45,26 +50,65 @@ footer.global {
 
   nav {
     width: 100%;
-    text-align: center;
 
-    @media only screen and (min-width: $smallScreen + px) {
-      // float: right;
-      text-align: left;
-      width: auto;
+    ul {
+      overflow: hidden;
+
+      .left-nav {
+        @include prop(margin, 20, 0, 40);
+
+        li {
+          display: block;
+          @include prop(margin, 10, 0);
+
+          @media only screen and (min-width: 640px) {
+            display: inline;
+            @include prop(margin, 0, 10);
+          }
+        }
+
+        @media only screen and (min-width: $largeScreen + px) {
+          @include prop(margin, 0);        
+        }
+      }
     }
 
     li {
       @include prop(margin, 0, 10);
       color: $white;
-      font-family:  "OpenSans-Regular";
       @include fontSize(13);
       @include prop(letter-spacing, 2);
       text-transform: uppercase;
       text-align: center;
+      float: none;
+
+      @media only screen and (min-width: $largeScreen + px) {
+        @include prop(margin, 5, 15);
+        float: left;
+      }
+
+      &.signup-form {
+        float: none;
+        @include prop(margin, 0, 10);
+        font-family: "OpenSans-Regular";
+
+        @media only screen and (min-width: $largeScreen + px) {
+          float: right;
+        }
+      }
+
+      &.header-nav-item {
+        display: inline;
+
+        @media only screen and (min-width: 850px) {
+          display: none;
+        }
+      }
 
       a {
         color: $white;
         @include pre(transition, all 0.3s ease);
+        font-family: "OpenSans-Bold";
 
         &:hover {
           color: $greenBackground;
@@ -76,7 +120,7 @@ footer.global {
         float: none;
         display: block;
 
-        @media only screen and (min-width: $smallScreen + px) {
+        @media only screen and (min-width: 700px) {
           display: inline;
           @include prop(margin, 5, 10, 0, 0);
           float: left;
@@ -84,7 +128,7 @@ footer.global {
       }
 
       input[type="email"] {
-        @media only screen and (min-width: $xsmallScreen + px) {
+        @media only screen and (min-width: 700px) {
           @include prop(margin-right, -5);
         }
       }
@@ -97,7 +141,7 @@ footer.global {
         float: none;
         @include prop(margin-top, 10);
 
-        @media only screen and (min-width: $smallScreen + px) {
+        @media only screen and (min-width: 700px) {
           float: right;
           @include prop(margin-top, 0);
         }
@@ -109,19 +153,16 @@ footer.global {
         @include prop(padding, 3, 15, 2);
         float: none;
         @include prop(margin-top, 10);
+        @include prop(margin-left, -6px);
 
         @media only screen and (min-width: $smallScreen + px) {
-          float: right;
           @include prop(margin-top, 0);
         }
-      }
 
-      @media only screen and (min-width: $largeScreen + px) {
-        @include prop(margin, 0, 15);
-      }
-
-      @media only screen and (min-width: $smallScreen + px) {
-        text-align: left;
+        @media only screen and (min-width: 700px) {
+          @include prop(margin-left, 0);
+          float: right;
+        }
       }
     }
 

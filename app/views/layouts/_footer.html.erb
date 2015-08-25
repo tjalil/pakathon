@@ -5,13 +5,51 @@
         <p>Pakathon <span>&copy;</span> | Dekh Magar Pyar Say</p>
       </div>
     </div> -->
-    <div class="columns large-12 medium-12 small-12 xsmall-12 text-center">
+    <div class="columns large-12 medium-12 small-12 xsmall-12">
       <nav>
         <ul>
-          <!-- <li><a href="javascript:void(0)">People</a></li> -->
-          <!-- <li><a href="javascript:void(0)">Blog</a></li> -->
-          <!-- <li><a href="javascript:void(0)">Contact</a></li> -->
-          <li>
+          <div class="left-nav">
+
+            <% if request.original_url == "http://www.pakathon.org/program" %>
+              <li class="header-nav-item"><a href="/program" class="active">Program</a></li>
+            <% else %>
+              <li class="header-nav-item"><a href="/program">Program</a></li>
+            <% end %>
+
+            <% if request.original_url == "http://www.pakathon.org/cities" %>
+              <li class="header-nav-item"><a href="/cities" class="active">Cities</a></li>
+            <% else %>
+              <li class="header-nav-item"><a href="/cities">Cities</a></li>
+            <% end %>
+
+            <% if request.original_url == "http://www.pakathon.org/team" %>
+              <li><a href="/team" class="active">Team</a></li>
+            <% else %>
+              <li><a href="/team">Team</a></li>
+            <% end %>
+
+            <% if request.original_url == "http://www.pakathon.org/careers" %>
+              <li><a href="/careers" class="active">Careers</a></li>
+            <% else %>
+              <li><a href="/careers">Careers</a></li>
+            <% end %>
+
+            <% if request.original_url == "http://www.pakathon.org/resources" %>
+              <li class="header-nav-item"><a href="/resources" class="active">Resources</a></li>
+            <% else %>
+              <li class="header-nav-item"><a href="/resources">Resources</a></li>
+            <% end %>
+
+            <li class="header-nav-item"><a href="https://muut.com/pakathon">Forum</a></li>
+
+            <!-- <%# if request.original_url == "http://www.pakathon.org/credits" %>
+              <li><a href="/credits" class="active">Credits</a></li>
+            <%# else %>
+              <li><a href="/credits">Credits</a></li>
+            <%# end %> -->
+          </div>
+          
+          <li class="signup-form">
             
             <!-- Begin MailChimp Signup Form -->
             <div id="mc_embed_signup">
