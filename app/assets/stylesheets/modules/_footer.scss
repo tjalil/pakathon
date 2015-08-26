@@ -61,14 +61,26 @@ footer.global {
           display: block;
           @include prop(margin, 10, 0);
 
-          @media only screen and (min-width: 640px) {
+          &.header-nav-item {
+            display: block;
+
+            @media only screen and (min-width: $smallScreen + px) {
+              display: inline;
+            }
+
+            @media only screen and (min-width: 850px) {
+              display: none;
+            }
+          }
+
+          @media only screen and (min-width: $smallScreen + px) {
             display: inline;
-            @include prop(margin, 0, 10);
+            @include prop(margin, 5, 10);
           }
         }
 
         @media only screen and (min-width: $largeScreen + px) {
-          @include prop(margin, 0);        
+          @include prop(margin, 0);
         }
       }
     }
@@ -94,14 +106,6 @@ footer.global {
 
         @media only screen and (min-width: $largeScreen + px) {
           float: right;
-        }
-      }
-
-      &.header-nav-item {
-        display: inline;
-
-        @media only screen and (min-width: 850px) {
-          display: none;
         }
       }
 
