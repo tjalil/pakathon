@@ -30,3 +30,14 @@
     letter-spacing: 5px;
   }
 }
+
+.single-city-hackathon {
+  @include prop(padding, 40, 0);
+  position: relative;
+
+  .keyline {
+    position: relative;
+    @include pre(width, 50%);
+    @include pre(left, 25%);
+  }
+}
