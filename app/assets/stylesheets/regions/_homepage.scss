@@ -595,26 +595,24 @@
       display: inline-block;
       @include prop(margin, 0, 30);
 
-      &#social-icons-facebook {
-        background: asset_url('logo-facebook.png') no-repeat no-repeat;
-        background-size: contain;
-      }
-
-      &#social-icons-twitter {
-        background: asset_url('logo-twitter.png') no-repeat no-repeat;
-        background-size: contain;
-      }
-
-      &#social-icons-instagram {
-        background: asset_url('logo-instagram.png') no-repeat no-repeat;
-        background-size: contain;
-      }
-
       a {
-        position: absolute;
+        position: relative;
         @include pre(height, 100%);
         @include pre(width, 100%);
         @include prop(left, 0);
+
+        &:before {
+          position: relative;
+          @include fontSize(25);
+          color: $white;
+          @include pre(transition, color 0.3s ease-out);
+        }
+
+        &:hover {
+          &:before {
+            color: $greenLight;
+          }
+        }
       }
 
       @media only screen and (max-width: 320px) { 
