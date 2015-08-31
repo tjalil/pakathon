@@ -44,6 +44,26 @@
           </div>
         <% end %>
 
+        <div class="row admin-hackathon-details">
+          <h3 class="gamma">Hackathon Details</h3>
+
+            <% if @hackathon.present? %>
+              <%= link_to "Edit", edit_admin_city_hackathon_path(current_user, @city, @hackathon), class: "button tiny orange edit-hackathon-details" %>  
+              <div class="hackathon-details-list">
+                <h5 class="epsilon">Date of Hackathon: <%= @hackathon.date_of_hackathon.to_s(:day_and_date) %></h5>
+                <h5 class="epsilon">Venue Name: <%= @hackathon.venue_name %></h5>
+                <h5 class="epsilon">Address Line 1: <%= @hackathon.address_line_1 %></h5>
+                <h5 class="epsilon">Postal/Zip Code: <%= @hackathon.postal_code %></h5>
+                <h5 class="epsilon">Eventbrite Link (or link to another registration page): <%= link_to @hackathon.eventbrite_link %></h5>
+
+                <div class="admin-user-panel column large-3 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= @hackathon.day_1_image %>)">
+
+                </div>
+              </div>
+            <% else %>
+              <%= link_to "Create", new_admin_city_hackathon_path(current_user, @city), class: "button tiny green" %>
+            <% end %>
+        </div>
 
         <div class="row type-of-user">
           <h3 class="gamma">Team Members</h3>
