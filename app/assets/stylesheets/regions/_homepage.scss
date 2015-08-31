@@ -30,6 +30,17 @@
     @include prop(padding, 0, 25);
   }
 
+  .tag {
+    @include fontSize(10);
+    letter-spacing: 2px;
+    font-family: "OpenSans-Bold";
+    color: $white;
+    background-color: $greenBackground;
+    @include prop(padding, 5, 10);
+    text-transform: uppercase;
+    @include prop(margin-bottom, 25);
+  }
+
   .hero-text {
     width: 100%;
     @include prop(margin, 0);
