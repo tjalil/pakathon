@@ -16,6 +16,8 @@ Rails.application.routes.draw do
         get 'dashboard'
       end
       resources :users, only: [:new, :create, :edit, :update, :destroy]
+
+      resources :hackathons, only: [:new, :create, :edit, :update]
       # resources :contacts, only: [:show]
     end
     resources :resources, except: [:show, :index] do
