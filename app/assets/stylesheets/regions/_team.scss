@@ -1,7 +1,8 @@
 .admin-users-dashboard,
 #team-core {
 
-  .type-of-user {
+  .type-of-user,
+  .admin-hackathon-details {
     @include prop(margin, 40, -10);
 
     .gamma {
