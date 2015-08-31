@@ -1,0 +1,85 @@
+<% if current_user.username == "taha.jalil" || @city.admin_id == current_user.id %>
+  <%= form_for ([current_user, @city, @hackathon]), :html => {:multipart => true} do |f| %>
+    <% if @hackathon.errors.any? %>
+      <div class="error_messages">
+        <h2>Form is invalid</h2>
+        <ul>
+          <% for message in @hackathon.errors.full_messages %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :date_of_hackathon, "Date of Hackathon" %><br>
+      <%= f.date_field :date_of_hackathon, class: "login-text-field", required: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :venue_name, "Venue Name" %><br>
+      <%= f.text_field :venue_name, class: "login-text-field", required: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :address_line_1, "Address Line 1" %><br>
+      <%= f.text_field :address_line_1, class: "login-text-field", required: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :postal_code, "Postal/Zip Code (Optional)" %><br>
+      <%= f.text_field :postal_code, class: "login-text-field" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :eventbrite_link, "Eventbrite Link (or another link which users access to register for the hackathon)" %><br>
+      <%= f.text_field :eventbrite_link, class: "login-text-field", required: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :day_1_image, "Day 1 Image (Optional)" %><br>
+      <%= f.file_field :day_1_image, class: "file-field" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :day_1_description, "Day 1 Details (Optional)" %><br>
+      <%= f.text_area :day_1_description, class: "login-text-field" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :day_2_image, "Day 2 Image (Optional)" %><br>
+      <%= f.file_field :day_2_image, class: "file-field" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :day_2_description, "Day 2 Details (Optional)" %><br>
+      <%= f.text_area :day_2_description, class: "login-text-field" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :day_3_image, "Day 3 Image (Optional)" %><br>
+      <%= f.file_field :day_3_image, class: "file-field" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :day_3_description, "Day 3 Details (Optional)" %><br>
+      <%= f.text_area :day_3_description, class: "login-text-field" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :judging_criteria, "Judging Criteria (Optional)" %><br>
+      <%= f.text_area :judging_criteria, class: "login-text-field" %>
+    </div>
+
+    <%= f.hidden_field :city_id, value: @city.id %>
+
+    <div class="action">
+      <%= f.submit "Save", class: "button green" %>
+    </div>
+
+  <% end %>
+<% else %>
+  <h1>Sorry you do not have access to this page</h1>
+<% end %>
+
+<%= link_to "Back to #{@city.name}'s City Dashboard", dashboard_admin_city_path(current_user, @city), class: "button back-button white-red" %>
