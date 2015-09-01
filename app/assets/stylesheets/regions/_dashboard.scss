@@ -1,3 +1,35 @@
-.hackathon-details-list {
-  @include prop(margin, 10);
+.admin-hackathon-details {
+  .edit-hackathon-details {
+    @include prop(top, -5);
+  }
+
+  .hackathon-details-list {
+    @include prop(margin, 10);
+  }
+
+  .epsilon {
+    line-height: 2;
+  }
+
+  .admin-event-days-image-panel {
+    @include prop(margin, 20, 0);
+    position: relative;
+    display: block;
+    
+    .day-image {
+      position: relative;
+      @include prop(min-height, 250);
+      @include pre(width, 100%);
+      background-size: cover;
+      background-color: white;
+      background-repeat-x: no-repeat;
+      background-repeat-y: no-repeat;
+      background-position-x: 50%;
+    }
+  }
+
+  .admin-judging-criteria {
+    clear: both;
+    @include prop(margin-top, 20);
+  }
 }
