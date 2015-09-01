@@ -2,6 +2,7 @@ class HackathonsController < ApplicationController
   before_filter :require_login
   before_filter :find_city
   before_filter :find_user
+  before_filter :find_hackathon, only: [:edit, :update]
 
   def new
     @hackathon = Hackathon.new
@@ -40,6 +41,10 @@ class HackathonsController < ApplicationController
 
   def find_user
     @admin = Admin.find(current_user.id)
+  end
+
+  def find_hackathon
+    @hackathon = Hackathon.find(params[:id])
   end
 
   def not_authenticated
