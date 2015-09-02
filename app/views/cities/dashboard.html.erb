@@ -45,42 +45,59 @@
         <% end %>
 
         <div class="row admin-hackathon-details">
-          <% if @hackathon.present? %>
-            <h3 class="gamma">Hackathon Details <%= link_to "Edit", edit_admin_city_hackathon_path(current_user, @city, @hackathon), class: "button tiny orange edit-hackathon-details" %></h3>
+          <% if @city.hackathon.present? %>
+            <h3 class="gamma">Hackathon Details <%= link_to "Edit", edit_admin_city_hackathon_path(current_user, @city, @city.hackathon.id), class: "button tiny orange edit-hackathon-details" %></h3>
 
-            <div class="hackathon-details-list">
-              <h5 class="epsilon">Date of Hackathon: <%= @hackathon.date_of_hackathon.to_s(:day_and_date) %></h5>
-              <h5 class="epsilon">Venue Name: <%= @hackathon.venue_name %></h5>
-              <h5 class="epsilon">Address Line 1: <%= @hackathon.address_line_1 %></h5>
-              <h5 class="epsilon">Postal/Zip Code: <%= @hackathon.postal_code %></h5>
-              <h5 class="epsilon">Eventbrite Link (or link to another registration page): <%= link_to "#{@hackathon.eventbrite_link}", @hackathon.eventbrite_link %></h5>
+            <div class="hackathon-details-list columns xsmall-12 small-12 medium-12 large-12">
+              <h5 class="epsilon">Date of Hackathon: <%= @city.hackathon.date_of_hackathon.to_s(:day_and_date) %></h5>
+              <h5 class="epsilon">Venue Name: <%= @city.hackathon.venue_name %></h5>
+              <h5 class="epsilon">Address Line 1: <%= @city.hackathon.address_line_1 %></h5>
+              <h5 class="epsilon">Postal/Zip Code: <%= @city.hackathon.postal_code %></h5>
+              <h5 class="epsilon">Eventbrite Link (or link to another registration page): <%= link_to "#{@city.hackathon.eventbrite_link}", @city.hackathon.eventbrite_link %></h5>
 
-              <div class="admin-event-days-image-panel columns large-4 medium-4 small-6 xsmall-12 text-center">
-                <div class="day-image" style="background-image: url(<%= @hackathon.day_1_image %>)"></div>
-                <div class="day-description">
-                  <h5 class="epsilon"><%= @hackathon.day_1_description %></h5>
+              <div class="row">
+                <div class="admin-event-days-image-panel columns large-4 medium-4 small-6 xsmall-12 text-center">
+                  <div class="day-image" style="background-image: url(<%= @city.hackathon.day_1_image %>)"></div>
+                  <div class="day-description">
+                    <h5 class="epsilon"><%= @city.hackathon.day_1_description %></h5>
+                  </div>
+                </div>
+
+                <div class="admin-event-days-image-panel columns large-4 medium-4 small-6 xsmall-12 text-center">
+                  <div class="day-image" style="background-image: url(<%= @city.hackathon.day_2_image %>)"></div>
+                  <div class="day-description">
+                    <h5 class="epsilon"><%= @city.hackathon.day_2_description %></h5>
+                  </div>
+                </div>
+
+                <div class="admin-event-days-image-panel columns large-4 medium-4 small-6 xsmall-12 text-center">
+                  <div class="day-image" style="background-image: url(<%= @city.hackathon.day_3_image %>)"></div>
+                  <div class="day-description">
+                    <h5 class="epsilon"><%= @city.hackathon.day_3_description %></h5>
+                  </div>
                 </div>
               </div>
 
-              <div class="admin-event-days-image-panel columns large-4 medium-4 small-6 xsmall-12 text-center">
-                <div class="day-image" style="background-image: url(<%= @hackathon.day_2_image %>)"></div>
-                <div class="day-description">
-                  <h5 class="epsilon"><%= @hackathon.day_2_description %></h5>
-                </div>
-              </div>
-
-              <div class="admin-event-days-image-panel columns large-4 medium-4 small-6 xsmall-12 text-center">
-                <div class="day-image" style="background-image: url(<%= @hackathon.day_3_image %>)"></div>
-                <div class="day-description">
-                  <h5 class="epsilon"><%= @hackathon.day_3_description %></h5>
-                </div>
-              </div>
-
-              <h5 class="epsilon admin-judging-criteria">Judging Criteria: <%= @hackathon.judging_criteria %></h5>
+              <h5 class="epsilon admin-judging-criteria">Judging Criteria: <%= @city.hackathon.judging_criteria %></h5>
 
             </div>
           <% else %>
           <h3 class="gamma">Hackathon Details <%= link_to "Create", new_admin_city_hackathon_path(current_user, @city), class: "button tiny green" %></h3>
+          <% end %>
+        </div>
+
+        <div class="row admin-events-details">
+          <h3 class="gamma">Events <%= link_to "Create New Event", new_admin_city_event_path(current_user, @city), class: "button tiny green", id: "create-event" %></h3>
+
+          <% @city.events.each do |event| %>
+            <div class="columns xsmall-12 small-12 medium-12 large-12">
+              <h5 class="epsilon">Date of Event: <%= event.date_of_event.to_s(:day_and_date) %></h5>
+
+              <div class="event-image" style="background-image: url(<%= event.event_image %>)">
+              </div>
+
+              <h5 class="epsilon">Event Thumbnail Image: <%= event.date_of_event.to_s(:day_and_date) %></h5>
+            </div>
           <% end %>
         </div>
 

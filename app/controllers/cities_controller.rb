@@ -19,7 +19,7 @@ class CitiesController < ApplicationController
     if @city.save
       redirect_to admin_path(current_user), notice: "#{@city.name} successfully created!"
     else
-      render :edit, alert: "There was an issue creating this city. Please try again."
+      render :new, alert: "There was an issue creating this city. Please try again."
     end
   end
 
@@ -48,8 +48,6 @@ class CitiesController < ApplicationController
     @judges = @city.users.where(type_of_user: "Judge");
     @mentors = @city.users.where(type_of_user: "Mentor");
     @sponsors = @city.users.where(type_of_user: "Sponsor");
-
-    @hackathon = Hackathon.find_by_city_id(@city.id)
   end
 
   private
