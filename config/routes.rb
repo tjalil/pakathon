@@ -18,6 +18,8 @@ Rails.application.routes.draw do
       resources :users, only: [:new, :create, :edit, :update, :destroy]
 
       resources :hackathons, only: [:new, :create, :edit, :update]
+      resources :events, except: [:show, :index]
+      
       # resources :contacts, only: [:show]
     end
     resources :resources, except: [:show, :index] do
