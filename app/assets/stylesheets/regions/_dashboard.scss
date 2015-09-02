@@ -15,7 +15,7 @@
     @include prop(margin, 20, 0);
     position: relative;
     display: block;
-    
+
     .day-image {
       position: relative;
       @include prop(min-height, 250);
@@ -31,5 +31,22 @@
   .admin-judging-criteria {
     clear: both;
     @include prop(margin-top, 20);
+  }
+}
+
+.admin-events-details {
+  #create-event {
+    @include prop(top, -5);
+  }
+
+  .event-image {
+    position: relative;
+    @include prop(min-height, 250);
+    @include pre(width, 100%);
+    background-size: cover;
+    background-color: white;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-position-x: 50%;
   }
 }

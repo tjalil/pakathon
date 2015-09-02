@@ -95,6 +95,10 @@ li {
         color: $white;
     }
 
+    // all positioning properties need to be taken out and 
+    // placed in the specific instance of this style in the other
+    // stylesheet, not in common
+    
     &.back-button {
         position: relative;
         @include prop(top, 20);

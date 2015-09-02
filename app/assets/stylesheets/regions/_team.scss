@@ -2,7 +2,8 @@
 #team-core {
 
   .type-of-user,
-  .admin-hackathon-details {
+  .admin-hackathon-details,
+  .admin-events-details {
     @include prop(margin, 40, -10);
 
     .gamma {
