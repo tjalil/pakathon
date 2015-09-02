@@ -10,6 +10,7 @@ class HackathonsController < ApplicationController
 
   def create
     @hackathon = Hackathon.new(hackathon_params)
+    @hackathon.city_id = @city.id
 
     if @hackathon.save
       redirect_to dashboard_admin_city_path(current_user, @city), notice: "Hackathon details successfully created!"
