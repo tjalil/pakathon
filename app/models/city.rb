@@ -2,7 +2,8 @@ class City < ActiveRecord::Base
   has_many :users
   belongs_to :admin
   has_many :contacts
-  has_many :hackathons
+  has_one :hackathon
+  has_many :events
 
   mount_uploader :hero_photo, ImageUploader
   mount_uploader :map_photo, ImageUploader
