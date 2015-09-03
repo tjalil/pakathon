@@ -1,0 +1,43 @@
+.single-city-hero {
+  @include prop(padding, 130, 0, 40);
+  @include prop(min-height, 300);
+  position: relative;
+
+  background-size: cover;
+  background-color: white;
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-position-y: 30%;
+  background-position-x: 50%;
+
+  &:before {
+    content: "";
+    position: absolute;
+    @include pre(width, 100%);
+    @include pre(height, 100%);
+    @include pre(left, 0);
+    top: 0;
+    background: rgba(0, 0, 0, 0.2);
+    @include pre(transition, background 0.3s ease-out);
+    z-index: 2;
+  }
+
+  .gamma {
+    color: $white;
+    position: relative;
+    z-index: 3;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+  }
+}
+
+.single-city-hackathon {
+  @include prop(padding, 40, 0);
+  position: relative;
+
+  .keyline {
+    position: relative;
+    @include pre(width, 50%);
+    @include pre(left, 25%);
+  }
+}

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150814010354) do
+ActiveRecord::Schema.define(version: 20150903001601) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,12 +62,86 @@ ActiveRecord::Schema.define(version: 20150814010354) do
     t.datetime "updated_at"
   end
 
+  create_table "events", force: true do |t|
+    t.text     "event_image"
+    t.datetime "event_date"
+    t.time     "event_time"
+    t.string   "event_name"
+    t.text     "address_line_1"
+    t.text     "postal_code"
+    t.text     "event_description"
+    t.text     "eventpage_link"
+    t.integer  "city_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "venue_name"
+  end
+
+  add_index "events", ["city_id"], name: "index_events_on_city_id", using: :btree
+
+  create_table "faqs", force: true do |t|
+    t.text     "question"
+    t.text     "answer"
+    t.integer  "city_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "faqs", ["city_id"], name: "index_faqs_on_city_id", using: :btree
+
+  create_table "galleries", force: true do |t|
+    t.text     "image_1"
+    t.text     "image_2"
+    t.text     "image_3"
+    t.text     "image_4"
+    t.text     "link_to_gallery"
+    t.integer  "city_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "galleries", ["city_id"], name: "index_galleries_on_city_id", using: :btree
+
+  create_table "hackathons", force: true do |t|
+    t.datetime "date_of_hackathon"
+    t.string   "venue_name"
+    t.string   "address_line_1"
+    t.string   "postal_code"
+    t.text     "eventbrite_link"
+    t.text     "day_1_image"
+    t.text     "day_1_description"
+    t.text     "day_2_image"
+    t.text     "day_2_description"
+    t.text     "day_3_image"
+    t.text     "day_3_description"
+    t.text     "judging_criteria"
+    t.integer  "city_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "hackathons", ["city_id"], name: "index_hackathons_on_city_id", using: :btree
+
   create_table "logos", force: true do |t|
     t.string   "name"
     t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "projects", force: true do |t|
+    t.text     "project_name"
+    t.text     "project_url"
+    t.string   "names_of_team_members"
+    t.text     "project_description"
+    t.text     "project_video_url"
+    t.text     "project_photo"
+    t.integer  "city_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "projects", ["city_id"], name: "index_projects_on_city_id", using: :btree
 
   create_table "resources", force: true do |t|
     t.string   "title"
