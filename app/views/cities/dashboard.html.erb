@@ -90,6 +90,7 @@
             <% @city.events.each do |event| %>
               <div class="columns xsmall-12 small-12 medium-12 large-12 single-event">
                 <%= link_to "Edit Event", edit_admin_city_event_path(current_user, @city, event), class: "button tiny orange edit-event" %>
+                <%= link_to "Delete", admin_city_event_path(current_user, @city, event), method: :delete, class: "button tiny red delete-event", data: {confirm: "Are you sure?"} %>
 
                 <div class="event-image" style="background-image: url(<%= event.event_image %>)">
                 </div>
