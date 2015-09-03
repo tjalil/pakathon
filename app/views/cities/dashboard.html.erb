@@ -107,6 +107,26 @@
             <% end %>
           </div>
 
+          <div class="row admin-project-details">
+            <h3 class="gamma">Projects <%= link_to "Create New Project", new_admin_city_project_path(current_user, @city), class: "button tiny green", id: "create-project" %></h3>
+
+            <% @city.projects.each do |project| %>
+              <div class="columns xsmall-12 small-12 medium-12 large-12 single-project">
+                <%= link_to "Edit Project", edit_admin_city_project_path(current_user, @city, project), class: "button tiny orange edit-project" %>
+                <%= link_to "Delete", admin_city_project_path(current_user, @city, project), method: :delete, class: "button tiny red delete-project", data: {confirm: "Are you sure?"} %>
+
+                <h5 class="epsilon">Project Name: <%= project.project_name %></h5>
+                <h5 class="epsilon">Names of Team Members: <%= project.names_of_team_members %></h5>
+                <h5 class="epsilon">Project Description: <%= project.project_description %></h5>
+                <h5 class="epsilon">Project Site Url: <%= link_to "#{truncate(project.project_url, length: 80)}", project.project_url %></h5>
+                <h5 class="epsilon">Project Video: <%= link_to "#{truncate(project.project_video_url, length: 80)}", project.project_video_url %></h5>
+                <div class="project-image" style="background-image: url(<%= project.project_photo %>)">
+                </div>
+
+              </div>
+            <% end %>
+          </div>
+
           <div class="row type-of-user">
             <h3 class="gamma">Team Members <%= link_to "Add Team Member", new_admin_city_user_path(current_user, @city), class: "button tiny green add-team-member" %></h3>
             <% @team_members.each do |user| %>

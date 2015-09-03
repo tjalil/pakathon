@@ -3,7 +3,8 @@
 
   .type-of-user,
   .admin-hackathon-details,
-  .admin-events-details {
+  .admin-events-details,
+  .admin-project-details {
     @include prop(margin, 40, -10);
 
     .gamma {

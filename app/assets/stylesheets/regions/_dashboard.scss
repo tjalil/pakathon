@@ -76,3 +76,37 @@
     }
   }
 }
+
+.admin-project-details {
+  #create-project {
+    float: right;
+  }
+
+  .single-project {
+    @include prop(padding, 20);
+    @include prop(margin, 10, 0);
+    @include pre(border, 1px solid $greenBackground);
+
+    .epsilon {
+      line-height: 2;
+    }
+
+    .edit-project,
+    .delete-project {
+      float: right;
+    }
+
+    .project-image {
+      position: relative;
+      @include prop(min-height, 250);
+      @include prop(max-width, 300);
+      @include pre(width, 100%);
+      background-size: cover;
+      background-color: white;
+      background-repeat-x: no-repeat;
+      background-repeat-y: no-repeat;
+      background-position-x: 50%;
+      @include prop(margin, 20, 0);
+    }
+  }
+}
