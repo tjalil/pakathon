@@ -19,7 +19,7 @@ class CitiesController < ApplicationController
     if @city.save
       redirect_to admin_path(current_user), notice: "#{@city.name} successfully created!"
     else
-      render :edit, alert: "There was an issue creating this city. Please try again."
+      render :new, alert: "There was an issue creating this city. Please try again."
     end
   end
 

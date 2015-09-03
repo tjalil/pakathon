@@ -1,0 +1,63 @@
+<% if current_user.username == "taha.jalil" || @city.admin_id == current_user.id %>
+  <%= form_for ([current_user, @city, @event]), :html => {:multipart => true} do |f| %>
+    <% if @event.errors.any? %>
+      <div class="error_messages">
+        <h2>Form is invalid</h2>
+        <ul>
+          <% for message in @event.errors.full_messages %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :event_image, "Event Image (Optional)" %><br>
+      <%= f.file_field :event_image, class: "file-field" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :event_date, "Event Date" %><br>
+      <%= f.date_field :event_date, class: "login-text-field", required: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :event_time, "Event Time" %><br>
+      <%= f.time_field :event_time, class: "login-text-field", required: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :venue_name, "Venue Name" %><br>
+      <%= f.text_field :venue_name, class: "login-text-field", required: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :address_line_1, "Address Line 1" %><br>
+      <%= f.text_field :address_line_1, class: "login-text-field", required: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :postal_code, "Postal/Zip Code (Optional)" %><br>
+      <%= f.text_field :postal_code, class: "login-text-field" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :eventpage_link, "Eventbrite Link (or another link which users access to register for the event)" %><br>
+      <%= f.text_field :eventpage_link, class: "login-text-field", required: true %>
+    </div>    
+
+    <div class="field">
+      <%= f.label :event_description, "Event Description (Optional)" %><br>
+      <%= f.text_area :event_description, class: "login-text-field" %>
+    </div>
+
+    <div class="action">
+      <%= f.submit "Save", class: "button green" %>
+    </div>
+
+  <% end %>
+<% else %>
+  <h1>Sorry you do not have access to this page</h1>
+<% end %>
+
+<%= link_to "Back to #{@city.name}'s City Dashboard", dashboard_admin_city_path(current_user, @city), class: "button back-button white-red" %>
