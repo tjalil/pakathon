@@ -94,8 +94,10 @@
       }
 
       .tag {
-        opacity: 1;
-        @include prop(bottom, 0);
+        &.registration-closed {
+          opacity: 1;
+          @include prop(bottom, 0);
+        }
       }
     }
 
@@ -134,9 +136,17 @@
       position: absolute;
       @include prop(left, 0);
       @include prop(right, 0);
-      @include prop(bottom, -24);
-      opacity: 0;
-      transition: bottom 0.3s ease-out, opacity 0.3s ease-out;
+
+      &.registration-closed {
+        opacity: 0;
+        @include prop(bottom, -24);
+        transition: bottom 0.3s ease-out, opacity 0.3s ease-out;
+      }
+
+      &.registration-open {
+        @include prop(bottom, 0);
+        z-index: 2;
+      }
     }
   }
 }
