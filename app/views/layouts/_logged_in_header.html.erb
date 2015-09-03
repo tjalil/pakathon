@@ -5,6 +5,9 @@
         <ul>
           <li><%= link_to "My Dashboard", admin_path(current_user) %></li>
           <li><%= link_to "My Resources", my_resources_admin_resources_path(current_user) %></li>
+          <% if current_user.username != "taha.jalil" %>
+            <li><%= link_to "My City", dashboard_admin_city_path(current_user, @city) %></li>
+          <% end %>
         </ul>
       </nav>
 
