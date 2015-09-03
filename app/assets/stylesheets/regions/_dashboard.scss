@@ -110,3 +110,24 @@
     }
   }
 }
+
+.admin-faq-details {
+  #create-faq {
+    float: right;
+  }
+
+  .single-faq {
+    @include prop(padding, 20);
+    @include prop(margin, 10, 0);
+    @include pre(border, 1px solid $greenBackground);
+
+    .epsilon {
+      line-height: 2;
+    }
+
+    .edit-faq,
+    .delete-faq {
+      float: right;
+    }
+  }
+}
