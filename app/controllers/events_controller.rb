@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_filter :require_login
   before_filter :find_city
   before_filter :find_user
-  before_filter :find_event, only: [:edit, :update]
+  before_filter :find_event, only: [:edit, :update, :destroy]
 
   def new
     @event = Event.new
@@ -28,6 +28,11 @@ class EventsController < ApplicationController
     else
       render :edit, alert: "There was an issue editing this event. Please try again."
     end
+  end
+
+  def destroy
+    @event.destroy
+    redirect_to dashboard_admin_city_path(current_user, @city), notice: "Event successfully deleted"
   end
 
   private

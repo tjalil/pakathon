@@ -19,6 +19,9 @@ Rails.application.routes.draw do
 
       resources :hackathons, only: [:new, :create, :edit, :update]
       resources :events, except: [:show, :index]
+      resources :projects, except: [:show, :index]
+      resources :faqs, except: [:show, :index]
+      resources :galleries, except: [:show, :index]
       
       # resources :contacts, only: [:show]
     end

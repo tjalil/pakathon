@@ -57,7 +57,8 @@
       line-height: 2;
     }
 
-    .edit-event {
+    .edit-event,
+    .delete-event {
       float: right;
     }
 
@@ -73,5 +74,99 @@
       background-position-x: 50%;
       @include prop(margin, 20, 0);
     }
+  }
+}
+
+.admin-project-details {
+  #create-project {
+    float: right;
+  }
+
+  .single-project {
+    @include prop(padding, 20);
+    @include prop(margin, 10, 0);
+    @include pre(border, 1px solid $greenBackground);
+
+    .epsilon {
+      line-height: 2;
+    }
+
+    .edit-project,
+    .delete-project {
+      float: right;
+    }
+
+    .project-image {
+      position: relative;
+      @include prop(min-height, 250);
+      @include prop(max-width, 300);
+      @include pre(width, 100%);
+      background-size: cover;
+      background-color: white;
+      background-repeat-x: no-repeat;
+      background-repeat-y: no-repeat;
+      background-position-x: 50%;
+      @include prop(margin, 20, 0);
+    }
+  }
+}
+
+.admin-faq-details {
+  #create-faq {
+    float: right;
+  }
+
+  .single-faq {
+    @include prop(padding, 20);
+    @include prop(margin, 10, 0);
+    @include pre(border, 1px solid $greenBackground);
+
+    .epsilon {
+      line-height: 2;
+    }
+
+    .edit-faq,
+    .delete-faq {
+      float: right;
+    }
+  }
+}
+
+.admin-gallery-details {
+
+  .edit-gallery-details,
+  #create-gallery {
+    float: right;
+  }
+
+  .hackathon-details-list {
+    @include prop(margin, 10);
+    @include pre(border, 1px solid $greenBackground);
+  }
+
+  .epsilon {
+    line-height: 2;
+  }
+
+  .admin-event-days-image-panel {
+    @include prop(margin, 20, 0);
+    position: relative;
+    display: block;
+
+    .day-image {
+      position: relative;
+      @include prop(min-height, 250);
+      @include pre(width, 100%);
+      background-size: cover;
+      background-color: white;
+      background-repeat-x: no-repeat;
+      background-repeat-y: no-repeat;
+      background-position-x: 50%;
+      @include prop(margin, 20, 0);
+    }
+  }
+
+  .admin-judging-criteria {
+    clear: both;
   }
 }
