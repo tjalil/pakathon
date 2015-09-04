@@ -80,7 +80,7 @@
 
               </div>
             <% else %>
-            <h3 class="gamma">Hackathon Details <%= link_to "Create Hackathon", new_admin_city_hackathon_path(current_user, @city), class: "button tiny green create-hackathon" %></h3>
+              <h3 class="gamma">Hackathon Details <%= link_to "Create Hackathon", new_admin_city_hackathon_path(current_user, @city), class: "button tiny green create-hackathon" %></h3>
             <% end %>
           </div>
 
@@ -140,6 +140,37 @@
               </div>
             <% end %>
           </div>
+
+          <!-- ACTIVATE GALLERY -->
+          <!-- <div class="row admin-gallery-details">
+            <%# if @city.gallery.present? %>
+              <h3 class="gamma">Gallery <%#= link_to "Edit Gallery", edit_admin_city_gallery_path(current_user, @city, @city.gallery.id), class: "button tiny orange edit-gallery-details" %></h3>
+
+              <div class="gallery-details-list columns xsmall-12 small-12 medium-12 large-12">
+                <div class="row">
+                  <div class="admin-gallery-image-panel columns large-4 medium-4 small-6 xsmall-12 text-center">
+                    <div class="day-image" style="background-image: url(<%#= @city.gallery.image_1 %>)"></div>
+                  </div>
+
+                  <div class="admin-gallery-image-panel columns large-4 medium-4 small-6 xsmall-12 text-center">
+                    <div class="day-image" style="background-image: url(<%#= @city.gallery.image_2 %>)"></div>
+                  </div>
+
+                  <div class="admin-gallery-image-panel columns large-4 medium-4 small-6 xsmall-12 text-center">
+                    <div class="day-image" style="background-image: url(<%#= @city.gallery.image_3 %>)"></div>
+                  </div>
+
+                  <div class="admin-gallery-image-panel columns large-4 medium-4 small-6 xsmall-12 text-center">
+                    <div class="day-image" style="background-image: url(<%#= @city.gallery.image_4 %>)"></div>
+                  </div>
+
+                  <h5 class="epsilon">Link to external gallery: <%#= link_to "#{truncate(@city.gallery.link_to_gallery, length: 80)}", @city.gallery.link_to_gallery %></h5>
+                </div>
+              </div>
+            <%# else %>
+              <h3 class="gamma">Gallery <%#= link_to "Create Gallery", new_admin_city_gallery_path(current_user, @city), class: "button tiny green", id: "create-gallery" %></h3>
+            <%# end %>
+          </div> -->
 
           <div class="row type-of-user">
             <h3 class="gamma">Team Members <%= link_to "Add Team Member", new_admin_city_user_path(current_user, @city), class: "button tiny green add-team-member" %></h3>
