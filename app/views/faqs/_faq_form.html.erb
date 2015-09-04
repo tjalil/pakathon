@@ -1,0 +1,33 @@
+<% if current_user.username == "taha.jalil" || @city.admin_id == current_user.id %>
+  <%= form_for ([current_user, @city, @faq]), :html => {:multipart => true} do |f| %>
+    <% if @faq.errors.any? %>
+      <div class="error_messages">
+        <h2>Form is invalid</h2>
+        <ul>
+          <% for message in @faq.errors.full_messages %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :question, "Question" %><br>
+      <%= f.text_area :question, class: "login-text-field", required: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :answer, "Answer" %><br>
+      <%= f.text_area :answer, class: "login-text-field", required: true %>
+    </div>
+
+    <div class="action">
+      <%= f.submit "Save", class: "button green" %>
+    </div>
+
+  <% end %>
+<% else %>
+  <h1>Sorry you do not have access to this page</h1>
+<% end %>
+
+<%= link_to "Back to #{@city.name}'s City Dashboard", dashboard_admin_city_path(current_user, @city), class: "button back-button white-red" %>
