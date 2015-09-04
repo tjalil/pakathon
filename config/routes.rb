@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       resources :events, except: [:show, :index]
       resources :projects, except: [:show, :index]
       resources :faqs, except: [:show, :index]
+      resources :galleries, except: [:show, :index]
       
       # resources :contacts, only: [:show]
     end
