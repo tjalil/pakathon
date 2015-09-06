@@ -2,13 +2,10 @@
   <div class="row">
     <div class="columns xsmall-12 users-grid">
       <h2 class="alpha"><%= @city.name %>'s City Dashboard</h2>
-      <h5 class="epsilon"><%= link_to "Add Team Member/Judge/Mentor/Sponsor", new_admin_city_user_path(current_user, @city) %></h5>
-
-      <% if @city.users.present? %>
 
         <% if @city.name == "Global" %>
           <div class="row type-of-user">
-            <h3 class="gamma">Core Team Members</h3>
+            <h3 class="gamma">Core Team Members <%= link_to "Add Core Team Member", new_admin_city_user_path(current_user, @city), class: "button tiny green add-team-member" %></h3>
             <% @core_team_members.each do |user| %>
               <div class="admin-user-panel columns large-2 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
                 <div class="v-wrapper">
@@ -26,7 +23,7 @@
           </div>
 
           <div class="row type-of-user">
-            <h3 class="gamma">City Leads</h3>
+            <h3 class="gamma">City Leads <%= link_to "Add City Lead", new_admin_city_user_path(current_user, @city), class: "button tiny green add-team-member" %></h3>
             <% @city_leads.each do |user| %>
               <div class="admin-user-panel column large-3 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
                 <div class="v-wrapper">
@@ -44,27 +41,158 @@
           </div>
         <% end %>
 
+        <% if @city.name != "Global" %>
+          <div class="row admin-hackathon-details">
+            <% if @city.hackathon.present? %>
+              <h3 class="gamma">Hackathon Details <%= link_to "Edit Hackathon Details", edit_admin_city_hackathon_path(current_user, @city, @city.hackathon.id), class: "button tiny orange edit-hackathon-details" %></h3>
 
-        <div class="row type-of-user">
-          <h3 class="gamma">Team Members</h3>
-          <% @team_members.each do |user| %>
-            <div class="admin-user-panel column large-3 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
-              <div class="v-wrapper">
-                <div class="v-inner">
-                  <h4 class="delta"><%= user.name %></h4>
-                  <h5 class="epsilon"><%= user.description.upcase %></h5>
-                  
-                  <%= link_to "Edit", edit_admin_city_user_path(current_user, @city, user), class: "button tiny orange" %>
+              <div class="hackathon-details-list columns xsmall-12 small-12 medium-12 large-12">
+                <h5 class="epsilon">Date of Hackathon: <%= @city.hackathon.date_of_hackathon.to_s(:day_and_date) %></h5>
+                <h5 class="epsilon">Venue Name: <%= @city.hackathon.venue_name %></h5>
+                <h5 class="epsilon">Address Line 1: <%= @city.hackathon.address_line_1 %></h5>
+                <h5 class="epsilon">Postal/Zip Code: <%= @city.hackathon.postal_code %></h5>
+                <h5 class="epsilon">Eventbrite Link (or link to another registration page): <%= link_to "#{truncate(@city.hackathon.eventbrite_link, length: 80)}", @city.hackathon.eventbrite_link %></h5>
 
-                  <%= link_to "Delete", admin_city_user_path(current_user, @city, user), method: :delete, class: "button tiny red", data: {confirm: "Are you sure?"} %>
+                <div class="row">
+                  <div class="admin-event-days-image-panel columns large-4 medium-4 small-6 xsmall-12 text-center">
+                    <div class="day-image" style="background-image: url(<%= @city.hackathon.day_1_image %>)"></div>
+                    <div class="day-description">
+                      <h5 class="epsilon"><%= @city.hackathon.day_1_description %></h5>
+                    </div>
+                  </div>
+
+                  <div class="admin-event-days-image-panel columns large-4 medium-4 small-6 xsmall-12 text-center">
+                    <div class="day-image" style="background-image: url(<%= @city.hackathon.day_2_image %>)"></div>
+                    <div class="day-description">
+                      <h5 class="epsilon"><%= @city.hackathon.day_2_description %></h5>
+                    </div>
+                  </div>
+
+                  <div class="admin-event-days-image-panel columns large-4 medium-4 small-6 xsmall-12 text-center">
+                    <div class="day-image" style="background-image: url(<%= @city.hackathon.day_3_image %>)"></div>
+                    <div class="day-description">
+                      <h5 class="epsilon"><%= @city.hackathon.day_3_description %></h5>
+                    </div>
+                  </div>
+                </div>
+
+                <h5 class="epsilon admin-judging-criteria">Judging Criteria: <%= @city.hackathon.judging_criteria %></h5>
+
+              </div>
+            <% else %>
+              <h3 class="gamma">Hackathon Details <%= link_to "Create Hackathon", new_admin_city_hackathon_path(current_user, @city), class: "button tiny green create-hackathon" %></h3>
+            <% end %>
+          </div>
+
+          <div class="row admin-events-details">
+            <h3 class="gamma">Events <%= link_to "Create New Event", new_admin_city_event_path(current_user, @city), class: "button tiny green", id: "create-event" %></h3>
+
+            <% @city.events.each do |event| %>
+              <div class="columns xsmall-12 small-12 medium-12 large-12 single-event">
+                <%= link_to "Edit Event", edit_admin_city_event_path(current_user, @city, event), class: "button tiny orange edit-event" %>
+                <%= link_to "Delete", admin_city_event_path(current_user, @city, event), method: :delete, class: "button tiny red delete-event", data: {confirm: "Are you sure?"} %>
+
+                <div class="event-image" style="background-image: url(<%= event.event_image %>)">
+                </div>
+
+                <h5 class="epsilon">Date of Event: <%= event.event_date.to_s(:day_and_date) %></h5>
+                <h5 class="epsilon">Time of Event: <%= event.event_time.at_beginning_of_hour.strftime("%I:%M %p") %></h5>
+                <h5 class="epsilon">Venue Name: <%= event.venue_name %></h5>
+                <h5 class="epsilon">Address Line 1: <%= event.address_line_1 %></h5>
+                <h5 class="epsilon">Postal/Zip Code: <%= event.postal_code %></h5>
+                <h5 class="epsilon">Event Registration Link: <%= link_to "#{truncate(event.eventpage_link, length: 80)}", event.eventpage_link %></h5>
+                <h5 class="epsilon">Event Description: <%= event.event_description %></h5>
+              
+              </div>
+            <% end %>
+          </div>
+
+          <div class="row admin-project-details">
+            <h3 class="gamma">Projects <%= link_to "Create New Project", new_admin_city_project_path(current_user, @city), class: "button tiny green", id: "create-project" %></h3>
+
+            <% @city.projects.each do |project| %>
+              <div class="columns xsmall-12 small-12 medium-12 large-12 single-project">
+                <%= link_to "Edit Project", edit_admin_city_project_path(current_user, @city, project), class: "button tiny orange edit-project" %>
+                <%= link_to "Delete", admin_city_project_path(current_user, @city, project), method: :delete, class: "button tiny red delete-project", data: {confirm: "Are you sure?"} %>
+
+                <h5 class="epsilon">Project Name: <%= project.project_name %></h5>
+                <h5 class="epsilon">Names of Team Members: <%= project.names_of_team_members %></h5>
+                <h5 class="epsilon">Project Description: <%= project.project_description %></h5>
+                <h5 class="epsilon">Project Site Url: <%= link_to "#{truncate(project.project_url, length: 80)}", project.project_url %></h5>
+                <h5 class="epsilon">Project Video: <%= link_to "#{truncate(project.project_video_url, length: 80)}", project.project_video_url %></h5>
+                <div class="project-image" style="background-image: url(<%= project.project_photo %>)">
+                </div>
+
+              </div>
+            <% end %>
+          </div>
+
+          <div class="row admin-faq-details">
+            <h3 class="gamma">FAQs <%= link_to "Create New FAQ", new_admin_city_faq_path(current_user, @city), class: "button tiny green", id: "create-faq" %></h3>
+
+            <% @city.faqs.each do |faq| %>
+              <div class="columns xsmall-12 small-12 medium-12 large-12 single-faq">
+                <%= link_to "Edit FAQ", edit_admin_city_faq_path(current_user, @city, faq), class: "button tiny orange edit-faq" %>
+                <%= link_to "Delete", admin_city_faq_path(current_user, @city, faq), method: :delete, class: "button tiny red delete-faq", data: {confirm: "Are you sure?"} %>
+
+                <h5 class="epsilon">Question: <%= faq.question %></h5>
+                <h5 class="epsilon">Answer: <%= faq.answer %></h5>
+              </div>
+            <% end %>
+          </div>
+
+          <!-- ACTIVATE GALLERY -->
+          <!-- <div class="row admin-gallery-details">
+            <%# if @city.gallery.present? %>
+              <h3 class="gamma">Gallery <%#= link_to "Edit Gallery", edit_admin_city_gallery_path(current_user, @city, @city.gallery.id), class: "button tiny orange edit-gallery-details" %></h3>
+
+              <div class="gallery-details-list columns xsmall-12 small-12 medium-12 large-12">
+                <div class="row">
+                  <div class="admin-gallery-image-panel columns large-4 medium-4 small-6 xsmall-12 text-center">
+                    <div class="day-image" style="background-image: url(<%#= @city.gallery.image_1 %>)"></div>
+                  </div>
+
+                  <div class="admin-gallery-image-panel columns large-4 medium-4 small-6 xsmall-12 text-center">
+                    <div class="day-image" style="background-image: url(<%#= @city.gallery.image_2 %>)"></div>
+                  </div>
+
+                  <div class="admin-gallery-image-panel columns large-4 medium-4 small-6 xsmall-12 text-center">
+                    <div class="day-image" style="background-image: url(<%#= @city.gallery.image_3 %>)"></div>
+                  </div>
+
+                  <div class="admin-gallery-image-panel columns large-4 medium-4 small-6 xsmall-12 text-center">
+                    <div class="day-image" style="background-image: url(<%#= @city.gallery.image_4 %>)"></div>
+                  </div>
+
+                  <h5 class="epsilon">Link to external gallery: <%#= link_to "#{truncate(@city.gallery.link_to_gallery, length: 80)}", @city.gallery.link_to_gallery %></h5>
                 </div>
               </div>
-            </div>
-          <% end %>
-        </div>
+            <%# else %>
+              <h3 class="gamma">Gallery <%#= link_to "Create Gallery", new_admin_city_gallery_path(current_user, @city), class: "button tiny green", id: "create-gallery" %></h3>
+            <%# end %>
+          </div> -->
+
+          <div class="row type-of-user">
+            <h3 class="gamma">Team Members <%= link_to "Add Team Member", new_admin_city_user_path(current_user, @city), class: "button tiny green add-team-member" %></h3>
+            <% @team_members.each do |user| %>
+              <div class="admin-user-panel column large-3 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
+                <div class="v-wrapper">
+                  <div class="v-inner">
+                    <h4 class="delta"><%= user.name %></h4>
+                    <h5 class="epsilon"><%= user.description.upcase %></h5>
+                    
+                    <%= link_to "Edit", edit_admin_city_user_path(current_user, @city, user), class: "button tiny orange" %>
+
+                    <%= link_to "Delete", admin_city_user_path(current_user, @city, user), method: :delete, class: "button tiny red", data: {confirm: "Are you sure?"} %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
 
         <div class="row type-of-user">
-          <h3 class="gamma">Mentors</h3>
+          <h3 class="gamma">Mentors <%= link_to "Add Mentor", new_admin_city_user_path(current_user, @city), class: "button tiny green add-team-member" %></h3>
           <% @mentors.each do |user| %>
             <div class="admin-user-panel column large-3 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
               <div class="v-wrapper">
@@ -83,7 +211,7 @@
 
 
         <div class="row type-of-user">
-          <h3 class="gamma">Judges</h3>
+          <h3 class="gamma">Judges <%= link_to "Add Judge", new_admin_city_user_path(current_user, @city), class: "button tiny green add-team-member" %></h3>
           <% @judges.each do |user| %>
             <div class="admin-user-panel column large-3 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
               <div class="v-wrapper">
@@ -102,7 +230,7 @@
 
 
         <div class="row type-of-user">
-          <h3 class="gamma">Sponsors</h3>
+          <h3 class="gamma">Sponsors <%= link_to "Add Sponsor", new_admin_city_user_path(current_user, @city), class: "button tiny green add-team-member" %></h3>
           <% @sponsors.each do |user| %>
             <div class="admin-user-panel column large-3 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
               <div class="v-wrapper">
@@ -119,9 +247,6 @@
           <% end %>
         </div>
 
-      <% else %>
-        <h5 class="epsilon">No Team Members to display</h5>
-      <% end %>
     </div>
   </div>
 </section>
