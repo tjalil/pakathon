@@ -1,5 +1,5 @@
 #streams {
-  @include prop(padding, 90, 0, 40);
+  @include prop(padding, 90, 0, 20);
 
   .beta {
     text-transform: uppercase;
@@ -11,14 +11,25 @@
     p {
       color: $greyLight;
       line-height: 1.8;
-      @include fontSize(18);
+      @include fontSize(16);
       font-family: "OpenSans-Light";
       @include prop(margin-bottom, 20);
+
+      @media only screen and (min-width: $smallScreen + px) {
+        @include fontSize(18);  
+      }
     }
   }
 
   ul {
     @include prop(padding-top, 20);
+    @include prop(padding-right, 10);
+    @include prop(padding-left, 10);
+
+    @media only screen and (min-width: $mediumScreen + px) {
+      @include prop(padding-top, 20);
+      @include prop(padding, 0);
+    }
   }
 
   .single-stream {
@@ -42,6 +53,11 @@
       color: $greyDark;
       @include prop(margin, 20, 0);
       line-height: 2;
+      @include fontSize(14);
+
+      @media only screen and (min-width: $smallScreen + px) {
+        @include fontSize(16);
+      }
     }
 
     .case-studies {
