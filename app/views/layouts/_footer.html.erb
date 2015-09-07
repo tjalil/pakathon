@@ -16,6 +16,12 @@
               <li class="header-nav-item"><a href="/program">Program</a></li>
             <% end %>
 
+            <% if request.original_url == "http://www.pakathon.org/streams" %>
+              <li><a href="/streams" class="active">Streams</a></li>
+            <% else %>
+              <li><a href="/streams">Streams</a></li>
+            <% end %>
+
             <% if request.original_url == "http://www.pakathon.org/cities" %>
               <li class="header-nav-item"><a href="/cities" class="active">Cities</a></li>
             <% else %>

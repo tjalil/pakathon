@@ -1,0 +1,71 @@
+#streams {
+  @include prop(padding, 90, 0, 20);
+
+  .beta {
+    text-transform: uppercase;
+    color: $greyLight;
+    @include prop(margin-bottom, 20);
+  }
+
+  .streams-description {
+    p {
+      color: $greyLight;
+      line-height: 1.8;
+      @include fontSize(16);
+      font-family: "OpenSans-Light";
+      @include prop(margin-bottom, 20);
+
+      @media only screen and (min-width: $smallScreen + px) {
+        @include fontSize(18);  
+      }
+    }
+  }
+
+  ul {
+    @include prop(padding-top, 20);
+    @include prop(padding-right, 10);
+    @include prop(padding-left, 10);
+
+    @media only screen and (min-width: $mediumScreen + px) {
+      @include prop(padding-top, 20);
+      @include prop(padding, 0);
+    }
+  }
+
+  .single-stream {
+    background: $white;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    @include prop(margin-bottom, 40);
+    border-left: 1px solid $greenLight;
+    @include prop(padding, 20);
+
+    .alpha {
+      color: $greyLight;
+      font-family: "OpenSans-Light";
+
+      &:before {
+        @include prop(padding-right, 20);
+        color: $green;
+      }
+    }
+
+    .description {
+      color: $greyDark;
+      @include prop(margin, 20, 0);
+      line-height: 2;
+      @include fontSize(14);
+
+      @media only screen and (min-width: $smallScreen + px) {
+        @include fontSize(16);
+      }
+    }
+
+    .case-studies {
+      text-transform: uppercase;
+      font-family: "OpenSans-Bold";
+      @include fontSize(13);
+      letter-spacing: 2px;
+      color: $green;
+    }
+  }
+}
