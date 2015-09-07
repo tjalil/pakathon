@@ -192,6 +192,8 @@
     a {
       position: relative;
       @include prop(top, 7);
+      letter-spacing: 2px;
+      @include fontSize(13);
     }
   }
 }
@@ -225,7 +227,6 @@
       @include prop(left, 0);
       @include prop(right, 0);
       @include fontSize(70);
-      // color: darken(#1964BB, 10);
       color: $green;
       @include prop(top, 0);
     }
@@ -236,39 +237,18 @@
   }
 
   .large-block-grid-6 {
-    @include prop(padding, 0, 25);
+    @include prop(padding, 0, 25, 20);
     @include prop(margin, 0);
   }
 
-  .text {
-    text-align: center;
-    @include prop(margin-bottom, 20);
-
-    @media only screen and (min-width: $mediumScreen + px) {
-      text-align: right;
-      @include prop(margin-bottom, 0);
+  .punch {
+    text-decoration: underline;
+    @include fontSize(18);
+    @include pre(transition, color 0.3s ease);
+    
+    &:hover {
+      text-decoration: none;
     }
-  }
-
-  .cta {
-    text-align: center;
-
-    @media only screen and (min-width: $mediumScreen + px) {
-      text-align: left;
-    }
-
-    a {
-      position: relative;
-      @include prop(top, 7);
-    }
-  }
-
-  .cta-row {
-    @include prop(margin-top, 50);
-  }
-
-  img {
-    @include border(1, solid, $bodyColor);
   }
 }
 
@@ -411,8 +391,8 @@
       .button {
         background: $white;
         @include border(1, solid, $white);
-        @include fontSize(15);
-        letter-spacing: 1px;
+        @include fontSize(13);
+        letter-spacing: 2px;
         font-family: "OpenSans-Bold";
 
         &:hover {
@@ -498,7 +478,8 @@
     #testimonial-cta {
       .button {
         @include prop(padding, 5, 10);
-        @include fontSize(12);
+        @include fontSize(10);
+        letter-spacing: 2px;
 
         @media only screen and (min-width: 768px) and (max-width: 1093px) {
           @include fontSize(10);
