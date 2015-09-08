@@ -124,94 +124,10 @@
   </div>
 </section>
 
-<%# if @city.name == "Toronto" %>
-<!-- 
-  <section class="city-hero" id="<%#= @city.name.downcase.split(" ").join %>-background-img">
-    <div class="row">
-      <div class="columns large-12 medium-12 small-12 xsmall-12">
-
-        <%# if @city.name == "Toronto" %>
-
-          <div class="hero-text text-center">
-            <h1 class="beta">#PakathonTO | October 2<span>ND</span> - 4<span>TH</span></h1>
-            
-            <h2 class="alpha video-action"><%#= image_tag(Logo.find_by(name:"play-button-red").image_url(:team), size:"60") %> Engaging the World to Reshape Pakistan</h2>
-            
-            <h2 class="alpha video-action-on-hover">Watch the Video</h3>
-          </div>
-
-          <div class="video-action-on-click">
-            <iframe width="1400" height="500" src="https://www.youtube.com/embed/RqfYtAHHFJk?autohide=1&color=white&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
-          </div>
-
-        <%# else %>
-          <div class="hero-text text-center">
-            <h1 class="beta">OCTOBER 2<span>ND</span> - 4<span>TH</span></h1>
-          </div>
-        <%# end %>
-      </div>
+<section class="hackathon-cta">
+  <div class="row">
+    <div class="columns xsmall-12 text-center">
+      <h2 class="delta">Sounds like your cup of tea? <%= link_to "Register Now", "", class: "button green text-center" %></h2>
     </div>
-  </section> -->
-<!-- 
-  <section id="city-support">
-    <div class="row">
-      <div class="columns large-6 medium-6 small-12 xsmall-12 city-connect">
-
-        <div class="row text-center">
-          <div class="small-12 medium-12 large-12 columns text-center">
-            <p class="punch">A conversation worth having. Let's talk.</h5>
-
-              <p class="punch email">pakathonTO@gmail.com</p>
-          </div>
-        </div>
-
-        <div class="row text-center">
-          <ul class="large-6 large-centered medium-6 medium-centered small-6 small-centered xsmall-12 toronto-social-media">
-            <li class="toronto-facebook">
-              <a href="https://www.facebook.com/pakathonTO">
-              </a>
-            </li>
-            <li class="toronto-twitter">
-              <a href="https://twitter.com/PakathonTO">
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
- -->
-      <%# if @city.name == "Toronto" %>
-        <!-- <div class="columns large-6 medium-6 small-12 xsmall-12 text-center city-email-signup"> -->
-          <!-- Begin MailChimp Signup Form -->
-          <!-- <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css"> -->
-         <!--  <div id="city_mc_embed_signup">
-            <form action="//pakathon.us9.list-manage.com/subscribe/post?u=ad8b8f5d43cbae3d83d1dbe5e&amp;id=42c988d66c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-              <div id="city_mc_embed_signup_scroll" class="text-center">
-                <label for="mce-EMAIL">Subscribe to <%#= @city.name %>'s mailing list</label>
-                <div class="email-field">
-                  <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email" required>
-                </div> -->
-                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-               <!--  <div style="position: absolute; left: -5000px;">
-                  <input type="text" name="b_ad8b8f5d43cbae3d83d1dbe5e_42c988d66c" tabindex="-1" value="">
-                </div>
-                <div class="clear">
-                  <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-                </div>
-              </div>
-            </form>
-          </div> -->
-          <!--End mc_embed_signup-->
-     <!--    </div>
-      <%# end %>
-    </div>
-  </section>
-
-<%# else %>
-  <section id="city-hero">
-    <div class="row">
-      <div class="large-10 large-centered text-center columns">
-        <h2>Oops. Sorry this page does not exist.</br> Click here to return to the main website - <a href="http://www.pakathon.org/">Pakathon</a></h2>
-      </div>
-    </div>
-  </section>
-<%# end %> -->
+  </div>
+</section>

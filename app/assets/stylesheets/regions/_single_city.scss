@@ -275,3 +275,34 @@
     }
   }
 }
+
+.hackathon-cta {
+  @include prop(padding, 20, 0);
+  background-color: $greyLight;
+
+  .delta {
+    color: $white;
+  }
+
+  .button {
+    position: relative;
+    @include fontSize(13);
+    letter-spacing: 2px;
+    display: block;
+    @include prop(margin-top, 20);
+    @include prop(top, 0);
+    @include prop(left, 0);
+    @include pre(width, 100%);
+
+    @media only screen and (min-width: 480px) {
+      @include pre(width, 50%);
+      @include pre(left, 25%);      
+    }
+
+    @media only screen and (min-width: $smallScreen + px) {
+      display: inline;
+      @include prop(top, -4);
+      @include prop(left, 20);
+    }
+  }
+}
