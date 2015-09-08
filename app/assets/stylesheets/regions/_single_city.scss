@@ -148,3 +148,130 @@
     }
   }
 }
+
+.single-city-judging-and-faqs {
+  @include prop(padding, 20, 0);
+  background-color: $offWhite;
+
+  .judging-criteria {
+    position: relative;
+    @include prop(padding-bottom, 10);
+
+    @media only screen and (min-width: $smallScreen + px) {
+      @include prop(padding-bottom, 0);      
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      display: none;
+      background-color: $green;
+      @include pre(right, 0);
+      @include pre(top, 5%);
+      @include prop(width, 1);
+      @include pre(height, 90%);
+
+      @media only screen and (min-width: $smallScreen + px) {
+        display: block;
+      }
+    }
+
+    &:after {
+     content: "";
+      position: absolute;
+      display: block;
+      background-color: $green;
+      @include pre(bottom, 0);
+      @include pre(left, 5%);
+      @include prop(height, 1);
+      @include pre(width, 90%);
+
+      @media only screen and (min-width: $smallScreen + px) {
+        display: none;
+      } 
+    }
+  }
+
+  .faqs {
+    @include prop(padding-top, 20);
+
+    @media only screen and (min-width: $smallScreen + px) {
+      @include prop(padding-top, 0);      
+    }
+  }
+
+  .gamma {
+    @include prop(padding, 0, 0, 10);
+  }
+
+  .criteria,
+  .question {
+    color: $greyDark;
+    @include fontSize(16);
+    @include prop(padding, 10, 0);
+    font-family: "OpenSans-Semibold";
+  }
+
+  .green-bullet {
+    position: relative;
+    @include prop(padding, 0, 0, 10, 15);
+    font-family: "OpenSans-Light";
+    color: $greyDark;
+    @include fontSize(16);
+
+    &:before {
+      content: "";
+      position: absolute;
+      @include prop(top, 8);
+      @include prop(left, 0);
+      @include prop(width, 6);
+      @include prop(height, 6);
+      background-color: $green;
+      @extend .circle;
+    }
+  }
+
+  .answer {
+    position: relative;
+    @include prop(padding, 0, 0, 10, 0);
+    font-family: "OpenSans-Light";
+    color: $greyDark;
+    @include fontSize(16);
+    line-height: 1.8;
+
+    &.last-answer {
+      @include prop(padding, 0, 0, 30, 0);
+    }
+  }
+
+  .min-small-screen {
+    display: none;
+
+    @media only screen and (min-width: $smallScreen + px) {
+      display: block;
+    }
+  }
+
+  .button {
+    @include fontSize(13);
+    letter-spacing: 2px;
+    display: block;
+    position: relative;
+    @include pre(width, 100%);
+
+    @media only screen and (min-width: 480px) {
+      @include pre(width, 50%);
+      @include pre(left, 25%);      
+    }
+
+    @media only screen and (min-width: $smallScreen + px) {
+      @include pre(width, 70%);
+      @include pre(left, 15%);      
+    }
+
+    @media only screen and (min-width: $mediumScreen + px) {
+      @include pre(width, 60%);
+      @include pre(left, 20%);
+    }
+  }
+}
