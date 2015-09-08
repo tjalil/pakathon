@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # match '/500', to: 'errors#internal_server_error', via: :all
   
   resources :cities, only: [:index, :show]
+  # resources :cities, only: [:index]
 
   resources :admins, only: [:show] do
     resources :cities, only: [:new, :create, :edit, :update] do
