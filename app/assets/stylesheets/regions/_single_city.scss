@@ -306,3 +306,24 @@
     }
   }
 }
+
+.single-city-resources {
+  @include prop(padding, 40, 0);
+
+  .gamma {
+    @include prop(padding-bottom, 20);
+  }
+
+  ul {
+    @include prop(margin, 0);
+    float: left;
+
+    @media only screen and (max-width: $smallScreen + px) {
+      @include pre(width, 100%);
+    }
+  }
+
+  .resource-box {
+    @include prop(padding, 20);
+  }
+}

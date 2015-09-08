@@ -24,7 +24,8 @@ class CitiesController < ApplicationController
   end
 
   def show
-    @global = City.find_by(name: "Boston")
+    # @global = City.find_by(name: "Boston")
+    @resources = Resource.order('created_at DESC').limit(4)
   end
 
   def edit
