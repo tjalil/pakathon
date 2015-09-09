@@ -422,6 +422,32 @@
         }
       }
     }
+  }
+}
 
+.single-city-gallery {
+  @include prop(padding, 40, 0);
+
+  .gallery-image {
+    @include prop(min-height, 300);
+    position: relative;
+
+    background-size: cover;
+    background-color: $grey;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-position-y: 30%;
+    background-position-x: 50%;
+  }
+
+  .punch {
+    @include prop(margin, 20, 0, 0);
+    display: block;
+    text-align: center;
+
+    @media only screen and (min-width: $smallScreen + px) {
+      text-align: left;
+      @include pre(width, 50%);
+    }
   }
 }
