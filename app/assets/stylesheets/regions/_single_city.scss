@@ -327,3 +327,101 @@
     @include prop(padding, 20);
   }
 }
+
+.single-city-team {
+  @include prop(padding, 40, 0);
+  background-color: $offWhite;
+
+  .gamma {
+    @include prop(padding-bottom, 20);
+  }
+
+  .admin-user-panel {
+    position: relative;
+    background-size: cover;
+    background-color: white;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-position-x: 50%;
+    z-index: 1;
+    float: left;
+    @include prop(padding, 0);
+    @include prop(min-height, 250);
+    @include pre(width, 44%);
+    @include prop(margin, 5);
+
+    @media only screen and (min-width: $smallScreen + px) and (max-width: 707px) {
+      @include pre(width, 30%);
+      @include prop(margin, 10);
+    }
+
+    @media only screen and (min-width: 708px) {
+      @include pre(width, 22%);
+    }
+
+    @media only screen and (min-width: $largeScreen + px) {
+      @include prop(max-width, 265);
+      @include pre(width, 18%);
+    }
+
+    &:before {
+      content: none;
+    }
+
+    .team-member-info {
+      position: absolute;
+      @include pre(left, 0);
+      @include pre(right, 0);
+      @include pre(bottom, 0);
+      overflow: hidden;
+      height: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+      @include pre(transition, height 0.3s ease-out);
+
+      @media only screen and (min-width: $smallScreen + px) {
+        height: 50px;
+      }
+
+      .delta,
+      .epsilon {
+        color: $white;
+        font-family: "OpenSans-Light";
+      }
+
+      .delta {
+        @include fontSize(18);
+      }
+
+      .epsilon {
+        @include fontSize(14);
+        @include prop(padding-bottom, 10);
+      }
+
+      .social-icons {
+        display: inline-block;
+        
+        a {
+          &:before {
+            position: relative;
+            color: $white;
+            @include fontSize(20);
+            @include prop(padding, 10);
+
+            @media only screen and (min-width: $smallScreen + px) {
+              @include prop(padding, 20);
+            }
+          }
+        }
+      }
+    }
+
+    @media only screen and (min-width: $smallScreen + px) {
+      &:hover {
+        .team-member-info {
+          height: 100px;
+        }
+      }
+    }
+
+  }
+}

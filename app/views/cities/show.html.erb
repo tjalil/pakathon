@@ -174,3 +174,39 @@
     </ul>
   </div>
 </section>
+
+<section class="single-city-team">
+  <div class="row">
+    <div class="columns xsmall-12">
+      <h2 class="gamma">Team</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="columns xsmall-12">
+      <% @city.users.each do |user| %>
+        <% if user.type_of_user == "Team Member" || user.type_of_user == "City Lead" %>
+          <div class="admin-user-panel columns large-2 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
+            <div class="team-member-info">
+              <h4 class="delta"><%= user.name %></h4>
+              <h5 class="epsilon"><%= user.description.upcase %></h5>
+              <ul>
+                <% if user.twitter.present? %>
+                  <li id="social-icons-twitter" class="social-icons">
+                    <a class="icon-twitter" href="<%= user.twitter %>" target="_blank"></a>
+                  </li>
+                <% end %>
+
+                <% if user.linkedin.present? %>
+                  <li id="social-icons-linkedin" class="social-icons">
+                    <a class="icon-linkedin" href="<%= user.linkedin %>" target="_blank"></a>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</section>
