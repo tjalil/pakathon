@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
-  def toronto_baithak
+  def toronto_appetizer
   end
 
   def homepage
