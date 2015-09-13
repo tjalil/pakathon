@@ -23,7 +23,7 @@
 				"name": "energy"
 			},
 			"setIdx": 0,
-			"setId": 11,
+			"setId": 3,
 			"iconIdx": 0
 		},
 		{
@@ -50,7 +50,7 @@
 				"name": "law-order"
 			},
 			"setIdx": 0,
-			"setId": 11,
+			"setId": 3,
 			"iconIdx": 1
 		},
 		{
@@ -75,7 +75,7 @@
 				"name": "women"
 			},
 			"setIdx": 0,
-			"setId": 11,
+			"setId": 3,
 			"iconIdx": 2
 		},
 		{
@@ -104,7 +104,7 @@
 				"name": "calendar"
 			},
 			"setIdx": 0,
-			"setId": 11,
+			"setId": 3,
 			"iconIdx": 3
 		},
 		{
@@ -130,7 +130,7 @@
 				"name": "close"
 			},
 			"setIdx": 0,
-			"setId": 11,
+			"setId": 3,
 			"iconIdx": 4
 		},
 		{
@@ -156,7 +156,7 @@
 				"name": "drawer"
 			},
 			"setIdx": 0,
-			"setId": 11,
+			"setId": 3,
 			"iconIdx": 5
 		},
 		{
@@ -194,7 +194,7 @@
 				"name": "bitcoin"
 			},
 			"setIdx": 0,
-			"setId": 11,
+			"setId": 3,
 			"iconIdx": 6
 		},
 		{
@@ -226,7 +226,7 @@
 				"name": "book"
 			},
 			"setIdx": 0,
-			"setId": 11,
+			"setId": 3,
 			"iconIdx": 7
 		},
 		{
@@ -261,7 +261,7 @@
 				"name": "cafe"
 			},
 			"setIdx": 0,
-			"setId": 11,
+			"setId": 3,
 			"iconIdx": 8
 		},
 		{
@@ -305,7 +305,7 @@
 				"name": "gaming"
 			},
 			"setIdx": 0,
-			"setId": 11,
+			"setId": 3,
 			"iconIdx": 9
 		},
 		{
@@ -337,7 +337,7 @@
 				"name": "healthcare"
 			},
 			"setIdx": 0,
-			"setId": 11,
+			"setId": 3,
 			"iconIdx": 10
 		},
 		{
@@ -366,7 +366,7 @@
 				"name": "retail"
 			},
 			"setIdx": 0,
-			"setId": 11,
+			"setId": 3,
 			"iconIdx": 11
 		},
 		{
@@ -399,7 +399,7 @@
 				"code": 58887
 			},
 			"setIdx": 1,
-			"setId": 10,
+			"setId": 2,
 			"iconIdx": 0
 		},
 		{
@@ -429,7 +429,7 @@
 				"code": 58888
 			},
 			"setIdx": 1,
-			"setId": 10,
+			"setId": 2,
 			"iconIdx": 1
 		},
 		{
@@ -459,7 +459,7 @@
 				"code": 58889
 			},
 			"setIdx": 1,
-			"setId": 10,
+			"setId": 2,
 			"iconIdx": 2
 		},
 		{
@@ -486,7 +486,7 @@
 				"code": 58890
 			},
 			"setIdx": 1,
-			"setId": 10,
+			"setId": 2,
 			"iconIdx": 3
 		},
 		{
@@ -513,7 +513,7 @@
 				"code": 58891
 			},
 			"setIdx": 1,
-			"setId": 10,
+			"setId": 2,
 			"iconIdx": 4
 		},
 		{
@@ -541,7 +541,7 @@
 				"code": 58892
 			},
 			"setIdx": 1,
-			"setId": 10,
+			"setId": 2,
 			"iconIdx": 5
 		},
 		{
@@ -552,6 +552,7 @@
 					"M256 224c0 53.019-42.981 96-96 96s-96-42.981-96-96c0-53.019 42.981-96 96-96s96 42.981 96 96z"
 				],
 				"attrs": [],
+				"isMulticolor": false,
 				"tags": [
 					"linkedin",
 					"brand",
@@ -568,9 +569,35 @@
 				"name": "linkedin",
 				"code": 58897
 			},
-			"setIdx": 10,
+			"setIdx": 1,
+			"setId": 2,
+			"iconIdx": 6
+		},
+		{
+			"icon": {
+				"paths": [
+					"M512 0c-176.732 0-320 143.268-320 320 0 320 320 704 320 704s320-384 320-704c0-176.732-143.27-320-320-320zM512 512c-106.040 0-192-85.96-192-192s85.96-192 192-192 192 85.96 192 192-85.96 192-192 192z"
+				],
+				"attrs": [],
+				"tags": [
+					"location",
+					"map-marker",
+					"pin"
+				],
+				"grid": 16
+			},
+			"attrs": [],
+			"properties": {
+				"id": 308,
+				"order": 2,
+				"prevSize": 32,
+				"ligatures": "location, map-marker",
+				"name": "location",
+				"code": 58898
+			},
+			"setIdx": 2,
 			"setId": 0,
-			"iconIdx": 457
+			"iconIdx": 71
 		}
 	],
 	"height": 1024,
