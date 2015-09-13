@@ -52,7 +52,7 @@
 
 <section id="single-city-hackathon">
   <div class="row hackathon-details">
-    <div class="columns large-3 large-push-1 medium-4 small-4 xsmall-12">
+    <div class="columns large-3 large-push-1 medium-4 small-12 xsmall-12 text-center">
       <div class="hackathon-stopwatch text-center">
         <div class="v-wrapper">
           <div class="v-inner">
@@ -66,7 +66,7 @@
       </div>
     </div>
 
-    <div class="columns large-7 large-pull-1 medium-8 small-8 xsmall-12">
+    <div class="columns large-7 large-pull-1 medium-8 small-12 xsmall-12">
       <h2 class="gamma">Hackathon 2015</h2>
       <div class="dates-and-address">
         <p class="date icon-calendar">OCT 2 - 4, 2015</p>
@@ -338,8 +338,12 @@
   </div>
 
   <div class="row">
-    <div class="columns xsmall-12 text-center gallery-cta">
+    <div class="columns xsmall-12 text-center tablet-desktop gallery-cta">
       <%= link_to "See more from Pakathon #{@city.name}", "https://www.facebook.com/pakathonTO/photos_stream", {class: "button green text-center", target: "_blank"} %>
+    </div>
+
+    <div class="columns xsmall-12 text-center mobile gallery-cta">
+      <%= link_to "View Gallery", "https://www.facebook.com/pakathonTO/photos_stream", {class: "button green text-center", target: "_blank"} %>
     </div>
   </div>
 </section>

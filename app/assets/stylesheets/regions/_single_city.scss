@@ -122,20 +122,12 @@
     .hackathon-stopwatch {
       position: relative;
       @include prop(min-height, 260);
-      @include prop(min-width, 260);
+      @include prop(width, 260);
       background: asset_url('hackathon.jpg') 0% 100%;
-      background-size: 120%;
+      background-size: 100%;
       @extend .circle;
-
-      @media only screen and (min-width: 480px) {
-        @include pre(width, 50%);
-        @include pre(left, 25%);
-      }
-
-      @media only screen and (min-width: $smallScreen + px) {
-        @include pre(left, 0%);
-        @include pre(width, 100%);
-      }
+      @include pre(left, 50%);
+      @include prop(margin-left, -130);
 
       .v-wrapper {
         @include prop(min-height, 260);
@@ -180,7 +172,7 @@
       display: inline-block;
       color: $greenLightest;
       @include fontSize(14);
-      line-height: 1.3;
+      line-height: 2;
       font-family: "OpenSans-Bold";
       text-transform: uppercase;
       letter-spacing: 2px;
@@ -191,7 +183,6 @@
         position: absolute;
         @include fontSize(20);
         @include prop(left, 0);
-        @include prop(top, -5);
       }
     }
 
@@ -238,7 +229,6 @@
   .image {
     position: relative;
     @include pre(width, 100%);
-    @include pre(border, 1px solid $greyDark);
     @include prop(min-height, 200);
     background-color: $offWhite;
 
@@ -578,6 +568,22 @@
 
   .gallery-cta {
     @include prop(padding-top, 40);
+  }
+
+  .mobile {
+    display: block;
+
+    @media only screen and (min-width: $smallScreen + px) {
+      display: none;
+    }
+  }
+
+  .tablet-desktop {
+    display: none;
+
+    @media only screen and (min-width: $smallScreen + px) {
+      display: block;
+    }
   }
 
   .button {
