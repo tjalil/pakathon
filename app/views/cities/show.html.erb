@@ -1,12 +1,56 @@
 <section class="single-city-hero" style="background-image: url(<%= @city.hero_photo %>)">
   <div class="row">
-    <div class="columns xsmall-12 text-center">
-      <h2 class="gamma"><%= @city.name %></h2>
+    <div class="inner-nav">
+      <ul>
+        <li id="single-city-hackathon-nav-item">
+          <a href="#single-city-hackathon" class="smooth-scroll">
+            <p class="punch">2015 Hackathon</p>
+          </a>
+        </li>
+        <li id="single-city-judging-nav-item">
+          <a href="#single-city-judging-and-faqs" class="smooth-scroll">
+            <p class="punch">Judging Criteria</p>
+          </a>
+        </li>
+        <li id="single-city-resources-nav-item">
+          <a href="#single-city-resources" class="smooth-scroll">
+            <p class="punch">Resources</p>
+          </a>
+        </li>
+        <li id="single-city-mentors-nav-item">
+          <a href="#single-city-mentors" class="smooth-scroll">
+            <p class="punch">Mentors</p>
+          </a>
+        </li>
+        <li id="single-city-judges-nav-item">
+          <a href="#single-city-judges" class="smooth-scroll">
+            <p class="punch">Judges</p>
+          </a>
+        </li>
+        <li id="single-city-team-nav-item">
+          <a href="#single-city-team" class="smooth-scroll">
+            <p class="punch">Team</p>
+          </a>
+        </li>
+        <li id="single-city-partner-nav-item">
+          <a href="#single-city-partners" class="smooth-scroll">
+            <p class="punch">Partners</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="v-wrapper">
+      <div class="v-inner">
+        <div class="columns xsmall-12 text-center">
+          <h2 class="gamma"><%= @city.name %></h2>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="single-city-hackathon">
+<section id="single-city-hackathon">
   <div class="row hackathon-header">
     <div class="columns xsmall-12 text-center">
       <h2 class="beta">Hackathon 2015</h2>
@@ -78,7 +122,7 @@
   </div>
 </section>
 
-<section class="single-city-judging-and-faqs">
+<section id="single-city-judging-and-faqs">
   <div class="row">
     <div class="columns large-6 medium-6 small-6 xsmall-12 judging-criteria">
       <h2 class="gamma">Judging Criteria</h2>
@@ -124,7 +168,7 @@
   </div>
 </section>
 
-<section class="hackathon-cta">
+<section id="hackathon-cta">
   <div class="row">
     <div class="columns xsmall-12 text-center">
       <h2 class="delta">Sounds like your cup of tea? <%= link_to "Register Now", "", class: "button green text-center" %></h2>
@@ -132,7 +176,7 @@
   </div>
 </section>
 
-<section class="single-city-resources">
+<section id="single-city-resources">
   <div class="row">
     <div class="columns xsmall-12">
       <h2 class="gamma">Latest Resources</h2>
@@ -175,7 +219,7 @@
   </div>
 </section>
 
-<section class="single-city-team">
+<section id="single-city-team">
   <div class="row">
     <div class="columns xsmall-12">
       <h2 class="gamma">Team</h2>
@@ -211,7 +255,7 @@
   </div>
 </section>
 
-<section class="single-city-gallery">
+<section id="single-city-gallery">
   <div class="row">
     <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" style="background-image: url(<%= @city.hero_photo %>)"></div>
     <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" style="background-image: url(<%= @city.hero_photo %>)"></div>

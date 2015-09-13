@@ -1,13 +1,12 @@
 .single-city-hero {
-  @include prop(padding, 130, 0, 40);
-  @include prop(min-height, 300);
+  @include prop(padding, 70, 0, 0);
   position: relative;
 
   background-size: cover;
   background-color: white;
   background-repeat-x: no-repeat;
   background-repeat-y: no-repeat;
-  background-position-y: 30%;
+  background-position-y: 40%;
   background-position-x: 50%;
 
   &:before {
@@ -17,9 +16,16 @@
     @include pre(height, 100%);
     @include pre(left, 0);
     top: 0;
-    background: rgba(0, 0, 0, 0.2);
-    @include pre(transition, background 0.3s ease-out);
+    background: rgba(53, 53, 53, 0.84);
     z-index: 2;
+  }
+
+  .row {
+    position: relative;
+
+    .v-wrapper {
+      @include prop(min-height, 300);
+    }
   }
 
   .gamma {
@@ -28,10 +34,79 @@
     z-index: 3;
     text-transform: uppercase;
     letter-spacing: 5px;
+    @include pre(width, 50%);
+    @include pre(left, 25%);
+  }
+
+  .inner-nav {
+    position: absolute;
+    @include pre(left, 0);
+    @include prop(top, -2);
+    z-index: 3;
+    display: none;
+
+    @media only screen and (min-width: $mediumScreen + px) {
+      display: block;
+    }
+
+    li {
+      @include prop(min-width, 260);
+      @include prop(min-height, 40);
+      position: relative;
+
+      p {
+        color: $white;
+        @include prop(margin, 0);
+        font-family: "OpenSans-Bold";
+        @include fontSize(13);
+        text-transform: uppercase;
+        line-height: 1;
+        letter-spacing: 1px;
+      }
+
+      a {
+        position: relative;
+        display: block;
+        @include prop(height, 40);
+        @include prop(padding, 14, 0, 13, 30);
+
+        &:hover {
+          background: $greenBackground;
+        }
+      }
+
+      &#single-city-hackathon-nav-item {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      &#single-city-judging-nav-item {
+        background: rgba(255, 255, 255, 0.25);
+      }
+
+      &#single-city-resources-nav-item {
+        background: rgba(255, 255, 255, 0.20);
+      }
+
+      &#single-city-mentors-nav-item {
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      &#single-city-judges-nav-item {
+        background: rgba(255, 255, 255, 0.10);
+      }
+
+      &#single-city-team-nav-item {
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      &#single-city-partner-nav-item {
+        background: rgba(255, 255, 255, 0);
+      }
+    }
   }
 }
 
-.single-city-hackathon {
+#single-city-hackathon {
   @include prop(padding, 40, 0);
   position: relative;
 
@@ -149,7 +224,7 @@
   }
 }
 
-.single-city-judging-and-faqs {
+#single-city-judging-and-faqs {
   @include prop(padding, 20, 0);
   background-color: $offWhite;
 
@@ -276,7 +351,7 @@
   }
 }
 
-.hackathon-cta {
+#hackathon-cta {
   @include prop(padding, 20, 0);
   background-color: $greyLight;
 
@@ -307,7 +382,7 @@
   }
 }
 
-.single-city-resources {
+#single-city-resources {
   @include prop(padding, 40, 0);
 
   .gamma {
@@ -328,7 +403,7 @@
   }
 }
 
-.single-city-team {
+#single-city-team {
   @include prop(padding, 40, 0);
   background-color: $offWhite;
 
@@ -425,7 +500,7 @@
   }
 }
 
-.single-city-gallery {
+#single-city-gallery {
   @include prop(padding, 40, 0);
 
   .gallery-image {
