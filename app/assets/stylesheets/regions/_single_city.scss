@@ -107,15 +107,9 @@
 }
 
 #single-city-hackathon {
-  @include prop(padding, 40, 0);
+  @include prop(padding, 40, 0, 70);
   position: relative;
   background: $greenBackground;
-
-  // .keyline {
-  //   position: relative;
-  //   @include pre(width, 50%);
-  //   @include pre(left, 25%);
-  // }
 
   .gamma {
     @include fontSize(35);
@@ -177,13 +171,14 @@
     }
 
     .dates-and-address {
-      @include prop(padding, 10, 0);
+      @include prop(padding, 20, 0);
+      @include pre(border-bottom, 2px solid $greenLightest);
     }
 
     .date,
     .address {
       display: inline-block;
-      color: $greyDark;
+      color: $greenLightest;
       @include fontSize(14);
       line-height: 1.3;
       font-family: "OpenSans-Bold";
@@ -200,11 +195,15 @@
       }
     }
 
+    .date {
+      @include prop(padding-right, 20);
+    }
+
     .description {
       @include fontSize(18);
       line-height: 1.8;
-      color: $bodyColor;
-      @include prop(padding, 10, 0, 25);
+      color: $white;
+      @include prop(padding, 20, 0, 25);
       font-family: "OpenSans-Light";
     }
 
@@ -213,40 +212,62 @@
       letter-spacing: 2px;
     }
   }
+}
 
-  .hackathon-daily-descriptions {
-    .image {
-      position: relative;
-      @include pre(width, 100%);
-      @include pre(border, 1px solid $greyDark);
-      @include prop(min-height, 200);
-      background-color: $offWhite;
+#single-city-hackathon-days {
+  @include prop(padding, 20, 0, 0);
+  background-color: $offWhite;
 
-      .day-indicator {
-        position: absolute;
-        @include pre(bottom, 0);
-        @include pre(left, 0);
-        @include prop(margin, 10);
-        @include fontSize(24);
-        color: $greyDark;
-        font-family: "OpenSans-Bold";
-      }
+  .row {
+    background: $white;
+    position: relative;
+    @include prop(padding, 40, 0);
+    @include prop(top, -80);
+  }
+
+  .day-indicator {
+    position: relative;
+    @include prop(margin-bottom, 10);
+    @include fontSize(20);
+    line-height: 1.4;
+    color: $greyDark;
+    text-transform: uppercase;
+    font-family: "OpenSans-Bold";
+  }
+
+  .image {
+    position: relative;
+    @include pre(width, 100%);
+    @include pre(border, 1px solid $greyDark);
+    @include prop(min-height, 200);
+    background-color: $offWhite;
+
+    &#image-day-1 {
+      background: asset_url('hackathon-day-one.jpg') 50% 50% / cover;
     }
 
-    .description {
-      p {
-        @include fontSize(16);
-        line-height: 2;
-        color: $bodyColor;
-        @include prop(padding, 10, 0);
-        font-family: "OpenSans-Light";
-      }
+    &#image-day-2 {
+      background: asset_url('hackathon-day-two.jpg') 50% 50% / cover;
+    }
+
+    &#image-day-3 {
+      background: asset_url('hackathon-day-three.jpg') 50% 50% / cover;
+    }
+  }
+
+  .description {
+    p {
+      @include fontSize(16);
+      line-height: 2;
+      color: $bodyColor;
+      @include prop(padding, 10, 0);
+      font-family: "OpenSans-Light";
     }
   }
 }
 
 #single-city-judging-and-faqs {
-  @include prop(padding, 20, 0);
+  @include prop(padding, 0, 0, 20);
   background-color: $offWhite;
 
   .judging-criteria {
