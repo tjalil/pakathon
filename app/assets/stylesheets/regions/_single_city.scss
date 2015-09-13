@@ -109,25 +109,29 @@
 #single-city-hackathon {
   @include prop(padding, 40, 0);
   position: relative;
+  background: $greenBackground;
 
-  .hackathon-header,
+  // .keyline {
+  //   position: relative;
+  //   @include pre(width, 50%);
+  //   @include pre(left, 25%);
+  // }
+
+  .gamma {
+    @include fontSize(35);
+    color: $white;
+  }
+
   .hackathon-details {
     @include prop(margin-bottom, 50);
-  }
 
-  .keyline {
-    position: relative;
-    @include pre(width, 50%);
-    @include pre(left, 25%);
-  }
-
-  .hackathon-details {
     .hackathon-stopwatch {
       position: relative;
-      @include prop(min-height, 150);
-      @include pre(width, 100%);
-      background-color: $offWhite;
-      @include pre(border, 1px solid $greyDark);
+      @include prop(min-height, 260);
+      @include prop(min-width, 260);
+      background: asset_url('hackathon.jpg') 0% 100%;
+      background-size: 120%;
+      @extend .circle;
 
       @media only screen and (min-width: 480px) {
         @include pre(width, 50%);
@@ -140,42 +144,59 @@
       }
 
       .v-wrapper {
-        @include prop(min-height, 150);
+        @include prop(min-height, 260);
 
         .circle {
           position: relative; 
-          @include pre(border, 1px solid $greyLight);
-          @include prop(height, 100);
-          @include prop(width, 100);
-          @include pre(left, 50%);
-          @include prop(margin-left, -50);
-          @include prop(padding, 10, 0);
+          background: rgba(255, 255, 255, 0.9);
+          @include prop(height, 170);
+          @include prop(width, 170);
+          @include prop(left, 45);
+
+          .text {
+            @include fontSize(16);
+            font-family: "OpenSans-Bold";
+            text-transform: uppercase;
+            line-height: 1.75;
+            color: $greyLight;
+
+            &:first-child {
+              @include prop(padding-top, 18);
+            }
+          }
+
+          .number {
+            @include fontSize(60);
+            font-family: "OpenSans-Bold";
+            text-transform: uppercase;
+            line-height: 1.3;
+            color: $green; 
+          }
         }
       }
     }
 
-    .hackathon-date {
-      @include pre(border-left, 1px solid $greyDark);
-      @include pre(border-bottom, 1px solid $greyDark);
-      @include pre(border-right, 1px solid $greyDark);
+    .dates-and-address {
+      @include prop(padding, 10, 0);
     }
 
+    .date,
     .address {
-      display: block;
+      display: inline-block;
       color: $greyDark;
-      @include fontSize(18);
+      @include fontSize(14);
+      line-height: 1.3;
+      font-family: "OpenSans-Bold";
+      text-transform: uppercase;
+      letter-spacing: 2px;
       @include prop(padding-left, 30);
+      position: relative;
 
       &:before {
-        content: "";
         position: absolute;
-        @include prop(top, 3);
-        @include prop(left, 20);
-        @include prop(width, 18);
-        @include prop(height, 18);
-        // @include pre(border, 2px solid $green);
-        background-color: $green;
-        @extend .circle;
+        @include fontSize(20);
+        @include prop(left, 0);
+        @include prop(top, -5);
       }
     }
 
