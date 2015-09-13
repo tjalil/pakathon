@@ -124,6 +124,17 @@ li {
       }
     }
 
+    &.white-green {
+      color: $greenLight;
+      background: $white;
+      pointer: cursor;
+
+      &:hover {
+        background: $greenLight;
+        color: $white;
+      }
+    }
+
     &.orange {
         @include border(0, solid, $orange);
         color: $white;
