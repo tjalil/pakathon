@@ -74,7 +74,7 @@
       </div>
       
       <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac cursus lacus. Fusce finibus finibus urna non vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac cursus lacus. Fusce finibus finibus urna non vehicula.</p>
-      <%= link_to "Register", "", class: "button white-green" %>
+      <%= link_to "Register", "", {class: "button white-green", target: "_blank"} %>
     </div>
   </div>
 </section>
@@ -157,7 +157,7 @@
       <p class="question min-small-screen">How have you collaborated globally?</p>
       <p class="answer last-answer min-small-screen">A critical part of the process is finding a problem area that you can effectively address - so spend some time thinking about each of the areas and try to identify discrete challenges. Each stream listed below refers to case studies that have attained substantial success, in terms of sustainability, growth, business strategy, and plan execution.</p>
 
-      <%= link_to "See all Faqs", "/faqs", class: "button green text-center" %>
+      <%= link_to "See all Faqs", "/faqs", {class: "button green text-center", target: "_blank"} %>
     </div>
   </div>
 </section>
@@ -165,7 +165,7 @@
 <section id="hackathon-cta">
   <div class="row">
     <div class="columns xsmall-12 text-center">
-      <h2 class="delta">Sounds like your cup of tea? <%= link_to "Register Now", "", class: "button green text-center" %></h2>
+      <h2 class="delta">Sounds like your cup of tea? <%= link_to "Register Now", "javascript:void(0)", {class: "button white-green text-center", target: "_blank"} %></h2>
     </div>
   </div>
 </section>
@@ -210,6 +210,86 @@
         </li>
       <% end %>
     </ul>
+
+    <div class="columns xsmall-12 text-center resources-cta">
+      <%= link_to "See all Resources", "/resources", {class: "button green text-center", target: "_blank"} %>
+    </div>
+  </div>
+</section>
+
+<section id="single-city-mentors">
+  <div class="row">
+    <div class="columns xsmall-12">
+      <h2 class="gamma">Mentors</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="columns xsmall-12">
+      <%# @city.users.order('name ASC').each do |user| %>
+        <%# if user.type_of_user == "Mentor" %>
+      <% @city.users.order('name ASC').limit(5).each do |user| %>
+        <% if user.type_of_user == "Team Member" %>
+          <div class="admin-user-panel columns large-2 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
+            <div class="team-member-info">
+              <h4 class="delta"><%= user.name %></h4>
+              <h5 class="epsilon"><%= user.description.upcase %></h5>
+              <ul>
+                <% if user.twitter.present? %>
+                  <li id="social-icons-twitter" class="social-icons">
+                    <a class="icon-twitter" href="<%= user.twitter %>" target="_blank"></a>
+                  </li>
+                <% end %>
+
+                <% if user.linkedin.present? %>
+                  <li id="social-icons-linkedin" class="social-icons">
+                    <a class="icon-linkedin" href="<%= user.linkedin %>" target="_blank"></a>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<section id="single-city-judges">
+  <div class="row">
+    <div class="columns xsmall-12">
+      <h2 class="gamma">Judges</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="columns xsmall-12">
+      <%# @city.users.order('name ASC').each do |user| %>
+        <%# if user.type_of_user == "Judge" %>
+      <% @city.users.order('name ASC').limit(5).each do |user| %>
+        <% if user.type_of_user == "Team Member" %>
+          <div class="admin-user-panel columns large-3 medium-4 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
+            <div class="team-member-info">
+              <h4 class="delta"><%= user.name %></h4>
+              <h5 class="epsilon"><%= user.description.upcase %></h5>
+              <ul>
+                <% if user.twitter.present? %>
+                  <li id="social-icons-twitter" class="social-icons">
+                    <a class="icon-twitter" href="<%= user.twitter %>" target="_blank"></a>
+                  </li>
+                <% end %>
+
+                <% if user.linkedin.present? %>
+                  <li id="social-icons-linkedin" class="social-icons">
+                    <a class="icon-linkedin" href="<%= user.linkedin %>" target="_blank"></a>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </section>
 
@@ -258,8 +338,32 @@
   </div>
 
   <div class="row">
-    <div class="columns xsmall-12">
-      <a href="javascript:void(0)" class="punch">See more from Pakathon <%= @city.name %></a>
+    <div class="columns xsmall-12 text-center gallery-cta">
+      <%= link_to "See more from Pakathon #{@city.name}", "https://www.facebook.com/pakathonTO/photos_stream", {class: "button green text-center", target: "_blank"} %>
     </div>
+  </div>
+</section>
+
+<section id="single-city-community-partners">
+  <div class="row">
+    <div class="columns xsmall-12 text-center">
+      <h2 class="gamma">Thank you to all our Community Partners</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @city.users.order('name ASC').each do |user| %>
+      <% if user.type_of_user == "Sponsor" %>
+      <div class="columns xsmall-6 small-3 medium-3 large-2 partners">
+        <div class="community-partner">
+          <div class="v-wrapper">
+            <div class="v-inner">
+              <img src="<%= user.avatar %>" class="partner-logo">
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
   </div>
 </section>

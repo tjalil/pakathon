@@ -395,10 +395,11 @@
 
 #hackathon-cta {
   @include prop(padding, 20, 0);
-  background-color: $greyLight;
+  background-color: $greenBackground;
 
   .delta {
     color: $white;
+    font-family: "OpenSans-Light";
   }
 
   .button {
@@ -443,8 +444,20 @@
   .resource-box {
     @include prop(padding, 20);
   }
+
+  .resources-cta {
+    @include prop(padding, 20, 0);
+  }
+
+  .button {
+    @include fontSize(13);
+    letter-spacing: 2px;
+    position: relative;
+  }
 }
 
+#single-city-mentors,
+#single-city-judges,
 #single-city-team {
   @include prop(padding, 40, 0);
   background-color: $offWhite;
@@ -545,6 +558,12 @@
 #single-city-gallery {
   @include prop(padding, 40, 0);
 
+  .row:first-child {
+    @include prop(margin, 0);
+    @include pre(width, 100%);
+    max-width: none;
+  }
+
   .gallery-image {
     @include prop(min-height, 300);
     position: relative;
@@ -557,14 +576,44 @@
     background-position-x: 50%;
   }
 
-  .punch {
-    @include prop(margin, 20, 0, 0);
-    display: block;
-    text-align: center;
+  .gallery-cta {
+    @include prop(padding-top, 40);
+  }
 
-    @media only screen and (min-width: $smallScreen + px) {
-      text-align: left;
-      @include pre(width, 50%);
+  .button {
+    @include fontSize(13);
+    letter-spacing: 2px;
+    position: relative;
+  }
+}
+
+#single-city-community-partners {
+  @include prop(padding, 40, 0);
+  background-color: $offWhite;
+
+  .columns {
+    float: left;
+  }
+
+  .gamma {
+    @include prop(padding, 0, 0, 20);
+  }
+
+  .community-partner {
+    background: $white;
+    @include pre(width, 100%);
+    @include prop(max-height, 160);
+    @include prop(margin, 20, 0);
+    position: relative;
+    z-index: 1;
+
+    .v-wrapper {
+      @include prop(height, 160);
+    }
+
+    .partner-logo {
+      @include pre(width, 100%);
     }
   }
+
 }
