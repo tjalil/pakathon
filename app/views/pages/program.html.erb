@@ -45,6 +45,12 @@
       <div class="mobile">
         <%= link_to "Judging Criteria", "#program-judging-criteria", {class: "button green smooth-scroll", target: "_blank"} %>
       </div>
+
+      <div class="mentors-cta">
+        <div id="img-mentor" class="circle" style="background-image: url(<%= @mentor.avatar %>)"></div>
+        <p class="punch">We've got an experienced roster of Mentors to guide and support the teams through every step of the program.</p>
+        <%= link_to "See all Mentors", "/team", {class: "button white-green"} %>
+      </div>
     </div>
 
     <div class="columns large-8 medium-8 small-8 xsmall-12 right-panel">

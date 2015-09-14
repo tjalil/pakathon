@@ -7,6 +7,7 @@ class PagesController < ApplicationController
   end
 
   def program
+    @mentor = User.find_by_type_of_user('Mentor')
   end
 
   def streams
