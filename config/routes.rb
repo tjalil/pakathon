@@ -54,7 +54,7 @@ Rails.application.routes.draw do
       get 'team'
       get 'contact'
       get 'streams'
-      get 'toronto_appetizer'
+      # get 'toronto_appetizer'
       # get 'dekhmagarpyarsay_program_proto'
       # get 'dekhmagarpyarsay_team_proto'
       # get 'dekhmagarpyarsay_contact_proto'
