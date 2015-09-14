@@ -22,6 +22,31 @@
     @media only screen and (min-width: 1200px) {
       @include prop(padding, 0, 60);
     }
+
+    ul {
+      @include prop(padding-bottom, 20);
+    }
+
+    .mobile {
+      display: block;
+
+      @media only screen and (min-width: $largeScreen + px) {
+        display: none;
+      }
+    }
+
+    .tablet-desktop {
+      display: none;
+
+      @media only screen and (min-width: $largeScreen + px) {
+        display: block;
+      }
+    }
+
+    .button {
+      @include fontSize(13);
+      letter-spacing: 1px;
+    }
   }
 
   li {
@@ -264,6 +289,66 @@
       @include fontSize(18);
       font-family: "OpenSans-Light";
       @include prop(margin-top, 0);
+    }
+  }
+}
+
+
+#program-judging-criteria {
+  @include prop(padding, 20, 0, 0);
+
+  ul {
+    @include prop(padding-top, 0);
+    @include prop(margin, 0, 5);
+
+    @media only screen and (min-width: $mediumScreen + px) {
+      @include prop(margin, 0, 20);
+    }
+  }
+
+  .single-question {
+    background: $white;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    border-left: 1px solid $greenLight;
+    @include prop(padding, 20);
+
+    .alpha {
+      color: $greyLight;
+      font-family: "OpenSans-Regular";
+      @include fontSize(20);
+
+      &:before {
+        @include prop(padding-right, 20);
+        color: $green;
+      }
+    }
+  }
+
+  li {
+    @include prop(padding, 0);
+  }
+
+  .green-bullet {
+    position: relative;
+    @include prop(padding, 0, 0, 0, 15);
+    @include prop(margin, 10, 0);
+    font-family: "OpenSans-Light";
+    color: $greyDark;
+    @include fontSize(16);
+
+    &:first-child {
+      @include prop(margin, 10, 0);
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      @include prop(top, 8);
+      @include prop(left, 0);
+      @include prop(width, 6);
+      @include prop(height, 6);
+      background-color: $green;
+      @extend .circle;
     }
   }
 }
