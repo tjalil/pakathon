@@ -191,22 +191,26 @@
           </div>
         <% end %>
 
-        <div class="row type-of-user">
+        <div class="row type-of-user" id="admin-mentors">
           <h3 class="gamma">Mentors <%= link_to "Add Mentor", new_admin_city_user_path(current_user, @city), class: "button tiny green add-team-member" %></h3>
-          <% @mentors.each do |user| %>
-            <div class="admin-user-panel column large-3 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
-              <div class="v-wrapper">
-                <div class="v-inner">
-                  <h4 class="delta"><%= user.name %></h4>
-                  <h5 class="epsilon"><%= user.description.upcase %></h5>
-                  
+
+          <ul class="mentor-panel columns large-block-grid-3 medium-block-grid-3 small-block-grid-2 xsmall-block-grid-1">
+            <% @mentors.each do |user| %>
+              <li>
+                <div class="mentor-profile">
+                  <div class="mentor-img" style="background-image: url(<%= user.avatar %>)"></div>
+                  <div class="team-member-info">
+                    <h4 class="delta text-center"><%= user.name %></h4>
+                    <%= simple_format(user.description) %>
+                  </div>
+
                   <%= link_to "Edit", edit_admin_city_user_path(current_user, @city, user), class: "button tiny orange" %>
 
                   <%= link_to "Delete", admin_city_user_path(current_user, @city, user), method: :delete, class: "button tiny red", data: {confirm: "Are you sure?"} %>
                 </div>
-              </div>
-            </div>
-          <% end %>
+              </li>
+            <% end %>
+          </ul>
         </div>
 
 

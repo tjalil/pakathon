@@ -73,7 +73,8 @@
   }
 }
 
-#team-mentors {
+#team-mentors,
+#admin-mentors {
   @include prop(padding, 40, 0, 0);
 
   .gamma {
@@ -132,6 +133,12 @@
 
   br {
     line-height: 2;
+  }
+}
+
+#admin-mentors {
+  .mentor-profile {
+    @include prop(padding-bottom, 40);
   }
 }
 
