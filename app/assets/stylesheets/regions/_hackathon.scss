@@ -75,7 +75,7 @@
         @include fontSize(15);
         line-height: 1.5;
         @include prop(margin, 0);
-        @include prop(padding-bottom, 10);
+        @include prop(padding-bottom, 30);
       }
 
       .button {
