@@ -73,6 +73,68 @@
   }
 }
 
+#team-mentors {
+  @include prop(padding, 40, 0, 0);
+
+  .gamma {
+    @include prop(margin, 20, 10);
+    letter-spacing: 5px;
+  }
+
+  ul {
+    @include prop(padding-top, 20);
+    @include prop(padding-right, 10);
+    @include prop(padding-left, 10);
+
+    @media only screen and (min-width: $mediumScreen + px) {
+      @include prop(padding, 0);
+      @include prop(padding-top, 20);
+    }
+  }
+
+  .mentor-profile {
+    background: $white;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    @include prop(margin-bottom, 40);
+    border-left: 1px solid $greenLight;
+    position: relative;
+  }
+
+  .mentor-img {
+    position: relative;
+    @include prop(height, 250); 
+    @include prop(width, 250);
+    background-size: cover;
+    background-color: white;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 0%;
+    z-index: 1;
+    @include pre(left, 50%);
+    @include prop(margin-left, -125);
+  }
+
+  .team-member-info {
+    @include prop(padding, 0);
+    @include prop(margin, 10);
+    position: relative;
+  }
+
+  .delta {
+    @include prop(padding, 0, 10);
+  }
+
+  p {
+    font-family: "OpenSans-Light";
+    @include prop(padding, 10);
+  }
+
+  br {
+    line-height: 2;
+  }
+}
+
 #team-core {
   @include prop(padding, 40, 0);
 
