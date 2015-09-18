@@ -124,6 +124,17 @@ li {
       }
     }
 
+    &.white {
+      color: $greenLight;
+      background: $white;
+      pointer: cursor;
+
+      &:hover {
+        color: darken($greenLight, 5);
+        background: darken($white, 2);
+      }
+    }
+
     &.white-green {
       color: $greenLight;
       background: $white;
