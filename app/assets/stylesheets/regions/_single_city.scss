@@ -163,26 +163,26 @@
     }
 
     .dates-and-address {
-      @include prop(padding, 20, 0);
+      @include prop(padding, 10, 0, 20);
       @include pre(border-bottom, 2px solid $greenLightest);
     }
 
     .date,
     .address {
-      display: inline-block;
       color: $greenLightest;
       @include fontSize(14);
-      line-height: 2;
+      line-height: 2.5;
       font-family: "OpenSans-Bold";
       text-transform: uppercase;
       letter-spacing: 2px;
-      @include prop(padding-left, 30);
+      @include prop(padding-left, 25);
       position: relative;
 
       &:before {
         position: absolute;
         @include fontSize(20);
         @include prop(left, 0);
+        @include prop(top, 5);
       }
     }
 

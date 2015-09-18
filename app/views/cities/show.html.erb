@@ -1,373 +1,379 @@
-<section class="single-city-hero" style="background-image: url(<%= @city.hero_photo %>)">
-  <div class="row">
-    <div class="inner-nav">
-      <ul>
-        <li id="single-city-hackathon-nav-item">
-          <a href="#single-city-hackathon" class="smooth-scroll">
-            <p class="punch">2015 Hackathon</p>
-          </a>
-        </li>
-        <li id="single-city-judging-nav-item">
-          <a href="#single-city-judging-and-faqs" class="smooth-scroll">
-            <p class="punch">Judging Criteria</p>
-          </a>
-        </li>
-        <li id="single-city-resources-nav-item">
-          <a href="#single-city-resources" class="smooth-scroll">
-            <p class="punch">Resources</p>
-          </a>
-        </li>
-        <li id="single-city-mentors-nav-item">
-          <a href="#single-city-mentors" class="smooth-scroll">
-            <p class="punch">Mentors</p>
-          </a>
-        </li>
-        <li id="single-city-judges-nav-item">
-          <a href="#single-city-judges" class="smooth-scroll">
-            <p class="punch">Judges</p>
-          </a>
-        </li>
-        <li id="single-city-team-nav-item">
-          <a href="#single-city-team" class="smooth-scroll">
-            <p class="punch">Team</p>
-          </a>
-        </li>
-        <li id="single-city-partner-nav-item">
-          <a href="#single-city-partners" class="smooth-scroll">
-            <p class="punch">Partners</p>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="v-wrapper">
-      <div class="v-inner">
-        <div class="columns xsmall-12 text-center">
-          <h2 class="gamma"><%= @city.name %></h2>
-        </div>
+<% if current_user %>
+  <section class="single-city-hero" style="background-image: url(<%= @city.hero_photo %>)">
+    <div class="row">
+      <div class="inner-nav">
+        <ul>
+          <li id="single-city-hackathon-nav-item">
+            <a href="#single-city-hackathon" class="smooth-scroll">
+              <p class="punch">2015 Hackathon</p>
+            </a>
+          </li>
+          <li id="single-city-judging-nav-item">
+            <a href="#single-city-judging-and-faqs" class="smooth-scroll">
+              <p class="punch">Judging Criteria</p>
+            </a>
+          </li>
+          <li id="single-city-resources-nav-item">
+            <a href="#single-city-resources" class="smooth-scroll">
+              <p class="punch">Resources</p>
+            </a>
+          </li>
+          <li id="single-city-mentors-nav-item">
+            <a href="#single-city-mentors" class="smooth-scroll">
+              <p class="punch">Mentors</p>
+            </a>
+          </li>
+          <li id="single-city-judges-nav-item">
+            <a href="#single-city-judges" class="smooth-scroll">
+              <p class="punch">Judges</p>
+            </a>
+          </li>
+          <li id="single-city-team-nav-item">
+            <a href="#single-city-team" class="smooth-scroll">
+              <p class="punch">Team</p>
+            </a>
+          </li>
+          <li id="single-city-partner-nav-item">
+            <a href="#single-city-partners" class="smooth-scroll">
+              <p class="punch">Partners</p>
+            </a>
+          </li>
+        </ul>
       </div>
-    </div>
-  </div>
-</section>
 
-<section id="single-city-hackathon">
-  <div class="row hackathon-details">
-    <div class="columns large-3 large-push-1 medium-4 small-12 xsmall-12 text-center">
-      <div class="hackathon-stopwatch text-center">
-        <div class="v-wrapper">
-          <div class="v-inner">
-            <div class="circle">
-              <p class="text">in</p>
-              <p class="number">29</p>
-              <p class="text">days</p>
-            </div>
+      <div class="v-wrapper">
+        <div class="v-inner">
+          <div class="columns xsmall-12 text-center">
+            <h2 class="gamma"><%= @city.name %></h2>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="columns large-7 large-pull-1 medium-8 small-12 xsmall-12">
-      <h2 class="gamma">Hackathon 2015</h2>
-      <div class="dates-and-address">
-        <p class="date icon-calendar">OCT 2 - 4, 2015</p>
-        <p class="address icon-location">Venue Name, Address Line 1, City Name</p>  
-      </div>
-      
-      <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac cursus lacus. Fusce finibus finibus urna non vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac cursus lacus. Fusce finibus finibus urna non vehicula.</p>
-      <%= link_to "Register", "", {class: "button white-green", target: "_blank"} %>
-    </div>
-  </div>
-</section>
-
-<section id="single-city-hackathon-days">
-  <div class="row">
-    <div class="columns large-4 medium-4 small-4 xsmall-12">
-      <div class="day">
-        <p class="day-indicator">Day 1</p>
-        <div id="image-day-1" class="image"></div>
-
-        <div class="description">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac cursus lacus. Fusce finibus finibus urna non vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac cursus lacus. Fusce finibus finibus urna non vehicula.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="columns large-4 medium-4 small-4 xsmall-12">
-      <div class="day">
-        <p class="day-indicator">Day 2</p>
-        <div id="image-day-2" class="image"></div>
-
-        <div class="description">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac cursus lacus. Fusce finibus finibus urna non vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac cursus lacus. Fusce finibus finibus urna non vehicula.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="columns large-4 medium-4 small-4 xsmall-12">
-      <div class="day">
-        <p class="day-indicator">Day 3</p>
-        <div id="image-day-3" class="image"></div>
-
-        <div class="description">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac cursus lacus. Fusce finibus finibus urna non vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac cursus lacus. Fusce finibus finibus urna non vehicula.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="single-city-judging-and-faqs">
-  <div class="row">
-    <div class="columns large-6 medium-6 small-6 xsmall-12 judging-criteria">
-      <h2 class="gamma">Judging Criteria</h2>
-      <p class="criteria">How have you collaborated globally? [20%]</p>
-      <ul>
-        <li class="green-bullet">Did you work or interact with colleagues in another city? How did you collaborate and communicate?</li>
-        <li class="green-bullet">What tools did you use to collaborate (e.g Github, Pakathon Forum, Skype)</li>
-      </ul>
-
-      <p class="criteria">Tell us your story and share progress over the weekend. [40%]</p>
-      <ul>
-        <li class="green-bullet">Share the bios of your team and tell us why you are the right people to be working on this idea.</li>
-        <li class="green-bullet">Is there anything in your team’s background that will help you execute this project?</li>
-        <li class="green-bullet">What is the project you are working on?</li>
-        <li class="green-bullet">Demonstrate evidence of progress over the weekend.</li>
-        <li class="green-bullet">If you have a software or web based product, demonstrate how it would work.</li>
-        <li class="green-bullet">If you have a design mockup, demonstrate the User Interface.</li>
-      </ul>
-
-      <p class="criteria">How are you making an impact? [40%]</p>
-      <ul>
-        <li class="green-bullet">Are you disrupting an industry?</li>
-        <li class="green-bullet">Who is your target market? What value are you providing them?</li>
-        <li class="green-bullet">What is the size of the market or the number of people impacted?</li>
-        <li class="green-bullet">How do you plan on reaching your target audience?</li>
-        <li class="green-bullet">How do you plan on making this financially sustainable? What is your revenue stream?</li>
-      </ul>
-    </div>
-
-    <div class="columns large-6 medium-6 small-6 xsmall-12 faqs">
-      <h2 class="gamma">FAQs</h2>
-      <p class="question">How have you collaborated globally?</p>
-      <p class="answer">A critical part of the process is finding a problem area that you can effectively address - so spend some time thinking about each of the areas and try to identify discrete challenges. Each stream listed below refers to case studies that have attained substantial success, in terms of sustainability, growth, business strategy, and plan execution.</p>
-
-      <p class="question">How have you collaborated globally?</p>
-      <p class="answer">A critical part of the process is finding a problem area that you can effectively address - so spend some time thinking about each of the areas and try to identify discrete challenges. Each stream listed below refers to case studies that have attained substantial success, in terms of sustainability, growth, business strategy, and plan execution.</p>
-
-      <p class="question min-small-screen">How have you collaborated globally?</p>
-      <p class="answer last-answer min-small-screen">A critical part of the process is finding a problem area that you can effectively address - so spend some time thinking about each of the areas and try to identify discrete challenges. Each stream listed below refers to case studies that have attained substantial success, in terms of sustainability, growth, business strategy, and plan execution.</p>
-
-      <%= link_to "See all Faqs", "/faqs", {class: "button green text-center", target: "_blank"} %>
-    </div>
-  </div>
-</section>
-
-<section id="hackathon-cta">
-  <div class="row">
-    <div class="columns xsmall-12 text-center">
-      <h2 class="delta">Sounds like your cup of tea? <%= link_to "Register Now", "javascript:void(0)", {class: "button white-green text-center", target: "_blank"} %></h2>
-    </div>
-  </div>
-</section>
-
-<section id="single-city-resources">
-  <div class="row">
-    <div class="columns xsmall-12">
-      <h2 class="gamma">Latest Resources</h2>
-    </div>
-  </div>
-
-  <div class="row">
-    <ul class="columns large-block-grid-4 medium-block-grid-3 small-block-grid-2 xsmall-block-grid-1">
-      <% @resources.each do |resource| %>
-        <li class="resource-box">
-          <a href="<%= resource.link_to_document %>">
-            <% if resource.type_of_document == "Text File" %>
-              <div class="text-center icon-doc">
-            <% elsif resource.type_of_document == "Audio File" %>
-              <div class="text-center icon-audio">
-            <% elsif resource.type_of_document == "Video File" %>
-              <div class="text-center icon-video">
-            <% end %>
-
-                <% if resource.series %>
-                  <p class="type"><%= resource.series %></p>
-                <% end %>
-                
-                <h4 class="delta"><%= resource.title %></h4>
-                <div class="resource-posted">
-                  <p class="tiny">Posted On: <%= resource.created_at.to_s(:just_date) %></p>
-                </div>
-
-                <% if resource.link_to_download.present? %>
-                  <div class="download-link">
-                    <%= link_to "Or click here to download", resource.link_to_download, class: "tiny" %>
-                  </div>
-                <% end %>
-
-              </div>
-          </a>
-        </li>
-      <% end %>
-    </ul>
-
-    <div class="columns xsmall-12 text-center resources-cta">
-      <%= link_to "See all Resources", "/resources", {class: "button green text-center", target: "_blank"} %>
-    </div>
-  </div>
-</section>
-
-<section id="single-city-mentors">
-  <div class="row">
-    <div class="columns xsmall-12">
-      <h2 class="gamma">Mentors</h2>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="columns xsmall-12">
-      <%# @city.users.order('name ASC').each do |user| %>
-        <%# if user.type_of_user == "Mentor" %>
-      <% @city.users.order('name ASC').limit(5).each do |user| %>
-        <% if user.type_of_user == "Team Member" %>
-          <div class="admin-user-panel columns large-2 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
-            <div class="team-member-info">
-              <h4 class="delta"><%= user.name %></h4>
-              <h5 class="epsilon"><%= user.description.upcase %></h5>
-              <ul>
-                <% if user.twitter.present? %>
-                  <li id="social-icons-twitter" class="social-icons">
-                    <a class="icon-twitter" href="<%= user.twitter %>" target="_blank"></a>
-                  </li>
-                <% end %>
-
-                <% if user.linkedin.present? %>
-                  <li id="social-icons-linkedin" class="social-icons">
-                    <a class="icon-linkedin" href="<%= user.linkedin %>" target="_blank"></a>
-                  </li>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-</section>
-
-<section id="single-city-judges">
-  <div class="row">
-    <div class="columns xsmall-12">
-      <h2 class="gamma">Judges</h2>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="columns xsmall-12">
-      <%# @city.users.order('name ASC').each do |user| %>
-        <%# if user.type_of_user == "Judge" %>
-      <% @city.users.order('name ASC').limit(5).each do |user| %>
-        <% if user.type_of_user == "Team Member" %>
-          <div class="admin-user-panel columns large-3 medium-4 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
-            <div class="team-member-info">
-              <h4 class="delta"><%= user.name %></h4>
-              <h5 class="epsilon"><%= user.description.upcase %></h5>
-              <ul>
-                <% if user.twitter.present? %>
-                  <li id="social-icons-twitter" class="social-icons">
-                    <a class="icon-twitter" href="<%= user.twitter %>" target="_blank"></a>
-                  </li>
-                <% end %>
-
-                <% if user.linkedin.present? %>
-                  <li id="social-icons-linkedin" class="social-icons">
-                    <a class="icon-linkedin" href="<%= user.linkedin %>" target="_blank"></a>
-                  </li>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-</section>
-
-<section id="single-city-team">
-  <div class="row">
-    <div class="columns xsmall-12">
-      <h2 class="gamma">Team</h2>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="columns xsmall-12">
-      <% @city.users.order('name ASC').each do |user| %>
-        <% if user.type_of_user == "Team Member" || user.type_of_user == "City Lead" %>
-          <div class="admin-user-panel columns large-2 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
-            <div class="team-member-info">
-              <h4 class="delta"><%= user.name %></h4>
-              <h5 class="epsilon"><%= user.description.upcase %></h5>
-              <ul>
-                <% if user.twitter.present? %>
-                  <li id="social-icons-twitter" class="social-icons">
-                    <a class="icon-twitter" href="<%= user.twitter %>" target="_blank"></a>
-                  </li>
-                <% end %>
-
-                <% if user.linkedin.present? %>
-                  <li id="social-icons-linkedin" class="social-icons">
-                    <a class="icon-linkedin" href="<%= user.linkedin %>" target="_blank"></a>
-                  </li>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-</section>
-
-<section id="single-city-gallery">
-  <div class="row">
-    <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" style="background-image: url(<%= @city.hero_photo %>)"></div>
-    <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" style="background-image: url(<%= @city.hero_photo %>)"></div>
-    <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" style="background-image: url(<%= @city.hero_photo %>)"></div>
-    <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" style="background-image: url(<%= @city.hero_photo %>)"></div>
-  </div>
-
-  <div class="row">
-    <div class="columns xsmall-12 text-center tablet-desktop gallery-cta">
-      <%= link_to "See more from Pakathon #{@city.name}", "https://www.facebook.com/pakathonTO/photos_stream", {class: "button green text-center", target: "_blank"} %>
-    </div>
-
-    <div class="columns xsmall-12 text-center mobile gallery-cta">
-      <%= link_to "View Gallery", "https://www.facebook.com/pakathonTO/photos_stream", {class: "button green text-center", target: "_blank"} %>
-    </div>
-  </div>
-</section>
-
-<section id="single-city-partners">
-  <div class="row">
-    <div class="columns xsmall-12 text-center">
-      <h2 class="gamma">Thank you to all our Community Partners</h2>
-    </div>
-  </div>
-
-  <div class="row">
-    <% @city.users.order('name ASC').each do |user| %>
-      <% if user.type_of_user == "Sponsor" %>
-      <div class="columns xsmall-6 small-3 medium-3 large-2 partners">
-        <div class="community-partner">
+  <section id="single-city-hackathon">
+    <div class="row hackathon-details">
+      <div class="columns large-3 large-push-1 medium-4 small-12 xsmall-12 text-center">
+        <div class="hackathon-stopwatch text-center">
           <div class="v-wrapper">
             <div class="v-inner">
-              <img src="<%= user.avatar %>" class="partner-logo">
+              <div class="circle">
+                <p class="text">in</p>
+                <p class="number"><%= (@city.hackathon.date_of_hackathon.to_date - Time.now.to_date).to_i %></p>
+                <p class="text">days</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      <div class="columns large-7 large-pull-1 medium-8 small-12 xsmall-12">
+        <h2 class="gamma">Hackathon 2015</h2>
+        <div class="dates-and-address">
+          <p class="date icon-calendar"><%= @city.hackathon.date_of_hackathon.to_s(:just_date).split(",").first %> - <%= (@city.hackathon.date_of_hackathon + 2.days).to_s(:just_date).split(" ")[1..2].join(" ") %></p>
+          <p class="address icon-location"><%= @city.hackathon.venue_name %>, <%= @city.hackathon.address_line_1 %>, <%= @city.name %>, <%= @city.hackathon.postal_code %></p>  
+        </div>
+        
+        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac cursus lacus. Fusce finibus finibus urna non vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac cursus lacus. Fusce finibus finibus urna non vehicula.</p>
+        <%= link_to "Register", "#{@city.hackathon.eventbrite_link}", {class: "button white", target: "_blank"} %>
+      </div>
+    </div>
+  </section>
+
+  <section id="single-city-hackathon-days">
+    <div class="row">
+      <div class="columns large-4 medium-4 small-4 xsmall-12">
+        <div class="day">
+          <p class="day-indicator">Day 1</p>
+          <div id="image-day-1" class="image"></div>
+
+          <div class="description">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac cursus lacus. Fusce finibus finibus urna non vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac cursus lacus. Fusce finibus finibus urna non vehicula.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns large-4 medium-4 small-4 xsmall-12">
+        <div class="day">
+          <p class="day-indicator">Day 2</p>
+          <div id="image-day-2" class="image"></div>
+
+          <div class="description">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac cursus lacus. Fusce finibus finibus urna non vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac cursus lacus. Fusce finibus finibus urna non vehicula.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns large-4 medium-4 small-4 xsmall-12">
+        <div class="day">
+          <p class="day-indicator">Day 3</p>
+          <div id="image-day-3" class="image"></div>
+
+          <div class="description">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac cursus lacus. Fusce finibus finibus urna non vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac cursus lacus. Fusce finibus finibus urna non vehicula.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="single-city-judging-and-faqs">
+    <div class="row">
+      <div class="columns large-6 medium-6 small-6 xsmall-12 judging-criteria">
+        <h2 class="gamma">Judging Criteria</h2>
+        <p class="criteria">How have you collaborated globally? [20%]</p>
+        <ul>
+          <li class="green-bullet">Did you work or interact with colleagues in another city? How did you collaborate and communicate?</li>
+          <li class="green-bullet">What tools did you use to collaborate (e.g Github, Pakathon Forum, Skype)</li>
+        </ul>
+
+        <p class="criteria">Tell us your story and share progress over the weekend. [40%]</p>
+        <ul>
+          <li class="green-bullet">Share the bios of your team and tell us why you are the right people to be working on this idea.</li>
+          <li class="green-bullet">Is there anything in your team’s background that will help you execute this project?</li>
+          <li class="green-bullet">What is the project you are working on?</li>
+          <li class="green-bullet">Demonstrate evidence of progress over the weekend.</li>
+          <li class="green-bullet">If you have a software or web based product, demonstrate how it would work.</li>
+          <li class="green-bullet">If you have a design mockup, demonstrate the User Interface.</li>
+        </ul>
+
+        <p class="criteria">How are you making an impact? [40%]</p>
+        <ul>
+          <li class="green-bullet">Are you disrupting an industry?</li>
+          <li class="green-bullet">Who is your target market? What value are you providing them?</li>
+          <li class="green-bullet">What is the size of the market or the number of people impacted?</li>
+          <li class="green-bullet">How do you plan on reaching your target audience?</li>
+          <li class="green-bullet">How do you plan on making this financially sustainable? What is your revenue stream?</li>
+        </ul>
+      </div>
+
+      <div class="columns large-6 medium-6 small-6 xsmall-12 faqs">
+        <h2 class="gamma">FAQs</h2>
+        <p class="question">How have you collaborated globally?</p>
+        <p class="answer">A critical part of the process is finding a problem area that you can effectively address - so spend some time thinking about each of the areas and try to identify discrete challenges. Each stream listed below refers to case studies that have attained substantial success, in terms of sustainability, growth, business strategy, and plan execution.</p>
+
+        <p class="question">How have you collaborated globally?</p>
+        <p class="answer">A critical part of the process is finding a problem area that you can effectively address - so spend some time thinking about each of the areas and try to identify discrete challenges. Each stream listed below refers to case studies that have attained substantial success, in terms of sustainability, growth, business strategy, and plan execution.</p>
+
+        <p class="question min-small-screen">How have you collaborated globally?</p>
+        <p class="answer last-answer min-small-screen">A critical part of the process is finding a problem area that you can effectively address - so spend some time thinking about each of the areas and try to identify discrete challenges. Each stream listed below refers to case studies that have attained substantial success, in terms of sustainability, growth, business strategy, and plan execution.</p>
+
+        <%= link_to "See all Faqs", "/faqs", {class: "button green text-center", target: "_blank"} %>
+      </div>
+    </div>
+  </section>
+
+  <section id="hackathon-cta">
+    <div class="row">
+      <div class="columns xsmall-12 text-center">
+        <h2 class="delta">Sounds like your cup of tea? <%= link_to "Register Now", "#{@city.hackathon.eventbrite_link}", {class: "button white text-center", target: "_blank"} %></h2>
+      </div>
+    </div>
+  </section>
+
+  <section id="single-city-resources">
+    <div class="row">
+      <div class="columns xsmall-12">
+        <h2 class="gamma">Latest Resources</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <ul class="columns large-block-grid-4 medium-block-grid-3 small-block-grid-2 xsmall-block-grid-1">
+        <% @resources.each do |resource| %>
+          <li class="resource-box">
+            <a href="<%= resource.link_to_document %>">
+              <% if resource.type_of_document == "Text File" %>
+                <div class="text-center icon-doc">
+              <% elsif resource.type_of_document == "Audio File" %>
+                <div class="text-center icon-audio">
+              <% elsif resource.type_of_document == "Video File" %>
+                <div class="text-center icon-video">
+              <% end %>
+
+                  <% if resource.series %>
+                    <p class="type"><%= resource.series %></p>
+                  <% end %>
+                  
+                  <h4 class="delta"><%= resource.title %></h4>
+                  <div class="resource-posted">
+                    <p class="tiny">Posted On: <%= resource.created_at.to_s(:just_date) %></p>
+                  </div>
+
+                  <% if resource.link_to_download.present? %>
+                    <div class="download-link">
+                      <%= link_to "Or click here to download", resource.link_to_download, class: "tiny" %>
+                    </div>
+                  <% end %>
+
+                </div>
+            </a>
+          </li>
+        <% end %>
+      </ul>
+
+      <div class="columns xsmall-12 text-center resources-cta">
+        <%= link_to "See all Resources", "/resources", {class: "button green text-center", target: "_blank"} %>
+      </div>
+    </div>
+  </section>
+
+  <section id="single-city-mentors">
+    <div class="row">
+      <div class="columns xsmall-12">
+        <h2 class="gamma">Mentors</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="columns xsmall-12">
+        <%# @city.users.order('name ASC').each do |user| %>
+          <%# if user.type_of_user == "Mentor" %>
+        <% @city.users.order('name ASC').limit(5).each do |user| %>
+          <% if user.type_of_user == "Team Member" %>
+            <div class="admin-user-panel columns large-2 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
+              <div class="team-member-info">
+                <h4 class="delta"><%= user.name %></h4>
+                <h5 class="epsilon"><%= user.description.upcase %></h5>
+                <ul>
+                  <% if user.twitter.present? %>
+                    <li id="social-icons-twitter" class="social-icons">
+                      <a class="icon-twitter" href="<%= user.twitter %>" target="_blank"></a>
+                    </li>
+                  <% end %>
+
+                  <% if user.linkedin.present? %>
+                    <li id="social-icons-linkedin" class="social-icons">
+                      <a class="icon-linkedin" href="<%= user.linkedin %>" target="_blank"></a>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+
+  <section id="single-city-judges">
+    <div class="row">
+      <div class="columns xsmall-12">
+        <h2 class="gamma">Judges</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="columns xsmall-12">
+        <%# @city.users.order('name ASC').each do |user| %>
+          <%# if user.type_of_user == "Judge" %>
+        <% @city.users.order('name ASC').limit(5).each do |user| %>
+          <% if user.type_of_user == "Team Member" %>
+            <div class="admin-user-panel columns large-3 medium-4 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
+              <div class="team-member-info">
+                <h4 class="delta"><%= user.name %></h4>
+                <h5 class="epsilon"><%= user.description.upcase %></h5>
+                <ul>
+                  <% if user.twitter.present? %>
+                    <li id="social-icons-twitter" class="social-icons">
+                      <a class="icon-twitter" href="<%= user.twitter %>" target="_blank"></a>
+                    </li>
+                  <% end %>
+
+                  <% if user.linkedin.present? %>
+                    <li id="social-icons-linkedin" class="social-icons">
+                      <a class="icon-linkedin" href="<%= user.linkedin %>" target="_blank"></a>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+
+  <section id="single-city-team">
+    <div class="row">
+      <div class="columns xsmall-12">
+        <h2 class="gamma">Team</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="columns xsmall-12">
+        <% @city.users.order('name ASC').each do |user| %>
+          <% if user.type_of_user == "Team Member" || user.type_of_user == "City Lead" %>
+            <div class="admin-user-panel columns large-2 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
+              <div class="team-member-info">
+                <h4 class="delta"><%= user.name %></h4>
+                <h5 class="epsilon"><%= user.description.upcase %></h5>
+                <ul>
+                  <% if user.twitter.present? %>
+                    <li id="social-icons-twitter" class="social-icons">
+                      <a class="icon-twitter" href="<%= user.twitter %>" target="_blank"></a>
+                    </li>
+                  <% end %>
+
+                  <% if user.linkedin.present? %>
+                    <li id="social-icons-linkedin" class="social-icons">
+                      <a class="icon-linkedin" href="<%= user.linkedin %>" target="_blank"></a>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+
+  <section id="single-city-gallery">
+    <div class="row">
+      <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" style="background-image: url(<%= @city.hero_photo %>)"></div>
+      <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" style="background-image: url(<%= @city.hero_photo %>)"></div>
+      <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" style="background-image: url(<%= @city.hero_photo %>)"></div>
+      <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" style="background-image: url(<%= @city.hero_photo %>)"></div>
+    </div>
+
+    <div class="row">
+      <div class="columns xsmall-12 text-center tablet-desktop gallery-cta">
+        <%= link_to "See more from Pakathon #{@city.name}", "https://www.facebook.com/pakathonTO/photos_stream", {class: "button green text-center", target: "_blank"} %>
+      </div>
+
+      <div class="columns xsmall-12 text-center mobile gallery-cta">
+        <%= link_to "View Gallery", "https://www.facebook.com/pakathonTO/photos_stream", {class: "button green text-center", target: "_blank"} %>
+      </div>
+    </div>
+  </section>
+
+  <section id="single-city-partners">
+    <div class="row">
+      <div class="columns xsmall-12 text-center">
+        <h2 class="gamma">Thank you to all our Community Partners</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <% @city.users.order('name ASC').each do |user| %>
+        <% if user.type_of_user == "Sponsor" %>
+        <div class="columns xsmall-6 small-3 medium-3 large-2 partners">
+          <div class="community-partner">
+            <div class="v-wrapper">
+              <div class="v-inner">
+                <img src="<%= user.avatar %>" class="partner-logo">
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
-</section>
+    </div>
+  </section>
+<% else %>
+  <script type="text/javascript">
+    window.location.href="/"  // put your correct path in a string here
+  </script>
+<% end %>
