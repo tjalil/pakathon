@@ -348,21 +348,42 @@
 
   <section id="single-city-gallery">
     <div class="row">
-      <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" style="background-image: url(<%= @city.hero_photo %>)"></div>
-      <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" style="background-image: url(<%= @city.hero_photo %>)"></div>
-      <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" style="background-image: url(<%= @city.hero_photo %>)"></div>
-      <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" style="background-image: url(<%= @city.hero_photo %>)"></div>
+      <% if @city.gallery.image_1 %>
+        <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" style="background-image: url(<%= @city.gallery.image_1 %>)"></div>
+      <% else %>
+        <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" style="background: asset_url('global-finals.jpg') 50% 50% / cover"></div>
+      <% end %>
+
+      <% if @city.gallery.image_2 %>
+        <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" style="background-image: url(<%= @city.gallery.image_2 %>)"></div>
+      <% else %>
+        <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" style="background: asset_url('orientation.jpg') 50% 50% / cover"></div>
+      <% end %>
+
+      <% if @city.gallery.image_3 %>
+        <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" style="background-image: url(<%= @city.gallery.image_3 %>)"></div>
+      <% else %>
+        <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" style="background: asset_url('toronto-baithak.png') 50% 50% / cover"></div>
+      <% end %>
+
+      <% if @city.gallery.image_4 %>
+        <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" style="background-image: url(<%= @city.gallery.image_4 %>)"></div>
+      <% else %>
+        <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" style="background: asset_url('mini-events.jpg') 50% 50% / cover"></div>
+      <% end %>
     </div>
 
-    <div class="row">
-      <div class="columns xsmall-12 text-center tablet-desktop gallery-cta">
-        <%= link_to "See more from Pakathon #{@city.name}", "https://www.facebook.com/pakathonTO/photos_stream", {class: "button green text-center", target: "_blank"} %>
-      </div>
+    <% if @city.gallery.link_to_gallery %>
+      <div class="row">
+        <div class="columns xsmall-12 text-center tablet-desktop gallery-cta">
+          <%= link_to "See more from Pakathon #{@city.name}", "#{@city.gallery.link_to_gallery}", {class: "button green text-center", target: "_blank"} %>
+        </div>
 
-      <div class="columns xsmall-12 text-center mobile gallery-cta">
-        <%= link_to "View Gallery", "https://www.facebook.com/pakathonTO/photos_stream", {class: "button green text-center", target: "_blank"} %>
+        <div class="columns xsmall-12 text-center mobile gallery-cta">
+          <%= link_to "View Gallery", "#{@city.gallery.link_to_gallery}", {class: "button green text-center", target: "_blank"} %>
+        </div>
       </div>
-    </div>
+    <% end %>
   </section>
 
   <section id="single-city-partners">
@@ -390,6 +411,6 @@
   </section>
 <% else %>
   <script type="text/javascript">
-    window.location.href="/"  // put your correct path in a string here
+    window.location.href="/";  // put your correct path in a string here
   </script>
 <% end %>

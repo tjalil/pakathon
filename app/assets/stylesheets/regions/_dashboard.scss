@@ -146,9 +146,11 @@
 
   .epsilon {
     line-height: 2;
+    display: block;
+    clear: both;
   }
 
-  .admin-event-days-image-panel {
+  .admin-gallery-image-panel {
     @include prop(margin, 20, 0);
     position: relative;
     display: block;
