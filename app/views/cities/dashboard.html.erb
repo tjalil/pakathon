@@ -126,22 +126,23 @@
               </div>
             <% end %>
           </div>
+        <% end %>
 
-          <div class="row admin-faq-details">
-            <h3 class="gamma">FAQs <%= link_to "Create New FAQ", new_admin_city_faq_path(current_user, @city), class: "button tiny green", id: "create-faq" %></h3>
+        <div class="row admin-faq-details">
+          <h3 class="gamma">FAQs <%= link_to "Create New FAQ", new_admin_city_faq_path(current_user, @city), class: "button tiny green", id: "create-faq" %></h3>
 
-            <% @city.faqs.each do |faq| %>
-              <div class="columns xsmall-12 small-12 medium-12 large-12 single-faq">
-                <%= link_to "Edit FAQ", edit_admin_city_faq_path(current_user, @city, faq), class: "button tiny orange edit-faq" %>
-                <%= link_to "Delete", admin_city_faq_path(current_user, @city, faq), method: :delete, class: "button tiny red delete-faq", data: {confirm: "Are you sure?"} %>
+          <% @city.faqs.each do |faq| %>
+            <div class="columns xsmall-12 small-12 medium-12 large-12 single-faq">
+              <%= link_to "Edit FAQ", edit_admin_city_faq_path(current_user, @city, faq), class: "button tiny orange edit-faq" %>
+              <%= link_to "Delete", admin_city_faq_path(current_user, @city, faq), method: :delete, class: "button tiny red delete-faq", data: {confirm: "Are you sure?"} %>
 
-                <h5 class="epsilon">Question: <%= faq.question %></h5>
-                <h5 class="epsilon">Answer: <%= faq.answer %></h5>
-              </div>
-            <% end %>
-          </div>
+              <h5 class="epsilon">Question: <%= faq.question %></h5>
+              <h5 class="epsilon">Answer: <%= faq.answer %></h5>
+            </div>
+          <% end %>
+        </div>
 
-          
+        <% if @city.name != "Global" %>
           <div class="row admin-gallery-details">
             <% if @city.gallery.present? %>
               <h3 class="gamma">Gallery <%= link_to "Edit Gallery", edit_admin_city_gallery_path(current_user, @city, @city.gallery.id), class: "button tiny orange edit-gallery-details" %></h3>
