@@ -35,8 +35,22 @@
             <span id="dot-five"></span>
             <p class="punch">Partnerships and Funding</p>
           </a>
-        </li>   
+        </li>
       </ul>
+
+      <div class="tablet-desktop">
+        <%= link_to "Hackathon Judging Criteria", "#program-judging-criteria", {class: "button green smooth-scroll", target: "_blank"} %>
+      </div>
+
+      <div class="mobile">
+        <%= link_to "Judging Criteria", "#program-judging-criteria", {class: "button green smooth-scroll", target: "_blank"} %>
+      </div>
+
+      <div class="mentors-cta">
+        <div id="img-mentor" class="circle" style="background-image: url(<%= @mentor.avatar %>)"></div>
+        <p class="punch">We've got an experienced roster of Mentors to support and guide the teams through every step of the program.</p>
+        <%= link_to "See all Mentors", "/team", {class: "button white-green"} %>
+      </div>
     </div>
 
     <div class="columns large-8 medium-8 small-8 xsmall-12 right-panel">
@@ -118,6 +132,56 @@
           </div>
         </div>
       </div>
+
+      <div class="row" id="program-judging-criteria">
+        <div class="columns xsmall-12 text-center">
+          <h2 class="gamma">Hackathon Judging Criteria</h2>
+        </div>
+
+        <div class="columns xsmall-12 criteria-tile">
+          <div class="single-question">
+            <h2 class="alpha">How are you making an impact? [40%]</h2>
+            <div class="content">
+              <ul>
+                <li class="green-bullet">Are you disrupting an industry?</li>
+                <li class="green-bullet">Who is your target market? What value are you providing them?</li>
+                <li class="green-bullet">What is the size of the market or the number of people impacted?</li>
+                <li class="green-bullet">How do you plan on reaching your target audience?</li>
+                <li class="green-bullet">How do you plan on making this financially sustainable? What is your revenue stream?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns xsmall-12 criteria-tile">
+          <div class="single-question">
+            <h2 class="alpha">Tell us your story and share progress over the weekend. [40%]</h2>
+            <div class="content">
+              <ul>
+                <li class="green-bullet">Share the bios of your team and tell us why you are the right people to be working on this idea.</li>
+                <li class="green-bullet">Is there anything in your team’s background that will help you execute this project?</li>
+                <li class="green-bullet">What is the project you are working on?</li>
+                <li class="green-bullet">Demonstrate evidence of progress over the weekend.</li>
+                <li class="green-bullet">If you have a software or web based product, demonstrate how it would work.</li>
+                <li class="green-bullet">If you have a design mockup, demonstrate the User Interface.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns xsmall-12 criteria-tile">
+          <div class="single-question">
+            <h2 class="alpha">How have you collaborated globally? [20%]</h2>
+            <div class="content">
+              <ul>
+                <li class="green-bullet">Did you work or interact with colleagues in another city? How did you collaborate and communicate?</li>
+                <li class="green-bullet">What tools did you use to collaborate (e.g Github, Pakathon Forum, Skype)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+      </div>
     </div>
   </div>
 </section>
@@ -157,7 +221,14 @@
         <span id="dot-five"></span>
         <p class="punch">Partnerships and Funding</p>
       </a>
-    </li>   
+    </li>
+
+    <li>
+      <a href="#program-judging-criteria" class="smooth-scroll">
+        <span id="dot-six"></span>
+        <p class="punch">Judging Criteria</p>
+      </a>
+    </li> 
   </ul>
   <a class="button circle icon-drawer" id="page-nav-btn"><span class="hidden">Nav</span></a>
 </div>

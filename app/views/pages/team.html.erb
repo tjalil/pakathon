@@ -12,9 +12,35 @@
   </div>
 </section>
 
+<% if @users.where(type_of_user: "Mentor").count > 3 %>
+  <section id="team-mentors">
+    <div class="row">
+      <div class="columns xsmall-12">
+        <h2 class="gamma">MENTORS</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <ul class="mentor-panel columns large-block-grid-3 medium-block-grid-3 small-block-grid-2 xsmall-block-grid-1">
+      <% @users.where(type_of_user: "Mentor").each do |user| %>
+        <li>
+          <div class="mentor-profile">
+            <div class="mentor-img" style="background-image: url(<%= user.avatar %>)"></div>
+            <div class="team-member-info">
+              <h4 class="delta text-center"><%= user.name %></h4>
+              <%= simple_format(user.description) %>
+            </div>
+          </div>
+        </li>
+      <% end %>
+      </ul>
+    </div>
+  </section>
+<% end %>
+
 <section id="team-core">
   <div class="row">
-    <div class="columns large-12 medium-12 small-12 xsmall-12">
+    <div class="columns xsmall-12">
       <h2 class="gamma">TEAM</h2>
     </div>
   </div>

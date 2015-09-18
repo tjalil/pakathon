@@ -1,12 +1,13 @@
 class PagesController < ApplicationController
 
-  def toronto_baithak
+  def toronto_appetizer
   end
 
   def homepage
   end
 
   def program
+    @mentor = User.find_by_type_of_user('Mentor')
   end
 
   def streams

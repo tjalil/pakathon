@@ -22,6 +22,69 @@
     @media only screen and (min-width: 1200px) {
       @include prop(padding, 0, 60);
     }
+
+    ul {
+      @include prop(padding-bottom, 10);
+    }
+
+    .mobile {
+      display: block;
+      @include prop(padding-bottom, 30);
+
+      @media only screen and (min-width: $largeScreen + px) {
+        display: none;
+      }
+    }
+
+    .tablet-desktop {
+      display: none;
+      @include prop(padding-bottom, 30);
+
+      @media only screen and (min-width: $largeScreen + px) {
+        display: block;
+      }
+    }
+
+    .button {
+      @include fontSize(13);
+      letter-spacing: 1px;
+    }
+
+    .mentors-cta {
+      background: $greenBackground;
+      position: absolute;
+      @include pre(left, 0);
+      @include pre(width, 100%);
+      @include prop(padding, 10, 10, 20);
+
+      #img-mentor {
+        display: inline-block;
+        position: absolute;
+        background-position-x: 50%;
+        background-position-y: 50%;
+        background-size: cover;
+        @include prop(height, 70);
+        @include prop(width, 70);
+      }
+
+      .punch {
+        position: relative;
+        @include prop(padding-left, 90);
+        color: $white;
+        font-family: "OpenSans-Regular";
+        @include fontSize(15);
+        line-height: 1.5;
+        @include prop(margin, 0);
+        @include prop(padding-bottom, 30);
+      }
+
+      .button {
+        display: block;
+        position: relative;
+        text-align: center;
+        @include prop(bottom, -10);
+      }
+    }
   }
 
   li {
@@ -98,7 +161,7 @@
       position: relative;
       content: "";
       @include prop(width, 24);
-        @include prop(height, 24);
+      @include prop(height, 24);
       background: $white;
       @include pre(border-radius, 50%);
       @include prop(margin-top, 0);
@@ -152,13 +215,11 @@
 
   .timeline-panel {
     @include prop(margin, 20, 0);
-    // @include prop(margin, 0);
     @include prop(padding, 20, 0, 0);
     @include border(1, solid, $greyDark, bottom);
 
     @media only screen and (min-width: $largeScreen + px) {
       @include prop(padding, 20, 0, 40);
-      // @include prop(padding, 20, 0);
     }
 
     &:last-child {
@@ -264,6 +325,61 @@
       @include fontSize(18);
       font-family: "OpenSans-Light";
       @include prop(margin-top, 0);
+    }
+  }
+}
+
+
+#program-judging-criteria {
+  @include prop(padding, 20, 0, 0);
+
+  .single-question {
+    background: $white;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    border-left: 1px solid $greenLight;
+    @include prop(padding, 20);
+
+    .alpha {
+      color: $greyLight;
+      font-family: "OpenSans-Regular";
+      @include fontSize(20);
+
+      &:before {
+        @include prop(padding-right, 20);
+        color: $green;
+      }
+    }
+  }
+
+  .criteria-tile {
+    @include prop(padding, 20, 10);
+
+    @media only screen and (min-width: $mediumScreen + px) {
+      @include prop(padding, 20, 40);      
+    }
+  }
+
+  .green-bullet {
+    position: relative;
+    @include prop(padding, 0, 0, 0, 15);
+    @include prop(margin, 10, 0);
+    font-family: "OpenSans-Light";
+    color: $greyDark;
+    @include fontSize(16);
+
+    &:first-child {
+      @include prop(margin, 10, 0);
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      @include prop(top, 8);
+      @include prop(left, 0);
+      @include prop(width, 6);
+      @include prop(height, 6);
+      background-color: $green;
+      @extend .circle;
     }
   }
 }
