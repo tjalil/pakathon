@@ -1,0 +1,18 @@
+<section id="faqs">
+  <div class="row">
+    <ul class="columns large-block-grid-2 medium-block-grid-2 small-block-grid-1 xsmall-block-grid-1">
+      <% @faqs.each do |faq| %>
+        <li>
+          <div class="single-faq">
+            <h2 class="delta"><%= faq.question %></h2>
+            <div class="content">
+              <p class="description">
+                <%= faq.answer %>
+              </p>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</section>

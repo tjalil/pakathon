@@ -1,0 +1,32 @@
+#faqs {
+  @include prop(padding, 90, 0, 20);
+
+  .single-faq {
+    background: $white;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    @include prop(margin-bottom, 40);
+    border-left: 1px solid $greenLight;
+    @include prop(padding, 20);
+
+    .delta {
+      color: $greyLight;
+      font-family: "OpenSans-Light";
+
+      &:before {
+        @include prop(padding-right, 20);
+        color: $green;
+      }
+    }
+
+    .description {
+      color: $greyDark;
+      @include prop(margin, 20, 0);
+      line-height: 2;
+      @include fontSize(14);
+
+      @media only screen and (min-width: $smallScreen + px) {
+        @include fontSize(16);
+      }
+    }
+  }
+}
