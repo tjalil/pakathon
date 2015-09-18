@@ -1,8 +1,12 @@
 class FaqsController < ApplicationController
-  before_filter :require_login
-  before_filter :find_city
-  before_filter :find_user
+  before_filter :require_login, except: [:index]
+  before_filter :find_city, except: [:index]
+  before_filter :find_user, except: [:index]
   before_filter :find_faq, only: [:edit, :update, :destroy]
+
+  def index
+    @faqs = City.find(18).faqs
+  end
 
   def new
     @faq = Faq.new
