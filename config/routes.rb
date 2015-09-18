@@ -44,8 +44,8 @@ Rails.application.routes.draw do
   # resources :contacts, only: [:new, :create]
 
   resources :careers, only: [:index]
-
   resources :resources, only: [:index]
+  resources :faqs, only: [:index]
 
   resources :pages, :path => '' do
     collection do
