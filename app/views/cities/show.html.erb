@@ -85,10 +85,18 @@
       <div class="columns large-4 medium-4 small-4 xsmall-12">
         <div class="day">
           <p class="day-indicator">Day 1</p>
-          <div id="image-day-1" class="image"></div>
+          <% if @city.hackathon.day_1_image.present? %>
+            <div id="admin-image-1" class="image" style="background-image: url(<%= @city.hackathon.day_1_image %>)"></div>
+          <% else %>
+            <div id="image-day-1" class="image"></div>
+          <% end %>
 
           <div class="description">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac cursus lacus. Fusce finibus finibus urna non vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac cursus lacus. Fusce finibus finibus urna non vehicula.</p>
+            <% if @city.hackathon.day_1_description.present? %>
+              <p><%= @city.hackathon.day_1_description %></p>
+            <% else %>
+              <p>Friday night begins with participants brainstorming with mentors and refining their ideas. Be ready to think on your feet and challenge yourself. Meet and debate others interested in your ideas. Find individuals with different skill sets to make sure you have a well rounded team of engineers, designers and strategists. At the end of the night one person from each team pitches to the audience and gives one last call for team members. Friday night is the last time you have to form a team. Pakathon organizers will facilitate introductions and brainstorming.</p>
+            <% end %>
           </div>
         </div>
       </div>
@@ -96,10 +104,18 @@
       <div class="columns large-4 medium-4 small-4 xsmall-12">
         <div class="day">
           <p class="day-indicator">Day 2</p>
-          <div id="image-day-2" class="image"></div>
+          <% if @city.hackathon.day_2_image.present? %>
+            <div id="admin-image-2" class="image" style="background-image: url(<%= @city.hackathon.day_2_image %>)"></div>
+          <% else %>
+            <div id="image-day-2" class="image"></div>
+          <% end %>
 
           <div class="description">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac cursus lacus. Fusce finibus finibus urna non vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac cursus lacus. Fusce finibus finibus urna non vehicula.</p>
+            <% if @city.hackathon.day_2_description.present? %>
+              <p><%= @city.hackathon.day_2_description %></p>
+            <% else %>
+              <p>Come in early, grab some coffee and get ready to work. Each team must create a business plan and a prototype of product wherever applicable. If you have a website, software or hardware create a mockup and practise demo-ing it. Coordinate and hold skype check-ins with team members in other cities. Chapters will have mentors on hand or over skype to help you with your business plan and prototype. Check with your city to see how long they have their facilities open. Teams with participants in multiple cities must pick which city their team will be collectively pitching from.</p>
+            <% end %>
           </div>
         </div>
       </div>
@@ -107,10 +123,18 @@
       <div class="columns large-4 medium-4 small-4 xsmall-12">
         <div class="day">
           <p class="day-indicator">Day 3</p>
-          <div id="image-day-3" class="image"></div>
+          <% if @city.hackathon.day_3_image.present? %>
+            <div id="admin-image-3" class="image" style="background: url(<%= @city.hackathon.day_3_image %>)"></div>
+          <% else %>
+            <div id="image-day-3" class="image"></div>
+          <% end %>
 
           <div class="description">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac cursus lacus. Fusce finibus finibus urna non vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac cursus lacus. Fusce finibus finibus urna non vehicula.</p>
+            <% if @city.hackathon.day_3_description.present? %>
+              <p><%= @city.hackathon.day_3_description %></p>
+            <% else %>
+              <p>Teams will have a few hours in the morning to finalize their pitches, slides and any prototype they will be demo-ing. Then pitching starts, each team gets assigned a time block to pitch in front of judges. Judges pick the winner(s) from each city or university based on the quality of plan and global collaboration of the team.</p>
+            <% end %>
           </div>
         </div>
       </div>
@@ -149,16 +173,12 @@
 
       <div class="columns large-6 medium-6 small-6 xsmall-12 faqs">
         <h2 class="gamma">FAQs</h2>
-        <p class="question">How have you collaborated globally?</p>
-        <p class="answer">A critical part of the process is finding a problem area that you can effectively address - so spend some time thinking about each of the areas and try to identify discrete challenges. Each stream listed below refers to case studies that have attained substantial success, in terms of sustainability, growth, business strategy, and plan execution.</p>
+        <% @faqs.each do |faq| %>
+          <p class="question"><%= faq.question %></p>
+          <p class="answer"><%= faq.answer %></p>
+        <% end %>
 
-        <p class="question">How have you collaborated globally?</p>
-        <p class="answer">A critical part of the process is finding a problem area that you can effectively address - so spend some time thinking about each of the areas and try to identify discrete challenges. Each stream listed below refers to case studies that have attained substantial success, in terms of sustainability, growth, business strategy, and plan execution.</p>
-
-        <p class="question min-small-screen">How have you collaborated globally?</p>
-        <p class="answer last-answer min-small-screen">A critical part of the process is finding a problem area that you can effectively address - so spend some time thinking about each of the areas and try to identify discrete challenges. Each stream listed below refers to case studies that have attained substantial success, in terms of sustainability, growth, business strategy, and plan execution.</p>
-
-        <%= link_to "See all Faqs", "/faqs", {class: "button green text-center", target: "_blank"} %>
+        <%#= link_to "See all Faqs", "/faqs", {class: "button green text-center", target: "_blank"} %>
       </div>
     </div>
   </section>
@@ -227,11 +247,9 @@
 
     <div class="row">
       <div class="columns xsmall-12">
-        <%# @city.users.order('name ASC').each do |user| %>
-          <%# if user.type_of_user == "Mentor" %>
-        <% @city.users.order('name ASC').limit(5).each do |user| %>
-          <% if user.type_of_user == "Team Member" %>
-            <div class="admin-user-panel columns large-2 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
+        <% @city.users.order('name ASC').each do |user| %>
+          <% if user.type_of_user == "Mentor" %>
+            <div class="admin-user-panel user-mentor columns large-2 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
               <div class="team-member-info">
                 <h4 class="delta"><%= user.name %></h4>
                 <h5 class="epsilon"><%= user.description.upcase %></h5>
@@ -265,11 +283,9 @@
 
     <div class="row">
       <div class="columns xsmall-12">
-        <%# @city.users.order('name ASC').each do |user| %>
-          <%# if user.type_of_user == "Judge" %>
-        <% @city.users.order('name ASC').limit(5).each do |user| %>
-          <% if user.type_of_user == "Team Member" %>
-            <div class="admin-user-panel columns large-3 medium-4 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
+        <% @city.users.order('name ASC').each do |user| %>
+          <% if user.type_of_user == "Judge" %>
+            <div class="admin-user-panel user-judge columns large-3 medium-4 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
               <div class="team-member-info">
                 <h4 class="delta"><%= user.name %></h4>
                 <h5 class="epsilon"><%= user.description.upcase %></h5>

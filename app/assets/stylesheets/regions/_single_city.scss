@@ -232,6 +232,14 @@
     @include prop(min-height, 200);
     background-color: $offWhite;
 
+    &#admin-image-1,
+    &#admin-image-2,
+    &#admin-image-3 {
+      background-position-x: 50%;
+      background-position-y: 50%;
+      background-size: cover;
+    }
+
     &#image-day-1 {
       background: asset_url('hackathon-day-one.jpg') 50% 50% / cover;
     }
@@ -488,6 +496,15 @@
       content: none;
     }
 
+    &.user-mentor,
+    &.user-judge {
+      .team-member-info {
+        @media only screen and (min-width: $smallScreen + px) {
+          @include prop(height, 25);
+        }
+      }
+    }
+
     .team-member-info {
       position: absolute;
       @include pre(left, 0);
@@ -499,7 +516,7 @@
       @include pre(transition, height 0.3s ease-out);
 
       @media only screen and (min-width: $smallScreen + px) {
-        height: 50px;
+        @include prop(height, 50);
       }
 
       .delta,
@@ -537,8 +554,15 @@
 
     @media only screen and (min-width: $smallScreen + px) {
       &:hover {
+        &.user-mentor,
+        &.user-judge {
+          .team-member-info {
+            @include pre(height, 100%);
+          }
+        }
+
         .team-member-info {
-          height: 100px;
+          @include prop(height, 100);
         }
       }
     }
