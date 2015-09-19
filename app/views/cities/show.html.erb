@@ -1,4 +1,4 @@
-<% if current_user %>
+<% if current_user || @city.name == "Melbourne" || @city.name == "Toronto" %>
   <section class="single-city-hero" style="background-image: url(<%= @city.hero_photo %>)">
     <div class="row">
       <div class="inner-nav">
@@ -352,25 +352,25 @@
 
   <section id="single-city-gallery">
     <div class="row">
-      <% if @city.gallery && @city.gallery.image_1 %>
+      <% if @city.gallery && @city.gallery.image_1.present? %>
         <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" style="background-image: url(<%= @city.gallery.image_1 %>)"></div>
       <% else %>
         <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" id="image-1"></div>
       <% end %>
 
-      <% if @city.gallery && @city.gallery.image_2 %>
+      <% if @city.gallery && @city.gallery.image_2.present? %>
         <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" style="background-image: url(<%= @city.gallery.image_2 %>)"></div>
       <% else %>
         <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" id="image-2"></div>
       <% end %>
 
-      <% if @city.gallery && @city.gallery.image_3 %>
+      <% if @city.gallery && @city.gallery.image_3.present? %>
         <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" style="background-image: url(<%= @city.gallery.image_3 %>)"></div>
       <% else %>
         <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" id="image-3"></div>
       <% end %>
 
-      <% if @city.gallery && @city.gallery.image_4 %>
+      <% if @city.gallery && @city.gallery.image_4.present? %>
         <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" style="background-image: url(<%= @city.gallery.image_4 %>)"></div>
       <% else %>
         <div class="columns large-3 medium-3 small-6 xsmall-6 gallery-image" id="image-4"></div>
