@@ -46,6 +46,12 @@
               <li class="header-nav-item"><a href="/resources">Resources</a></li>
             <% end %>
 
+            <% if request.original_url == "http://www.pakathon.org/faqs" %>
+              <li><a href="/faqs" class="active">FAQs</a></li>
+            <% else %>
+              <li><a href="/faqs">FAQs</a></li>
+            <% end %>
+
             <li class="header-nav-item"><a href="https://muut.com/pakathon">Forum</a></li>
 
             <!-- <%# if request.original_url == "http://www.pakathon.org/credits" %>
