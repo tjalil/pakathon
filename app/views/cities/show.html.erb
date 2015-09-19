@@ -125,7 +125,7 @@
           <div class="day">
             <p class="day-indicator">Day 3</p>
             <% if @city.hackathon.day_3_image.present? %>
-              <div id="admin-image-3" class="image" style="background: url(<%= @city.hackathon.day_3_image %>)"></div>
+              <div id="admin-image-3" class="image" style="background-image: url(<%= @city.hackathon.day_3_image %>)"></div>
             <% else %>
               <div id="image-day-3" class="image"></div>
             <% end %>
