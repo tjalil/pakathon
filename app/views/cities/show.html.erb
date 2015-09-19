@@ -51,95 +51,97 @@
     </div>
   </section>
 
-  <section id="single-city-hackathon">
-    <div class="row hackathon-details">
-      <div class="columns large-3 large-push-1 medium-4 small-12 xsmall-12 text-center">
-        <div class="hackathon-stopwatch text-center">
-          <div class="v-wrapper">
-            <div class="v-inner">
-              <div class="circle">
-                <p class="text">in</p>
-                <p class="number"><%= (@city.hackathon.date_of_hackathon.to_date - Time.now.to_date).to_i %></p>
-                <p class="text">days</p>
+  <% if @city.hackathon %>
+    <section id="single-city-hackathon">
+      <div class="row hackathon-details">
+        <div class="columns large-3 large-push-1 medium-4 small-12 xsmall-12 text-center">
+          <div class="hackathon-stopwatch text-center">
+            <div class="v-wrapper">
+              <div class="v-inner">
+                <div class="circle">
+                  <p class="text">in</p>
+                  <p class="number"><%= (@city.hackathon.date_of_hackathon.to_date - Time.now.to_date).to_i %></p>
+                  <p class="text">days</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="columns large-7 large-pull-1 medium-8 small-12 xsmall-12">
-        <h2 class="gamma">Hackathon 2015</h2>
-        <div class="dates-and-address">
-          <p class="date icon-calendar"><%= @city.hackathon.date_of_hackathon.to_s(:just_date).split(",").first %> - <%= (@city.hackathon.date_of_hackathon + 2.days).to_s(:just_date).split(" ")[1..2].join(" ") %></p>
-          <p class="address icon-location"><%= @city.hackathon.venue_name %>, <%= @city.hackathon.address_line_1 %>, <%= @city.name %>, <%= @city.hackathon.postal_code %></p>  
+        <div class="columns large-7 large-pull-1 medium-8 small-12 xsmall-12">
+          <h2 class="gamma">Hackathon 2015</h2>
+          <div class="dates-and-address">
+            <p class="date icon-calendar"><%= @city.hackathon.date_of_hackathon.to_s(:just_date).split(",").first %> - <%= (@city.hackathon.date_of_hackathon + 2.days).to_s(:just_date).split(" ")[1..2].join(" ") %></p>
+            <p class="address icon-location"><%= @city.hackathon.venue_name %>, <%= @city.hackathon.address_line_1 %>, <%= @city.name %>, <%= @city.hackathon.postal_code %></p>  
+          </div>
+          
+          <p class="description">Join us in making our annual Pakathon weekend hackathon in 2015 our best one yet - claim your spot by registering at the link below.</p>
+          <%= link_to "Register", "#{@city.hackathon.eventbrite_link}", {class: "button white", target: "_blank"} %>
         </div>
-        
-        <p class="description">Join us in making our annual Pakathon weekend hackathon in 2015 our best one yet - claim your spot by registering at the link below.</p>
-        <%= link_to "Register", "#{@city.hackathon.eventbrite_link}", {class: "button white", target: "_blank"} %>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="single-city-hackathon-days">
-    <div class="row">
-      <div class="columns large-4 medium-4 small-4 xsmall-12">
-        <div class="day">
-          <p class="day-indicator">Day 1</p>
-          <% if @city.hackathon.day_1_image.present? %>
-            <div id="admin-image-1" class="image" style="background-image: url(<%= @city.hackathon.day_1_image %>)"></div>
-          <% else %>
-            <div id="image-day-1" class="image"></div>
-          <% end %>
-
-          <div class="description">
-            <% if @city.hackathon.day_1_description.present? %>
-              <p><%= @city.hackathon.day_1_description %></p>
+    <section id="single-city-hackathon-days">
+      <div class="row">
+        <div class="columns large-4 medium-4 small-4 xsmall-12">
+          <div class="day">
+            <p class="day-indicator">Day 1</p>
+            <% if @city.hackathon.day_1_image.present? %>
+              <div id="admin-image-1" class="image" style="background-image: url(<%= @city.hackathon.day_1_image %>)"></div>
             <% else %>
-              <p>Friday night begins with participants brainstorming with mentors and refining their ideas. Be ready to think on your feet and challenge yourself. Meet and debate others interested in your ideas. Find individuals with different skill sets to make sure you have a well rounded team of engineers, designers and strategists. At the end of the night one person from each team pitches to the audience and gives one last call for team members. Friday night is the last time you have to form a team. Pakathon organizers will facilitate introductions and brainstorming.</p>
+              <div id="image-day-1" class="image"></div>
             <% end %>
+
+            <div class="description">
+              <% if @city.hackathon.day_1_description.present? %>
+                <p><%= @city.hackathon.day_1_description %></p>
+              <% else %>
+                <p>Friday night begins with participants brainstorming with mentors and refining their ideas. Be ready to think on your feet and challenge yourself. Meet and debate others interested in your ideas. Find individuals with different skill sets to make sure you have a well rounded team of engineers, designers and strategists. At the end of the night one person from each team pitches to the audience and gives one last call for team members. Friday night is the last time you have to form a team. Pakathon organizers will facilitate introductions and brainstorming.</p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns large-4 medium-4 small-4 xsmall-12">
+          <div class="day">
+            <p class="day-indicator">Day 2</p>
+            <% if @city.hackathon.day_2_image.present? %>
+              <div id="admin-image-2" class="image" style="background-image: url(<%= @city.hackathon.day_2_image %>)"></div>
+            <% else %>
+              <div id="image-day-2" class="image"></div>
+            <% end %>
+
+            <div class="description">
+              <% if @city.hackathon.day_2_description.present? %>
+                <p><%= @city.hackathon.day_2_description %></p>
+              <% else %>
+                <p>Come in early, grab some coffee and get ready to work. Each team must create a business plan and a prototype of product wherever applicable. If you have a website, software or hardware create a mockup and practise demo-ing it. Coordinate and hold skype check-ins with team members in other cities. Chapters will have mentors on hand or over skype to help you with your business plan and prototype. Check with your city to see how long they have their facilities open. Teams with participants in multiple cities must pick which city their team will be collectively pitching from.</p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns large-4 medium-4 small-4 xsmall-12">
+          <div class="day">
+            <p class="day-indicator">Day 3</p>
+            <% if @city.hackathon.day_3_image.present? %>
+              <div id="admin-image-3" class="image" style="background: url(<%= @city.hackathon.day_3_image %>)"></div>
+            <% else %>
+              <div id="image-day-3" class="image"></div>
+            <% end %>
+
+            <div class="description">
+              <% if @city.hackathon.day_3_description.present? %>
+                <p><%= @city.hackathon.day_3_description %></p>
+              <% else %>
+                <p>Teams will have a few hours in the morning to finalize their pitches, slides and any prototype they will be demo-ing. Then pitching starts, each team gets assigned a time block to pitch in front of judges. Judges pick the winner(s) from each city or university based on the quality of plan and global collaboration of the team.</p>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
-
-      <div class="columns large-4 medium-4 small-4 xsmall-12">
-        <div class="day">
-          <p class="day-indicator">Day 2</p>
-          <% if @city.hackathon.day_2_image.present? %>
-            <div id="admin-image-2" class="image" style="background-image: url(<%= @city.hackathon.day_2_image %>)"></div>
-          <% else %>
-            <div id="image-day-2" class="image"></div>
-          <% end %>
-
-          <div class="description">
-            <% if @city.hackathon.day_2_description.present? %>
-              <p><%= @city.hackathon.day_2_description %></p>
-            <% else %>
-              <p>Come in early, grab some coffee and get ready to work. Each team must create a business plan and a prototype of product wherever applicable. If you have a website, software or hardware create a mockup and practise demo-ing it. Coordinate and hold skype check-ins with team members in other cities. Chapters will have mentors on hand or over skype to help you with your business plan and prototype. Check with your city to see how long they have their facilities open. Teams with participants in multiple cities must pick which city their team will be collectively pitching from.</p>
-            <% end %>
-          </div>
-        </div>
-      </div>
-
-      <div class="columns large-4 medium-4 small-4 xsmall-12">
-        <div class="day">
-          <p class="day-indicator">Day 3</p>
-          <% if @city.hackathon.day_3_image.present? %>
-            <div id="admin-image-3" class="image" style="background: url(<%= @city.hackathon.day_3_image %>)"></div>
-          <% else %>
-            <div id="image-day-3" class="image"></div>
-          <% end %>
-
-          <div class="description">
-            <% if @city.hackathon.day_3_description.present? %>
-              <p><%= @city.hackathon.day_3_description %></p>
-            <% else %>
-              <p>Teams will have a few hours in the morning to finalize their pitches, slides and any prototype they will be demo-ing. Then pitching starts, each team gets assigned a time block to pitch in front of judges. Judges pick the winner(s) from each city or university based on the quality of plan and global collaboration of the team.</p>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  <% end %>
 
   <section id="single-city-judging-and-faqs">
     <div class="row">
@@ -183,13 +185,15 @@
     </div>
   </section>
 
-  <section id="hackathon-cta">
-    <div class="row">
-      <div class="columns xsmall-12 text-center">
-        <h2 class="delta">Sounds like your cup of tea? <%= link_to "Register Now", "#{@city.hackathon.eventbrite_link}", {class: "button white text-center", target: "_blank"} %></h2>
+  <% if @city.hackathon %>
+    <section id="hackathon-cta">
+      <div class="row">
+        <div class="columns xsmall-12 text-center">
+          <h2 class="delta">Sounds like your cup of tea? <%= link_to "Register Now", "#{@city.hackathon.eventbrite_link}", {class: "button white text-center", target: "_blank"} %></h2>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  <% end %>
 
   <section id="single-city-resources">
     <div class="row">
