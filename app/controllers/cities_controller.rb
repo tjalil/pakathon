@@ -24,7 +24,7 @@ class CitiesController < ApplicationController
 
   def show
     @resources = Resource.order('created_at DESC').limit(4)
-    @faqs = Faq.order('created_at ASC').limit(3)
+    @faqs = @city.faqs.order('created_at ASC').limit(3)
   end
 
   def edit
