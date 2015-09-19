@@ -6,7 +6,6 @@ class CitiesController < ApplicationController
 
   def index
     @cities = City.order('eventbrite_page DESC')
-    # @global = City.find_by(name: "Boston")
   end
 
   def new

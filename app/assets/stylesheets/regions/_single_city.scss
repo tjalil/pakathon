@@ -588,6 +588,19 @@
     background-repeat-y: no-repeat;
     background-position-y: 30%;
     background-position-x: 50%;
+
+    &#image-1 {
+      background: asset_url('global-finals.jpg') 50% 50% / cover;
+    }
+    &#image-2 {
+      background: asset_url('orientation.jpg') 50% 50% / cover;
+    }
+    &#image-3 {
+      background: asset_url('toronto-baithak.png') 50% 50% / cover;
+    }
+    &#image-4 {
+      background: asset_url('mini-events.jpg') 50% 50% / cover;
+    }
   }
 
   .gallery-cta {
