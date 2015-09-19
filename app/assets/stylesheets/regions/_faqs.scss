@@ -1,6 +1,17 @@
 #faqs {
   @include prop(padding, 90, 0, 20);
 
+  ul {
+    @include prop(padding-top, 20);
+    @include prop(padding-right, 10);
+    @include prop(padding-left, 10);
+
+    @media only screen and (min-width: $mediumScreen + px) {
+      @include prop(padding-top, 20);
+      @include prop(padding, 0);
+    }
+  }
+  
   .single-faq {
     background: $white;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
