@@ -23,12 +23,11 @@
 
   ul {
     @include prop(padding-top, 20);
-    @include prop(padding-right, 10);
-    @include prop(padding-left, 10);
+    @include prop(margin, 0);
 
     @media only screen and (min-width: $mediumScreen + px) {
       @include prop(padding-top, 20);
-      @include prop(padding, 0);
+      @include prop(margin, 0, -20);
     }
   }
 
