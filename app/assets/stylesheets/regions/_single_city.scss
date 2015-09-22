@@ -1,3 +1,81 @@
+.sticky-nav {
+  display: none;
+  background: rgba(53, 53, 53, 0.84);
+  @include prop(width, 260);
+  @include prop(margin-top, 65);
+  @include prop(padding-top, 5);
+  position: fixed;
+  z-index: 300;
+
+  .sticky-nav-menu-btn {
+    
+    &:hover {
+      .icon-drawer:before {
+        color: $greenBackground;
+      }
+    }
+  }
+
+  .current-section {
+    .punch {
+      position: relative;
+      display: block;
+      color: $white;
+      @include prop(margin, 0);
+      font-family: "OpenSans-Bold";
+      @include fontSize(13);
+      text-transform: uppercase;
+      line-height: 1;
+      letter-spacing: 1px;
+    }
+  }
+
+  .menu-state {
+    position: relative;
+    @include prop(height, 40);
+  }
+
+  .icon-drawer {
+    position: absolute;
+    display: inline-block;
+    @include prop(top, 5);
+    @include prop(left, -30);
+
+    &:before {
+      position: relative;
+      @include fontSize(30);
+      color: $white;
+    }
+  }
+
+  .columns {
+    @include prop(padding, 0, 0, 0, 50);
+  }
+
+  li {
+    @include prop(min-height, 40);
+    position: relative;
+
+    a {
+      position: relative;
+      display: block;
+      @include prop(height, 40);
+      @include prop(padding, 14, 0, 13, 10);
+      color: $white;
+      @include prop(margin, 0);
+      font-family: "OpenSans-Bold";
+      @include fontSize(13);
+      text-transform: uppercase;
+      line-height: 1;
+      letter-spacing: 1px;
+
+      &:hover {
+        background: $greenBackground;
+      }
+    }
+  }
+}
+
 .single-city-hero {
   @include prop(padding, 70, 0, 0);
   position: relative;

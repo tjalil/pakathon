@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require layout
 //= require careers
+//= require single_city
 //= require hackathon

@@ -1,4 +1,47 @@
 <% if current_user || @city.name == "Melbourne" || @city.name == "Toronto" %>
+  
+  <section class="sticky-nav">
+    <div class="row">
+      <div class="columns xsmall-12">
+        <div class="menu">
+          <div class="menu-state">
+            <a id="sticky-nav-menu-btn" href="javascript:void(0)">
+              <div class="icon-drawer menu-button"></div>
+              <div id="current-section">
+                <p></p>
+              </div>
+            </a>
+          </div>
+          <div class="menu-items">
+            <ul>
+              <li class="single-menu-item">
+                <a class="smooth-scroll" href="#single-city-hackathon">2015 Hackathon</a>
+              </li>
+              <li class="single-menu-item">
+                <a class="smooth-scroll" href="#single-city-judging-and-faqs">Judging Criteria</a>
+              </li>
+              <li class="single-menu-item">
+                <a class="smooth-scroll" href="#single-city-resources">Resources</a>
+              </li>
+              <li class="single-menu-item">
+                <a class="smooth-scroll" href="#single-city-mentors">Mentors</a>
+              </li>
+              <li class="single-menu-item">
+                <a class="smooth-scroll" href="#single-city-judges">Judges</a>
+              </li>
+              <li class="single-menu-item">
+                <a class="smooth-scroll" href="#single-city-team">Team</a>
+              </li>
+              <li class="single-menu-item">
+                <a class="smooth-scroll" href="#single-city-partners">Partners</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="single-city-hero" style="background-image: url(<%= @city.hero_photo %>)">
     <div class="row">
       <div class="inner-nav">
@@ -69,7 +112,7 @@
         </div>
 
         <div class="columns large-7 large-pull-1 medium-8 small-12 xsmall-12">
-          <h2 class="gamma">Hackathon 2015</h2>
+          <h2 class="section-header gamma">Hackathon 2015</h2>
           <div class="dates-and-address">
             <p class="date icon-calendar"><%= @city.hackathon.date_of_hackathon.to_s(:just_date).split(",").first %> - <%= (@city.hackathon.date_of_hackathon + 2.days).to_s(:just_date).split(" ")[1..2].join(" ") %></p>
             <p class="address icon-location"><%= @city.hackathon.venue_name %>, <%= @city.hackathon.address_line_1 %>, <%= @city.name %>, <%= @city.hackathon.postal_code %></p>  
@@ -146,7 +189,7 @@
   <section id="single-city-judging-and-faqs">
     <div class="row">
       <div class="columns large-6 medium-6 small-6 xsmall-12 judging-criteria">
-        <h2 class="gamma">Judging Criteria</h2>
+        <h2 class="section-header gamma">Judging Criteria</h2>
         <p class="criteria">How have you collaborated globally? [20%]</p>
         <ul>
           <li class="green-bullet">Did you work or interact with colleagues in another city? How did you collaborate and communicate?</li>
@@ -198,6 +241,7 @@
   <section id="single-city-resources">
     <div class="row">
       <div class="columns xsmall-12">
+        <h2 class="section-header" style="display:none">Resources</h2>
         <h2 class="gamma">Latest Resources</h2>
       </div>
     </div>
@@ -245,7 +289,7 @@
   <section id="single-city-mentors">
     <div class="row">
       <div class="columns xsmall-12">
-        <h2 class="gamma">Mentors</h2>
+        <h2 class="section-header gamma">Mentors</h2>
       </div>
     </div>
 
@@ -281,7 +325,7 @@
   <section id="single-city-judges">
     <div class="row">
       <div class="columns xsmall-12">
-        <h2 class="gamma">Judges</h2>
+        <h2 class="section-header gamma">Judges</h2>
       </div>
     </div>
 
@@ -317,7 +361,7 @@
   <section id="single-city-team">
     <div class="row">
       <div class="columns xsmall-12">
-        <h2 class="gamma">Team</h2>
+        <h2 class="section-header gamma">Team</h2>
       </div>
     </div>
 
@@ -393,6 +437,7 @@
   <section id="single-city-partners">
     <div class="row">
       <div class="columns xsmall-12 text-center">
+        <h2 class="section-header" style="display:none">Partners</h2>
         <h2 class="gamma">Thank you to all our Community Partners</h2>
       </div>
     </div>
