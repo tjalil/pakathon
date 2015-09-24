@@ -95,7 +95,7 @@
   </section>
 
   <% if @city.hackathon %>
-    <section id="single-city-hackathon">
+    <section id="single-city-hackathon" data-title="Hackathon 2015">
       <div class="row hackathon-details">
         <div class="columns large-3 large-push-1 medium-4 small-12 xsmall-12 text-center">
           <div class="hackathon-stopwatch text-center">
@@ -112,7 +112,6 @@
         </div>
 
         <div class="columns large-7 large-pull-1 medium-8 small-12 xsmall-12">
-          <h2 class="section-header gamma">Hackathon 2015</h2>
           <div class="dates-and-address">
             <p class="date icon-calendar"><%= @city.hackathon.date_of_hackathon.to_s(:just_date).split(",").first %> - <%= (@city.hackathon.date_of_hackathon + 2.days).to_s(:just_date).split(" ")[1..2].join(" ") %></p>
             <p class="address icon-location"><%= @city.hackathon.venue_name %>, <%= @city.hackathon.address_line_1 %>, <%= @city.name %>, <%= @city.hackathon.postal_code %></p>  
@@ -186,7 +185,7 @@
     </section>
   <% end %>
 
-  <section id="single-city-judging-and-faqs">
+  <section id="single-city-judging-and-faqs" data-title="Judging Criteria">
     <div class="row">
       <div class="columns large-6 medium-6 small-6 xsmall-12 judging-criteria">
         <h2 class="section-header gamma">Judging Criteria</h2>
@@ -238,7 +237,7 @@
     </section>
   <% end %>
 
-  <section id="single-city-resources">
+  <section id="single-city-resources" data-title="Resources">
     <div class="row">
       <div class="columns xsmall-12">
         <h2 class="section-header" style="display:none">Resources</h2>
@@ -286,7 +285,7 @@
     </div>
   </section>
 
-  <section id="single-city-mentors">
+  <section id="single-city-mentors" data-title="Mentors">
     <div class="row">
       <div class="columns xsmall-12">
         <h2 class="section-header gamma">Mentors</h2>
@@ -322,7 +321,7 @@
     </div>
   </section>
 
-  <section id="single-city-judges">
+  <section id="single-city-judges" data-title="Judges">
     <div class="row">
       <div class="columns xsmall-12">
         <h2 class="section-header gamma">Judges</h2>
@@ -358,7 +357,7 @@
     </div>
   </section>
 
-  <section id="single-city-team">
+  <section id="single-city-team" data-title="Team">
     <div class="row">
       <div class="columns xsmall-12">
         <h2 class="section-header gamma">Team</h2>
@@ -434,7 +433,7 @@
     <% end %>
   </section>
 
-  <section id="single-city-partners">
+  <section id="single-city-partners" data-title="Partners">
     <div class="row">
       <div class="columns xsmall-12 text-center">
         <h2 class="section-header" style="display:none">Partners</h2>
