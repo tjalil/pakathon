@@ -17,9 +17,11 @@
   }
 
   .current-section {
-    .punch {
+    p {
       position: relative;
       display: block;
+      @include prop(height, 40);
+      @include prop(padding, 14, 0, 13, 10);
       color: $white;
       @include prop(margin, 0);
       font-family: "OpenSans-Bold";
