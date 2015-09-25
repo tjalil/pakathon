@@ -56,11 +56,6 @@
               <p class="punch">Judging Criteria</p>
             </a>
           </li>
-          <li id="single-city-resources-nav-item">
-            <a href="#single-city-resources" class="smooth-scroll">
-              <p class="punch">Resources</p>
-            </a>
-          </li>
           <li id="single-city-mentors-nav-item">
             <a href="#single-city-mentors" class="smooth-scroll">
               <p class="punch">Mentors</p>
@@ -74,6 +69,11 @@
           <li id="single-city-team-nav-item">
             <a href="#single-city-team" class="smooth-scroll">
               <p class="punch">Team</p>
+            </a>
+          </li>
+          <li id="single-city-resources-nav-item">
+            <a href="#single-city-resources" class="smooth-scroll">
+              <p class="punch">Resources</p>
             </a>
           </li>
           <li id="single-city-partner-nav-item">
@@ -95,7 +95,7 @@
   </section>
 
   <% if @city.hackathon %>
-    <section id="single-city-hackathon" data-title="Hackathon 2015">
+    <section id="single-city-hackathon" class="menu-target" data-title="Hackathon 2015">
       <div class="row hackathon-details">
         <div class="columns large-3 large-push-1 medium-4 small-12 xsmall-12 text-center">
           <div class="hackathon-stopwatch text-center">
@@ -185,7 +185,7 @@
     </section>
   <% end %>
 
-  <section id="single-city-judging-and-faqs" data-title="Judging Criteria">
+  <section id="single-city-judging-and-faqs" class="menu-target" data-title="Judging Criteria">
     <div class="row">
       <div class="columns large-6 medium-6 small-6 xsmall-12 judging-criteria">
         <h2 class="section-header gamma">Judging Criteria</h2>
@@ -237,10 +237,117 @@
     </section>
   <% end %>
 
-  <section id="single-city-resources" data-title="Resources">
+  <section id="single-city-mentors" class="menu-target" data-title="Mentors">
     <div class="row">
       <div class="columns xsmall-12">
-        <h2 class="section-header" style="display:none">Resources</h2>
+        <h2 class="section-header gamma">Mentors</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="columns xsmall-12">
+        <% @city.users.order('name ASC').each do |user| %>
+          <% if user.type_of_user == "Mentor" %>
+            <div class="admin-user-panel user-mentor columns large-2 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
+              <div class="team-member-info">
+                <h4 class="delta"><%= user.name %></h4>
+                <h5 class="epsilon"><%= user.description.upcase %></h5>
+                <ul>
+                  <% if user.twitter.present? %>
+                    <li id="social-icons-twitter" class="social-icons">
+                      <a class="icon-twitter" href="<%= user.twitter %>" target="_blank"></a>
+                    </li>
+                  <% end %>
+
+                  <% if user.linkedin.present? %>
+                    <li id="social-icons-linkedin" class="social-icons">
+                      <a class="icon-linkedin" href="<%= user.linkedin %>" target="_blank"></a>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+
+  <section id="single-city-judges" class="menu-target" data-title="Judges">
+    <div class="row">
+      <div class="columns xsmall-12">
+        <h2 class="section-header gamma">Judges</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="columns xsmall-12">
+        <% @city.users.order('name ASC').each do |user| %>
+          <% if user.type_of_user == "Judge" %>
+            <div class="admin-user-panel user-judge columns large-3 medium-4 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
+              <div class="team-member-info">
+                <h4 class="delta"><%= user.name %></h4>
+                <h5 class="epsilon"><%= user.description.upcase %></h5>
+                <ul>
+                  <% if user.twitter.present? %>
+                    <li id="social-icons-twitter" class="social-icons">
+                      <a class="icon-twitter" href="<%= user.twitter %>" target="_blank"></a>
+                    </li>
+                  <% end %>
+
+                  <% if user.linkedin.present? %>
+                    <li id="social-icons-linkedin" class="social-icons">
+                      <a class="icon-linkedin" href="<%= user.linkedin %>" target="_blank"></a>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+
+  <section id="single-city-team" class="menu-target" data-title="Team">
+    <div class="row">
+      <div class="columns xsmall-12">
+        <h2 class="section-header gamma">Team</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="columns xsmall-12">
+        <% @city.users.order('name ASC').each do |user| %>
+          <% if user.type_of_user == "Team Member" || user.type_of_user == "City Lead" %>
+            <div class="admin-user-panel columns large-2 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
+              <div class="team-member-info">
+                <h4 class="delta"><%= user.name %></h4>
+                <h5 class="epsilon"><%= user.description.upcase %></h5>
+                <ul>
+                  <% if user.twitter.present? %>
+                    <li id="social-icons-twitter" class="social-icons">
+                      <a class="icon-twitter" href="<%= user.twitter %>" target="_blank"></a>
+                    </li>
+                  <% end %>
+
+                  <% if user.linkedin.present? %>
+                    <li id="social-icons-linkedin" class="social-icons">
+                      <a class="icon-linkedin" href="<%= user.linkedin %>" target="_blank"></a>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+
+  <section id="single-city-resources" class="menu-target" data-title="Resources">
+    <div class="row">
+      <div class="columns xsmall-12">
         <h2 class="gamma">Latest Resources</h2>
       </div>
     </div>
@@ -285,114 +392,6 @@
     </div>
   </section>
 
-  <section id="single-city-mentors" data-title="Mentors">
-    <div class="row">
-      <div class="columns xsmall-12">
-        <h2 class="section-header gamma">Mentors</h2>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="columns xsmall-12">
-        <% @city.users.order('name ASC').each do |user| %>
-          <% if user.type_of_user == "Mentor" %>
-            <div class="admin-user-panel user-mentor columns large-2 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
-              <div class="team-member-info">
-                <h4 class="delta"><%= user.name %></h4>
-                <h5 class="epsilon"><%= user.description.upcase %></h5>
-                <ul>
-                  <% if user.twitter.present? %>
-                    <li id="social-icons-twitter" class="social-icons">
-                      <a class="icon-twitter" href="<%= user.twitter %>" target="_blank"></a>
-                    </li>
-                  <% end %>
-
-                  <% if user.linkedin.present? %>
-                    <li id="social-icons-linkedin" class="social-icons">
-                      <a class="icon-linkedin" href="<%= user.linkedin %>" target="_blank"></a>
-                    </li>
-                  <% end %>
-                </ul>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-  </section>
-
-  <section id="single-city-judges" data-title="Judges">
-    <div class="row">
-      <div class="columns xsmall-12">
-        <h2 class="section-header gamma">Judges</h2>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="columns xsmall-12">
-        <% @city.users.order('name ASC').each do |user| %>
-          <% if user.type_of_user == "Judge" %>
-            <div class="admin-user-panel user-judge columns large-3 medium-4 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
-              <div class="team-member-info">
-                <h4 class="delta"><%= user.name %></h4>
-                <h5 class="epsilon"><%= user.description.upcase %></h5>
-                <ul>
-                  <% if user.twitter.present? %>
-                    <li id="social-icons-twitter" class="social-icons">
-                      <a class="icon-twitter" href="<%= user.twitter %>" target="_blank"></a>
-                    </li>
-                  <% end %>
-
-                  <% if user.linkedin.present? %>
-                    <li id="social-icons-linkedin" class="social-icons">
-                      <a class="icon-linkedin" href="<%= user.linkedin %>" target="_blank"></a>
-                    </li>
-                  <% end %>
-                </ul>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-  </section>
-
-  <section id="single-city-team" data-title="Team">
-    <div class="row">
-      <div class="columns xsmall-12">
-        <h2 class="section-header gamma">Team</h2>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="columns xsmall-12">
-        <% @city.users.order('name ASC').each do |user| %>
-          <% if user.type_of_user == "Team Member" || user.type_of_user == "City Lead" %>
-            <div class="admin-user-panel columns large-2 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
-              <div class="team-member-info">
-                <h4 class="delta"><%= user.name %></h4>
-                <h5 class="epsilon"><%= user.description.upcase %></h5>
-                <ul>
-                  <% if user.twitter.present? %>
-                    <li id="social-icons-twitter" class="social-icons">
-                      <a class="icon-twitter" href="<%= user.twitter %>" target="_blank"></a>
-                    </li>
-                  <% end %>
-
-                  <% if user.linkedin.present? %>
-                    <li id="social-icons-linkedin" class="social-icons">
-                      <a class="icon-linkedin" href="<%= user.linkedin %>" target="_blank"></a>
-                    </li>
-                  <% end %>
-                </ul>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-  </section>
-
   <section id="single-city-gallery">
     <div class="row">
       <% if @city.gallery && @city.gallery.image_1.present? %>
@@ -433,7 +432,7 @@
     <% end %>
   </section>
 
-  <section id="single-city-partners" data-title="Partners">
+  <section id="single-city-partners" class="menu-target" data-title="Partners">
     <div class="row">
       <div class="columns xsmall-12 text-center">
         <h2 class="section-header" style="display:none">Partners</h2>

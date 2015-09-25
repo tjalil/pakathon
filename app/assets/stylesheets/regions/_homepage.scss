@@ -31,14 +31,22 @@
   }
 
   .tag {
-    @include fontSize(10);
+    @include fontSize(12);
     letter-spacing: 2px;
     font-family: "OpenSans-Bold";
     color: $white;
     background-color: $greenBackground;
     @include prop(padding, 5, 10);
     text-transform: uppercase;
-    @include prop(margin-bottom, 25);
+
+    a {
+      color: $white;
+      text-decoration: underline;
+    }
+
+    span {
+      text-decoration: underline;
+    }
   }
 
   .hero-text {
@@ -49,6 +57,7 @@
     h2 {
       color: $greyDark;
       text-transform: uppercase;
+      @include prop(margin-top, 15);
 
       @media only screen and (min-width: $mediumScreen + px) {
         @include fontSize(37);

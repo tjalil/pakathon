@@ -16,12 +16,20 @@
     }
   }
 
-  .current-section {
+  // .menu-items {
+  //   display: none;
+
+  //   &.active {
+  //     display: block;
+  //   }
+  // }
+
+  #current-section {
     p {
       position: relative;
       display: block;
       @include prop(height, 40);
-      @include prop(padding, 14, 0, 13, 10);
+      @include prop(padding, 13, 0, 13, 10);
       color: $white;
       @include prop(margin, 0);
       font-family: "OpenSans-Bold";
@@ -37,16 +45,26 @@
     @include prop(height, 40);
   }
 
-  .icon-drawer {
+  .menu-button {
     position: absolute;
     display: inline-block;
     @include prop(top, 5);
     @include prop(left, -30);
 
-    &:before {
-      position: relative;
-      @include fontSize(30);
-      color: $white;
+    &.icon-drawer {
+      &:before {
+        position: relative;
+        @include fontSize(30);
+        color: $white;
+      }
+    }
+
+    &.icon-close {
+      &:before {
+        position: relative;
+        @include fontSize(18);
+        color: $white;
+      }
     }
   }
 
@@ -170,19 +188,19 @@
         background: rgba(255, 255, 255, 0.25);
       }
 
-      &#single-city-resources-nav-item {
+      &#single-city-mentors-nav-item {
         background: rgba(255, 255, 255, 0.20);
       }
 
-      &#single-city-mentors-nav-item {
+      &#single-city-judges-nav-item {
         background: rgba(255, 255, 255, 0.15);
       }
 
-      &#single-city-judges-nav-item {
+      &#single-city-team-nav-item {
         background: rgba(255, 255, 255, 0.10);
       }
 
-      &#single-city-team-nav-item {
+      &#single-city-resources-nav-item {
         background: rgba(255, 255, 255, 0.05);
       }
 
