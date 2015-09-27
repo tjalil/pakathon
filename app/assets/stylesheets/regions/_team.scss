@@ -315,29 +315,55 @@
 // }
 
 #team-partners {
-  li {
-    @include prop(height, 100);
-    @include prop(margin, 0);
-    @include prop(padding, 20);
+  // li {
+  //   @include prop(height, 100);
+  //   @include prop(margin, 0);
+  //   @include prop(padding, 20);
 
-    @media only screen and (min-width: $smallScreen + px) {
-      @include prop(height, 150); 
-      @include prop(margin, 20, 0);
-      @include prop(padding, 0, 20);
+  //   @media only screen and (min-width: $smallScreen + px) {
+  //     @include prop(height, 150); 
+  //     @include prop(margin, 20, 0);
+  //     @include prop(padding, 0, 20);
+  //   }
+
+  //   img {
+  //     @include prop(height, 70);
+
+  //     @media only screen and (min-width: $smallScreen + px) {
+  //       @include prop(height, 100);
+  //     }
+  //   }
+  // }
+
+  // li:last-child {
+  //   img {
+  //     @include prop(height, 150);
+  //   }
+  // }
+
+  .columns {
+    float: left;
+  }
+
+  .gamma {
+    @include prop(padding, 0, 0, 20);
+  }
+
+  .community-partner {
+    background: $white;
+    @include pre(width, 100%);
+    @include prop(max-height, 160);
+    @include prop(margin, 20, 0);
+    position: relative;
+    z-index: 1;
+
+    .v-wrapper {
+      @include prop(height, 160);
     }
 
-    img {
-      @include prop(height, 70);
-
-      @media only screen and (min-width: $smallScreen + px) {
-        @include prop(height, 100);
-      }
+    .partner-logo {
+      @include pre(width, 100%);
     }
   }
 
-  li:last-child {
-    img {
-      @include prop(height, 150);
-    }
-  }
 }

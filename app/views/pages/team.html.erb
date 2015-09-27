@@ -12,6 +12,28 @@
   </div>
 </section>
 
+<section id="team-core">
+  <div class="row">
+    <div class="columns xsmall-12">
+      <h2 class="gamma">TEAM</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="columns xsmall-12">
+      <% @users.each do |user| %>
+        <% if user.type_of_user == "Core Team Member" || user.type_of_user == "City Lead" %>
+          <div class="admin-user-panel columns large-2 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
+            <div class="team-member-info">
+              <h4 class="delta"><%= user.name %></h4>
+              <h5 class="epsilon"><%= user.description.upcase %></h5>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</section>
+
 <% if @users.where(type_of_user: "Mentor").count > 3 %>
   <section id="team-mentors">
     <div class="row">
@@ -38,28 +60,6 @@
   </section>
 <% end %>
 
-<section id="team-core">
-  <div class="row">
-    <div class="columns xsmall-12">
-      <h2 class="gamma">TEAM</h2>
-    </div>
-  </div>
-  <div class="row">
-    <div class="columns xsmall-12">
-      <% @users.each do |user| %>
-        <% if user.type_of_user == "Core Team Member" || user.type_of_user == "City Lead" %>
-          <div class="admin-user-panel columns large-2 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
-            <div class="team-member-info">
-              <h4 class="delta"><%= user.name %></h4>
-              <h5 class="epsilon"><%= user.description.upcase %></h5>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-</section>
-
 <section id="team-partners">
   <div class="row">
     <div class="columns large-12 medium-12 small-12 xsmall-12">
@@ -69,9 +69,15 @@
   <div class="row">
     <ul>
       <% @sponsors.each do |sponsor| %>
-        <li class="columns large-4 medium-4 small-6 xsmall-12 team-photo text-center">
-          <%= image_tag sponsor.avatar_url %>
-        </li>
+        <div class="columns xsmall-6 small-3 medium-3 large-2 partners">
+          <div class="community-partner">
+            <div class="v-wrapper">
+              <div class="v-inner">
+                <img src="<%= sponsor.avatar %>" class="partner-logo">
+              </div>
+            </div>
+          </div>
+        </div>
       <% end %>
     </ul>
   </div>

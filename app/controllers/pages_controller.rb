@@ -15,7 +15,7 @@ class PagesController < ApplicationController
 
   def team
     @users = City.find(18).users.order('name ASC')
-    @sponsors = City.find(18).sponsors
+    @sponsors = User.where(type_of_user: "Sponsor")
   end
 
   def contact
