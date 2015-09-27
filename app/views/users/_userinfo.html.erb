@@ -30,6 +30,10 @@
       <%= f.label :type_of_user %><br>
       <% if current_user.username == "taha.jalil" %>
         <p>
+          <%= f.radio_button(:type_of_user, "Leadership") %>
+          <%= f.label(:type_of_user, "Leadership") %>
+        </p>
+        <p>
           <%= f.radio_button(:type_of_user, "Core Team Member") %>
           <%= f.label(:type_of_user, "Core Team Member") %>
         </p>

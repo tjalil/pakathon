@@ -76,6 +76,25 @@ li {
     font-family: 'OpenSans-Semibold';
   }
 
+  &.heading {
+    font-family: 'OpenSans-Bold';
+    @include fontSize(20);
+    text-transform: uppercase;
+    color: $greyLight;
+    position: relative;
+    @include prop(margin-bottom, 20);
+
+    &:before {
+      position: absolute;
+      content: "";
+      @include pre(width, 100%);
+      @include prop(height, 1);
+      @include pre(bottom, 0);
+      @include pre(left, 0);
+      background-color: $greenBackground;
+    }
+  }
+
   &.tiny {
     @include fontSize(14);
     line-height: 1.6;

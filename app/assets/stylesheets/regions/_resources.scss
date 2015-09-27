@@ -29,16 +29,14 @@
 
 #email-course-resources-repo,
 #webinar-series-resources-repo,
+#fact-sheets-resources-repo,
 #misc-resources-repo {
     @include prop(padding, 20, 0);
 
     ul {
         @include prop(margin, 0);
+        @include pre(width, 100%);
         float: left;
-
-        @media only screen and (max-width: $smallScreen + px) {
-            @include pre(width, 100%);
-        }
     }
 
     .main-resource-link {

@@ -7,6 +7,7 @@ class ResourcesController < ApplicationController
     @resources = Resource.order('created_at ASC')
     @email_course_resources = Resource.order('created_at ASC').where(series: "Email Course")
     @webinar_series_resources = Resource.order('created_at ASC').where(series: "Webinar Series")
+    @fact_sheets_resources = Resource.order('created_at ASC').where(series: "Fact Sheets")
     @other_resources = Resource.order('created_at ASC').where(series: "Other")
   end
 
