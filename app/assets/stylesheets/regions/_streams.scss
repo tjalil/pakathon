@@ -66,5 +66,33 @@
       letter-spacing: 2px;
       color: $green;
     }
+
+    .fact-sheet-link {
+      display: block;
+      @include prop(margin-top, 20);
+      @include pre(transition, color 0.3s ease);
+
+      .icon-doc {
+        .epsilon {
+          color: $white;
+          font-family: "OpenSans-Bold";
+          letter-spacing: 2px;
+          @include fontSize(14);
+        }
+
+        &:before {
+          @include fontSize(20);
+          @include prop(padding-bottom, 10);
+        }
+      }
+
+      &:hover {
+        .icon-doc {
+          .epsilon {
+            color: $greenLight;
+          }
+        }
+      }
+    }
   }
 }
