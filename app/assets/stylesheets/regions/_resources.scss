@@ -35,11 +35,8 @@
 
     ul {
         @include prop(margin, 0);
+        @include prop(width, 100%);
         float: left;
-
-        @media only screen and (max-width: $smallScreen + px) {
-            @include pre(width, 100%);
-        }
     }
 
     .main-resource-link {

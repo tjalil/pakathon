@@ -11,7 +11,7 @@
       <ul class="columns large-block-grid-2 medium-block-grid-2 small-block-grid-2 xsmall-block-grid-1">
         <% @email_course_resources.each do |resource| %>
           <li class="resource-box">
-            <a id="course-resource" href="<%= resource.link_to_document %>">
+            <a id="course-resource" href="<%= resource.link_to_document %>" target="_blank">
               <% if resource.type_of_document == "Text File" %>
                 <div class="text-center icon-doc">
               <% elsif resource.type_of_document == "Audio File" %>
@@ -53,7 +53,7 @@
       <ul class="columns large-block-grid-4 medium-block-grid-3 small-block-grid-2 xsmall-block-grid-1">
         <% @webinar_series_resources.each do |resource| %>
           <li class="resource-box">
-            <a href="<%= resource.link_to_document %>">
+            <a href="<%= resource.link_to_document %>" target="_blank">
               <% if resource.type_of_document == "Text File" %>
                 <div class="text-center icon-doc">
               <% elsif resource.type_of_document == "Audio File" %>
@@ -97,7 +97,7 @@
       <ul class="columns large-block-grid-4 medium-block-grid-3 small-block-grid-2 xsmall-block-grid-1">
         <% @fact_sheets_resources.each do |resource| %>
           <li class="resource-box">
-            <a href="<%= resource.link_to_document %>">
+            <a href="<%= resource.link_to_document %>" target="_blank">
               <% if resource.type_of_document == "Text File" %>
                 <div class="text-center icon-doc">
               <% elsif resource.type_of_document == "Audio File" %>
@@ -141,7 +141,7 @@
       <ul class="columns large-block-grid-4 medium-block-grid-3 small-block-grid-2 xsmall-block-grid-1">
         <% @other_resources.each do |resource| %>
           <li class="resource-box">
-            <a href="<%= resource.link_to_document %>">
+            <a href="<%= resource.link_to_document %>" target="_blank">
               <% if resource.type_of_document == "Text File" %>
                 <div class="text-center icon-doc">
               <% elsif resource.type_of_document == "Audio File" %>
