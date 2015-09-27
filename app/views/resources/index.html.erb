@@ -95,7 +95,7 @@
     </div>
     <div class="row">
       <ul class="columns large-block-grid-4 medium-block-grid-3 small-block-grid-2 xsmall-block-grid-1">
-        <% @webinar_series_resources.each do |resource| %>
+        <% @fact_sheets_resources.each do |resource| %>
           <li class="resource-box">
             <a href="<%= resource.link_to_document %>">
               <% if resource.type_of_document == "Text File" %>
