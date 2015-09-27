@@ -1,24 +1,70 @@
 <section id="team-hero">
-  <div class="v-wrapper">
-    <div class="v-inner">
+  <!-- <div class="v-wrapper">
+    <div class="v-inner"> -->
       <div class="row">
-        <div class="columns large-10 large-centered medium-10 medium-centered small-12 xsmall-12">
-          <div class="hero-text text-center">
-            <h2 class="gamma">We are a group of passionate people putting in all the hours we have to make our vision a reality.</h2>
+        <div class="inner-nav">
+          <ul>
+           <li id="team-nav-item">
+              <a href="#team-core" class="smooth-scroll">
+                <p class="punch">The Team</p>
+              </a>
+            </li>
+            <li id="mentors-nav-item">
+              <a href="#team-mentors" class="smooth-scroll">
+                <p class="punch">Our Mentors</p>
+              </a>
+            </li>
+            <li id="partners-nav-item">
+              <a href="#team-partners" class="smooth-scroll">
+                <p class="punch">Our Partners</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="v-wrapper">
+          <div class="v-inner">
+            <div class="columns large-10 large-centered medium-10 medium-centered small-12 xsmall-12">
+              <div class="hero-text text-center">
+                <h2 class="gamma">We are a group of passionate individuals putting in all the hours we have to make our vision a reality.</h2>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    <!-- </div>
+  </div> -->
 </section>
 
 <section id="team-core">
   <div class="row">
-    <div class="columns xsmall-12">
-      <h2 class="gamma">TEAM</h2>
+    <div class="columns xsmall-12 text-center">
+      <h2 class="gamma">THE TEAM</h2>
     </div>
   </div>
+
   <div class="row">
+    <div class="columns xsmall-12">
+      <p class="heading">Leadership</p>
+    </div>
+    <div class="columns xsmall-12">
+      <% @users.each do |user| %>
+        <% if user.type_of_user == "Leadership" %>
+          <div class="admin-user-panel columns large-2 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
+            <div class="team-member-info">
+              <h4 class="delta"><%= user.name %></h4>
+              <h5 class="epsilon"><%= user.description.upcase %></h5>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="columns xsmall-12">
+      <p class="heading">Core Team</p>
+    </div>
     <div class="columns xsmall-12">
       <% @users.each do |user| %>
         <% if user.type_of_user == "Core Team Member" || user.type_of_user == "City Lead" %>
@@ -37,8 +83,8 @@
 <% if @users.where(type_of_user: "Mentor").count > 3 %>
   <section id="team-mentors">
     <div class="row">
-      <div class="columns xsmall-12">
-        <h2 class="gamma">MENTORS</h2>
+      <div class="columns xsmall-12 text-center">
+        <h2 class="gamma">OUR MENTORS</h2>
       </div>
     </div>
 
@@ -62,8 +108,8 @@
 
 <section id="team-partners">
   <div class="row">
-    <div class="columns large-12 medium-12 small-12 xsmall-12">
-      <h2 class="gamma">PARTNERS</h2>
+    <div class="columns xsmall-12 text-center">
+      <h2 class="gamma">OUR PARTNERS</h2>
     </div>
   </div>
   <div class="row">
