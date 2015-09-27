@@ -35,7 +35,7 @@
 
     ul {
         @include prop(margin, 0);
-        @include prop(width, 100%);
+        @include pre(width, 100%);
         float: left;
     }
 
