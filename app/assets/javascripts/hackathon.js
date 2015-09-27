@@ -55,6 +55,11 @@ $(window).ready(function() {
       $(this).parent().prevAll().children('a').addClass('active');
     }
     $(this).addClass('active');
+
+    if ($('.menu-items').hasClass('active')) {
+      $('.menu-button').removeClass('icon-close').addClass('icon-drawer');
+      $('.menu-items').slideUp(300).removeClass('active');
+    }
   });
 
   // 

@@ -26,11 +26,11 @@ $(window).ready(function() {
     $('.menu-items').hide().removeClass('active');
 
     $('#sticky-nav-menu-btn').click(function() {
-      if ($('.menu-button').hasClass('active')) {
-        $('#sticky-nav-menu-button .menu-button').removeClass('icon-close').addClass('icon-drawer');
+      if ($('.menu-items').hasClass('active')) {
+        $('.menu-button').removeClass('icon-close').addClass('icon-drawer');
         $('.menu-items').slideUp(300).removeClass('active');
       } else {
-        $('#sticky-nav-menu-button .menu-button').removeClass('icon-drawer').addClass('icon-close');
+        $('.menu-button').removeClass('icon-drawer').addClass('icon-close');
         $('.menu-items').slideDown(300).addClass('active');
       }
     });

@@ -60,6 +60,9 @@
     }
 
     &.icon-close {
+      @include prop(top, 10);
+      @include prop(left, -20);
+      
       &:before {
         position: relative;
         @include fontSize(18);
