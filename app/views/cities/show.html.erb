@@ -307,7 +307,7 @@
             <p class="answer"><%= faq.answer %></p>
           <% end %>
         <% elsif @city.name == "Boston" %>
-          <% Faq.all.order('created_at ASC').limit(3).each do |faq| %>
+          <% Faq.all.order('created_at DESC').limit(3).each do |faq| %>
             <p class="question"><%= faq.question %></p>
             <p class="answer"><%= faq.answer %></p>
           <% end %>
@@ -364,43 +364,43 @@
         </div>
       </div>
     </section>
-  <% end %>
 
-  <section id="single-city-judges" class="menu-target" data-title="Judges">
-    <div class="row">
-      <div class="columns xsmall-12">
-        <h2 class="section-header gamma">Judges</h2>
+    <section id="single-city-judges" class="menu-target" data-title="Judges">
+      <div class="row">
+        <div class="columns xsmall-12">
+          <h2 class="section-header gamma">Judges</h2>
+        </div>
       </div>
-    </div>
 
-    <div class="row">
-      <div class="columns xsmall-12">
-        <% @city.users.order('name ASC').each do |user| %>
-          <% if user.type_of_user == "Judge" %>
-            <div class="admin-user-panel user-judge columns large-3 medium-4 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
-              <div class="team-member-info">
-                <h4 class="delta"><%= user.name %></h4>
-                <h5 class="epsilon"><%= user.description.upcase %></h5>
-                <ul>
-                  <% if user.twitter.present? %>
-                    <li id="social-icons-twitter" class="social-icons">
-                      <a class="icon-twitter" href="<%= user.twitter %>" target="_blank"></a>
-                    </li>
-                  <% end %>
+      <div class="row">
+        <div class="columns xsmall-12">
+          <% @city.users.order('name ASC').each do |user| %>
+            <% if user.type_of_user == "Judge" %>
+              <div class="admin-user-panel user-judge columns large-3 medium-4 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
+                <div class="team-member-info">
+                  <h4 class="delta"><%= user.name %></h4>
+                  <h5 class="epsilon"><%= user.description.upcase %></h5>
+                  <ul>
+                    <% if user.twitter.present? %>
+                      <li id="social-icons-twitter" class="social-icons">
+                        <a class="icon-twitter" href="<%= user.twitter %>" target="_blank"></a>
+                      </li>
+                    <% end %>
 
-                  <% if user.linkedin.present? %>
-                    <li id="social-icons-linkedin" class="social-icons">
-                      <a class="icon-linkedin" href="<%= user.linkedin %>" target="_blank"></a>
-                    </li>
-                  <% end %>
-                </ul>
+                    <% if user.linkedin.present? %>
+                      <li id="social-icons-linkedin" class="social-icons">
+                        <a class="icon-linkedin" href="<%= user.linkedin %>" target="_blank"></a>
+                      </li>
+                    <% end %>
+                  </ul>
+                </div>
               </div>
-            </div>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  <% end %>
 
   <section id="single-city-team" class="menu-target" data-title="Team">
     <div class="row">
