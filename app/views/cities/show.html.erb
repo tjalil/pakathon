@@ -299,8 +299,8 @@
         </div>
       <% end %>
 
-      <div class="columns large-6 medium-6 small-6 xsmall-12 faqs">
-        <% if @city.name != "Boston" %>
+      <% if @city.name != "Boston" %>
+        <div class="columns large-6 medium-6 small-6 xsmall-12 faqs">
           <h2 class="gamma">FAQs</h2>
             <% @faqs.each do |faq| %>
               <p class="question"><%= faq.question %></p>
@@ -308,8 +308,8 @@
             <% end %>
 
           <%= link_to "See all Faqs", "/faqs", {class: "button green text-center", target: "_blank"} %>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
   </section>
 
