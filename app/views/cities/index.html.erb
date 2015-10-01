@@ -16,7 +16,7 @@
           <div id="city-<%= city.slug %>" class="admin-city-panel column large-3 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= city.hero_photo %>)">
 
             <% if city.eventbrite_page.present? %>
-              <% if city.name == "Melbourne" || city.name == "Toronto" %>
+              <% if city.name == "Melbourne" || city.name == "Toronto" || city.name == "Boston" %>
                 <a href="<%= city_path(city) %>">
               <% else %>
                 <a href="<%= city.eventbrite_page %>">
