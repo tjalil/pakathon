@@ -534,10 +534,7 @@
   ul {
     @include prop(margin, 0);
     float: left;
-
-    @media only screen and (max-width: $smallScreen + px) {
-      @include pre(width, 100%);
-    }
+    @include pre(width, 100%);
   }
 
   .resource-box {

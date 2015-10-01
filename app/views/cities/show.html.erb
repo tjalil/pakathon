@@ -1,4 +1,4 @@
-<% if current_user || @city.name == "Melbourne" || @city.name == "Toronto" %>
+<% if current_user || @city.name == "Melbourne" || @city.name == "Toronto"  || @city.name == "Boston" %>
   
   <section class="sticky-nav">
     <div class="row">
@@ -14,27 +14,40 @@
           </div>
           <div class="menu-items">
             <ul>
-              <li class="single-menu-item">
-                <a class="smooth-scroll" href="#single-city-hackathon">2015 Hackathon</a>
-              </li>
+              <% if @city.hackathon %>
+                <li class="single-menu-item">
+                  <a class="smooth-scroll" href="#single-city-hackathon">2015 Hackathon</a>
+                </li>
+              <% end %>
+
               <li class="single-menu-item">
                 <a class="smooth-scroll" href="#single-city-judging-and-faqs">Judging Criteria</a>
               </li>
-              <li class="single-menu-item">
-                <a class="smooth-scroll" href="#single-city-mentors">Mentors</a>
-              </li>
-              <li class="single-menu-item">
-                <a class="smooth-scroll" href="#single-city-judges">Judges</a>
-              </li>
-              <li class="single-menu-item">
-                <a class="smooth-scroll" href="#single-city-team">Team</a>
-              </li>
+
+              <% if @city.name == "Melbourne" || @city.name == "Toronto" %>
+                <li class="single-menu-item">
+                  <a class="smooth-scroll" href="#single-city-mentors">Mentors</a>
+                </li>
+                <li class="single-menu-item">
+                  <a class="smooth-scroll" href="#single-city-judges">Judges</a>
+                </li>
+              <% end %>
+
+              <% if @city.users %>
+                <li class="single-menu-item">
+                  <a class="smooth-scroll" href="#single-city-team">Team</a>
+                </li>
+              <% end %>
+
               <li class="single-menu-item">
                 <a class="smooth-scroll" href="#single-city-resources">Resources</a>
               </li>
-              <li class="single-menu-item">
-                <a class="smooth-scroll" href="#single-city-partners">Partners</a>
-              </li>
+
+              <% if @city.name == "Melbourne" || @city.name == "Toronto" %>
+                <li class="single-menu-item">
+                  <a class="smooth-scroll" href="#single-city-partners">Partners</a>
+                </li>
+              <% end %>
             </ul>
           </div>
         </div>
@@ -46,41 +59,53 @@
     <div class="row">
       <div class="inner-nav">
         <ul>
-          <li id="single-city-hackathon-nav-item">
-            <a href="#single-city-hackathon" class="smooth-scroll">
-              <p class="punch">2015 Hackathon</p>
-            </a>
-          </li>
+          <% if @city.hackathon %>
+            <li id="single-city-hackathon-nav-item">
+              <a href="#single-city-hackathon" class="smooth-scroll">
+                <p class="punch">2015 Hackathon</p>
+              </a>
+            </li>
+          <% end %>
+
           <li id="single-city-judging-nav-item">
             <a href="#single-city-judging-and-faqs" class="smooth-scroll">
               <p class="punch">Judging Criteria</p>
             </a>
           </li>
-          <li id="single-city-mentors-nav-item">
-            <a href="#single-city-mentors" class="smooth-scroll">
-              <p class="punch">Mentors</p>
-            </a>
-          </li>
-          <li id="single-city-judges-nav-item">
-            <a href="#single-city-judges" class="smooth-scroll">
-              <p class="punch">Judges</p>
-            </a>
-          </li>
-          <li id="single-city-team-nav-item">
-            <a href="#single-city-team" class="smooth-scroll">
-              <p class="punch">Team</p>
-            </a>
-          </li>
+
+          <% if @city.name == "Melbourne" || @city.name == "Toronto" %>
+            <li id="single-city-mentors-nav-item">
+              <a href="#single-city-mentors" class="smooth-scroll">
+                <p class="punch">Mentors</p>
+              </a>
+            </li>
+            <li id="single-city-judges-nav-item">
+              <a href="#single-city-judges" class="smooth-scroll">
+                <p class="punch">Judges</p>
+              </a>
+            </li>
+          <% end %>
+
+          <% if @city.users %>
+            <li id="single-city-team-nav-item">
+              <a href="#single-city-team" class="smooth-scroll">
+                <p class="punch">Team</p>
+              </a>
+            </li>
+          <% end %>
+
           <li id="single-city-resources-nav-item">
             <a href="#single-city-resources" class="smooth-scroll">
               <p class="punch">Resources</p>
             </a>
           </li>
-          <li id="single-city-partner-nav-item">
-            <a href="#single-city-partners" class="smooth-scroll">
-              <p class="punch">Partners</p>
-            </a>
-          </li>
+          <% if @city.name == "Melbourne" || @city.name == "Toronto" %>
+            <li id="single-city-partner-nav-item">
+              <a href="#single-city-partners" class="smooth-scroll">
+                <p class="punch">Partners</p>
+              </a>
+            </li>
+          <% end %>
         </ul>
       </div>
 
@@ -112,114 +137,180 @@
         </div>
 
         <div class="columns large-7 large-pull-1 medium-8 small-12 xsmall-12">
-          <div class="dates-and-address">
-            <p class="date icon-calendar"><%= @city.hackathon.date_of_hackathon.to_s(:just_date).split(",").first %> - <%= (@city.hackathon.date_of_hackathon + 2.days).to_s(:just_date).split(" ")[1..2].join(" ") %></p>
-            <p class="address icon-location"><%= @city.hackathon.venue_name %>, <%= @city.hackathon.address_line_1 %>, <%= @city.name %>, <%= @city.hackathon.postal_code %></p>  
-          </div>
-          
-          <p class="description">Join us in making our annual Pakathon weekend hackathon in 2015 our best one yet - claim your spot by registering at the link below.</p>
-          <%= link_to "Register", "#{@city.hackathon.eventbrite_link}", {class: "button white", target: "_blank"} %>
+            <div class="dates-and-address">
+              <p class="date icon-calendar"><%= @city.hackathon.date_of_hackathon.to_s(:just_date).split(",").first %> - <%= (@city.hackathon.date_of_hackathon + 2.days).to_s(:just_date).split(" ")[1..2].join(" ") %></p>
+              <p class="address icon-location"><%= @city.hackathon.venue_name ? "#{@city.hackathon.venue_name}" : "" %><%= @city.hackathon.address_line_1 ? ", #{@city.hackathon.address_line_1}" : "" %><%= @city.name ? ", #{@city.name}" : "" %><%= @city.hackathon.postal_code ? ", #{@city.hackathon.postal_code}" : "" %></p>
+            </div>
+            
+            <% if @city.name == "Melbourne" || @city.name == "Toronto" %>
+              <p class="description">Join us in making our annual Pakathon weekend hackathon in 2015 our best one yet - claim your spot by registering at the link below.</p>
+              <%= link_to "Register", "#{@city.hackathon.eventbrite_link}", {class: "button white", target: "_blank"} %>
+            <% elsif @city.name == "Boston" %>
+              <p class="description">Join us in making our annual Pakathon weekend hackathon in 2015 our best one yet.</p>
+              <%= link_to "Submit your video pitch", "#{@city.hackathon.eventbrite_link}", {class: "button white", target: "_blank"} %>
+            <% end %>
         </div>
       </div>
     </section>
 
     <section id="single-city-hackathon-days">
       <div class="row">
-        <div class="columns large-4 medium-4 small-4 xsmall-12">
-          <div class="day">
-            <p class="day-indicator">Day 1</p>
-            <% if @city.hackathon.day_1_image.present? %>
-              <div id="admin-image-1" class="image" style="background-image: url(<%= @city.hackathon.day_1_image %>)"></div>
-            <% else %>
-              <div id="image-day-1" class="image"></div>
-            <% end %>
-
-            <div class="description">
-              <% if @city.hackathon.day_1_description.present? %>
-                <p><%= @city.hackathon.day_1_description %></p>
+        <% if @city.name == "Melbourne" || @city.name == "Toronto" %>
+          <div class="columns large-4 medium-4 small-4 xsmall-12">
+            <div class="day">
+              <p class="day-indicator">Day 1</p>
+              <% if @city.hackathon.day_1_image.present? %>
+                <div id="admin-image-1" class="image" style="background-image: url(<%= @city.hackathon.day_1_image %>)"></div>
               <% else %>
-                <p>Friday night begins with participants brainstorming with mentors and refining their ideas. Be ready to think on your feet and challenge yourself. Meet and debate others interested in your ideas. Find individuals with different skill sets to make sure you have a well rounded team of engineers, designers and strategists. At the end of the night one person from each team pitches to the audience and gives one last call for team members. Friday night is the last time you have to form a team. Pakathon organizers will facilitate introductions and brainstorming.</p>
+                <div id="image-day-1" class="image"></div>
               <% end %>
+
+              <div class="description">
+                <% if @city.hackathon.day_1_description.present? %>
+                  <p><%= @city.hackathon.day_1_description %></p>
+                <% else %>
+                  <p>Friday night begins with participants brainstorming with mentors and refining their ideas. Be ready to think on your feet and challenge yourself. Meet and debate others interested in your ideas. Find individuals with different skill sets to make sure you have a well rounded team of engineers, designers and strategists. At the end of the night one person from each team pitches to the audience and gives one last call for team members. Friday night is the last time you have to form a team. Pakathon organizers will facilitate introductions and brainstorming.</p>
+                <% end %>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="columns large-4 medium-4 small-4 xsmall-12">
-          <div class="day">
-            <p class="day-indicator">Day 2</p>
-            <% if @city.hackathon.day_2_image.present? %>
-              <div id="admin-image-2" class="image" style="background-image: url(<%= @city.hackathon.day_2_image %>)"></div>
-            <% else %>
-              <div id="image-day-2" class="image"></div>
-            <% end %>
-
-            <div class="description">
-              <% if @city.hackathon.day_2_description.present? %>
-                <p><%= @city.hackathon.day_2_description %></p>
+          <div class="columns large-4 medium-4 small-4 xsmall-12">
+            <div class="day">
+              <p class="day-indicator">Day 2</p>
+              <% if @city.hackathon.day_2_image.present? %>
+                <div id="admin-image-2" class="image" style="background-image: url(<%= @city.hackathon.day_2_image %>)"></div>
               <% else %>
-                <p>Come in early, grab some coffee and get ready to work. Each team must create a business plan and a prototype of product wherever applicable. If you have a website, software or hardware create a mockup and practise demo-ing it. Coordinate and hold skype check-ins with team members in other cities. Chapters will have mentors on hand or over skype to help you with your business plan and prototype. Check with your city to see how long they have their facilities open. Teams with participants in multiple cities must pick which city their team will be collectively pitching from.</p>
+                <div id="image-day-2" class="image"></div>
               <% end %>
+
+              <div class="description">
+                <% if @city.hackathon.day_2_description.present? %>
+                  <p><%= @city.hackathon.day_2_description %></p>
+                <% else %>
+                  <p>Come in early, grab some coffee and get ready to work. Each team must create a business plan and a prototype of product wherever applicable. If you have a website, software or hardware create a mockup and practise demo-ing it. Coordinate and hold skype check-ins with team members in other cities. Chapters will have mentors on hand or over skype to help you with your business plan and prototype. Check with your city to see how long they have their facilities open. Teams with participants in multiple cities must pick which city their team will be collectively pitching from.</p>
+                <% end %>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="columns large-4 medium-4 small-4 xsmall-12">
-          <div class="day">
-            <p class="day-indicator">Day 3</p>
-            <% if @city.hackathon.day_3_image.present? %>
-              <div id="admin-image-3" class="image" style="background-image: url(<%= @city.hackathon.day_3_image %>)"></div>
-            <% else %>
-              <div id="image-day-3" class="image"></div>
-            <% end %>
-
-            <div class="description">
-              <% if @city.hackathon.day_3_description.present? %>
-                <p><%= @city.hackathon.day_3_description %></p>
+          <div class="columns large-4 medium-4 small-4 xsmall-12">
+            <div class="day">
+              <p class="day-indicator">Day 3</p>
+              <% if @city.hackathon.day_3_image.present? %>
+                <div id="admin-image-3" class="image" style="background-image: url(<%= @city.hackathon.day_3_image %>)"></div>
               <% else %>
-                <p>Teams will have a few hours in the morning to finalize their pitches, slides and any prototype they will be demo-ing. Then pitching starts, each team gets assigned a time block to pitch in front of judges. Judges pick the winner(s) from each city or university based on the quality of plan and global collaboration of the team.</p>
+                <div id="image-day-3" class="image"></div>
               <% end %>
+
+              <div class="description">
+                <% if @city.hackathon.day_3_description.present? %>
+                  <p><%= @city.hackathon.day_3_description %></p>
+                <% else %>
+                  <p>Teams will have a few hours in the morning to finalize their pitches, slides and any prototype they will be demo-ing. Then pitching starts, each team gets assigned a time block to pitch in front of judges. Judges pick the winner(s) from each city or university based on the quality of plan and global collaboration of the team.</p>
+                <% end %>
+              </div>
             </div>
           </div>
-        </div>
+        <% elsif @city.name == "Boston"  %>
+          <div class="day">
+            <div class="columns xsmall-12 small-4">
+              <% if @city.hackathon.day_1_image.present? %>
+                <div id="admin-image-1" class="image" style="background-image: url(<%= @city.hackathon.day_1_image %>)"></div>
+              <% else %>
+                <div id="image-day-1" class="image"></div>
+              <% end %>
+            </div>
+
+            <div class="columns xsmall-12 small-8">
+              <div class="description">
+                <p>Your idea &amp; prototype can pave a brand new innovative path of solutions for Pakistan or the developing world. What do you do now to bring it to the next level? Submit your video pitch! The #1 winning pitch from Boston will be brought to the Global Hackathon in Toronto! This is a huge opportunity for you to meet hundreds of new Pakistani change makers and give your idea a shot at winning the top prize.</p>
+
+                <p>Our 20 Global Mentors can be found on the <%= link_to "Team", "/team" %> page.</p>
+
+                <p><strong>WHAT TO DO:</strong> Please make sure your video fulfills judging criteria stated below, and that the video is submitted using this <a href="https://docs.google.com/forms/d/1ys47YOWEVsLLfcVMTJmhaJjE25Uhs-QB-kpQPtk6XqI/viewform?c=0&w=1" target="_blank">form</a>. You must also submit a supplementary document for the video (details below) which should be emailed to boston@pakathon.org</p>
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
     </section>
   <% end %>
 
   <section id="single-city-judging-and-faqs" class="menu-target" data-title="Judging Criteria">
     <div class="row">
-      <div class="columns large-6 medium-6 small-6 xsmall-12 judging-criteria">
-        <h2 class="section-header gamma">Judging Criteria</h2>
-        <p class="criteria">How have you collaborated globally? [20%]</p>
-        <ul>
-          <li class="green-bullet">Did you work or interact with colleagues in another city? How did you collaborate and communicate?</li>
-          <li class="green-bullet">What tools did you use to collaborate (e.g Github, Pakathon Forum, Skype)</li>
-        </ul>
+      <% if @city.name == "Melbourne" || @city.name == "Toronto" %>
+        <div class="columns large-6 medium-6 small-6 xsmall-12 judging-criteria">
+          <h2 class="section-header gamma">Judging Criteria</h2>
+          <p class="criteria">How have you collaborated globally? [20%]</p>
+          <ul>
+            <li class="green-bullet">Did you work or interact with colleagues in another city? How did you collaborate and communicate?</li>
+            <li class="green-bullet">What tools did you use to collaborate (e.g Github, Pakathon Forum, Skype)</li>
+          </ul>
 
-        <p class="criteria">Tell us your story and share progress over the weekend. [40%]</p>
-        <ul>
-          <li class="green-bullet">Share the bios of your team and tell us why you are the right people to be working on this idea.</li>
-          <li class="green-bullet">Is there anything in your team’s background that will help you execute this project?</li>
-          <li class="green-bullet">What is the project you are working on?</li>
-          <li class="green-bullet">Demonstrate evidence of progress over the weekend.</li>
-          <li class="green-bullet">If you have a software or web based product, demonstrate how it would work.</li>
-          <li class="green-bullet">If you have a design mockup, demonstrate the User Interface.</li>
-        </ul>
+          <p class="criteria">Tell us your story and share progress over the weekend. [40%]</p>
+          <ul>
+            <li class="green-bullet">Share the bios of your team and tell us why you are the right people to be working on this idea.</li>
+            <li class="green-bullet">Is there anything in your team’s background that will help you execute this project?</li>
+            <li class="green-bullet">What is the project you are working on?</li>
+            <li class="green-bullet">Demonstrate evidence of progress over the weekend.</li>
+            <li class="green-bullet">If you have a software or web based product, demonstrate how it would work.</li>
+            <li class="green-bullet">If you have a design mockup, demonstrate the User Interface.</li>
+          </ul>
 
-        <p class="criteria">How are you making an impact? [40%]</p>
-        <ul>
-          <li class="green-bullet">Are you disrupting an industry?</li>
-          <li class="green-bullet">Who is your target market? What value are you providing them?</li>
-          <li class="green-bullet">What is the size of the market or the number of people impacted?</li>
-          <li class="green-bullet">How do you plan on reaching your target audience?</li>
-          <li class="green-bullet">How do you plan on making this financially sustainable? What is your revenue stream?</li>
-        </ul>
-      </div>
+          <p class="criteria">How are you making an impact? [40%]</p>
+          <ul>
+            <li class="green-bullet">Are you disrupting an industry?</li>
+            <li class="green-bullet">Who is your target market? What value are you providing them?</li>
+            <li class="green-bullet">What is the size of the market or the number of people impacted?</li>
+            <li class="green-bullet">How do you plan on reaching your target audience?</li>
+            <li class="green-bullet">How do you plan on making this financially sustainable? What is your revenue stream?</li>
+          </ul>
+        </div>
+      <% elsif @city.name == "Boston" %>
+        <div class="columns large-6 medium-6 small-6 xsmall-12 judging-criteria">
+          <h2 class="section-header gamma">Judging Criteria</h2>
+          <p class="criteria">Video Submission Criteria is divided in 3 parts.</p>
+          <p class="criteria">The total video should be no longer than 5 minutes and must contain a 3-4 page supplement document that sufficiently answers the question in the 3 parts. This document should be emailed to boston@pakathon.org</p>
+          <p class="criteria">Part 1</p>
+          <ul>
+            <li class="green-bullet">Share the bios of your team and tell us why you are the right people to be working on this idea.</li>
+            <li class="green-bullet">Is there anything in your team’s background that will help you execute this project?</li>
+            <li class="green-bullet">What is the project you are working on? (value proposition, problem, solution)</li>
+          </ul>
+
+          <p class="criteria">Part 2</p>
+          <ul>
+            <li class="green-bullet">How are you making an impact?</li>
+            <li class="green-bullet">Who is your target market?</li>
+            <li class="green-bullet">What value are you providing them?</li>
+            <li class="green-bullet">How do you plan on reaching your target audience?</li>
+            <li class="green-bullet">How do you plan on making this financially sustainable?</li>
+            <li class="green-bullet">What is your revenue stream?</li>
+          </ul>
+
+          <p class="criteria">Part 3</p>
+          <ul>
+            <li class="green-bullet">If you have a software or web based product, demonstrate how it would work.</li>
+            <li class="green-bullet">If you have a design mockup, demonstrate the User Interface.</li>
+          </ul>
+
+          <p class="criteria">Please direct any questions that you may have to boston@pakathon.org</p>
+        </div>
+      <% end %>
 
       <div class="columns large-6 medium-6 small-6 xsmall-12 faqs">
         <h2 class="gamma">FAQs</h2>
-        <% @faqs.each do |faq| %>
-          <p class="question"><%= faq.question %></p>
-          <p class="answer"><%= faq.answer %></p>
+        <% if @city.name == "Melbourne" || @city.name == "Toronto" %>
+          <% @faqs.each do |faq| %>
+            <p class="question"><%= faq.question %></p>
+            <p class="answer"><%= faq.answer %></p>
+          <% end %>
+        <% elsif @city.name == "Boston" %>
+          <% Faq.all.order('created_at ASC').limit(3).each do |faq| %>
+            <p class="question"><%= faq.question %></p>
+            <p class="answer"><%= faq.answer %></p>
+          <% end %>
         <% end %>
 
         <%= link_to "See all Faqs", "/faqs", {class: "button green text-center", target: "_blank"} %>
@@ -237,41 +328,43 @@
     </section>
   <% end %>
 
-  <section id="single-city-mentors" class="menu-target" data-title="Mentors">
-    <div class="row">
-      <div class="columns xsmall-12">
-        <h2 class="section-header gamma">Mentors</h2>
+  <% if @city.name == "Melbourne" || @city.name == "Toronto" %>
+    <section id="single-city-mentors" class="menu-target" data-title="Mentors">
+      <div class="row">
+        <div class="columns xsmall-12">
+          <h2 class="section-header gamma">Mentors</h2>
+        </div>
       </div>
-    </div>
 
-    <div class="row">
-      <div class="columns xsmall-12">
-        <% @city.users.order('name ASC').each do |user| %>
-          <% if user.type_of_user == "Mentor" %>
-            <div class="admin-user-panel user-mentor columns large-2 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
-              <div class="team-member-info">
-                <h4 class="delta"><%= user.name %></h4>
-                <h5 class="epsilon"><%= user.description.upcase %></h5>
-                <ul>
-                  <% if user.twitter.present? %>
-                    <li id="social-icons-twitter" class="social-icons">
-                      <a class="icon-twitter" href="<%= user.twitter %>" target="_blank"></a>
-                    </li>
-                  <% end %>
+      <div class="row">
+        <div class="columns xsmall-12">
+          <% @city.users.order('name ASC').each do |user| %>
+            <% if user.type_of_user == "Mentor" %>
+              <div class="admin-user-panel user-mentor columns large-2 medium-3 small-6 xsmall-12 text-center" style="background-image: url(<%= user.avatar %>)">
+                <div class="team-member-info">
+                  <h4 class="delta"><%= user.name %></h4>
+                  <h5 class="epsilon"><%= user.description.upcase %></h5>
+                  <ul>
+                    <% if user.twitter.present? %>
+                      <li id="social-icons-twitter" class="social-icons">
+                        <a class="icon-twitter" href="<%= user.twitter %>" target="_blank"></a>
+                      </li>
+                    <% end %>
 
-                  <% if user.linkedin.present? %>
-                    <li id="social-icons-linkedin" class="social-icons">
-                      <a class="icon-linkedin" href="<%= user.linkedin %>" target="_blank"></a>
-                    </li>
-                  <% end %>
-                </ul>
+                    <% if user.linkedin.present? %>
+                      <li id="social-icons-linkedin" class="social-icons">
+                        <a class="icon-linkedin" href="<%= user.linkedin %>" target="_blank"></a>
+                      </li>
+                    <% end %>
+                  </ul>
+                </div>
               </div>
-            </div>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  <% end %>
 
   <section id="single-city-judges" class="menu-target" data-title="Judges">
     <div class="row">
@@ -432,30 +525,32 @@
     <% end %>
   </section>
 
-  <section id="single-city-partners" class="menu-target" data-title="Partners">
-    <div class="row">
-      <div class="columns xsmall-12 text-center">
-        <h2 class="section-header" style="display:none">Partners</h2>
-        <h2 class="gamma">Thank you to all our Community Partners</h2>
+  <% if @city.name == "Melbourne" || @city.name == "Toronto" %>
+    <section id="single-city-partners" class="menu-target" data-title="Partners">
+      <div class="row">
+        <div class="columns xsmall-12 text-center">
+          <h2 class="section-header" style="display:none">Partners</h2>
+          <h2 class="gamma">Thank you to all our Community Partners</h2>
+        </div>
       </div>
-    </div>
 
-    <div class="row">
-      <% @city.users.order('name ASC').each do |user| %>
-        <% if user.type_of_user == "Sponsor" %>
-        <div class="columns xsmall-6 small-3 medium-3 large-2 partners">
-          <div class="community-partner">
-            <div class="v-wrapper">
-              <div class="v-inner">
-                <img src="<%= user.avatar %>" class="partner-logo">
+      <div class="row">
+        <% @city.users.order('name ASC').each do |user| %>
+          <% if user.type_of_user == "Sponsor" %>
+            <div class="columns xsmall-6 small-3 medium-3 large-2 partners">
+              <div class="community-partner">
+                <div class="v-wrapper">
+                  <div class="v-inner">
+                    <img src="<%= user.avatar %>" class="partner-logo">
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
-  </section>
+      </div>
+    </section>
+  <% end %>
 <% else %>
   <script type="text/javascript">
     window.location.href="/";  // put your correct path in a string here
