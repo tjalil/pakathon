@@ -300,20 +300,15 @@
       <% end %>
 
       <div class="columns large-6 medium-6 small-6 xsmall-12 faqs">
-        <h2 class="gamma">FAQs</h2>
-        <% if @city.name == "Melbourne" || @city.name == "Toronto" %>
-          <% @faqs.each do |faq| %>
-            <p class="question"><%= faq.question %></p>
-            <p class="answer"><%= faq.answer %></p>
-          <% end %>
-        <% elsif @city.name == "Boston" %>
-          <% Faq.all.order('created_at DESC').limit(3).each do |faq| %>
-            <p class="question"><%= faq.question %></p>
-            <p class="answer"><%= faq.answer %></p>
-          <% end %>
-        <% end %>
+        <% if @city.name != "Boston" %>
+          <h2 class="gamma">FAQs</h2>
+            <% @faqs.each do |faq| %>
+              <p class="question"><%= faq.question %></p>
+              <p class="answer"><%= faq.answer %></p>
+            <% end %>
 
-        <%= link_to "See all Faqs", "/faqs", {class: "button green text-center", target: "_blank"} %>
+          <%= link_to "See all Faqs", "/faqs", {class: "button green text-center", target: "_blank"} %>
+        <% end %>
       </div>
     </div>
   </section>
