@@ -23,6 +23,10 @@
   <div class="field radio-field">
     <%= f.label :series, "Which series does this belong to? (Required)" %><br>
     <p>
+      <%= f.radio_button(:series, "Hackathon Resource") %>
+      <%= f.label(:series, "Hackathon Resource") %>
+    </p>
+    <p>
       <%= f.radio_button(:series, "Email Course") %>
       <%= f.label(:series, "Email Course") %>
     </p>

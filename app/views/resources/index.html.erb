@@ -1,5 +1,47 @@
 <section id="resources-hero"></section>
 
+<% if @hackathon_resources.present? %>
+  <section id="hackathon-resources-repo">
+    <div class="row section-heading">
+      <div class="columns xsmall-12">
+        <p class="heading">Hackathon Resources</p>
+      </div>
+    </div>
+    <div class="row">
+      <ul class="columns large-block-grid-2 medium-block-grid-2 small-block-grid-2 xsmall-block-grid-1">
+        <% @hackathon_resources.each do |resource| %>
+          <li class="resource-box">
+            <a id="course-resource" href="<%= resource.link_to_document %>" target="_blank">
+              <% if resource.type_of_document == "Text File" %>
+                <div class="text-center icon-doc">
+              <% elsif resource.type_of_document == "Audio File" %>
+                <div class="text-center icon-audio">
+              <% elsif resource.type_of_document == "Video File" %>
+                <div class="text-center icon-video">
+              <% end %>
+
+                <div class="email-course-banner" style="background-image: url(<%= resource.email_course_banner %>)"></div>
+                  
+                  <h4 class="delta"><%= resource.title %></h4>
+                  <div class="resource-posted">
+                    <p class="tiny">Posted On: <%= resource.created_at.to_s(:just_date) %></p>
+                  </div>
+
+                  <% if resource.link_to_download.present? %>
+                    <div class="download-link">
+                      <%= link_to "Or click here to download", resource.link_to_download, class: "tiny" %>
+                    </div>
+                  <% end %>
+
+                </div>
+            </a>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </section>
+<% end %>
+
 <% if @email_course_resources.present? %>
   <section id="email-course-resources-repo">
     <div class="row section-heading">
