@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="row">
-      <ul class="columns large-block-grid-2 medium-block-grid-2 small-block-grid-2 xsmall-block-grid-1">
+      <ul class="columns large-block-grid-4 medium-block-grid-3 small-block-grid-2 xsmall-block-grid-1">
         <% @hackathon_resources.each do |resource| %>
           <li class="resource-box">
             <a id="course-resource" href="<%= resource.link_to_document %>" target="_blank">
@@ -20,7 +20,9 @@
                 <div class="text-center icon-video">
               <% end %>
 
-                <div class="email-course-banner" style="background-image: url(<%= resource.email_course_banner %>)"></div>
+                <% if resource.series %>
+                    <p class="type"><%= resource.series %></p>
+                  <% end %>
                   
                   <h4 class="delta"><%= resource.title %></h4>
                   <div class="resource-posted">
