@@ -295,8 +295,16 @@
       @include fontSize(18);
       line-height: 1.8;
       color: $white;
-      @include prop(padding, 20, 0, 25);
+      @include prop(padding, 20, 0, 0);
       font-family: "OpenSans-Light";
+
+      // &:not(:first-child) {
+      //   @include prop(padding, 10, 0, 0);
+      // }
+
+      &:last-of-type {
+        @include prop(padding, 20, 0, 25);
+      }
     }
 
     .button {

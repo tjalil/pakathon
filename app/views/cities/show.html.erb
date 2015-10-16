@@ -128,7 +128,12 @@
               <div class="v-inner">
                 <div class="circle">
                   <p class="text">in</p>
-                  <p class="number"><%= (@city.hackathon.date_of_hackathon.to_date - Time.now.to_date).to_i %></p>
+                  <!-- <p class="number"><%#= (@city.hackathon.date_of_hackathon.to_date - Time.now.to_date).to_i %></p> -->
+                  <% if (Time.local(2015, 11, 8).to_date - Time.now.to_date).to_i > 0 %>
+                    <p class="number"><%= (Time.local(2015, 11, 8).to_date - Time.now.to_date).to_i %></p>
+                  <% else %>
+                    <p class="number">0</p>
+                  <% end %>
                   <p class="text">days</p>
                 </div>
               </div>
@@ -138,16 +143,31 @@
 
         <div class="columns large-7 large-pull-1 medium-8 small-12 xsmall-12">
             <div class="dates-and-address">
-              <p class="date icon-calendar"><%= @city.hackathon.date_of_hackathon.to_s(:just_date).split(",").first %> - <%= (@city.hackathon.date_of_hackathon + 2.days).to_s(:just_date).split(" ")[1..2].join(" ") %></p>
-              <p class="address icon-location"><%= @city.hackathon.venue_name ? "#{@city.hackathon.venue_name}" : "" %><%= @city.hackathon.address_line_1 ? ", #{@city.hackathon.address_line_1}" : "" %><%= @city.name ? ", #{@city.name}" : "" %><%= @city.hackathon.postal_code ? ", #{@city.hackathon.postal_code}" : "" %></p>
+              <p class="date icon-calendar">
+                NOV 08, 2015 - 10:00am to 4:00pm
+                <!-- <%#= @city.hackathon.date_of_hackathon.to_s(:just_date).split(",").first %> - <%#= (@city.hackathon.date_of_hackathon + 2.days).to_s(:just_date).split(" ")[1..2].join(" ") %> -->
+              </p>
+              <p class="address icon-location">
+                77 Wynford Dr, Toronto, ON M3C 1K1
+                <%#= @city.hackathon.venue_name ? "#{@city.hackathon.venue_name}" : "" %><%#= @city.hackathon.address_line_1 ? ", #{@city.hackathon.address_line_1}" : "" %><%#= @city.name ? ", #{@city.name}" : "" %><%#= @city.hackathon.postal_code ? ", #{@city.hackathon.postal_code}" : "" %>
+              </p>
             </div>
             
             <% if @city.name == "Melbourne" || @city.name == "Toronto" %>
-              <p class="description">Join us in making our annual Pakathon weekend hackathon in 2015 our best one yet - claim your spot by registering at the link below.</p>
-              <%= link_to "Register", "#{@city.hackathon.eventbrite_link}", {class: "button white", target: "_blank"} %>
+              <!-- <p class="description">Join us in making our annual Pakathon weekend hackathon in 2015 our best one yet - claim your spot by registering at the link below.</p> -->
+              <p class="description">After a successful local hackathon, we invite you to come join us in Toronto at the Global Finals; a day of ideas, culture and innovation.</p>
+              <p class="description">The final calendar event will showcase 15 all star teams from across the globe and an amazing judging panel featuring investors, entrepreneurs and changemakers. Attendees will be treated to a visual and cultural display by Pakistani artists who are masters of their craft.</p>
+              <p class="description">Come partake in this great exchange of ideas and culture.</p>
+
+              <%#= link_to "Register", "#{@city.hackathon.eventbrite_link}", {class: "button white", target: "_blank"} %>
+              <%= link_to "Get My Ticket", "http://www.eventbrite.ca/e/pakathon-global-finals-tickets-18949737174", {class: "button white", target: "_blank"} %>
             <% elsif @city.name == "Boston" %>
-              <p class="description">Join us in making our annual Pakathon weekend hackathon in 2015 our best one yet.</p>
-              <%= link_to "Submit your video pitch", "#{@city.hackathon.eventbrite_link}", {class: "button white", target: "_blank"} %>
+              <p class="description">After a successful local hackathon, we invite you to come join us in Toronto at the Global Finals; a day of ideas, culture and innovation.</p>
+              <p class="description">The final calendar event will showcase 15 all star teams from across the globe and an amazing judging panel featuring investors, entrepreneurs and changemakers. Attendees will be treated to a visual and cultural display by Pakistani artists who are masters of their craft.</p>
+              <p class="description">Come partake in this great exchange of ideas and culture.</p>
+              <%= link_to "Get My Ticket", "http://www.eventbrite.ca/e/pakathon-global-finals-tickets-18949737174", {class: "button white", target: "_blank"} %>
+              <!-- <p class="description">Join us in making our annual Pakathon weekend hackathon in 2015 our best one yet.</p> -->
+              <%#= link_to "Submit your video pitch", "#{@city.hackathon.eventbrite_link}", {class: "button white", target: "_blank"} %>
             <% end %>
         </div>
       </div>
@@ -317,7 +337,7 @@
     <section id="hackathon-cta">
       <div class="row">
         <div class="columns xsmall-12 text-center">
-          <h2 class="delta">Sounds like your cup of tea? <%= link_to "Register Now", "#{@city.hackathon.eventbrite_link}", {class: "button white text-center", target: "_blank"} %></h2>
+          <h2 class="delta">Sounds like your cup of tea? <%= link_to "Get My Ticket", "http://www.eventbrite.ca/e/pakathon-global-finals-tickets-18949737174", {class: "button white", target: "_blank"} %></h2>
         </div>
       </div>
     </section>
