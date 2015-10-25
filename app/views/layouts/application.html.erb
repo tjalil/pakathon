@@ -22,7 +22,7 @@
   </script>
   
 </head>
-<body>
+<body class="<%= controller_name %> <%= action_name %>">
   <%= render 'layouts/header' %>
   <% if current_user %>
     <%= render 'layouts/logged_in_header' %>

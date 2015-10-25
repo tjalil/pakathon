@@ -88,21 +88,31 @@ $(document).ready(function() {
   };
 
   menuDrawer.init();
-
-  // video button treatment on toronto page
-  $('.video-action').mouseenter(function(){
-    $(this).hide();
-    $('.video-action-on-hover').show();
-  });
-
-  $('.video-action-on-hover').mouseleave(function(){
-    $(this).hide();
-    $('.video-action').show();
-  });
-
-  $('.video-action-on-hover').click(function(){
-    $('.hero-text').hide();
-    $('.video-action-on-click').fadeIn();
-  });
   
+});
+
+// ----------------------------------------------------------------
+// Announcement
+// ----------------------------------------------------------------
+jQuery(window).ready(function($) {
+
+  var $announcement = $("#announcement-strip");
+  var $header = $('.homepage header.global');
+  var $hero = $('#homepage-hero');
+  if (!$announcement.length) return;
+
+  // Reveal #announcement-strip after 1 second
+  setTimeout(function () {
+    $announcement.addClass("reveal");
+    $header.addClass("announcement-active");
+    $hero.addClass("announcement-active");
+  }, 1000);
+
+  $announcement.on('click', '.close-button', function(e) {
+    e.preventDefault();
+    $announcement.removeClass("reveal");
+    $header.removeClass("announcement-active");
+    $hero.removeClass("announcement-active");
+    // Cookies.set('scalar_announce', '1', { path: '/' });
+  });
 });

@@ -151,3 +151,105 @@ header.global {
     float: right;
   }
 }
+
+//----------------------------------------------------------------
+//  Announcement Strip
+//----------------------------------------------------------------
+#announcement-strip {
+  display: block;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: -140px;
+  text-align: center;
+  padding: 10px 0;
+  transition: background 0.3s ease, top 0.6s ease;
+  -webkit-transition: background 0.3s ease, top 0.6s ease;
+    -moz-transition: background 0.3s ease, top 0.6s ease;
+      -ms-transition: background 0.3s ease, top 0.6s ease;
+  height: auto;
+  box-shadow: 0 2px 7px $grey;
+  color: #fff;
+  z-index: 3;
+  background-color: $greenLight;
+
+  @media only screen and (min-width: 401px) {
+    top: -100px;
+  }
+
+  &:hover {
+    color: #fff;
+  }
+
+  &.reveal {
+    top: 0px;
+  }
+
+  .row,
+  .column {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .close-button {
+    position: absolute;
+    right: 50px;
+    top: 0;
+    z-index: 3;
+
+    &:before {
+        position: absolute;
+          top: 15px;
+        width: 15px;
+        height: 15px;
+        color: white;
+        font-size: 15px;
+        font-weight: 700;
+    }
+  }
+}
+
+#announcement {
+  position: relative;
+  z-index: 1;
+  height: auto;
+  margin: 0;
+  display: block;
+  text-align: left;
+
+  @media only screen and (min-width: 601px) {
+    text-align: center;
+  }
+
+  .row,
+  .columns {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .columns {
+    padding-right: 50px;
+
+    @media only screen and (min-width: 501px) {
+      padding-right: 80px;      
+    }
+  }
+
+  h5 {
+    font-size: 14px;
+    display: inline-block;
+    color: $white;
+    margin: 0;
+    position: relative;
+    padding-left: 10px;
+    line-height: 1.4;
+
+    @media only screen and (min-width: $smallScreen + px) {
+      font-size: 16px;
+    }
+
+    span {
+      text-decoration: underline;
+    }
+  }
+}
