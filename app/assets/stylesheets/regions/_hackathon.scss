@@ -300,6 +300,16 @@
       @media only screen and (min-width: $largeScreen + px) {
         @include prop(margin, 0, 0, 0, 330);
       }
+
+      .button {
+        display: inline-block;
+        position: relative;
+        left: 50%;
+        margin-left: -90px;
+        margin-bottom: 20px;
+        font-size: 13px;
+        letter-spacing: 2px;
+      }
     }
 
     .gamma, .delta {
