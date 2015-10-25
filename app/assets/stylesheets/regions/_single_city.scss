@@ -297,6 +297,7 @@
       color: $white;
       @include prop(padding, 20, 0, 0);
       font-family: "OpenSans-Light";
+      text-align: center;
 
       // &:not(:first-child) {
       //   @include prop(padding, 10, 0, 0);
@@ -305,11 +306,23 @@
       &:last-of-type {
         @include prop(padding, 20, 0, 25);
       }
+
+      @media only screen and (min-width: $smallScreen + px) {
+        text-align: left;
+      }
     }
 
     .button {
+      position: relative;
       @include fontSize(13);
       letter-spacing: 2px;
+      left: 50%;
+      margin-left: -90px;
+
+      @media only screen and (min-width: $smallScreen + px) {
+        left: 0;
+        margin-left: 0;
+      }
     }
   }
 }
