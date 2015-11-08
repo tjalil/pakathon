@@ -42,6 +42,11 @@
   .punch {
     font-family: 'OpenSans-Light';
     color: white;
+
+    a {
+      color: $white;
+      text-decoration: underline;
+    }
   }
 }
 
