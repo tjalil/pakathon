@@ -1,0 +1,67 @@
+#global-final-hero {
+  position: relative;
+  @include prop(padding, 130, 0, 40);
+  @include prop(min-height, 400);
+
+  @include pre(width, 100%);
+  background-size: cover;
+  background-color: white;
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 50%;
+  z-index: 1;
+  background-image: asset_url("aga-khan.jpg");
+
+  &:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+  }
+
+  .hero-text {
+    position: relative;
+    z-index: 3;
+  }
+
+  span {
+    text-transform: uppercase;
+    border-bottom: 1px solid $white;
+  }
+
+  h3 {
+    color: $white;
+    letter-spacing: 2px;
+  }
+
+  .punch {
+    font-family: 'OpenSans-Light';
+    color: white;
+  }
+}
+
+#twitter-grid {
+  @include prop(padding, 20, 0);
+
+  .delta {
+    @include prop(padding, 20, 0);
+  }
+
+  a {
+    display: block;
+  }
+
+  .small {
+    @include fontSize(12);
+    @include prop(padding-bottom, 10);
+  }
+
+  .green {
+    color: $greenLight;
+  }
+}

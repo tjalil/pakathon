@@ -3,6 +3,10 @@ class PagesController < ApplicationController
   def toronto_appetizer
   end
 
+  def global_final
+    @datetime = DateTime.new(2015,11,8,11,0,0)
+  end
+
   def homepage
   end
 
