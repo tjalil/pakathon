@@ -1,13 +1,23 @@
 <div id="announcement-strip">
-    <a href="javascript:void(0)" class="close-button icon-close"></a>
+  <a href="javascript:void(0)" class="close-button icon-close"></a>
 
-    <a id="announcement" href="https://pakathonglobal.splashthat.com/" target="_blank">
-      <div class="row">
-        <div class="columns xsmall-12">
-          <h5 class="epsilon"><span>Join Us</span> for Global Finals on November 8th, 2015 at the Aga Khan Museum, Toronto.</h5>
+    <% if DateTime.now < DateTime.new(2015, 11, 8) %>
+      <a id="announcement" href="https://pakathonglobal.splashthat.com/" target="_blank">
+        <div class="row">
+          <div class="columns xsmall-12">
+              <h5 class="epsilon"><span>Join Us</span> for Global Finals on November 8th, 2015 at the Aga Khan Museum, Toronto.</h5>
+          </div>
         </div>
-      </div>
-    </a>
+      </a>
+    <% else %>
+      <a id="announcement" href="/global-final">
+        <div class="row">
+          <div class="columns xsmall-12">
+              <h5 class="epsilon"><span>Watch Global Final Livestream</span> - Live at 11:00AM EST on November 8th, 2015</h5>
+          </div>
+        </div>
+      </a>
+    <% end %>
   </div>
 
 <header class="global">
@@ -19,6 +29,7 @@
 
       <nav>
         <ul>
+
           <% if request.original_url == "http://www.pakathon.org/program" %>
             <li><a href="/program" class="active">Program</a></li>
           <% else %>
