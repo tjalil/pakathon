@@ -16,7 +16,7 @@ body {
   right: 0;
   @include prop(width, 320);
   height: 100%;
-  @include prop(padding, 100, 20, 50);
+  @include prop(padding, 90, 20, 50);
 
   li {
     @include prop(margin, 20, 0);
