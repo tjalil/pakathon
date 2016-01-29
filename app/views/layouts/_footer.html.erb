@@ -35,15 +35,15 @@
             <% end %>
 
             <% if request.original_url == "http://www.pakathon.org/careers" %>
-              <li><a href="/careers" class="active">Careers</a></li>
+              <li class="header-nav-item"><a href="/careers" class="active">Careers</a></li>
             <% else %>
-              <li><a href="/careers">Careers</a></li>
+              <li class="header-nav-item"><a href="/careers">Careers</a></li>
             <% end %>
 
             <% if request.original_url == "http://www.pakathon.org/resources" %>
-              <li class="header-nav-item"><a href="/resources" class="active">Resources</a></li>
+              <li><a href="/resources" class="active">Resources</a></li>
             <% else %>
-              <li class="header-nav-item"><a href="/resources">Resources</a></li>
+              <li><a href="/resources">Resources</a></li>
             <% end %>
 
             <% if request.original_url == "http://www.pakathon.org/faqs" %>
